@@ -1,0 +1,30 @@
+---
+layout: base.njk
+---
+<section class="lg-container">
+	<aside>
+		<header class="post-header content">
+			<ul class="links-nextprev">
+				<li><a href="{{ previousPost.url }}" aria-describedby="Previous post">Previous Post</a></li>
+        <li><a href="{{ nextPost.url }}" aria-describedby="Next post">Next Post</a></li>
+			</ul>
+			<ul class="post-metadata">
+				<li>
+					<h1>{{ title }}</h1>
+				</li>
+				<li class="sm-link"><time datetime="{{ page.date | htmlDateString }}">{{ page.date }}</time></li>
+			</ul>
+		</header>
+
+	</aside>
+	<article class="article-wrapper">
+		{% if thumb %}
+		<img src="{{ thumb }}" alt="{{ thumbAlt }}" class="article-img">
+		{% endif %}
+		<div class="textblock">
+			<h2>{{ description }}</h2>
+			<hr>
+			{{ content | safe }}
+		</div>
+	</article>
+</section>

@@ -1,3 +1,4 @@
+const markdownIt = require("markdown-it");
 const { minify } = require("terser");
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
@@ -26,6 +27,14 @@ module.exports = function (eleventyConfig) {
 		}
 	})
 
+	eleventyConfig.addFilter("getAllTags", collection => {
+		let tagSet = new Set();
+		for(let item of collection) {
+			(item.data.tags || []).forEach(tag => tagSet.add(tag));
+		}
+		return Array.from(tagSet);
+	});
+
 	// Transforms
 	Object.keys(transforms).forEach((transformName) => {
 		eleventyConfig.addTransform(transformName, transforms[transformName])
@@ -43,6 +52,7 @@ module.exports = function (eleventyConfig) {
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
 
+	// Watch Targets
 	eleventyConfig.addWatchTarget('./src/_assets/stylesheets/');
 	eleventyConfig.addWatchTarget('./src/_assets/scripts/');
 	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");

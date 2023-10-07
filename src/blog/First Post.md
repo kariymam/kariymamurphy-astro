@@ -3,7 +3,8 @@ title: First post
 description: This is a description
 date: "git Last Modified"
 tags:
-  - work experience
+  - cat
+  - dog
 ---
 
 ## A note about my "case study" style

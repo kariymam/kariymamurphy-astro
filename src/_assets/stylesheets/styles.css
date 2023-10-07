@@ -1,7 +1,58 @@
 @import 'colors.css';
+@import 'fonts.css';
 @import 'utils/_tailwind.css';
 @import 'utils/_accessibility.css';
 
+html {
+	font-size: 100%;
+	}
+
+/* Credit https://css-tricks.com/custom-tailwind-css/ */
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer utilities {
+  .list-interpunct > li:before {
+    content: '・';
+    float: left;
+    margin: 0 0 0 -0.9em;
+    width: 0.9em;
+  }
+
+  @media (min-width: 992px) {
+   .list-interpunct > li:before {
+      margin: 0 0 0 -1.5em;
+      width: 1.5em;
+    }
+  }
+}
+
 a {
 	@apply text-ws-blue-500 underline;
+}
+
+header {
+	border-bottom: var(--border);
+}
+
+.indicator {
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 36px;
+  width: 100px;
+	height: 100%;
+	opacity: 1;
+	background-color: var(--color-gray-4);
 }

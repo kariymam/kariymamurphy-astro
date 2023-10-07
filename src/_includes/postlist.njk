@@ -1,0 +1,22 @@
+<ol reversed class="postlist grid" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+	{% for post in postslist | reverse %}
+	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+		<div class="ArticleCard">
+			{% if post.data.thumb %}
+			<a href="{{ post.url }}" class="ArticleLink"><img src="{{ post.data.thumb }}"
+					alt="{{ post.data.thumbAlt }}" /></a>
+			{% endif %}
+			<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+				<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | htmlDateString
+					}}</time>
+				{% if post.data.description %}
+				<p>{{ post.data.description }}</p>
+				{% endif %}
+			</a>
+		</div>
+		{% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+		<a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
+		{% endfor %}
+	</li>
+	{% endfor %}
+</ol>

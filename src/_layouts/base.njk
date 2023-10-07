@@ -18,13 +18,14 @@
         <noscript>
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" type="text/css"/>
         </noscript>
+        <link href="https://use.typekit.net/uxs6fmy.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     </head>
     <body>
         <a href="#main" class="skip-link">Skip to main content</a>
-        <div>
-          {% include "_partials/nav.njk" %}
-        </div>
+        {% include "_partials/header.njk" %}
         {{ content | safe }}
+        {% include 'footer.njk' %}
     </body>
     <script src="/static/app.min.js" defer></script>
 </html>

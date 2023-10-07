@@ -1,0 +1,24 @@
+:root {
+  --display-font: "degular-variable", Helvetica, Arial, sans-serif, serif, Icons;
+  --body-font: "degular-variable", Helvetica, Arial, sans-serif, serif, Icons;
+	--link-font: "degular-variable", Helvetica, Arial, sans-serif, serif, Icons;
+	--display-settings: 'ital' 0, 'opsz' 35, 'wght' 365; /* font-variation-settings */
+	--body-settings: "ital" 0, "opsz" 15, "wght" 365;
+	--link-settings: "ital" 0, "opsz" 30, "wght" 700;
+}
+
+html, body {
+	font-family: "degular-variable", Inter, ui-sans-serif, system-ui, sans-serif; /* 4 */
+}
+
+h1, h2, h3, h4 {
+	font-variation-settings: var(--display-settings);
+}
+
+p {
+	font-variation-settings: var(--body-settings);
+}
+
+a[href] {
+	font-variation-settings: var(--link-settings);
+}
