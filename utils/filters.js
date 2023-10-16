@@ -7,6 +7,9 @@ module.exports = {
 			zone: 'utc'
 		}).toFormat('yyyy-LL-dd');
 	},
+	readableDate: (dateObj, format, zone) => {
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLL dd yyyy");
+	},
 	filterTagList: function filterTagList(tags) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
 	},

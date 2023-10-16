@@ -3,6 +3,10 @@
 @import 'utils/_tailwind.css';
 @import 'utils/_accessibility.css';
 
+* {
+	border-color: var(--color-gray-5);
+}
+
 html {
 	font-size: 100%;
 	}
@@ -55,4 +59,52 @@ header {
 	height: 100%;
 	opacity: 1;
 	background-color: var(--color-gray-4);
+}
+
+/* POST TAGS */
+
+.post-tag {
+  border: var(--border-btn);
+  display: inline-block;
+  font-size: 0.875rem;
+  margin: 0.5rem 0;
+  padding: 0.1rem 0.5rem 0 0.5rem;
+  line-height: 1.5;
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 300ms;
+  margin-right: auto;
+	text-decoration: none;
+}
+
+.post-tag:hover {
+  background-color: var(--nav-indicator-hover);
+	border: var(--border-primary);
+	text-decoration: underline;
+}
+
+.postlist-item > .post-tag {
+  align-self: center;
+}
+
+.postlist-item {
+	display: flex;
+	flex-direction: column;
+}
+
+.scrim {
+	background: linear-gradient(153deg, rgba(0, 0, 0, 0.35) 50.64%, rgba(0, 0, 0, 0.00) 100%);
+}
+
+.articleCard {
+	text-decoration: none;
+	background-color: var(--background);
+}
+
+.articleCardTags a {
+	margin-right: 8px;
+}
+
+.articleCardTags a:last-child {
+	margin-right: 0;
 }

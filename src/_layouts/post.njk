@@ -12,7 +12,7 @@ layout: base.njk
 				<li>
 					<h1>{{ title }}</h1>
 				</li>
-				<li class="sm-link"><time datetime="{{ page.date | htmlDateString }}">{{ page.date }}</time></li>
+				<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
 			</ul>
 		</header>
 
