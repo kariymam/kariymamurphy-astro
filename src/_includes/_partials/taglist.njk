@@ -1,0 +1,13 @@
+<ul class="page-tags-list flex flex-row flex-wrap gap-1 pb-8">
+  <li class="page-tags-list-item">
+    <a href="/tags/" class="post-tag px-2">all</a>
+  </li>
+  {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl
+  %}/tags/{{
+    tag | slugify
+  }}/{% endset %}
+  <li class="page-tags-list-item">
+    <a href="{{ tagUrl }}" class="post-tag px-2">{{ tag }}</a>
+  </li>
+  {% endfor %}
+</ul>

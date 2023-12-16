@@ -18,7 +18,3 @@ h1, h2, h3, h4 {
 p {
 	font-variation-settings: var(--body-settings);
 }
-
-a[href] {
-	font-variation-settings: var(--link-settings);
-}

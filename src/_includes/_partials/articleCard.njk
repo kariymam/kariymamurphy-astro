@@ -1,36 +1,44 @@
-{% block content %}
-  <a href="{{ post.url }}" class="articleCard rounded-t-3xl bg-slate-200">
+
+  <div class="flex flex-col relative justify-end h-full w-full min-h-fit transition-all">
+
     {% if post.data.thumb %}
-    <img src="{{ post.data.thumb }}"
-         alt="{{ post.data.thumbAlt }}"
-         class="absolute inset-0 h-full w-full rounded-t-3xl pb-16 object-cover opacity-75 transition-opacity group-hover:opacity-50"
-    />
-    {% endif %}
-    <div class="relative w-full scrim border-2 rounded-t-3xl">
-      <div class="articleCardHeader p-8">
-        <p class="text-sm font-medium uppercase tracking-widest">
-          <time datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-        </p>
-        <p class="text-xl font-bold text-white sm:text-2xl">
-          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-        </p>
-      </div>
-      <div class="mt-32 sm:mt-48 lg:mt-64">
-        <div
-          class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+    <a href="{{ post.url }}" class="h-full w-full decoration-transparent hover:decoration-inherit">
+      <img
+        src="{{ post.data.thumb }}"
+        alt="{{ post.data.thumbAlt }}"
+        class="scrim thumbImg inset-0 absolute object-cover"
+      />
+      <div
+          class="flex flex-col justify-center group relative h-full px-4"
         >
-          <p class="text-base text-white p-8">
-            {% if post.data.description %}
-            {{ post.data.description }}
-            {% endif %}
-          </p>
+        <div class="flex items-end justify-end pb-8 mt-4">
+          <span class="postlist-item-header bg-white px-1"></span>
         </div>
-      </div>
-    </div>
-  </a>
-  <div class="articleCardTags group relative block px-8 py-3 bg-white border-b-2 border-x-2 rounded-b-3xl">
-    {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-    <a href="{{ tagUrl | url }}" class="post-tag">{{ tag }}</a>
-    {% endfor %}
+            <div class="flex flex-col justify-center text-2xl max-w-xl h-full pb-4">
+                <h3 class="max-w-sm h-72">
+                  <span class="p-1">
+                  {% if post.data.title %}{{ post.data.title }}{% else %}
+                  <code>{{ post.url }}</code>
+                  {% endif %}
+                </span>
+              </h3>
+              <time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{
+                post.date | readableDate
+              }}</time>
+          </div>
+        </div>
+    </a>
+    {% endif %}
   </div>
-  {% endblock %}
+    <div class="articleCardTags w-full p-4 flex flex-row flex-wrap gap-1">
+      {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
+        tag | slug
+      }}/{% endset %}
+
+      <a href="{{ tagUrl }}"
+        class="relative block articleCardTag"
+        >{{ tag }}</a
+      >
+
+      {% endfor %}
+    </div>
