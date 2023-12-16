@@ -1,0 +1,72 @@
+	:root {
+		/* primary */
+		--primary: var(--color-gray-2); /* use tailwind color instead */
+		--background: #fff;
+		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
+
+
+		/* grays */
+		--color-gray-1: rgba(29, 29, 28, 0.85);
+		--color-gray-2: rgba(33 ,36, 35, 1);
+		--color-gray-3: rgba(115, 115, 115, 0.50);
+		--color-gray-4: rgba(166, 166, 166, 1);
+		--color-gray-5: rgba(242,242,242,0.85);
+
+		--scrimOnImg: var(--color-gray-3);
+		--scrimOnHover: var(--color-gray-4);
+
+		--border-btn: var(--color-gray-3);
+		--border-bg: var(--color-gray-4);
+		--border-primary: var(--primary);
+		/* text */
+		--text-color: var(--color-gray-1);
+		--text-color-link-active: var(--color-gray-1);
+		--text-color-link-visited: var(--primary);
+		--text-color-link: var(--primary);
+
+		/*dynamic*/
+		--nav-indicator-hover: var(--color-gray-5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+		--primary: #fff;
+    --background: var(--color-gray-2);
+
+		--scrimOnImg: var(--color-gray-1);
+		--scrimOnHover: var(--color-gray-2);
+
+		--border-bg: var(--color-gray-3);
+
+    --text-color: var(--color-gray-5);
+		--text-color-link-visited: var(--primary);
+    --text-color-link-active: #74d5d4;
+		--hr: 1px solid var(--color-gray-224);
+  }
+}
+
+html, body {
+	background-color: var(--background);
+	color: var(--text-color);
+}
+
+footer {
+	border-bottom: 2px solid var(--border-bg);
+	border-top: 2px solid var(--border-bg);
+}
+
+p > a[href] {
+	color: var(--text-color-link);
+}
+
+.border-right {
+	border-right: var(--border-bg);
+}
+
+article {
+	background-color: var(--background);
+}
+
+.postlist-item-header {
+	color: var(--text-color-link);
+}

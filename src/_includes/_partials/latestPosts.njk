@@ -1,0 +1,34 @@
+<div class="px-1">
+  {% set postsCount = collections.posts | length %}
+  {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+    <h2 class="p-5 text-xl">Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h2>
+      {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+      {% set postslistCounter = postsCount %}
+      <div reversed class="postlist grid grid-cols-2 columns-3 gap-1 break-inside-avoid w-full" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+        {% for post in postslist | reverse %}
+        <div class="rounded-3xl postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+          {% include "_partials/articleCard.njk" %}
+        </div>
+        {% endfor %}
+        <div>
+          <div class="articleCard px-4 h-full">
+            <div class="h-full">
+              {% set remainingPostsCount = collections.posts - numberOfLatestPostsToShow %}
+              {% set postslist = collections.posts %}
+              <div class="flex flex-col" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+                {% for post in postslist | reverse %}
+                <div class="flex flex-row">
+                  <a href="{{ post.url }}" class="postlist-item-header h-full w-full decoration-transparent hover:decoration-inherit">
+                    {% if post.data.title %}
+                    {{ post.data.title }}
+                    {% else %}
+                    <code>{{ post.url }}</code>
+                    {% endif %}</a>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

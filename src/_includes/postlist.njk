@@ -1,0 +1,9 @@
+  <ol reversed class="postlist grid grid-cols-2 columns-3 gap-1 break-inside-avoid w-full" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+    {% for post in postslist | reverse %}
+    <li class="rounded-3xl postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+      {% include "_partials/articleCard.njk" %}
+    </li>
+    {% endfor %}
+  </ol>
+
+  <!-- grid grid-cols-2 md:grid-cols-4 gap-4 -->

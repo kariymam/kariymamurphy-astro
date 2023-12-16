@@ -1,0 +1,56 @@
+---
+layout: base.njk
+---
+<style>
+  :root {
+  --bg-img: url('{{ thumb }}');
+  }
+</style>
+  <article class="mx-auto flex flex-col flex-1 items-start justify-end md:justify-between lg:flex-row">
+    <div class="px-12 max-w-md h-full md:h-1/2 md:w-full sm:w-full lg:top-0 lg:sticky">
+      <header class="post-header content">
+
+          <ul class="post-metadata">
+            <li>
+              <h1 class="text-2xl leading-none tracking-tight py-5">{{ title }}</h1>
+            </li>
+            <li><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
+          </ul>
+        </header>
+    </div>
+  <div class="w-full border-left">
+    <div class="grid grid-row-2 row-auto gap-1 break-inside-avoid w-full">
+      {% if thumb %}
+      <div class="relative">
+      <div class="flex relative overflow-hidden">
+        <div class="relative w-full">
+          <div class="bg-image h-full" style="background-image: var(--bg-img);background-size: contain;">
+          <img src="{{ thumb }}" alt="{{ thumbAlt }}"
+            class="inset-0 z-10 absolute object-cover overflow-hidden block top-0 bottom-0 right-0 box-border m-0 h-full">
+            <div class="overflow-hidden w-full h-full"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+      {% endif %}
+      <div class="max-w-screen-md w-full textblock mx-auto py-8 text-base">
+        <h2 class="text-xl">{{ description }}</h2>
+        <hr>
+        {{ content | safe }}
+      </div>
+      <div class="pageNav flex flex-row">
+      {%- if collections.posts %}
+          {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+          {%- set nextPost = collections.posts | getNextCollectionItem %}
+          {%- if nextPost or previousPost %}
+            {%- if previousPost %}
+            <div class="w-full">Previous: <a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
+                {% endif %}
+            {%- if nextPost %}
+            <div class="w-full">Next: <a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a></div>
+              {% endif %}
+          {%- endif %}
+          {%- endif %}
+    </div>
+    </div>
+  </article>

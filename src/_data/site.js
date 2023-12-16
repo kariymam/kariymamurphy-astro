@@ -1,8 +1,13 @@
 module.exports = {
-	"title": "Eleventy Web Starter",
-	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PostCSS and esbuild",
+	"title": "Kariyma Murphy",
+	"description": "I do a little bit of this and a little bit of that",
 	"url": "https://eleventywebstarter.netlify.app",
-	"author": "Chris Collins",
+	"language": "en",
+	"author": {
+		"name": "Kariyma Murphy",
+		"email": "kariyma@oohnice.design",
+		"url": "https://example.com/about-me/"
+	},
 	"meta_data": {
 		"twitter": "@chrissy_dev",
 		"opengraph_default": "/static/opengraph-default.jpg"
