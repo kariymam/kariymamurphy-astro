@@ -84,8 +84,6 @@ a {
 .thumbImg {
 	height: 100%;
 	width: 100%;
-	transition-duration: 300ms;
-	transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 	filter: grayscale(1);
 	mix-blend-mode: multiply;
 }
@@ -117,6 +115,7 @@ a {
     justify-content: center;
     transition-duration: .3s;
     transition-property: background-color;
+		border: solid 2px var(--border-bg);
 }
 
 .postlist-item-header:before  {
