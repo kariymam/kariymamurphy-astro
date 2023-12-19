@@ -1,5 +1,5 @@
 ---
-title: This is an even longer title of a post look how long this is wow so many words so many possibilities
+title: This is an even longer title of a post look how long this is wow
 description: I was hired to brand and design social media flyer for We Own This! This is an example of a really long description, what’s up what’s happening lorem ipsum dolor sit.
 date: 2023-10-03
 tags:

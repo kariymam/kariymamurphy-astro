@@ -44,3 +44,29 @@ postlistItem.forEach(post => {
 	})
 });
 */
+
+let tl = gsap.timeline();
+const postlistItem = document.querySelectorAll(".postlist-item");
+
+postlistItem.forEach(post => {
+  post.addEventListener("mouseover", (e) => {
+		let m = e.target.closest("article");
+		let q = gsap.utils.selector(m);
+		const headerHeight = m.querySelector("h3").offsetHeight;
+		const moveY = headerHeight + 16;
+
+		tl.to(q(".thumbImg"), {
+			duration: 0.2,
+			ease: "power1.out",
+			top: `${moveY}px`
+		});
+
+	})
+	post.addEventListener("mouseleave", () => {
+		tl.to((".thumbImg"), {
+			duration: 0.2,
+			ease: "power1.in",
+			top: 0
+		});
+	})
+});
