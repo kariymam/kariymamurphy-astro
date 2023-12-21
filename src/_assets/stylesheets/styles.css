@@ -78,9 +78,9 @@ h4, h5, h6 {
 
 .post-tag {
 	gap: 4px;
-  border: var(--border-btn);
+  border: 2px solid var(--border-primary);
 	border-radius: 99px;
-  display: inline-block;
+  display: flex;
 	color: var(--text-color);
   background-color: var(--scrimOnImg);
   transition-property: background-color;
@@ -90,8 +90,8 @@ h4, h5, h6 {
 }
 
 .post-tag:hover {
+	border: 2px solid var(--scrimOnHover);
   background-color: var(--scrimOnHover);
-	border: var(--border-primary);
 	text-decoration: underline;
 }
 

@@ -31,9 +31,9 @@
                   >
             </span>
             <h3 class="postlist-item-header relative pr-9 my-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
-            <div class="relative h-full">
+            <div class="flex relative w-full h-full">
               <div
-                class="postlist-item-description text-sm lg:pb-4 md:pb-16 lg:h-48 px-8 lg:z-0 top-0 lg:bg-transparent"
+                class="postlist-item-description text-sm h-full md:pb-16 px-8 lg:z-0 top-0 lg:bg-transparent"
               >
               {% if post.data.description %}
               <h4 class="inline-block float-left">
