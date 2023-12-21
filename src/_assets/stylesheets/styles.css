@@ -41,8 +41,25 @@ html {
   }
 }
 
-a {
+/* a {
 	@apply underline;
+} */
+
+a h3 {
+	@apply underline;
+}
+
+p a {
+	@apply underline;
+}
+
+p {
+	@apply text-base;
+}
+
+h4, h5, h6 {
+	@apply text-base;
+	@apply italic;
 }
 
 .indicator {
@@ -109,6 +126,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+	padding: 1rem 1rem 0 1rem;
 		/* border: solid 2px var(--border-bg); */
 }
 
@@ -144,3 +162,6 @@ h3 span {
 	height: 500px;
 }
 
+.postlist-item-description > h4::after {
+	content: "\00a0";
+}

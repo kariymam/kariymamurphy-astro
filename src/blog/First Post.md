@@ -1,6 +1,6 @@
 ---
 title: This is a title of a blog post yada yada yada
-description: I was hired to brand and design social media flyer for We Own This! This is an example of a really long description, what’s up what’s happening lorem ipsum dolor sit.
+description: This is a description.
 date: 2023-10-03
 tags:
   - joe pera

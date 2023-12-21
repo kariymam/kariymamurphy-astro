@@ -20,7 +20,7 @@
       >
         <a
           href="{{ post.url }}"
-          class="h-full w-full decoration-transparent hover:decoration-inherit overflow-hidden"
+          class="h-full w-full overflow-hidden"
         >
           <article class="flex flex-col group relative h-full w-full  lg:text-xl sm:text-base leading-tight">
             <span class="postlist-item-header px-4 flex flex-row flex-wrap gap-1 items-center justify-end pt-4">
@@ -30,7 +30,7 @@
                     >{{ post.date | readableDate }}</time
                   >
             </span>
-            <h3 class="relative px-4 my-4">
+            <h3 class="relative px-4 my-4 decoration-transparent hover:decoration-inherit">
                     {% if post.data.title %}{{ post.data.title }}{% else %}
                     <code>{{ post.url }}</code>
                     {% endif %}
@@ -38,8 +38,13 @@
             </h3>
             <div class="relative h-full">
               <div
-                class="postlist-item-description text-sm pb-4 lg:h-80 flex flex-col px-4 lg:z-0 top-0 lg:bg-transparent"
+                class="postlist-item-description text-sm pb-4 lg:h-80 px-4 lg:z-0 top-0 lg:bg-transparent"
               >
+              {% if post.data.description %}
+              <h4 class="inline-block float-left">
+                  {{ post.data.description }}
+              </h4>
+              {% endif %}
               {% excerpt post %}
               </div>
               {% if post.data.thumb %}

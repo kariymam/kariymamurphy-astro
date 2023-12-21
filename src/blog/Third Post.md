@@ -1,6 +1,6 @@
 ---
 title: Another one
-description: A description
+description: This is an even loooooonger description.
 date: 2023-10-03
 tags:
   - joe pera

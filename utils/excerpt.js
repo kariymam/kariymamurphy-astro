@@ -3,9 +3,9 @@
 	const striptags = require("striptags");
 	const markdownIt = require('markdown-it');
 
-	module.exports = function excerpt(post) {
+	module.exports = function async (post) {
 		let excerpt = post.data?.page?.excerpt;
-		const content = post.templateContent;
+		let content = post.templateContent;
 
 		excerpt = striptags(content)
 			.substring(0, 150)
