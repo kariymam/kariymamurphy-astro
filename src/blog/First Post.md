@@ -1,7 +1,6 @@
 ---
 title: This is a title of a blog post yada yada yada
 description: This is a description.
-date: 2023-10-03
 tags:
   - joe pera
   - gus

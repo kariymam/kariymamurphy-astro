@@ -1,7 +1,6 @@
 ---
 title: This is an even longer title of a post look how long this is wow
 description: This is a longer description.
-date: 2023-10-03
 tags:
   - joe pera
   - gus

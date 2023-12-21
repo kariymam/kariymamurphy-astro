@@ -1,7 +1,6 @@
 ---
 title: Another one
 description: This is an even loooooonger description.
-date: 2023-10-03
 tags:
   - joe pera
   - gus
