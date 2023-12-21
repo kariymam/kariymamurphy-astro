@@ -119,6 +119,11 @@ h4, h5, h6 {
   height: 100%;
 }
 
+div.postlist-item:nth-child(n+2) {
+	border-bottom: 2px solid var(--border-primary);
+}
+
+
 .postlist-item {
 	counter-increment: start-from -1;
 	align-self: center;
@@ -127,7 +132,6 @@ h4, h5, h6 {
     flex-direction: column;
     justify-content: flex-end;
 	padding: 1rem 1rem 0 1rem;
-		/* border: solid 2px var(--border-bg); */
 }
 
 .postlist-item-header:before  {

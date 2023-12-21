@@ -8,12 +8,12 @@
   {% set postslistCounter = postsCount %}
   <div
     reversed
-    class="postlist grid grid-cols-2 columns-3 break-inside-avoid w-full border-l-2"
+    class="postlist grid grid-cols-2 columns-3 break-inside-avoid w-full border-l-2 border-t-2"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
     <div
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full md:border-t-2 md:border-r-2"
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2"
     >
       <div
         class="flex flex-col relative justify-end h-full w-full min-h-fit transition-all"
@@ -54,7 +54,7 @@
                 <img
                   src="{{ post.data.thumb }}"
                   alt="{{ post.data.thumbAlt }}"
-                  class="thumbImg inset-0 lg:absolute transition-all object-cover"
+                  class="thumbImg inset-0 top-0 lg:absolute transition-all object-cover object-top"
                 />
               </div>
               {% endif %}

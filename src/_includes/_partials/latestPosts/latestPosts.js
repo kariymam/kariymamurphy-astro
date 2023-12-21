@@ -25,7 +25,7 @@ postlistItem.forEach(post => { // loop over each element with ".postlist-item"
   post.addEventListener("mouseover", (e) => {
 		let m = e.target.closest("article"); // target closest <article>
 		let q = gsap.utils.selector(m); // gsap select closest <article>
-		const headerHeight = m.querySelector("p").offsetHeight; //find offsetHeight of <.postlist-item-description>
+		const headerHeight = m.querySelector("p").offsetHeight; //find offsetHeight of <p>
 		const moveY = headerHeight + 16; // add 16 to offsetHeight
 
 		tl.to(q(".thumbImg"), {

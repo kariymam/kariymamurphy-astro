@@ -1,6 +1,6 @@
 	:root {
 		/* globals */
-		--primary: var(--color-gray-1); /* use tailwind color instead */
+		--primary: teal; /* use tailwind color instead */
 		--background: var(--color-gray-5);
 		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
 
@@ -10,9 +10,10 @@
 		--color-gray-2: rgba(33 ,36, 35, 1);
 		--color-gray-3: rgba(115, 115, 115, 0.90);
 		--color-gray-4: rgba(166, 166, 166, 1);
-		--color-gray-5: rgba(242,242,242,0.85);
+		--color-gray-5: rgba(253,252,244,0.85);
 
-		/* grays */
+		/* color */
+		--light-teal: rgba(95,194,178,1);
 
 		--scrimOnImg: var(--color-gray-5);
 		--scrimOnHover: var(--color-gray-4);
@@ -30,7 +31,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-		--primary: var(--color-gray-5);
+		--primary: var(--light-teal);
     --background: var(--color-gray-1);
 
 		--scrimOnImg: var(--color-gray-1);
@@ -48,21 +49,12 @@ html, body {
 	color: var(--text-color);
 }
 
-footer {
-	border-bottom: 2px solid var(--border-primary);
-	border-top: 2px solid var(--border-primary);
-}
-
 p > a[href] {
 	color: var(--text-color-link);
 }
 
 .postlist-item-header {
 	color: var(--text-color-link);
-}
-
-.postlist-item:hover img.thumbImg {
-	border-top: solid 2px;
 }
 
 time {
