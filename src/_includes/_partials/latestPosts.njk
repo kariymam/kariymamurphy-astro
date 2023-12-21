@@ -1,57 +1,73 @@
 <div>
   {% set postsCount = collections.posts | length %} {% set latestPostsCount =
   postsCount | min(numberOfLatestPostsToShow) %}
-  <h2 class="p-5 text-xl">
+  <h2 class="py-5">
     Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
   </h2>
   {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
   {% set postslistCounter = postsCount %}
   <div
     reversed
-    class="postlist grid grid-cols-2 columns-3 break-inside-avoid w-full"
+    class="postlist grid grid-cols-2 columns-3 break-inside-avoid w-full border-l-2"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
     <div
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}"
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full md:border-t-2 md:border-r-2"
     >
       <div
         class="flex flex-col relative justify-end h-full w-full min-h-fit transition-all"
       >
-        {% if post.data.thumb %}
         <a
           href="{{ post.url }}"
-          class="h-full w-full decoration-transparent hover:decoration-inherit"
+          class="h-full w-full decoration-transparent hover:decoration-inherit overflow-hidden"
         >
-          <article class="flex flex-col group relative h-full w-full">
-            <div class="flex flex-col pt-4 px-4 pb-32 z-0 top-0 border-t-2 border-r-2">
-              <h3
-                class="postlist-item-header max-w-md pb-4 text-2xl"
+          <article class="flex flex-col group relative h-full w-full  lg:text-xl sm:text-base leading-tight">
+            <span class="postlist-item-header px-4 flex flex-row flex-wrap gap-1 items-center justify-end pt-4">
+              <time
+                    datetime="{{ post.date | htmlDateString }}"
+                    class="text-sm"
+                    >{{ post.date | readableDate }}</time
+                  >
+            </span>
+            <h3 class="relative px-4 my-4">
+                    {% if post.data.title %}{{ post.data.title }}{% else %}
+                    <code>{{ post.url }}</code>
+                    {% endif %}
+
+            </h3>
+            <div class="relative h-full">
+              <div
+                class="postlist-item-description text-sm pb-4 lg:h-80 flex flex-col px-4 lg:z-0 top-0 lg:bg-transparent"
               >
-                <span>
-                  {% if post.data.title %}{{ post.data.title }}{% else %}
-                  <code>{{ post.url }}</code>
-                  {% endif %}
-                </span>
-                <time
-                  datetime="{{ post.date | htmlDateString }}"
-                  class="text-sm"
-                  >{{ post.date | readableDate }}</time
-                >
-              </h3>
-            </div>
-            <div
-              class="flex items-end justify-end h-full w-full top-0 absolute overflow-hidden z-10"
-            >
-              <img
-                src="{{ post.data.thumb }}"
-                alt="{{ post.data.thumbAlt }}"
-                class="scrim thumbImg inset-0 absolute transition-all object-cover"
-              />
+              {% excerpt post %}
+              </div>
+              {% if post.data.thumb %}
+              <div
+                class="flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative overflow-hidden lg:z-10"
+              >
+                <img
+                  src="{{ post.data.thumb }}"
+                  alt="{{ post.data.thumbAlt }}"
+                  class="thumbImg inset-0 lg:absolute transition-all object-cover"
+                />
+              </div>
+              {% endif %}
             </div>
           </article>
         </a>
-        {% endif %}
+      </div>
+      <div class="absolute max-w-sm pt-8 px-4 pb-4 flex flex-row flex-wrap gap-1 z-20">
+        {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
+          tag | slug
+        }}/{% endset %}
+
+        <a href="{{ tagUrl }}"
+          class="relative block post-tag px-2"
+          >{{ tag }}</a
+        >
+
+        {% endfor %}
       </div>
     </div>
     {% endfor %}

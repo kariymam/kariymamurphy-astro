@@ -4,7 +4,7 @@
 @import 'utils/_accessibility.css';
 
 * {
-	border-color: var(--border-bg);
+	border-color: var(--border-primary);
 }
 
 html {
@@ -64,7 +64,8 @@ a {
   border: var(--border-btn);
 	border-radius: 99px;
   display: inline-block;
-  background-color: transparent;
+	color: var(--text-color);
+  background-color: var(--scrimOnImg);
   transition-property: background-color;
   transition-duration: 300ms;
 	text-decoration: none;
@@ -74,6 +75,7 @@ a {
 .post-tag:hover {
   background-color: var(--scrimOnHover);
 	border: var(--border-primary);
+	text-decoration: underline;
 }
 
 .postlist-item > .post-tag {
@@ -84,11 +86,7 @@ a {
 .thumbImg {
 	height: 100%;
 	width: 100%;
-	mix-blend-mode: multiply;
-}
-
-.postlist-item:hover > div.postlist-item-header {
-	border-top: var(--border-primary);
+	border-top: transparent;
 }
 
 .container {
@@ -110,8 +108,7 @@ a {
     background-color: transparent;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: center;
+    justify-content: flex-end;
 		/* border: solid 2px var(--border-bg); */
 }
 
@@ -121,7 +118,9 @@ a {
     line-height: 100%;
     pointer-events: none;
     text-align: right;
-		font-size: 0.8rem;
+		color: var(--color-gray-3);
+		text-decoration: transparent;
+		font-size: 1rem;
 }
 
 li.postlist-item:hover > img.thumbImg {
@@ -129,28 +128,8 @@ li.postlist-item:hover > img.thumbImg {
 	mix-blend-mode: normal;
 }
 
-.scrim {
-  background: linear-gradient(rgba(0, 0, 0, 0), var(--background));
-}
-
 h3 span {
 	background-color: var(--background);
-}
-
-.articleCardTags {
-	border-top: 2px var(--border-bg);
-	border-style: solid;
-}
-
-.articleCardTag {
-	padding: 0.1rem 0.25rem 0 0.25rem;
-	border: 2px solid var(--primary);
-	text-decoration: none;
-}
-
-.articleCardTag:hover {
-	background-color: var(--primary);
-	text-decoration: underline;
 }
 
 .textblock>*+* {
@@ -165,13 +144,3 @@ h3 span {
 	height: 500px;
 }
 
-.border-left {
-	border-left: 2px var(--border-bg);
-	border-style: solid;
-}
-
-@media only screen and (max-width: 1024px) {
-	.border-left {
-		border-left: none;
-	}
-}

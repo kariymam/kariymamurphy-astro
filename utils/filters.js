@@ -1,6 +1,11 @@
 const {	DateTime } = require('luxon');
+const markdownIt = require("markdown-it");
 
 module.exports = {
+	//Markdownit
+	md: (content = "") => {
+		return markdownIt({ html: true }).render(content);
+	},
 	// https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
 	htmlDateString: (dateObj) => {
 		return DateTime.fromJSDate(dateObj, {

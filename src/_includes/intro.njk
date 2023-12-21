@@ -8,5 +8,5 @@
 {% set postsCount = collections.posts | length %}
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% if morePosts > 0 %}
-<small>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/blog/">the archive</a>.</small>
+<small>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/tags/">the archive</a>.</small>
 {% endif %}
