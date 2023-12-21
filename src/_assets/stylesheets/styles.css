@@ -135,7 +135,7 @@ div.postlist-item:nth-child(n+2) {
 }
 
 .postlist-item-header:before  {
-    content: "" counter(start-from,decimal-leading-zero) ". ";
+    content: "" counter(start-from,decimal-leading-zero) ".\00a0";
     display: inline-block;
     line-height: 100%;
     pointer-events: none;
@@ -143,6 +143,12 @@ div.postlist-item:nth-child(n+2) {
 		color: var(--color-gray-3);
 		text-decoration: transparent;
 		font-size: 1rem;
+		width: 1rem;
+}
+
+h3.postlist-item-header {
+	text-indent: -1rem;
+  padding-left: 2rem;
 }
 
 li.postlist-item:hover > img.thumbImg {
