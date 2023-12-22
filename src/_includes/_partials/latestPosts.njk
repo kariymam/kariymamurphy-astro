@@ -31,14 +31,14 @@
                       >{{ post.date | readableDate }}</time
                     >
               </span>
-              <h3 class="postlist-item-header relative pl-4 pr-9 py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+              <h3 class="postlist-item-header relative lg:text-base lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
             </div>
             <div class="flex-col flex-nowrap relative w-full h-full">
               <div
-                class="postlist-item-description text-sm h-full px-8 pb-14 lg:z-0 top-0 lg:bg-transparent mx-3"
+                class="postlist-item-description text-sm h-full lg:px-8 pb-14 lg:z-0 top-0 lg:bg-transparent mx-3"
               >
               {% if post.data.description %}
-              <h4 class="inline-block float-left">
+              <h4 class="inline-block float-left lg:text-base md:text-sm sm:text-sm">
                   {{ post.data.description }}
               </h4>
               {% endif %}
