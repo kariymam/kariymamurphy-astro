@@ -23,17 +23,19 @@
           class="h-full w-full overflow-hidden"
         >
           <article class="flex flex-col group relative h-full w-full  lg:text-xl sm:text-base leading-tight">
-            <span class="flex flex-row flex-wrap pb-8 gap-1 items-center justify-end">
-              <time
-                    datetime="{{ post.date | htmlDateString }}"
-                    class="text-sm"
-                    >{{ post.date | readableDate }}</time
-                  >
-            </span>
-            <h3 class="postlist-item-header relative pr-9 my-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
-            <div class="flex relative w-full h-full">
+            <div class="px-4 pt-4">
+              <span class="flex flex-row flex-wrap pb-8 gap-1 items-center justify-end">
+                <time
+                      datetime="{{ post.date | htmlDateString }}"
+                      class="text-sm"
+                      >{{ post.date | readableDate }}</time
+                    >
+              </span>
+              <h3 class="postlist-item-header relative pl-4 pr-9 py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+            </div>
+            <div class="flex-col flex-nowrap relative w-full h-full">
               <div
-                class="postlist-item-description text-sm h-full md:pb-16 px-8 lg:z-0 top-0 lg:bg-transparent"
+                class="postlist-item-description text-sm h-full px-8 pb-14 lg:z-0 top-0 lg:bg-transparent mx-3"
               >
               {% if post.data.description %}
               <h4 class="inline-block float-left">
@@ -41,15 +43,20 @@
               </h4>
               {% endif %}
               {% excerpt post %}
+              <img
+                  src="{{ post.data.thumb }}"
+                  alt="{{ post.data.thumbAlt }}"
+                  class="inset-0 top-0 relative lg:opacity-0 h-auto w-auto lg:block"
+                />
               </div>
               {% if post.data.thumb %}
               <div
-                class="flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative overflow-hidden lg:z-10"
+                class="thumbImgContainer border-t-2 lg:flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative lg:overflow-hidden lg:z-10"
               >
                 <img
                   src="{{ post.data.thumb }}"
                   alt="{{ post.data.thumbAlt }}"
-                  class="thumbImg inset-0 top-0 lg:absolute transition-all object-cover object-top"
+                  class="thumbImg lg:block lg:inset-0 lg:top-0 lg:absolute transition-all lg:object-cover lg:object-top"
                 />
               </div>
               {% endif %}
@@ -57,7 +64,7 @@
           </article>
         </a>
       </div>
-      <div class="absolute max-w-sm pt-8 pb-4 flex flex-row flex-wrap gap-1 z-20">
+      <div class="absolute max-w-sm pt-8 pb-4 px-4 flex flex-row flex-wrap gap-1 z-20">
         {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
           tag | slug
         }}/{% endset %}

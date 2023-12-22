@@ -1,6 +1,6 @@
 	:root {
 		/* globals */
-		--primary: rgba(6, 128, 121, 1); /* use tailwind color instead */
+		--primary: rgba(6, 128, 121, 0.85); /* use tailwind color instead */
 		--background: var(--color-gray-5);
 		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
 
@@ -13,12 +13,12 @@
 		--color-gray-5: rgba(253, 252, 246, 1);
 
 		/* color */
-		--light-teal: rgba(2, 174, 143, 1);
+		--light-teal: rgba(2, 174, 143, 0.85);
 
 		--scrimOnImg: var(--color-gray-5);
 		--scrimOnHover: var(--primary);
 
-		--border-primary: var(--primary);
+		--border-primary: var(--color-gray-4);
 		/* text */
 		--text-color: var(--color-gray-1);
 		--text-color-link-active: var(--color-gray-1);

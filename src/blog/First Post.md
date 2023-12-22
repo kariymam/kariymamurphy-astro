@@ -4,7 +4,7 @@ description: This is a description.
 tags:
   - joe pera
   - gus
-thumb: https://freight.cargo.site/t/original/i/bcb2fb3f43242ff697f7832f9469965b9a2f372c5df0ed9dd198c3afee3f174b/bcan_We-Own-This_socialmedia.png
+thumb: https://plus.unsplash.com/premium_photo-1686514714138-51925a219605?q=80&w=2835&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 thumbAlt: Image of animated Joe Pera
 ---
 
