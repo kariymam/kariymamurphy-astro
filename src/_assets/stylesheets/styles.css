@@ -93,6 +93,7 @@ h4, h5, h6 {
 	border: 2px solid var(--scrimOnHover);
   background-color: var(--scrimOnHover);
 	text-decoration: underline;
+	color: var(--background);
 }
 
 .postlist-item > .post-tag {
@@ -140,7 +141,7 @@ div.postlist-item:nth-child(n+2) {
     line-height: 100%;
     pointer-events: none;
     text-align: right;
-		color: var(--color-gray-3);
+		color: var(--primary);
 		text-decoration: transparent;
 		font-size: 1rem;
 		width: 1rem;
