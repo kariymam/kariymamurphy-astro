@@ -1,23 +1,31 @@
 ---
 layout: home.njk
-title: Eleventy Web Starter - Eleventy, esbuild, Tailwind and PostCSS
-description: Eleventy Web Starter is a lightweight Eleventy boilerplate utilising esbuild, Tailwind CSS and Post CSS
 eleventyNavigation:
   key: home
   order: 1
 numberOfLatestPostsToShow: 4
 ---
-
-
-
-<main id="main" class="mx-auto flex flex-col px-12 sm:px-6 lg:px-12 md:items-start lg:justify-center lg:flex-row md:justify-start">
-  <div class="max-w-none h-full md:h-1/2 md:w-full sm:w-full lg:top-0 lg:sticky lg:max-w-md lg:pr-12">
+<div class="h-full md:h-1/2 md:w-full sm:w-full top-0 sticky lg:w-1/4">
     <div class="intro lg:max-w-sm sm:max-w-lg">
       {% include "_partials/header.njk" %}
-      {% include "intro.njk" %}
+      <h1 class="pt-4 text-base max-w-xs w-auto">{{ site.description }}.
+        <span style="color: var(--text-color);">I’m a bit of a designer, I’ve helped organizations define and build digital products and services. <a href="/blog/" aria-labelledby="Link to my bio">Learn more about me</a> or contact me, I’m available for freelance or full-time work.</span>
+        </h1>
+        {% set postsCount = collections.posts | length %}
+        {% set morePosts = postsCount - numberOfLatestPostsToShow %}
+        {% if morePosts > 0 %}
+        <small>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/tags/">the archive</a>.</small>
+        {% endif %}
+      See <a href="/blog/">all tags</a>.
     </div>
   </div>
-  <div class="w-full">
-    {% include "_partials/latestPosts.njk" %}
+  <div class="w-auto">
+    {% set postsCount = collections.posts | length %} {% set latestPostsCount =
+      postsCount | min(numberOfLatestPostsToShow) %}
+      <h2 class="mb-1 py-5">
+        Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+      </h2>
+      {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+      {% set postslistCounter = postsCount %}
+      {% include 'postlist.njk' %}
   </div>
-</main>

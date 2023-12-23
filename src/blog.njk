@@ -7,15 +7,17 @@ eleventyNavigation:
   key: blog
   order: 2
 ---
-<main id="main">
-  <section class="flex flex-col mx-auto my-0 flex-auto justify-center items-start self-center">
-    <div class="flex flex-col w-full max-w-md h-full lg:h-full md:h-1/3 sm:h-1/2">
-      <h1 class="pb-1">All tags</h1>
-    {% include "_partials/taglist.njk" %}
+  <div class="h-full md:h-1/2 md:w-full sm:w-full top-0 sticky lg:w-1/4">
+    <div class="intro lg:max-w-sm sm:max-w-lg">
+      {% include "_partials/header.njk" %}
+      <h1 class="pt-4">All tags</h1>
+      {% include "_partials/taglist.njk" %}
     </div>
-    <div class="w-full px-12 pb-12">
-      {% set postslist = collections.posts %}
-      {% include "postlist.njk" %}
-    </div>
-  </section>
-</main>
+  </div>
+  <div class="w-auto">
+    <h2 class="mb-1 py-5">
+      All posts
+    </h2>
+    {% set postslist = collections.posts %}
+    {% include "postlist.njk" %}
+  </div>

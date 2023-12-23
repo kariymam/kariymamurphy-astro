@@ -4,8 +4,8 @@ module.exports = {
 			'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 		},
 		fontSize: {
-      sm: '1rem',
-      base: '1.25rem',
+      sm: '0.8rem',
+      base: '1.125rem',
       xl: '1.875rem',
       '2xl': '3.516rem',
       '3xl': '1.953rem',
@@ -35,6 +35,10 @@ module.exports = {
 			}
 		},
 	},
+	purge: {
+    enabled: true,
+    content: ['./dist/**/*.html'],
+  },
 	plugins: [],
 	content: ['src/**/*.njk', 'src/**/*.js']
 }

@@ -2,6 +2,7 @@
 	// Source: https://jonathanyeong.com/excerpts-with-eleventy/#:~:text=Cap%20at%20200%20characters,no%20need%20for%20specific%20tags.
 	const striptags = require("striptags");
 	const markdownIt = require('markdown-it');
+	const arrow = "\u2192"
 
 	module.exports = function async (post) {
 		let excerpt = post.data?.page?.excerpt;
@@ -17,5 +18,5 @@
 
 		}
 
-		return markdownIt({ html: true }).render(`${excerpt} <span class="text-sm">Read more</span>`);
+		return markdownIt({ html: true }).render(`${excerpt} <span class="text-sm whitespace-nowrap">Read more ${arrow}</span>`);
 	};

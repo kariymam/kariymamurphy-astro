@@ -1,9 +1,73 @@
-  <ol reversed class="postlist grid grid-cols-2 columns-3 gap-1 break-inside-avoid w-full" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-    {% for post in postslist | reverse %}
-    <li class="rounded-3xl postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-      {% include "_partials/articleCard.njk" %}
-    </li>
-    {% endfor %}
-  </ol>
 
-  <!-- grid grid-cols-2 md:grid-cols-4 gap-4 -->
+  <div
+    reversed
+    class="postlist grid max-w-screen-lg lg:grid-cols-3 columns-3 break-inside-avoid w-full border-l-2 border-t-2"
+    style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
+  >
+    {% for post in postslist | reverse %}
+    <div
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2"
+    >
+      <div
+        class="flex flex-col relative justify-end h-full w-full min-h-fit transition-all"
+      >
+        <a
+          href="{{ post.url }}"
+          class="h-full w-full"
+        >
+          <article class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent hover:border-teal-600 hover:text-teal-600">
+            <div class="px-4 pt-4">
+              <span class="flex flex-row flex-wrap pb-8 gap-1 items-center justify-end">
+                <time
+                      datetime="{{ post.date | htmlDateString }}"
+                      class="text-sm"
+                      >{{ post.date | readableDate }}</time
+                    >
+              </span>
+              <h3 class="postlist-item-header relative text-xl lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+            </div>
+            <div class="relative w-full h-full">
+              <div
+                class="h-full lg:pl-8 lg:pr-1 pb-16 mx-3 transition-all"
+              >
+                {% excerpt post %}
+                <img
+                    src="{{ post.data.thumb }}"
+                    alt="{{ post.data.thumbAlt }}"
+                    class="inset-0 top-0 relative lg:hidden"
+                  />
+                </div>
+              {% if post.data.thumb %}
+              <div
+                class="thumbImgContainer border-t-2 lg:flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative lg:overflow-hidden lg:z-10"
+              >
+                <img
+                  src="{{ post.data.thumb }}"
+                  alt="{{ post.data.thumbAlt }}"
+                  class="thumbImg lg:block lg:inset-0 lg:absolute lg:w-full transition-all lg:object-cover lg:object-top"
+                />
+              </div>
+              {% endif %}
+            </div>
+          </article>
+        </a>
+      </div>
+      <div class="absolute max-w-sm pt-8 pb-4 px-4 flex flex-row flex-wrap gap-1 z-20">
+        {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
+          tag | slug
+        }}/{% endset %}
+
+        <a href="{{ tagUrl }}"
+          class="relative block post-tag px-2 rounded-3xl"
+          >{{ tag }}</a
+        >
+
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% set js %}
+{% include './_partials/latestPosts/latestPosts.js' %}
+{% endset %}
+<script>{{ js | jsmin | safe }}</script>

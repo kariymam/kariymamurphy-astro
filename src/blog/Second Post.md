@@ -2,8 +2,7 @@
 title: This is an even longer title of a post look how long this is wow
 description: This is a longer description.
 tags:
-  - joe pera
-  - gus
+  - art
 ---
 
 These two very old people are the father and mother of Mr Bucket. Their names are Grandpa Joe and Grandma Josephine. Link to [Grandpa Joe and Grandma Josephine](https://www.belenalbeza.com/articles/better-excerpts-in-eleventy/).

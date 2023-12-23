@@ -47,9 +47,15 @@ html {
 	}
 }
 
-/* a {
+a {
 	@apply underline;
-} */
+	@apply text-teal-600;
+}
+
+.postlist-item a {
+	text-decoration-line: none;
+	color: var(--text-color);
+}
 
 a h3 {
 	@apply underline;
@@ -83,23 +89,17 @@ h4, h5, h6 {
 /* POST TAGS */
 
 .post-tag {
-	gap: 4px;
-  border: 2px solid var(--border-primary);
-	border-radius: 99px;
-  display: flex;
-	color: var(--text-color);
-  background-color: var(--scrimOnImg);
-  transition-property: background-color;
-  transition-duration: 300ms;
-	text-decoration: none;
+	text-decoration-color: transparent;
+	border: 2px solid var(--border-primary);
+	background-color: var(--btn);
 	margin-right: -2px;
+	color: var(--text-color);
 }
 
 .post-tag:hover {
-	border: 2px solid var(--scrimOnHover);
-  background-color: var(--scrimOnHover);
-	text-decoration: underline;
-	color: var(--background);
+	border-color: var(--btnHover);
+  background-color: var(--btnHover);
+	color: var(--text-color-link-active);
 }
 
 .postlist-item > .post-tag {
@@ -149,10 +149,13 @@ div.postlist-item:nth-child(n+2) {
     line-height: 100%;
     pointer-events: none;
     text-align: right;
-		color: var(--color-gray-3);
 		text-decoration: transparent;
 		width: 1rem;
 		margin-left: 1rem;
+}
+
+.postlist-item-header:before {
+	@apply text-sm
 }
 
 h3.postlist-item-header {
@@ -198,6 +201,6 @@ h3 span {
 
 }
 
-.postlist-item-description > h4::after {
+.postlist-item-description::after {
 	content: "\00a0";
 }

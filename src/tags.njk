@@ -14,15 +14,16 @@ eleventyComputed:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slugify }}/
 ---
-<main id="main">
-  <section class="flex flex-col mx-auto my-0 flex-auto justify-center items-start self-center">
-    <div class="flex flex-col pb-10 px-4 sm:px-6 lg:px-8">
-      <h1>Tagged “{{ tag }}”</h1>
-      <p>See <a href="/blog/">all tags</a>.</p>
+<div class="h-full md:h-1/2 md:w-full sm:w-full top-0 sticky lg:w-1/4">
+  <div class="intro lg:max-w-sm sm:max-w-lg">
+      {% include "_partials/header.njk" %}
+      <h1 class="pt-4">Tagged “{{ tag }}”</h1>
     </div>
-    <div class="px-4 sm:px-6 lg:px-8">
-      {% set postslist = collections[ tag ] %}
-      {% include "postlist.njk" %}
-    </div>
-  </section>
-</main>
+  </div>
+  <div class="w-auto">
+    <h2 class="mb-1 py-5">
+      See <a href="/blog/">all tags</a>.
+    </h2>
+    {% set postslist = collections[ tag ] %}
+    {% include "postlist.njk" %}
+  </div>

@@ -10,6 +10,7 @@ html, body {
 
 h1, h2, h3 {
 	font-variation-settings: var(--display-settings);
+	@apply leading-tight
 }
 
 p a {
