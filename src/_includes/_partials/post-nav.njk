@@ -1,0 +1,14 @@
+<div class="flex flex-row mb-1 py-5 border-b-2">
+  {%- if collections.posts %}
+          {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+          {%- set nextPost = collections.posts | getNextCollectionItem %}
+          {%- if nextPost or previousPost %}
+            {%- if previousPost %}
+            <div class="w-full text-start">&#8592; Previous: <a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
+                {% endif %}
+            {%- if nextPost %}
+            <div class="w-full text-end">Next: <a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a> &#8594;</div>
+              {% endif %}
+          {%- endif %}
+          {%- endif %}
+</div>
