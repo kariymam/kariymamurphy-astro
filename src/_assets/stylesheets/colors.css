@@ -41,7 +41,7 @@
 
     --text-color: var(--color-gray-5);
 		--text-color-link-visited: var(--primary);
-    --text-color-link-active: #74d5d4;
+    --text-color-link-active: var(--color-gray-1);
 		--hr: 1px solid var(--color-gray-224);
   }
 }
