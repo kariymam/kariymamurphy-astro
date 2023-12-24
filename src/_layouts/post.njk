@@ -11,10 +11,19 @@ date: Last Modified
     <div class="intro w-full lg:max-w-sm sm:max-w-lg">
       {% include "_partials/header.njk" %}
       <h1 class="text-xl mb-1 py-5 mr-20">{{ title }}</h1>
+      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
       <h2 class="text-base mr-20">{{ description }}</h2>
     </div>
   <div class="w-full">
-    {%- include "_partials/post-nav.njk" %}
+    {%- if collections.posts %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+    {%- set nextPost = collections.posts | getNextCollectionItem %}
+    {%- if nextPost or previousPost %}
+    <div class="flex flex-row mb-1 py-5 border-b-2">
+                {%- if previousPost %}
+                <div class="w-full text-start">&#8592; Previous: <a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
+                    {% endif %}
+    </div>
     <div class="grid grid-row-2 row-auto gap-1 break-inside-avoid w-full">
       {% if thumb %}
       <div class="relative">
@@ -34,6 +43,13 @@ date: Last Modified
           {{ content | safe }}
         </div>
       </div>
-
+      </div>
+      <div class="flex flex-row mb-1 py-5 border-b-2">
+        {%- if nextPost %}
+        <div class="w-full text-end">Next: <a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a> &#8594;</div>
+                  {% endif %}
+      </div>
+      {%- endif %}
+      {%- endif %}
     </div>
   </article>
