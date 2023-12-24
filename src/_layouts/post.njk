@@ -1,13 +1,15 @@
 ---
 layout: base.njk
 date: Last Modified
+eleventyNavigation:
+  parent: blog
 ---
 <style>
   :root {
   --bg-img: url('{{ thumb }}');
   }
 </style>
-  <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row sm:px-6 lg:px-12 md:items-start lg:justify-center md:justify-start">
+  <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row sm:px-6 md:items-start lg:justify-center md:justify-start">
     <div class="intro w-full lg:max-w-sm sm:max-w-lg">
       {% include "_partials/header.njk" %}
       <h1 class="text-xl mb-1 py-5 mr-20">{{ title }}</h1>
@@ -19,10 +21,13 @@ date: Last Modified
     {%- set previousPost = collections.posts | getPreviousCollectionItem %}
     {%- set nextPost = collections.posts | getNextCollectionItem %}
     {%- if nextPost or previousPost %}
-    <div class="flex flex-row mb-1 py-5 border-b-2">
-                {%- if previousPost %}
-                <div class="w-full text-start">&#8592; Previous: <a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
-                    {% endif %}
+    <div class="mb-1 py-5 border-b-2">
+                    <ul class="flex flex-row justify-end">
+                      {%- for tag in tags | filterTagList %}
+                        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                        <li class="min-w-max w-auto items-center mr-1"><a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+                        {%- endfor %}
+                    </ul>
     </div>
     <div class="grid grid-row-2 row-auto gap-1 break-inside-avoid w-full">
       {% if thumb %}
@@ -39,14 +44,15 @@ date: Last Modified
       </div>
       {% endif %}
       <div class="max-w-screen-lg w-full textblock mx-auto mb-1 py-5 mr-20 text-base">
-        <div class="mr-64">
           {{ content | safe }}
-        </div>
       </div>
       </div>
-      <div class="flex flex-row mb-1 py-5 border-b-2">
+      <div class="mb-1 py-5 border-b-2">
+        {%- if previousPost %}
+                <div class="w-full text-start flex items-center gap-1">Previous:<a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
+                    {% endif %}
         {%- if nextPost %}
-        <div class="w-full text-end">Next: <a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a> &#8594;</div>
+        <div class="w-full text-end flex items-center">Next:<a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a></div>
                   {% endif %}
       </div>
       {%- endif %}
