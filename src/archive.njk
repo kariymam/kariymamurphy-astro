@@ -1,0 +1,16 @@
+---
+layout: home.njk
+eleventyComputed:
+  title: Archive
+permalink: /archive/
+eleventyImport:
+  collections: ["post"]
+---
+<ol reversed>
+  {% set postslist = collections.posts %}
+  {% for post in postslist | reverse %}
+    <li class=" list-disc">
+      <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+    </li>
+    {% endfor %}
+  </ol>
