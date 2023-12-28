@@ -6,7 +6,7 @@ tags:
 ---
 
 These two very old people are the father and mother of Mr Bucket. Their names are Grandpa Joe and Grandma Josephine. Link to [Grandpa Joe and Grandma Josephine](https://www.belenalbeza.com/articles/better-excerpts-in-eleventy/).
-<!-- excerpt -->
+
 This is Mr Bucket. This is Mrs Bucket.
 
 Mr and Mrs Bucket have a small boy whose name is Charlie.

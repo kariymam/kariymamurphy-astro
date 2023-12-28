@@ -16,31 +16,30 @@ function
 gsap.fromTo(".thumbImg", { top: 0 }, { top: `${moveY}`, duration: 1 });
 
 */
-/* THIS IS WORKING!!!! */
+/* THIS IS WORKING!!!!
+*/
 
-let tl = gsap.timeline(); // create gsap timeline
-let postlistItem = document.querySelectorAll(".postlist-item"); // get all elements with ".postlist-item"
+let tl = gsap.timeline();
+let postlist = document.querySelectorAll(".postlist-item"); // get all elements with ".postlist-item"
+const headerHeight = (a, b) => a + b;  // add 16 to offsetHeight
 
-postlistItem.forEach(post => { // loop over each element with ".postlist-item"
+for (const post of postlist) { // loop over each element with ".postlist-item"
   post.addEventListener("mouseover", (e) => {
-		let m = e.target.closest("article"); // target closest <article>
-		let q = gsap.utils.selector(m); // gsap select closest <article>
-		const headerHeight = m.querySelector("p").offsetHeight; //find offsetHeight of <p>
-		const moveY = headerHeight + 32; // add 16 to offsetHeight
-
+		let cl = e.target.closest("article > div"); // target closest <article>
+		let m = cl.querySelector("p").offsetHeight; //find offsetHeight of <p>
+		let q = gsap.utils.selector(cl); // gsap select closest <article>
+		const moveY = headerHeight(m, 32);
 		tl.to(q(".thumbImg"), {
 			duration: 0.2,
 			ease: "sine.out",
 			top: `${moveY}px`
 		});
-
 	})
 	post.addEventListener("mouseleave", () => {
-		tl.to((".thumbImg"), {
-			duration: 0.1,
-			ease: "power1.in",
-			top: 0
-		});
-	})
-	return
-});
+    tl.to((".thumbImg"), {
+      duration: 0.1,
+      ease: "sine.in",
+      top: 0
+    });
+  })
+}

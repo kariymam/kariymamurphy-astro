@@ -1,3 +1,5 @@
+require
+
 module.exports = {
 	tags: [
 		"posts"

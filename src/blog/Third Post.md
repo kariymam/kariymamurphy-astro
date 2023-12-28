@@ -8,4 +8,3 @@ thumbAlt: Blurry photo of someone going down an elevator
 ---
 
 This is an example of an excerpt that I'd like to test. Some more text.
-<!-- excerpt -->

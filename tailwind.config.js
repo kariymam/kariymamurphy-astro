@@ -35,10 +35,6 @@ module.exports = {
 			}
 		},
 	},
-	purge: {
-    enabled: true,
-    content: ['./dist/**/*.html'],
-  },
 	plugins: [],
 	content: ['src/**/*.njk', 'src/**/*.js']
 }
