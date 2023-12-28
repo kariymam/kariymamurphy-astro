@@ -1,24 +1,3 @@
-
-/*
-1. hear the hover of a postlistItem
-	item.addEventListener('hover', event => {
-
-	})
-function
-. get postlistItem instance (done)
-. get the height of the closest h3 in postlistItem instance = headerHeight (done)
-. retrieve the headerHeight add 16px = moveY (done)
-. call moveY value
-. move thumbImg using top with moveY value
-. when mouse leaves postlistItem
-. move thumbImg back to top 0
-
-gsap.fromTo(".thumbImg", { top: 0 }, { top: `${moveY}`, duration: 1 });
-
-*/
-/* THIS IS WORKING!!!!
-*/
-
 let tl = gsap.timeline();
 let postlist = document.querySelectorAll(".postlist-item"); // get all elements with ".postlist-item"
 const headerHeight = (a, b) => a + b;  // add 16 to offsetHeight
