@@ -160,7 +160,22 @@ div.postlist-item:nth-child(n+2) {
 
 h3.postlist-item-header {
 	text-indent: -2rem;
-  padding-left: 2rem;
+  padding-left: 1rem;
+}
+
+.postlist-item-description > p {
+	padding-left: 1.2rem;
+	padding-bottom: 1rem;
+	width: 100%;
+}
+
+@media (max-width: 1024px) {
+	.postlist-item-description > p {
+		max-width: calc(100% * 0.85);
+	 }
+	 h3.postlist-item-header {
+		max-width: calc(100% * 0.85);
+	 }
 }
 
 @media (max-width: 992px) {

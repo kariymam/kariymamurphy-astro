@@ -7,7 +7,9 @@
   - [ ] Mixtapes
   - [x] Blog / Writing
     - [x] Post list
-  - [x] Posts
+    - [x] Tags
+    - [ ] Categories
+    - [x] Posts
   - [ ] About
     - [ ] Contact
   - [ ]
