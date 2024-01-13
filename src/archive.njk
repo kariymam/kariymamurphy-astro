@@ -1,10 +1,13 @@
 ---
-layout: home.njk
+layout: page.njk
 eleventyComputed:
   title: Archive
 permalink: /archive/
 eleventyImport:
   collections: ["post"]
+eleventyNavigation:
+  key: archive
+  order: 3
 ---
 <ol reversed>
   {% set postslist = collections.posts %}

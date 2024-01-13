@@ -3,29 +3,28 @@ layout: home.njk
 eleventyNavigation:
   key: home
   order: 1
-numberOfLatestPostsToShow: 4
+numberOfLatestPostsToShow: 3
 ---
-<div class="h-full md:h-1/2 md:w-full sm:w-full top-0 lg:sticky lg:w-1/4">
-    <div class="intro lg:max-w-sm sm:max-w-lg">
-      {% include "_partials/header.njk" %}
-
-      <h1 class="pt-4 text-base max-w-xs w-auto">{{ site.description }}.
-        <span style="color: var(--text-color);">I’m a bit of a designer, I’ve helped organizations define and build digital products and services. <a href="/blog/" aria-labelledby="Link to my bio">Learn more about me</a> or contact me, I’m available for freelance or full-time work.</span>
+{% set postsCount = collections.posts | length %}
+{% set morePosts = postsCount - numberOfLatestPostsToShow %}
+<div class="w-full lg:max-w-sm sm:max-w-lg top-0 lg:sticky">
+    <div class="intro">
+      {% include "_partials/logo.njk" %}
+      {% set postsCount = collections.posts | length %}
+      {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+      <h1 class="pt-4 text-2xl max-w-xs w-auto mb-1 pb-5 mr-20">
+        Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
         </h1>
-        {% set postsCount = collections.posts | length %}
-        {% set morePosts = postsCount - numberOfLatestPostsToShow %}
         {% if morePosts > 0 %}
         <small>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="/tags/">the archive</a>.</small>
         {% endif %}
-      See <a href="/blog/">all tags</a>.
+        {% include "_partials/taglist.njk" %}
     </div>
   </div>
-  <div class="w-auto">
-    {% set postsCount = collections.posts | length %} {% set latestPostsCount =
-      postsCount | min(numberOfLatestPostsToShow) %}
-      <h2 class="mb-1 py-5">
-        Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-      </h2>
+  <div class="w-full">
+    <div class="flex flex-row">
+      {% include "_partials/header.njk" %}
+    </div>
       {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
       {% set postslistCounter = postsCount %}
       {% include 'postlist.njk' %}

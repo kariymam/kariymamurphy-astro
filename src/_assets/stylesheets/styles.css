@@ -65,10 +65,6 @@ p a {
 	@apply underline;
 }
 
-p {
-	@apply text-base;
-}
-
 h4, h5, h6 {
 	@apply text-base;
 	@apply italic;
@@ -117,12 +113,9 @@ a.post-tag:hover, a.post-tag:active, a.post-tag:focus {
 }
 
 .container {
-	/*   background-color: blue; */
   display: flex;
-  margin: 0px auto; /* mx-auto */
-  justify-content: center; /* justify-center */
-  align-items: center; /* items-center */
-  align-self: stretch; /* self-center */
+  margin: 0px auto;
+  align-items: center;
 }
 
 .postlist {
@@ -137,10 +130,16 @@ div.postlist-item:nth-child(n+2) {
 .postlist-item {
 	counter-increment: start-from -1;
 	align-self: center;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media (min-width: 1024px) {
+	.postlist-item {
+		min-height: 32rem;
+	}
 }
 
 .postlist-item-header:before  {
@@ -188,11 +187,6 @@ h3.postlist-item-header {
 	}
 }
 
-li.postlist-item:hover > img.thumbImg {
-	filter: none;
-	mix-blend-mode: normal;
-}
-
 h3 span {
 	background-color: var(--background);
 }
@@ -226,4 +220,10 @@ h3 span {
 
 .postlist-item-description::after {
 	content: "\00a0";
+}
+
+@media (min-width: 1024px) {
+	.postlist {
+		grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+	}
 }

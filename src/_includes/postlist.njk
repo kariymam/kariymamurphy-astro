@@ -1,7 +1,7 @@
 
   <div
     reversed
-    class="postlist grid max-w-screen-lg lg:grid-cols-3 columns-3 break-inside-avoid w-full border-l-2 border-t-2"
+    class="postlist grid max-w-screen-lg break-inside-avoid w-full border-l-2 border-t-2"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
@@ -24,7 +24,7 @@
                       >{{ post.date | readableDate }}</time
                     >
               </span>
-              <h3 class="postlist-item-header relative text-xl lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+              <h3 class="postlist-item-header text-xl relative lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
             </div>
             <div class="relative w-full h-full">
               <div
@@ -67,7 +67,3 @@
     </div>
     {% endfor %}
   </div>
-{% set js %}
-{% include './_partials/latestPosts/latestPosts.js' %}
-{% endset %}
-<script>{{ js | jsmin | safe }}</script>

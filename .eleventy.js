@@ -8,6 +8,7 @@ const excerpt = require('./utils/excerpt.js');
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
+	eleventyConfig.addPassthroughCopy("./src/fonts/");
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {

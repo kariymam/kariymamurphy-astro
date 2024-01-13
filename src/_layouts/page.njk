@@ -1,0 +1,23 @@
+---
+layout: home.njk
+date: Last Modified
+---
+
+<div class="w-full lg:max-w-sm sm:max-w-lg top-0 lg:sticky">
+  <div class="intro">
+      {% include "_partials/logo.njk" %}
+      <h1 class="pt-4 text-2xl max-w-xs w-auto mb-1 pb-5 mr-20">
+        {{ title }}
+        </h1>
+    </div>
+  </div>
+  <div class="w-full">
+    <div class="flex flex-row">
+      {% include "_partials/header.njk" %}
+    </div>
+    <div class="border-t-2">
+      <div class="textblock mb-1 py-5 text-base max-w-2xl mr-auto">
+        {{ content | safe }}
+      </div>
+    </div>
+  </div>

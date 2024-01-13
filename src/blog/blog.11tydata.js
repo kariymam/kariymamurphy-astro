@@ -1,9 +1,7 @@
-require
-
 module.exports = {
 	tags: [
 		"posts"
 	],
 	"layout": "post.njk",
-	"permalink": "blog/{{ title | slugify }}/"
+	"permalink": "posts/{{ title | slugify }}/"
 };

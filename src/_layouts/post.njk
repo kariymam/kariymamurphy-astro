@@ -11,8 +11,8 @@ eleventyNavigation:
 </style>
   <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row sm:px-6 md:items-start lg:justify-center md:justify-start">
     <div class="intro w-full lg:max-w-sm sm:max-w-lg">
-      {% include "_partials/header.njk" %}
-      <h1 class="text-xl mb-1 py-5 mr-20">{{ title }}</h1>
+      {% include "_partials/logo.njk" %}
+      <h1 class="text-2xl mb-1 py-5 mr-20">{{ title }}</h1>
       <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
       <h2 class="text-base mr-20">{{ description }}</h2>
     </div>
@@ -21,8 +21,9 @@ eleventyNavigation:
     {%- set previousPost = collections.posts | getPreviousCollectionItem %}
     {%- set nextPost = collections.posts | getNextCollectionItem %}
     {%- if nextPost or previousPost %}
-    <div class="mb-1 py-5 border-b-2">
-                    <ul class="flex flex-row justify-end">
+    <div class="flex flex-row border-b-2">
+      {% include "_partials/header.njk" %}
+                    <ul class="flex h-16 items-center gap-1">
                       {%- for tag in tags | filterTagList %}
                         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                         <li class="min-w-max w-auto items-center mr-1"><a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
