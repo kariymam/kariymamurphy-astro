@@ -1,28 +1,21 @@
 ---
-title: This is an even longer title of a post look how long this is wow
-description: This is a longer description.
+title: Monumental
+description: Trying to fix 11ty issues
 tags:
-  - art
+  - exhibition-notes
+thumb: '/blog/imgs/IMG_7283.jpeg'
+thumbAlt: Image of Sonya Clark's Monumental Cloth
 ---
 
-These two very old people are the father and mother of Mr Bucket. Their names are Grandpa Joe and Grandma Josephine. Link to [Grandpa Joe and Grandma Josephine](https://www.belenalbeza.com/articles/better-excerpts-in-eleventy/).
+- Incredible feat because it is painstakingly large and intricate.
+- I could barely fit it in a photo without backing up into the brick wall piece.
+- But what does a truce between enemies mean when the enemies remain enemies of Black liberation?
+- “In American history, there was an opportunity for there to be a turning point after the Civil War, during Reconstruction,” says Clark. “But what actually held on — what endured — was what was surrendered, or the Confederate battle flag. And I think that says a lot about where we are currently.”[^1]
+- Turning point.
+- The dish cloth is ambiguous because it’s in liminal space where change could “happen” within the context of white supremacist violence that is designed to seem inevitable.
+- What opportunity does a truce between two sides of the same white supremacist violent state apparatus present for racial injustice?
+- And why is the truce the symbol we should remember? I keep thinking about Derrick Bell’s [[interest convergence]]
 
-This is Mr Bucket. This is Mrs Bucket.
+[^1]: [Sonya Clark Unravels American Propaganda In 'Monumental Cloth](https://www.wbur.org/news/2021/04/26/sonya-clark-monumental-cloth-decordova-museum) by Arielle Gray
 
-Mr and Mrs Bucket have a small boy whose name is Charlie.
-
-This is Charlie.
-
-How d'you do? And how d'you do? And how d'you do again? He is pleased to meet you.
-
-The whole of this family — the six grown-ups (count them) and little Charlie Bucket — live together in a small wooden house on the edge of a great town.
-
-The house wasn't nearly large enough for so many people, and life was extremely uncomfortable for them all. There were only two rooms in the place altogether, and there was only one bed. The bed was given to the four old grandparents because they were so old and tired. They were so tired, they never got out of it.
-
-Grandpa Joe and Grandma Josephine on this side, Grandpa George and Grandma Georgina on this side.
-
-Mr and Mrs Bucket and little Charlie Bucket slept in the other room, upon mattresses on the floor.
-
-In the summertime, this wasn't too bad, but in the winter, freezing cold draughts blew across the floor all night long, and it was awful.
-
-There wasn't any question of them being able to buy a better house — or even one more bed to sleep in. They were far too poor for that.
+![[IMG_7280.jpeg]]

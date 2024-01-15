@@ -6,13 +6,14 @@
 	module.exports = function async (post) {
 		let excerpt = post.data?.page?.excerpt;
 		let content = post.templateContent;
+		const charCount = 200;
 
 		excerpt = striptags(content)
-			.substring(0, 150)
+			.substring(0, charCount)
 			.replace(/^\\s+|\\s+$|\\s+(?=\\s)/g, "")
 			.trim();
 
-		if (content.length > 150) {
+		if (content.length > charCount) {
 			excerpt = excerpt.concat("...");
 
 		}

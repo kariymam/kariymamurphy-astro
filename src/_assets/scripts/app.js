@@ -2,9 +2,7 @@ console.log(`I was loaded at ${Date(Date.now()).toString()}`);
 
 let tl = gsap.timeline();
 let postlist = document.querySelectorAll(".postlist-item");
-
 const thumbImg = document.querySelector(".thumbImg");
-
 const headerHeight = (a, b) => a + b;
 
 for (const post of postlist) {
@@ -38,3 +36,28 @@ for (const post of postlist) {
 		}
   });
 }
+
+const mobile = "(min-width: 768px)";
+const header = document.querySelector('#header');
+const fchl = header.firstElementChild;
+const home = document.querySelector('#home');
+
+function moveNav(e) {
+  if (e.matches) {
+    // If media query matches, keep fchl at its original position
+    if (fchl.parentNode !== header) {
+      header.insertBefore(fchl, header.firstElementChild);
+    }
+  } else {
+    // If media query doesn't match, move fchl to a new position (e.g., appending it to home)
+    if (fchl.parentNode !== home) {
+      home.appendChild(fchl);
+    }
+  }
+}
+
+// Initial call to moveNav to set the initial state based on the window size
+moveNav(window.matchMedia(mobile));
+
+// Add event listener for changes in the media query
+window.matchMedia(mobile).addEventListener("change", moveNav);

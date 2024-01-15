@@ -1,0 +1,26 @@
+---
+pagination:
+  data: collections.codepens
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+    - posts
+    - tagList
+    - codepen
+  addAllPagesToCollections: true
+title: Codepens
+layout: page.njk
+eleventyNavigation:
+  key: codepens
+  order: 3
+eleventyImport:
+  collections: ["codepen"]
+---
+
+<ul class="list-none">
+  {%- for codepen in collections.codepen -%}
+  {% include "pen.njk" %}
+  {%- endfor -%}
+</ul>

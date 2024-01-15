@@ -9,6 +9,8 @@ module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
 	eleventyConfig.addPassthroughCopy("./src/fonts/");
+	eleventyConfig.addPassthroughCopy("./src/blog/imgs");
+	eleventyConfig.addPassthroughCopy("./src/codepens/imgs");
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {
@@ -27,33 +29,7 @@ module.exports = function (eleventyConfig) {
 			console.error("Terser error: ", err);
 			callback(null, code);
 		}
-	})
-
-	eleventyConfig.addFilter("getAllTags", collection => {
-		let tagSet = new Set();
-		for(let item of collection) {
-			(item.data.tags || []).forEach(tag => tagSet.add(tag));
-		}
-		return Array.from(tagSet);
 	});
-
-	// Get the first `n` elements of a collection.
-	eleventyConfig.addFilter("head", (array, n) => {
-		if(!Array.isArray(array) || array.length === 0) {
-			return [];
-		}
-		if( n < 0 ) {
-			return array.slice(n);
-		}
-
-		return array.slice(0, n);
-	});
-
-	// Return the smallest number argument
-	eleventyConfig.addFilter("min", (...numbers) => {
-		return Math.min.apply(null, numbers);
-	});
-
 
 	// Transforms
 	Object.keys(transforms).forEach((transformName) => {

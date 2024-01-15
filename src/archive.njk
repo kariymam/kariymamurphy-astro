@@ -1,19 +1,14 @@
 ---
 layout: page.njk
 eleventyComputed:
-  title: Archive
-permalink: /archive/
+  title: Index
+permalink: /index/
 eleventyImport:
   collections: ["post"]
 eleventyNavigation:
-  key: archive
-  order: 3
+  key: index
+  order: 4
 ---
-<ol reversed>
-  {% set postslist = collections.posts %}
-  {% for post in postslist | reverse %}
-    <li class=" list-disc">
-      <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-    </li>
-    {% endfor %}
-  </ol>
+{% set showYear = true %}
+{% set postslist = collections.posts %}
+{% include "postlist-lite.njk" %}

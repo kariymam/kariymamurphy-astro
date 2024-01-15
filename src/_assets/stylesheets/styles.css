@@ -1,7 +1,7 @@
-@import 'colors.css';
-@import 'fonts.css';
 @import 'utils/_tailwind.css';
 @import 'utils/_accessibility.css';
+@import 'colors.css';
+@import 'fonts.css';
 
 * {
 	border-color: var(--border-primary);
@@ -70,6 +70,10 @@ h4, h5, h6 {
 	@apply italic;
 }
 
+ol {
+	@apply pl-6
+}
+
 .indicator {
 	display: flex;
   flex-direction: column;
@@ -116,6 +120,7 @@ a.post-tag:hover, a.post-tag:active, a.post-tag:focus {
   display: flex;
   margin: 0px auto;
   align-items: center;
+	width: 100%;
 }
 
 .postlist {
@@ -138,7 +143,7 @@ div.postlist-item:nth-child(n+2) {
 
 @media (min-width: 1024px) {
 	.postlist-item {
-		min-height: 32rem;
+		min-height: 24rem;
 	}
 }
 
@@ -192,10 +197,12 @@ h3 span {
 }
 
 .textblock ol li {
+	margin-block-end: 1rem;
 	@apply list-decimal
 }
 
-.textblock ul li {
+.textblock > ul li {
+	margin-block-end: 1rem;
 	@apply list-disc
 }
 
@@ -225,5 +232,11 @@ h3 span {
 @media (min-width: 1024px) {
 	.postlist {
 		grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+	}
+}
+
+@media (max-width: 768px) {
+	#header {
+		display: none;
 	}
 }

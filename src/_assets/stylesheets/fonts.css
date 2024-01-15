@@ -1,3 +1,20 @@
+/* Noto Sans ExtraLight
+font-family: "noto-sans", sans-serif;
+font-weight: 200;
+font-style: normal;
+Noto Sans Regular
+font-family: "noto-sans", sans-serif;
+font-weight: 400;
+font-style: normal;
+Noto Sans Bold
+font-family: "noto-sans", sans-serif;
+font-weight: 700;
+font-style: normal;
+Noto Sans Black
+font-family: "noto-sans", sans-serif;
+font-weight: 900;
+font-style: normal; */
+
 @font-face {
 	font-family: "VG5000";
   src:
@@ -10,7 +27,7 @@
 
 :root {
   --display-font: 'VG5000', Inter, Helvetica, Arial, sans-serif, serif, Icons;
-  --body-font: "Chivo", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
+  --body-font: "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
 	--pixel-font: "VG5000", Inter, Helvetica, Arial, sans-serif, serif, Icons;
 	--display-settings: 'ital' 0, 'opsz' 35, 'wght' 500; /* font-variation-settings */
 }
@@ -20,10 +37,15 @@ html, body {
 	font-optical-sizing: auto;
 }
 
-h1, h2, h3 {
+h1 {
 	font-family: var(--display-font);
 	font-variation-settings: var(--display-settings);
 	@apply leading-tight
+}
+
+h2, h3, h4 {
+	font-family: var(--body-font);
+	@apply font-normal
 }
 
 time, small {
@@ -38,8 +60,14 @@ p a {
 	font-variation-settings: var(--display-settings);
 }
 
-/* a.post-tag {
+a.post-tag {
 	font-family: var(--display-font);
-	font-variation-settings: var(--display-settings);
-	padding-bottom: 0.2rem;
-} */
+}
+
+.postlist-item-header {
+	font-family: var(--display-font);
+}
+
+.display-font {
+	font-family: var(--display-font);
+}

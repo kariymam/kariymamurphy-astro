@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-date: Last Modified
+date: Created
 eleventyNavigation:
   parent: blog
 ---
@@ -9,31 +9,31 @@ eleventyNavigation:
   --bg-img: url('{{ thumb }}');
   }
 </style>
-  <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row sm:px-6 md:items-start lg:justify-center md:justify-start">
-    <div class="intro w-full lg:max-w-sm sm:max-w-lg">
+  <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row md:items-start lg:justify-center md:justify-start">
+    <div class="w-full lg:max-w-sm">
       {% include "_partials/logo.njk" %}
-      <h1 class="text-2xl mb-1 py-5 mr-20">{{ title }}</h1>
+      <h1 class="text-base py-5">{{ title }}</h1>
+      <h2 class="mb-1">{{ description }}</h2>
       <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-      <h2 class="text-base mr-20">{{ description }}</h2>
-    </div>
-  <div class="w-full">
-    {%- if collections.posts %}
-    {%- set previousPost = collections.posts | getPreviousCollectionItem %}
-    {%- set nextPost = collections.posts | getNextCollectionItem %}
-    {%- if nextPost or previousPost %}
-    <div class="flex flex-row border-b-2">
-      {% include "_partials/header.njk" %}
-                    <ul class="flex h-16 items-center gap-1">
+      <ul class="flex h-16 items-center gap-1">
                       {%- for tag in tags | filterTagList %}
                         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                         <li class="min-w-max w-auto items-center mr-1"><a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
                         {%- endfor %}
                     </ul>
     </div>
-    <div class="grid grid-row-2 row-auto gap-1 break-inside-avoid w-full">
+  <div class="w-full">
+    {%- if collections.posts %}
+    {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+    {%- set nextPost = collections.posts | getNextCollectionItem %}
+    {%- if nextPost or previousPost %}
+    <div id="header" class="flex flex-row lg:top-0 lg:sticky z-20">
+      {% include "_partials/header.njk" %}
+    </div>
+    <div class="grid grid-row-2 row-auto gap-1 break-inside-avoid w-full lg:border-t-2 md:border-t-2">
       {% if thumb %}
-      <div class="relative">
-      <div class="flex relative overflow-hidden">
+      <div>
+      <div class="flex overflow-hidden">
         <div class="relative w-full">
           <div class="bg-image h-full" style="background-image: var(--bg-img);background-size: contain;">
           <img src="{{ thumb }}" alt="{{ thumbAlt }}"
@@ -44,16 +44,16 @@ eleventyNavigation:
       </div>
       </div>
       {% endif %}
-      <div class="textblock mb-1 py-5 text-base max-w-2xl">
-          {{ content | safe }}
+      <div class="textblock mb-1 py-5 max-w-2xl">
+        {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe  }}
       </div>
       </div>
-      <div class="mb-1 py-5 border-b-2">
+      <div class="mb-1 py-5 border-b-2 flex">
         {%- if previousPost %}
-                <div class="w-full text-start flex items-center gap-1">Previous:<a href="{{ previousPost.url }}" aria-describedby="Previous post">{{ previousPost.data.title }}</a></div>
+                <div class="w-auto"><a href="{{ previousPost.url }}" aria-describedby="Previous post">Previous</a></div>
                     {% endif %}
         {%- if nextPost %}
-        <div class="w-full text-end flex items-center">Next:<a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }}</a></div>
+        <div class="w-full lg:text-end"><a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }} &#8594;</a></div>
                   {% endif %}
       </div>
       {%- endif %}

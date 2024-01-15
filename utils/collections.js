@@ -1,4 +1,7 @@
 module.exports = {
+	codepens: (collectionApi) => {
+		return collectionApi.getFilteredByTags("codepen");
+	}
 	// // Credit: https://lea.verou.me/blog/2023/11ty-indices/#dynamic-postsbytag-collection
 	// postsByTag: (collectionApi) => {
 	// 	const posts = collectionApi.getFilteredByTag("blog");

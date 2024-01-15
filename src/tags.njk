@@ -1,32 +1,9 @@
 ---
-pagination:
-  data: collections
-  size: 1
-  alias: tag
-  filter:
-    - all
-    - post
-    - posts
-    - tagList
-  addAllPagesToCollections: true
-layout: home.njk
-eleventyComputed:
-  title: Tagged “{{ tag }}”
-permalink: /tags/{{ tag | slugify }}/
+title: Tags
+layout: page.njk
+permalink: /tags/
 ---
-<div class="w-full lg:max-w-sm sm:max-w-lg top-0 lg:sticky">
-  <div class="intro">
-      {% include "_partials/logo.njk" %}
-      <h1 class="pt-4 text-2xl max-w-xs w-auto mb-1 pb-5 mr-20">
-        Tagged “{{ tag }}”
-        </h1>
-      {% include "_partials/taglist.njk" %}
-    </div>
-  </div>
-  <div class="w-full">
-    <div class="flex flex-row">
-      {% include "_partials/header.njk" %}
-    </div>
-    {% set postslist = collections[ tag ] %}
-    {% include "postlist.njk" %}
-  </div>
+
+<div class="text-2xl list-none">
+  {% include "_partials/taglist.njk" %}
+</div>

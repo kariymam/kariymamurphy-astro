@@ -6,10 +6,10 @@
   >
     {% for post in postslist | reverse %}
     <div
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2 items-end"
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2"
     >
       <div
-        class="flex flex-col relative justify-end h-full w-full min-h-fit transition-all"
+        class="flex flex-col relative justify-end h-full w-full min-h-fit"
       >
         <a
           href="{{ post.url }}"
@@ -24,11 +24,11 @@
                       >{{ post.date | readableDate }}</time
                     >
               </span>
-              <h3 class="postlist-item-header text-xl relative lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+              <h3 class="postlist-item-header lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
             </div>
             <div class="relative w-full h-full">
               <div
-                class="postlist-item-description h-full mx-3 transition-all"
+                class="postlist-item-description font-extralight h-full mx-3 transition-all"
               >
                 {% excerpt post %}
                 <img
@@ -52,18 +52,18 @@
           </article>
         </a>
       </div>
-      <div class="absolute max-w-sm pt-8 pb-4 px-4 flex flex-row flex-wrap gap-1 z-20">
-        {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
-          tag | slug
-        }}/{% endset %}
-
-        <a href="{{ tagUrl }}"
-          class="relative block post-tag px-2 rounded-3xl"
-          >{{ tag }}</a
-        >
-
-        {% endfor %}
-      </div>
+      <ul class="page-tags-list absolute max-w-sm pt-8 pb-4 px-4 page-tags-list flex flex-row flex-wrap z-20 gap-2">
+          {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
+            tag | slug
+          }}/{% endset %}
+          <li class="page-tags-list-item">
+            <a href="{{ tagUrl }}"
+              class="post-tag px-2 py-1 rounded-3xl"
+              >{{ tag }}</a
+            >
+          </li>
+          {% endfor %}
+      </ul>
     </div>
     {% endfor %}
   </div>

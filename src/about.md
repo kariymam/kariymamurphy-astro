@@ -1,10 +1,10 @@
 ---
-title: Hi! I'm Kariyma
+title: About me
 layout: page.njk
 permalink: /about/
 eleventyNavigation:
   key: about
-  order: 2
+  order: 4
 ---
 
 I'm a former UX/UI designer and graphic designer. Now, I'm pivoting to learning programming and GIS, so I can interpret data. So follow me as I try to (finally) complete courses like [JavaScript Algorithms and Data Structures](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/) certification, [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science), [The Coding Train's creative beginner coding courses](https://thecodingtrain.com/guides/getting-started), and [Javascript for Designers](https://www.superhi.com/courses/javascript-for-designers).
