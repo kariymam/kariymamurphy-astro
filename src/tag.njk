@@ -10,25 +10,11 @@ pagination:
     - tagList
     - codepen
   addAllPagesToCollections: true
-layout: home.njk
+layout: blogpage.njk
 eleventyComputed:
   title: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slugify }}/
 ---
-<div class="w-full lg:max-w-sm top-0 lg:sticky">
-  <div class="intro">
-      {% include "_partials/logo.njk" %}
-      <h1 class="pt-4 text-2xl max-w-xs w-auto mb-1 pb-5 mr-20">
-        Tagged “{{ tag }}”
-        </h1>
-        <h2><a href="/tags/">Tags</a></h2>
-      {% include "_partials/taglist.njk" %}
-    </div>
-  </div>
-  <div class="w-full">
-    <div id="header" class="flex flex-row">
-      {% include "_partials/header.njk" %}
-    </div>
-    {% set postslist = collections[ tag ] %}
-    {% include "postlist.njk" %}
-  </div>
+
+{% set postslist = collections[ tag ] %}
+{% include "postlist.njk" %}
