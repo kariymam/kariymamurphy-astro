@@ -45,7 +45,7 @@ eleventyNavigation:
       </div>
       {% endif %}
       <div class="textblock mb-1 py-5 max-w-2xl">
-        {{ content | replace("<p><img", "<figure><img") | replace("></p>", "></figure>") | safe  }}
+        {{ content | safe  }}
       </div>
       </div>
       <div class="mb-1 py-5 border-b-2 flex">
