@@ -18,9 +18,21 @@ eleventyNavigation:
 eleventyImport:
   collections: ["codepen"]
 ---
-
-<ul class="list-none">
-  {%- for codepen in collections.codepen -%}
-  {% include "pen.njk" %}
-  {%- endfor -%}
-</ul>
+<div
+    reversed
+    class="grid max-w-screen-lg break-inside-avoid w-full border-l-2 border-t-2"
+  >
+  <article
+      class="h-full w-full border-r-2 border-b-2"
+    >
+      <div
+        class="flex flex-col relative justify-end h-full w-full min-h-fit"
+      >
+        <ul class="list-none">
+          {%- for codepen in collections.codepen -%}
+          {% include "pen.njk" %}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </article>
+</div>
