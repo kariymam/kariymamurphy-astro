@@ -1,4 +1,74 @@
 ---
+layout: home.njk
+date: Created
+eleventyNavigation:
+  parent: blog
+---
+<style>
+  :root {
+  --bg-img: url('{{ thumb }}');
+  }
+</style>
+<div class="w-full lg:max-w-sm">
+  <div class="intro">
+      {% include "_partials/logo.njk" %}
+      <h1 class="text-2xl mb-1 py-5">{{ title }}</h1>
+    </div>
+  </div>
+  <div class="w-full">
+    <div id="header" aria-hidden="true" class="hidden md:flex flex-row">
+      {% include "_partials/header.njk" %}
+    </div>
+    <div class="lg:border-t-2 md:border-t-2">
+      <div class="mb-1 py-5 mr-auto">
+        <div class="textblock my-auto max-w-screen-sm">
+          <h2 class="mb-1">{{ description }}</h2>
+          <time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time>
+          <ul class="flex h-16 items-center gap-1 list-none">
+                      {%- for tag in tags | filterTagList %}
+                        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                        <li class="min-w-max w-auto items-center mr-1"><a href="{{ tagUrl }}">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+                        {%- endfor %}
+                    </ul>
+
+                    {% if thumb %}
+                    <div>
+                    <div class="flex overflow-hidden">
+                      <div class="relative w-full">
+                        <div class="bg-image h-full" style="background-image: var(--bg-img);background-size: contain;">
+                        <img src="{{ thumb }}" alt="{{ thumbAlt }}"
+                          class="inset-0 z-10 absolute object-cover overflow-hidden block top-0 bottom-0 right-0 box-border m-0 h-full">
+                          <div class="overflow-hidden w-full h-full"></div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    {% endif %}
+          <div class="posttextBlock">
+            {{ content | safe }}
+          </div>
+          {%- if collections.posts %}
+          {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+          {%- set nextPost = collections.posts | getNextCollectionItem %}
+          {%- if nextPost or previousPost %}
+          <div class="mb-1 py-5 border-b-2 flex">
+            {%- if previousPost %}
+                    <div class="w-auto">Previous post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></div>
+                        {% endif %}
+            {%- if nextPost %}
+            <div class="w-full lg:text-end">Next post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }} &#8594;</a></div>
+                      {% endif %}
+          </div>
+          {%- endif %}
+          {%- endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ---
 layout: base.njk
 date: Created
 eleventyNavigation:
@@ -9,12 +79,13 @@ eleventyNavigation:
   --bg-img: url('{{ thumb }}');
   }
 </style>
-  <article id="main" class="mx-auto w-auto flex flex-col lg:flex-row md:flex-row md:items-start lg:justify-center md:justify-start">
-    <div class="w-full lg:max-w-sm">
+{% include "toggles.njk" %}
+  <article id="main" class="mx-auto w-full flex flex-col lg:p-0 lg:flex-row md:flex-row md:items-start lg:justify-center md:justify-start">
+    <div class="w-full lg:w-72 md:w-72">
       {% include "_partials/logo.njk" %}
       <h1 class="text-base py-5">{{ title }}</h1>
       <h2 class="mb-1">{{ description }}</h2>
-      <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+      <time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time>
       <ul class="flex h-16 items-center gap-1">
                       {%- for tag in tags | filterTagList %}
                         {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
@@ -44,19 +115,20 @@ eleventyNavigation:
       </div>
       </div>
       {% endif %}
-      <div class="textblock mb-1 py-5 max-w-2xl">
+      <div class="textblock mb-1 py-5 max-w-screen-md">
         {{ content | safe  }}
       </div>
       </div>
       <div class="mb-1 py-5 border-b-2 flex">
         {%- if previousPost %}
-                <div class="w-auto"><a href="{{ previousPost.url }}" aria-describedby="Previous post">Previous</a></div>
+                <div class="w-auto">Previous post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></div>
                     {% endif %}
         {%- if nextPost %}
-        <div class="w-full lg:text-end"><a href="{{ nextPost.url }}" aria-describedby="Next post">{{ nextPost.data.title }} &#8594;</a></div>
+        <div class="w-full lg:text-end">Next post: <a href="{{ nextPost.url }}">{{ nextPost.data.title }} &#8594;</a></div>
                   {% endif %}
       </div>
       {%- endif %}
       {%- endif %}
     </div>
-  </article>
+
+  </article> -->

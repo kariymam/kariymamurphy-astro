@@ -15,29 +15,30 @@
           href="{{ post.url }}"
           class="h-full w-full"
         >
-          <article class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent hover:border-teal-600 hover:text-teal-600">
-            <div class="px-4 pt-4">
-              <span class="flex flex-row flex-wrap pb-8 gap-1 items-center justify-end">
+          <article class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent">
+            <div class="flex flex-col px-4 pt-4">
+              <span class="flex flex-row flex-wrap gap-1 items-center justify-end">
                 <time
                       datetime="{{ post.date | htmlDateString }}"
                       class="text-sm"
                       >{{ post.date | readableDate }}</time
                     >
               </span>
-              <h3 class="postlist-item-header lg:pl-4 lg:pr-9 lg:py-4 decoration-transparent hover:decoration-inherit">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+              <h3 class="postlist-item-header break-words p-4">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
             </div>
-            <div class="relative w-full h-full">
+            <div class="opacity relative w-full h-full">
               <div
-                class="postlist-item-description font-extralight h-full mx-3 transition-all"
+                class="postlist-item-description font-extralight h-full transition-all"
               >
-                {% excerpt post %}
+              <div class="mx-8 pb-8 lg:pb-0 max-w-sm">
+                {% excerpt post %}</div
+                >
+              {% if post.data.thumb %}
                 <img
                     src="{{ post.data.thumb }}"
                     alt="{{ post.data.thumbAlt }}"
                     class="inset-0 top-0 relative lg:hidden"
                   />
-                </div>
-              {% if post.data.thumb %}
               <div
                 class="thumbImgContainer border-t-2 lg:flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative lg:overflow-hidden lg:z-10"
               >
@@ -48,6 +49,7 @@
                 />
               </div>
               {% endif %}
+              </div>
             </div>
           </article>
         </a>

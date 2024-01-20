@@ -2,7 +2,7 @@
   {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
   <li class="page-tags-list-item">
     <a href="{{ tagUrl }}"
-          class="post-tag relative block px-2 rounded-3xl"
+          class="post-tag relative block px-2 rounded-full"
           >{{ tag }}</a
         >
   </li>

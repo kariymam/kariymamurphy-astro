@@ -1,14 +1,14 @@
-<header class="ml-auto">
+<div class="ml-auto">
   <div
     class="mx-auto flex h-16 items-center gap-8"
   >
 
-    <div class="flex flex-1 items-center justify-end md:justify-between">
-      <nav nav id="mainNav" role="navigation" aria-label="Global" class="hidden md:block">
+    <div class="flex flex-1 items-center justify-end md:justify-between px-6 md:px-0 lg:px-0">
+      <nav id="mainNav" aria-label="Global" class="hidden md:block">
         <h2 class="sr-only">Top level navigation menu</h2>
-        <div class="flex items-center gap-2 text-sm h-8">
+        <div class="flex items-center gap-6 text-sm h-8">
           {%- for entry in collections.all | eleventyNavigation %}
-            <a id="{{ entry.title }}" aria-label="{{ entry.description }}" class="navLink z-10 px-4 list-interpunct text-base" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+            <a id="{{ entry.title }}" aria-label="{{ entry.description }}" class="navLink z-10 list-interpunct text-base" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
           {%- endfor %}
         </div>
       </nav>
@@ -34,4 +34,4 @@
         </button>
       </div>
     </div>
-</header>
+  </div>

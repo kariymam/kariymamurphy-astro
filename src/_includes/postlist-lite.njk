@@ -1,16 +1,16 @@
-<ol reversed>
-  {% set currentYear = "" %}
-  {% for post in postslist | reverse %}
-  {% if showYear %}
-        {% set postYear = post.date.getFullYear() %}
-        {% if currentYear != postYear %}
-        {% set currentYear = postYear %}
-        <h3 class="display-font text-xl mb-9">{{ postYear }}</h3>
-        {% endif %}
-  {% endif %}
-    <li class="list-none mb-4">
-      <h2><a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h2>
-      <time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{ post.date | readableDate }}</time>
-    </li>
-  {% endfor %}
-  </ol>
+{% set currentYear = "" %}
+  <ol reversed class="list-none">
+    {% for post in postslist | reverse %}
+    <li class="mb-4">
+    {% if showYear %}
+          {% set postYear = post.date.getFullYear() %}
+          {% if currentYear != postYear %}
+          {% set currentYear = postYear %}
+          <h2 class="display-font text-xl mb-9">{{ postYear }}</h2>
+          {% endif %}
+    {% endif %}
+
+        <h3 class="text-2xl"><a href="{{ post.url | url }}"><time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{ post.date | readableDate }}</time> {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
+      </li>
+    {% endfor %}
+    </ol>

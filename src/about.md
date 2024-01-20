@@ -13,6 +13,8 @@ I'm studying to become a better researcher, some of my interests are mass media,
 
 ## Colophon
 
+Made with 11ty, <a href="https://randoma11y.com/apca">Random a11y</a>, PostCSS, & HyperUI. Starter template crafted by <a href="https://www.chrissy.dev">Chris Collins</a>.
+
 ### Typefaces
 
 Degheest by Ange Degheest, Camille Depalle, Eugénie Bidaut, Luna Delabre, Mandy Elbé, May Jolivet, Oriane Charvieux, Benjamin Gomez, Justine Herbel. Distributed by velvetyne.fr.

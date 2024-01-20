@@ -51,6 +51,18 @@ html, body {
 	color: var(--text-color);
 }
 
-p > a[href] {
-	color: var(--text-color-link);
+a {
+	@apply text-teal-600;
+}
+
+.primary-color {
+	background-color: #067D76;
+}
+
+.background-color {
+	background-color: var(--color-gray-5);
+}
+
+.gradient-color {
+	background-image: var(--gradient);
 }

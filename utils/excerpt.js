@@ -6,7 +6,8 @@
 	module.exports = function async (post) {
 		let excerpt = post.data?.page?.excerpt;
 		let content = post.templateContent;
-		const charCount = 200;
+		const charCount = 144;
+		const readMore = '<span class="text-base break-keep display-font">Read more &#8594;</span>';
 
 		excerpt = striptags(content)
 			.substring(0, charCount)
@@ -14,9 +15,8 @@
 			.trim();
 
 		if (content.length > charCount) {
-			excerpt = excerpt.concat("...");
-
+			excerpt = excerpt.concat("..."+readMore);
 		}
 
-		return markdownIt({ html: true }).render(`${excerpt} <span class="text-sm whitespace-nowrap">Read more</span>`);
+		return markdownIt({ html: true }).render(`${excerpt}`);
 	};

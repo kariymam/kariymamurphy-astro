@@ -26,26 +26,27 @@ font-style: normal; */
 }
 
 :root {
-  --display-font: 'VG5000', Inter, Helvetica, Arial, sans-serif, serif, Icons;
-  --body-font: "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
-	--pixel-font: "VG5000", Inter, Helvetica, Arial, sans-serif, serif, Icons;
+  --display-font: 'VG5000', "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
+  --body-font: "Familjen Grotesk", "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
+	--pixel-font: "VG5000", "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
 	--display-settings: 'ital' 0, 'opsz' 35, 'wght' 500; /* font-variation-settings */
 }
 
 html, body {
 	font-family: var(--body-font);
 	font-optical-sizing: auto;
+	@apply text-base
 }
 
-h1 {
+h1, h2 {
 	font-family: var(--display-font);
 	font-variation-settings: var(--display-settings);
 	@apply leading-tight
 }
 
-h2, h3, h4 {
+h3, h4 {
 	font-family: var(--body-font);
-	@apply font-normal
+	@apply font-bold
 }
 
 time, small {
@@ -60,6 +61,10 @@ p a {
 	font-variation-settings: var(--display-settings);
 }
 
+a h3 {
+	@apply underline
+}
+
 a.post-tag {
 	font-family: var(--display-font);
 }
@@ -70,4 +75,21 @@ a.post-tag {
 
 .display-font {
 	font-family: var(--display-font);
+}
+
+.gradient-line {
+	background: linear-gradient(56deg, rgba(0, 0, 0, 0.00) 49.9%, var(--border-primary) 49.91%, var(--border-primary) 50.05%, rgba(0, 0, 0, 0.00) 50.06%);
+}
+
+.vertical-text {
+	writing-mode: vertical-rl;
+	-webkit-writing-mode: vertical-lr;
+	-ms-writing-mode: vertical-lr;
+	text-orientation: mixed;
+}
+
+@media (max-width: 768px) {
+	.vertical-text {
+		writing-mode: inherit;
+	}
 }
