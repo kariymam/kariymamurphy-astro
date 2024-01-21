@@ -1,0 +1,8 @@
+<nav id="mainNav" aria-label="Global" class="hidden w-full border-b-2">
+  <h2 class="sr-only">Top level navigation menu</h2>
+  <div class="flex flex-col items-center text-sm my-2 z-10 list-interpunct display-font">
+    {%- for entry in collections.all | eleventyNavigation %}
+      <a id="{{ entry.title }}" aria-label="{{ entry.description }}" class="px-6 mb-2 text-2xl" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+    {%- endfor %}
+  </div>
+</nav>

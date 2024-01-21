@@ -1,5 +1,17 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
 
+const burger = document.querySelector('#burger')
+const headerMobile = document.querySelector('#headerMobile')
+const nav = document.querySelector('#headerMobile > nav')
+
+function toggleNav() {
+	nav.classList.toggle('hidden');
+}
+
+burger.addEventListener('click', function() {
+	toggleNav();
+});
+
 let tl = gsap.timeline();
 let postlist = document.querySelectorAll(".postlist-item");
 const thumbImg = document.querySelector(".thumbImg");
@@ -61,3 +73,4 @@ moveNav(window.matchMedia(mobile));
 
 // Add event listener for changes in the media query
 window.matchMedia(mobile).addEventListener("change", moveNav);
+
