@@ -74,3 +74,35 @@ moveNav(window.matchMedia(mobile));
 // Add event listener for changes in the media query
 window.matchMedia(mobile).addEventListener("change", moveNav);
 
+//
+
+const applyRandomFonts = (str, fontsArray) => {
+  return str.split('').map(char => {
+    // Check if the character is a space, if so, leave it unchanged
+    if (char === ' ') {
+      return char;
+    }
+
+    // Get a random index from the fontsArray
+    const randomIndex = Math.floor(Math.random() * fontsArray.length);
+
+    // Apply the font to the character
+    return `<span style="font-family: ${fontsArray[randomIndex]}">${char}</span>`;
+  }).join('');
+};
+
+const displayFonts = document.getElementsByClassName("displayFont");
+const fontOptions = ["VG5000", "FT88"];
+
+// Iterate over each element with the class "displayFont"
+for (let i = 0; i < displayFonts.length; i++) {
+  const inputString = displayFonts[i].innerText;
+
+  // Apply random fonts to the input string
+  const result = applyRandomFonts(inputString, fontOptions);
+
+  // Set the inner HTML of the current element with the modified string
+  displayFonts[i].innerHTML = result;
+}
+
+
