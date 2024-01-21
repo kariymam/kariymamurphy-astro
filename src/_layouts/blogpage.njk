@@ -17,12 +17,16 @@ layout: home.njk
           {{ title }}
           </h1>
       {% endif %}
-      <details class="open:background-color dark:open:bg-slate-900 open:ring-1 dark:open:ring-white/10 open:shadow-lg p-6 transition-all open">
+      {%- if title == "Blog" %}
+      <details>
+      {% else %}
+      <details open>
+      {%- endif -%}
         <summary>
           Tags
         </summary>
         {% include "_partials/taglist.njk" %}
-        <h3><a href="/tags/">All tags</a></h3>
+        <a href="/tags/">All tags</a>
       </details>
     </div>
   </div>
