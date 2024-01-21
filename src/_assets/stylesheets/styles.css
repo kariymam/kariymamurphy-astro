@@ -96,7 +96,7 @@ a.post-tag {
 	color: var(--text-color);
 }
 
-a.post-tag:hover, a.post-tag:active, a.post-tag:focus {
+a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
 	border-color: var(--btnHover);
   background-color: var(--btnHover);
 	color: var(--text-color-link-active);
