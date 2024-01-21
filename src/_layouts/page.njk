@@ -8,7 +8,7 @@ date: git Created
       <div id="headerMobile" aria-hidden="true" class="flex md:hidden">
         {% include "_partials/headerMobile.njk" %}
       </div>
-      <h1 class="mb-1 py-5">{{ title }}</h1>
+      <h1 class="mb-1 py-6 px-6 md:px-0">{{ title }}</h1>
     </div>
   </div>
   <div class="w-full">
@@ -16,8 +16,8 @@ date: git Created
       {% include "_partials/header.njk" %}
     </div>
     <div class="lg:border-t-2 md:border-t-2">
-      <div class="mb-1 py-5 mr-auto">
-        <div class="textblock my-auto max-w-screen-sm">
+      <div class="mb-1 py-6 mr-auto">
+        <div class="textblock px-6 md:px-0 max-w-screen-sm">
           {{ content | safe }}
         </div>
       </div>

@@ -1,28 +1,8 @@
-/* Noto Sans ExtraLight
-font-family: "noto-sans", sans-serif;
-font-weight: 200;
-font-style: normal;
-Noto Sans Regular
-font-family: "noto-sans", sans-serif;
-font-weight: 400;
-font-style: normal;
-Noto Sans Bold
-font-family: "noto-sans", sans-serif;
-font-weight: 700;
-font-style: normal;
-Noto Sans Black
-font-family: "noto-sans", sans-serif;
-font-weight: 900;
-font-style: normal; */
-
 @font-face {
 	font-family: "VG5000";
   src:
     url("/fonts/VG5000-Regular_web.woff2") format("woff2"),
     url("/fonts/VG5000-Regular_web.woff") format("woff");
-
-	font-style: normal;
-	font-weight: normal;
 }
 
 @font-face {
@@ -30,16 +10,12 @@ font-style: normal; */
   src:
     url("/fonts/FT88-Regular.woff2") format("woff2"),
     url("/fonts/FT88-Regular.woff") format("woff");
-
-	font-style: normal;
-	font-weight: normal;
 }
 
 :root {
   --display-font: 'VG5000', "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
   --body-font: "Familjen Grotesk", "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
 	--pixel-font: "VG5000", "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
-	--display-settings: 'ital' 0, 'opsz' 35, 'wght' 500; /* font-variation-settings */
 }
 
 html, body {
@@ -50,13 +26,11 @@ html, body {
 
 h1, h2 {
 	font-family: var(--display-font);
-	font-variation-settings: var(--display-settings);
 	@apply leading-tight
 }
 
 h3, h4 {
 	font-family: var(--body-font);
-	@apply font-bold
 }
 
 time, small {
@@ -65,10 +39,6 @@ time, small {
 
 .pixel-font {
 	font-family: var(--pixel-font);
-}
-
-p a {
-	font-variation-settings: var(--display-settings);
 }
 
 a h3 {
