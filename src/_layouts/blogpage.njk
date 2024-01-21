@@ -5,8 +5,8 @@ layout: home.njk
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 {% set postsCount = collections.posts | length %}
-<div class="w-full md:w-auto lg:w-auto lg:max-w-sm top-0 lg:sticky">
-    <div class="intro lg:w-72 md:w-72">
+<div class="w-full md:w-auto lg:w-auto lg:max-w-sm">
+    <div class="intro lg:w-80 md:w-80">
       {% include "_partials/logo.njk" %}
       <div id="headerMobile" aria-hidden="true" class="flex md:hidden">
         {% include "_partials/headerMobile.njk" %}
