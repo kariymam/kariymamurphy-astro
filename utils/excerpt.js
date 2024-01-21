@@ -7,7 +7,7 @@
 		let excerpt = post.data?.page?.excerpt;
 		let content = post.templateContent;
 		const charCount = 144;
-		const readMore = '<span class="text-base break-keep display-font">Read more &#8594;</span>';
+		const readMore = '<span class="text-base break-keep displayFont">Read more &#8594;</span>';
 
 		excerpt = striptags(content)
 			.substring(0, charCount)

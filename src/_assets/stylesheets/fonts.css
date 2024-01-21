@@ -25,6 +25,16 @@ font-style: normal; */
 	font-weight: normal;
 }
 
+@font-face {
+	font-family: "FT88";
+  src:
+    url("/fonts/FT88-Regular.woff2") format("woff2"),
+    url("/fonts/FT88-Regular.woff") format("woff");
+
+	font-style: normal;
+	font-weight: normal;
+}
+
 :root {
   --display-font: 'VG5000', "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
   --body-font: "Familjen Grotesk", "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
@@ -70,10 +80,6 @@ a.post-tag {
 }
 
 .postlist-item-header {
-	font-family: var(--display-font);
-}
-
-.display-font {
 	font-family: var(--display-font);
 }
 

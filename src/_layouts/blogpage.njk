@@ -8,6 +8,9 @@ layout: home.njk
 <div class="w-full md:w-auto lg:w-auto lg:max-w-sm">
     <div class="intro lg:w-80 md:w-80">
       {% include "_partials/logo.njk" %}
+      <div id="headerMobile" aria-hidden="true" class="flex md:hidden">
+        {% include "_partials/headerMobile.njk" %}
+      </div>
       {% if numberOfLatestPostsToShow%}
       <h1 class="pt-4 text-base max-w-xs w-auto mr-12">
         Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
