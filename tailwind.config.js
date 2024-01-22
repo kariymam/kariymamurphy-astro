@@ -4,8 +4,8 @@ module.exports = {
 			'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
 		},
 		fontSize: {
-      sm: '1rem',
-      base: '1.25rem',
+      sm: '0.8rem',
+      base: '1rem',
       xl: '2rem',
       '2xl': '3.516rem',
       '3xl': '1.953rem',

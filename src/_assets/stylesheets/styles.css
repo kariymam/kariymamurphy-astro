@@ -159,6 +159,7 @@ h3.postlist-item-header {
 	text-indent: -2rem;
   padding-left: 1rem;
 	display: inline-table;
+	@apply leading-tight
 }
 
 .postlist-item-description > p {
