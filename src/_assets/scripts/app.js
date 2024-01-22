@@ -1,11 +1,13 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
 
-const burger = document.querySelector('#burger')
-const headerMobile = document.querySelector('#headerMobile')
-const nav = document.querySelector('#headerMobile > nav')
+const burger = document.querySelector('#burger');
+const myName = document.querySelector('#myName');
+const headerMobile = document.querySelector('#header');
+const nav = document.querySelector('#mainNav');
 
 function toggleNav() {
 	nav.classList.toggle('hidden');
+	myName.classList.toggle('hidden');
 }
 
 burger.addEventListener('click', function() {
