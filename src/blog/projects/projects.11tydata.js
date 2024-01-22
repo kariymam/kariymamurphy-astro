@@ -1,6 +1,6 @@
 module.exports = {
 	tags: [
-		"codepen"
+		"projects"
 	],
   eleventyComputed: {
     permalink(data) {
