@@ -29,7 +29,7 @@ for (const post of postlist) {
         let q = gsap.utils.selector(cl);
 
         tl.to(q(".thumbImg"), {
-          duration: 0.2,
+          duration: 0.3,
           ease: "sine.out",
           top: `${moveY}px`
         });
@@ -41,7 +41,7 @@ for (const post of postlist) {
    // Check if the target element exists before animating
 	 if (thumbImg) {
 		tl.to(".thumbImg", {
-			duration: 0.1,
+			duration: 0.2,
 			ease: "sine.in",
 			top: 0
 		});

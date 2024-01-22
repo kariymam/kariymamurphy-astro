@@ -41,12 +41,6 @@ html {
   }
 }
 
-@media (max-width: 1024px) {
-	.thumbImgContainer {
-		display: none;
-	}
-}
-
 body {
 	display: flex;
 	flex-direction: column;
@@ -92,8 +86,8 @@ a.post-tag {
 	text-decoration-color: transparent;
 	border: 2px solid var(--border-primary);
 	background-color: var(--btn);
-	margin-right: -2px;
 	color: var(--text-color);
+	/* margin: 0.5rem 0 0.5rem 0; */
 }
 
 a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
@@ -112,7 +106,6 @@ a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
 
 
 .thumbImg {
-	height: 100%;
   width:auto;
 }
 

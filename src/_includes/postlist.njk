@@ -34,18 +34,16 @@
                 {% excerpt post %}</div
                 >
               {% if post.data.thumb %}
-                <img
-                    src="{{ post.data.thumb }}"
-                    alt="{{ post.data.thumbAlt }}"
-                    class="inset-0 top-0 relative lg:hidden"
-                  />
               <div
-                class="thumbImgContainer border-t-2 lg:flex items-end justify-end h-full w-full top-0 lg:absolute sm:relative lg:overflow-hidden lg:z-10"
+                class="thumbImgContainer relative border-t-2 lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-hidden lg:z-10"
               >
                 <img
-                  src="{{ post.data.thumb }}"
                   alt="{{ post.data.thumbAlt }}"
-                  class="thumbImg lg:block lg:inset-0 lg:absolute lg:w-full transition-all lg:object-cover lg:object-top"
+                  srcset="{{ post.data.thumb }}"
+                  sizes="(max-width: 600px) 480px,
+                        800px"
+                  src="{{ post.data.thumb }}"
+                  class="thumbImg lg:h-full object-cover lg:absolute lg:inset-0 lg:top-0"
                 />
               </div>
               {% endif %}
@@ -58,7 +56,7 @@
           {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
             tag | slug
           }}/{% endset %}
-          <li class="page-tags-list-item">
+          <li class="my-2">
             <a href="{{ tagUrl }}"
               class="post-tag px-2 py-1 rounded-3xl"
               >{{ tag }}</a

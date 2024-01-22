@@ -1,8 +1,4 @@
 module.exports = {
-	purge: [
-    './src/**/*.html',
-    './src/**/*.njk'
-  ],
 	theme: {
 		fontFamily: {
 			'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
@@ -40,5 +36,5 @@ module.exports = {
 		},
 	},
 	plugins: [],
-	content: ['src/**/*.njk', 'src/**/*.js']
+	content: ['./src/**/*.html', 'src/**/*.njk', 'src/**/*.js']
 }
