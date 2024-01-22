@@ -37,14 +37,15 @@
               <div
                 class="thumbImgContainer relative border-t-2 lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-hidden lg:z-10"
               >
-                <img
+                <!-- <img
                   alt="{{ post.data.thumbAlt }}"
                   srcset="{{ post.data.thumb }}"
                   sizes="(max-width: 600px) 480px,
                         800px"
                   src="{{ post.data.thumb }}"
                   class="thumbImg w-auto lg:absolute lg:inset-0 lg:top-0"
-                />
+                /> -->
+                {% image post.data.thumb, post.data.thumbAlt, "thumbImg h-full lg:absolute lg:object-cover lg:inset-0 lg:top-0" %}
               </div>
               {% endif %}
               </div>
