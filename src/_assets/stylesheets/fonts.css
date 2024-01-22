@@ -65,3 +65,7 @@ a h3 {
 		writing-mode: inherit;
 	}
 }
+
+.textblock > p ul li {
+	@apply leading-tight
+}

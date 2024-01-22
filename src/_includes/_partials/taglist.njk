@@ -2,6 +2,7 @@
   {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
   <li>
     <a href="{{ tagUrl }}"
+        title="{{ site.url}}{{ tagUrl }}"
           class="post-tag relative block px-2 rounded-full {% if page.url == tagUrl %}active{% endif %}"
           >{{ tag }}</a
         >
