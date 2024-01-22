@@ -1,21 +1,21 @@
 @font-face {
 	font-family: "VG5000";
   src:
-    url("/fonts/VG5000-Regular_web.woff2") format("woff2"),
-    url("/fonts/VG5000-Regular_web.woff") format("woff");
+    url("/static/fonts/VG5000-Regular_web.woff2") format("woff2"),
+    url("/static/fonts/VG5000-Regular_web.woff") format("woff");
 }
 
 @font-face {
 	font-family: "FT88";
   src:
-    url("/fonts/FT88-Regular.woff2") format("woff2"),
-    url("/fonts/FT88-Regular.woff") format("woff");
+    url("/static/fonts/FT88-Regular.woff2") format("woff2"),
+    url("/static/fonts/FT88-Regular.woff") format("woff");
 }
 
 :root {
-  --display-font: 'VG5000', "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
-  --body-font: "Familjen Grotesk", "noto-sans", Inter, monospace, Helvetica, Arial, sans-serif, serif, Icons;
-	--pixel-font: "VG5000", "Familjen Grotesk", Inter, Helvetica, Arial, sans-serif, serif, Icons;
+  --display-font: 'VG5000', "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
+  --body-font: "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
+	--pixel-font: "VG5000", "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
 }
 
 html, body {

@@ -4,11 +4,6 @@ date: Created
 eleventyNavigation:
   parent: blog
 ---
-<style>
-  :root {
-  --bg-img: url('{{ thumb }}');
-  }
-</style>
 <div class="w-full lg:max-w-sm">
   <div class="intro">
       {% include "_partials/logo.njk" %}
@@ -38,7 +33,7 @@ eleventyNavigation:
                     <div>
                     <div class="flex overflow-hidden">
                       <div class="relative w-full">
-                        <div class="bg-image h-full" style="background-image: var(--bg-img);background-size: contain;">
+                        <div class="bg-image h-full">
                         <img src="{{ thumb }}" alt="{{ thumbAlt }}"
                           class="inset-0 z-10 absolute object-cover overflow-hidden block top-0 bottom-0 right-0 box-border m-0 h-full">
                           <div class="overflow-hidden w-full h-full"></div>
