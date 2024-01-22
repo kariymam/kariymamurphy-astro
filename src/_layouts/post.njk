@@ -7,14 +7,11 @@ eleventyNavigation:
 <div class="w-full lg:max-w-sm">
   <div class="intro">
       {% include "_partials/logo.njk" %}
-      <div id="headerMobile" aria-hidden="true" class="flex md:hidden">
-        {% include "_partials/headerMobile.njk" %}
-      </div>
       <h1 class="text-2xl mb-1 py-6 px-6 md:px-0">{{ title }}</h1>
     </div>
   </div>
   <div class="w-full">
-    <div id="header" aria-hidden="true" class="hidden md:flex flex-row">
+    <div id="header" aria-hidden="true" class="md:flex flex-row">
       {% include "_partials/header.njk" %}
     </div>
     <div class="lg:border-t-2 md:border-t-2">
@@ -30,17 +27,18 @@ eleventyNavigation:
                     </ul>
 
                     {% if thumb %}
-                    <div>
-                    <div class="flex overflow-hidden">
-                      <div class="relative w-full">
-                        <div class="bg-image h-full">
-                        <img src="{{ thumb }}" alt="{{ thumbAlt }}"
-                          class="inset-0 z-10 absolute object-cover overflow-hidden block top-0 bottom-0 right-0 box-border m-0 h-full">
-                          <div class="overflow-hidden w-full h-full"></div>
-                        </div>
-                      </div>
-                    </div>
-                    </div>
+                    <div
+                class="thumbImgContainer relative"
+              >
+                <img
+                  alt="{{ thumbAlt }}"
+                  srcset="{{ thumb }}"
+                  sizes="(max-width: 600px) 480px,
+                        800px"
+                  src="{{ thumb }}"
+                  class="thumbImg lg:h-full"
+                />
+              </div>
                     {% endif %}
           <div class="posttextBlock">
             {{ content | safe }}

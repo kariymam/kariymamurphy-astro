@@ -45,10 +45,6 @@ a h3 {
 	@apply underline
 }
 
-a.post-tag {
-	font-family: var(--display-font);
-}
-
 .postlist-item-header {
 	font-family: var(--display-font);
 }
