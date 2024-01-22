@@ -45,6 +45,9 @@ module.exports = function (eleventyConfig) {
 	const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+	const pluginImages = require("./utils/images.js");
+	eleventyConfig.addPlugin(pluginImages);
+
 	eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: "<!-- excerpt -->",
