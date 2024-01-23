@@ -3,7 +3,7 @@ title: Monumental
 description: Trying to fix 11ty issues
 tags:
   - exhibition-notes
-thumb: '/static/imgs/IMG_7283.jpeg'
+thumb: 'imgs/IMG_7283.jpeg'
 thumbAlt: Image of Sonya Clark's Monumental Cloth
 ---
 

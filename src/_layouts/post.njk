@@ -30,14 +30,7 @@ eleventyNavigation:
                     <div
                 class="thumbImgContainer relative"
               >
-                <img
-                  alt="{{ thumbAlt }}"
-                  srcset="{{ thumb }}"
-                  sizes="(max-width: 600px) 480px,
-                        800px"
-                  src="{{ thumb }}"
-                  class="thumbImg"
-                />
+              {% image thumb, thumbAlt, "thumbImg" %}
               </div>
                     {% endif %}
           <div class="posttextBlock">
