@@ -1,5 +1,12 @@
 ---
-title: Hi, I'm Kariyma
-layout: page.njk
+title: Home
+layout: blogpage.njk
 permalink: /
+numberOfLatestPostsToShow: 3
 ---
+<div class="md:border-t-2 pt-6">
+  {% set showYear = true %}
+  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+  {% set postslistCounter = postsCount %}
+  {% include "postlist-lite.njk" %}
+</div>

@@ -8,4 +8,9 @@
         >
   </li>
   {% endfor %}
+  {%- if title !== "Tag" %}
+  <li>
+    <a href="/tags/" class="relative block px-2 rounded-full">View taglist</a>
+  </li>
+  {% endif %}
 </ul>

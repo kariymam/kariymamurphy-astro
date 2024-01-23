@@ -4,8 +4,6 @@ layout: blogpage.njk
 eleventyNavigation:
   key: blog
   order: 1
-numberOfLatestPostsToShow: 3
 ---
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include 'postlist.njk' %}
+{% set postslist = collections.posts %}
+{% include "postlist.njk" %}

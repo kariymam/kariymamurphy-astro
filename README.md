@@ -1,18 +1,19 @@
 # To-Do
--
+
 - [ ] Pages templates & partials
   - [x] Home
-    - [ ] Footer + Colophon
+    - [X] Footer + Colophon
       – [ ] Link to Github
   - [ ] Mixtapes
   - [x] Blog / Writing
+    - [ ] Change tag drawer icon
     - [x] Post list
     - [x] Tags
-    - [ ] Categories
+    - [ ] ~~Categories~~
     - [x] Posts
   - [ ] About
     - [ ] Contact
   - [ ]
 
 Credits:
-<a href="https://eleventywebstarter.netlify.app"><strong>Eleventy Web Starter</strong></a> created by <a href="https://www.chrissy.dev">Chris Collins</a>.
+[Eleventy Web Starter](https://eleventywebstarter.netlify.app) created by [Chris Collins](https://www.chrissy.dev)
