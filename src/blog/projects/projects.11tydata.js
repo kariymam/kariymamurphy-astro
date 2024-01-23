@@ -1,13 +1,9 @@
 module.exports = {
+	permalink: '',
 	tags: [
+		"posts",
 		"projects"
 	],
-  eleventyComputed: {
-    permalink(data) {
-      if (!data.pkg) {
-        return false;
-      }
-    }
-  },
-
+	"layout": "post.njk",
+	eleventyExcludeFromCollections: true
 };
