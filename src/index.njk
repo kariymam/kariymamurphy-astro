@@ -8,5 +8,5 @@ numberOfLatestPostsToShow: 3
   {% set showYear = true %}
   {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
   {% set postslistCounter = postsCount %}
-  {% include "postlist-lite.njk" %}
+  {% include "postlist-heavy.njk" %}
 </div>

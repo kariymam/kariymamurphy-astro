@@ -12,8 +12,11 @@
     - [ ] ~~Categories~~
     - [x] Posts
   - [ ] About
-    - [ ] Contact
-  - [ ]
+    - [ ] Github
+    - [ ] Read.cv
+    - [ ] Contact (email)
+  - [ ] Resume
+    - [ ] Add all work experience
 
 Credits:
 [Eleventy Web Starter](https://eleventywebstarter.netlify.app) created by [Chris Collins](https://www.chrissy.dev)

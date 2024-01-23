@@ -10,7 +10,7 @@
           {% endif %}
     {% endif %}
 
-        <h3 class="lg:text-2xl"><a href="{{ post.url | url }}"><time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{ post.date | readableDate }}</time> {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
+        <h3><a href="{{ post.url | url }}"><time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{ post.date | readableDate }}</time> {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
       </li>
     {% endfor %}
     </ol>

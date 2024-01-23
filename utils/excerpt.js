@@ -6,8 +6,9 @@
 	module.exports = function async (post) {
 		let excerpt = post.data?.page?.excerpt;
 		let content = post.templateContent;
+		let title = post.data.title;
 		const charCount = 144;
-		const readMore = '<span class="break-keep font-bold">Read more &#8594;</span>';
+		const readMore = `<span class="break-keep font-bold text-sm" style="font-family:var(--pixel-font);">Read <i class="font-bold">${title}</i></span>` ;
 
 		excerpt = striptags(content)
 			.substring(0, charCount)

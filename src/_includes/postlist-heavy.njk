@@ -1,0 +1,40 @@
+{% for post in postslist | reverse %}
+<article class="flex border-b-2 transition hover:shadow-xl mb-8">
+  <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
+    <time
+      datetime="{{ post.date | htmlDateString }}"
+      class="flex items-center justify-between gap-4 text-xs font-bold uppercase">
+      {{ post.date | readableDate }}
+    </time>
+  </div>
+  {% if post.data.thumb %}
+  <div class="hidden sm:block sm:basis-56">
+    {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square h-full w-full object-cover" %}
+  </div>
+  {% endif %}
+  <div class="flex flex-1 flex-col justify-between">
+    <div class="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
+      <a href="#">
+        <h3>
+          <a href="{{ post.url | url }}">
+          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+          </a>
+        </h3>
+      </a>
+
+      <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+        {% excerpt post %}
+      </p>
+    </div>
+
+    <div class="sm:flex sm:items-end sm:justify-end">
+      <a
+        href="{{ post.url | url }}"
+        class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
+        >
+        Read more
+      </a>
+    </div>
+  </div>
+</article>
+{% endfor %}

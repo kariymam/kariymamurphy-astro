@@ -1,7 +1,7 @@
 @import 'utils/_tailwind.css';
 @import 'utils/_accessibility.css';
-@import 'colors.css';
 @import 'fonts.css';
+@import 'colors.css';
 
 * {
 	border-color: var(--border-primary);
@@ -59,9 +59,28 @@ p a {
 	@apply underline;
 }
 
-h4, h5, h6 {
+h1 {
+	@apply text-2xl;
+	@apply font-bold;
+}
+
+h2 {
+	@apply text-xl;
+	@apply font-bold;
+}
+
+h3 {
+	font-size: 1.5rem;
+	@apply font-bold;
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
+h5, h6 {
 	@apply text-base;
-	@apply italic;
+	@apply font-bold;
 }
 
 ol {
@@ -87,6 +106,10 @@ a.post-tag {
 	border: 2px solid var(--border-primary);
 	background-color: var(--btn);
 	color: var(--text-color);
+	transition-property: background-color, border, color;
+	transition-duration: 0.2s;
+	font-size: 0.8rem;
+	font-family: var(--display-font);
 	/* margin: 0.5rem 0 0.5rem 0; */
 }
 
@@ -131,7 +154,7 @@ div.postlist-item:nth-child(n+2) {
 
 @media (min-width: 1024px) {
 	.postlist-item {
-		min-height: 32rem;
+		min-height: 24rem;
 	}
 }
 
@@ -150,11 +173,9 @@ div.postlist-item:nth-child(n+2) {
 }
 
 h3.postlist-item-header {
-	font-size: 4vw;
 	text-indent: -2rem;
   padding-left: 1rem;
 	display: inline-table;
-	@apply leading-tight
 }
 
 .postlist-item-description > p {
@@ -172,7 +193,6 @@ h3.postlist-item-header {
 		max-width: calc(100% * 0.85);
 	 }
 	 h3.postlist-item-header {
-		font-size: 2rem;
 		max-width: calc(100% * 0.85);
 	 }
 }
@@ -200,7 +220,7 @@ h3 span {
 }
 
 .textblock > * + * {
-	margin-block-end: 1.5em;
+	margin-block-end: 16px;
 }
 
 .posttextBlock > ol li  {

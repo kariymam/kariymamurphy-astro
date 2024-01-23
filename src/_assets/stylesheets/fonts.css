@@ -13,24 +13,27 @@
 }
 
 :root {
-  --display-font: 'VG5000', "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
-  --body-font: "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
-	--pixel-font: "VG5000", "Familjen Grotesk", Helvetica, Arial, sans-serif, serif, Icons;
+  --display-font: 'VG5000', monospace, Helvetica, Arial, sans-serif, serif, Icons;
+	--mono-font: 'Fira Mono', Helvetica, Arial, sans-serif, serif, Icons;
+  --body-font: 'Fira Mono', Helvetica, Arial, sans-serif, serif, Icons;
+	--pixel-font: "VG5000", Helvetica, Arial, sans-serif, serif, Icons;
 }
 
 html, body {
-	font-family: var(--body-font);
 	font-optical-sizing: auto;
-	@apply text-base
-}
-
-h1, h2 {
-	font-family: var(--display-font);
-	@apply leading-tight
-}
-
-h3, h4 {
 	font-family: var(--body-font);
+}
+
+h1 {
+	font-family: var(--display-font);
+}
+
+h2, h3 {
+	font-family: var(--display-font);
+}
+
+h4 {
+	font-family: var(--pixel-font);
 }
 
 time, small {
@@ -43,10 +46,6 @@ time, small {
 
 a h3 {
 	@apply underline
-}
-
-.postlist-item-header {
-	font-family: var(--display-font);
 }
 
 .gradient-line {
