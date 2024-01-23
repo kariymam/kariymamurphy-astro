@@ -235,13 +235,3 @@ h3 span {
 		grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 	}
 }
-
-.opacity {
-	opacity: 0.7;
-	transition-property: opacity;
-  transition-duration: 0.3s;
-  transition-delay: 0.1s;
-}
-.opacity:hover {
-	opacity: 1.0;
-}
