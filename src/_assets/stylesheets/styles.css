@@ -44,6 +44,7 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
+	text-rendering: optimizeLegibility
 }
 
 a {
@@ -55,9 +56,9 @@ a {
 	color: var(--text-color);
 }
 
-p a {
+/* p a {
 	@apply underline;
-}
+} */
 
 h1 {
 	@apply text-2xl;
@@ -66,21 +67,22 @@ h1 {
 
 h2 {
 	@apply text-xl;
-	@apply font-bold;
+	@apply font-light;
 }
 
 h3 {
-	font-size: 1.5rem;
+	@apply text-base;
 	@apply font-bold;
 }
 
 h4 {
-	font-size: 1.5rem;
+	@apply text-base;
+	@apply font-semibold;
 }
 
 h5, h6 {
 	@apply text-base;
-	@apply font-bold;
+	@apply font-medium;
 }
 
 ol {
@@ -109,7 +111,8 @@ a.post-tag {
 	transition-property: background-color, border, color;
 	transition-duration: 0.2s;
 	font-size: 0.8rem;
-	font-family: var(--display-font);
+	font-family: var(--mono-font);
+	text-transform: uppercase;
 	/* margin: 0.5rem 0 0.5rem 0; */
 }
 

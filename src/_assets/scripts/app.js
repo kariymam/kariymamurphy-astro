@@ -8,48 +8,43 @@ const nav = document.querySelector('#mainNav');
 function toggleNav() {
 	nav.classList.toggle('hidden');
 	myName.classList.toggle('hidden');
-}
+};
 
 burger.addEventListener('click', function() {
 	toggleNav();
 });
 
-let tl = gsap.timeline();
-let postlist = document.querySelectorAll(".postlist-item");
-const thumbImg = document.querySelector(".thumbImg");
+// postlist animation finally working the way I need
 const headerHeight = (a, b) => a + b;
+tl = gsap.timeline();
 
-for (const post of postlist) {
-  post.addEventListener("mouseover", (e) => {
-    let cl = e.target.closest("article > div");
+gsap.utils.toArray(".postlist-item").forEach(post => {
+	let picture = post.querySelector('picture');
+  let thumbImg = picture ? picture.querySelector('.thumbImg') : null;
+  let paragraph = post.querySelector('p');
 
-    if (cl) {
-      let m = cl.querySelector("p");
+	post.addEventListener("mouseover", (e) => {
+    if (thumbImg) {
+      let moveY = headerHeight(paragraph.offsetHeight, 32);
 
-      if (m) {
-        let moveY = headerHeight(m.offsetHeight, 32);
-        let q = gsap.utils.selector(cl);
-
-        tl.to(q(".thumbImg"), {
-          duration: 0.3,
-          ease: "sine.out",
-          top: `${moveY}px`
-        });
-      }
+      tl.to(thumbImg, {
+        duration: 0.2,
+        ease: "sine.out",
+        top: `${moveY}px`
+      });
     }
-  });
-
-  post.addEventListener("mouseleave", () => {
-   // Check if the target element exists before animating
-	 if (thumbImg) {
-		tl.to(".thumbImg", {
-			duration: 0.2,
-			ease: "sine.in",
-			top: 0
-		});
+	},
+		post.addEventListener("mouseleave", () => {
+		// Check if the target element exists before animating
+		if (thumbImg) {
+			  tl.to(thumbImg, {
+			  duration: 0.1,
+			  ease: "sine.in",
+			  top: 0
+			});
 		}
-  });
-}
+  })
+)});
 
 const mobile = "(min-width: 768px)";
 const header = document.querySelector('#header');
@@ -68,7 +63,7 @@ function moveNav(e) {
       home.appendChild(fchl);
     }
   }
-}
+};
 
 // Initial call to moveNav to set the initial state based on the window size
 moveNav(window.matchMedia(mobile));
@@ -105,6 +100,6 @@ for (let i = 0; i < displayFonts.length; i++) {
 
   // Set the inner HTML of the current element with the modified string
   displayFonts[i].innerHTML = result;
-}
+};
 
 

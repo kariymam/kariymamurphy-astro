@@ -5,14 +5,14 @@
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
-    <div
+    <article
       class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2"
     >
       <div
         class="flex flex-col relative justify-end h-full w-full min-h-fit"
       >
       <a href="{{ post.url }}" class="h-full w-full">
-        <article class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent">
+        <div class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent">
           <div class="flex flex-col px-4 pt-4">
             <span class="flex flex-row flex-wrap gap-1 items-center justify-end">
               <time
@@ -40,10 +40,10 @@
             {% endif %}
             </div>
           </div>
-        </article>
+        </div>
       </a>
       </div>
-      <ul class="page-tags-list bg-white border-t-2 border-r-2 lg:border-transparent lg:absolute max-w-sm lg:bg-transparent px-4 flex flex-row flex-wrap z-20 gap-2">
+      <ul class="page-tags-list border-t-2 border-r-2 lg:border-transparent lg:absolute max-w-sm lg:bg-transparent px-4 lg:pb-4 flex flex-row flex-wrap z-20 gap-2">
           {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{
             tag | slug
           }}/{% endset %}
@@ -55,6 +55,6 @@
           </li>
           {% endfor %}
       </ul>
-    </div>
+    </article>
     {% endfor %}
   </div>

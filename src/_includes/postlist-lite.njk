@@ -6,7 +6,7 @@
           {% set postYear = post.date.getFullYear() %}
           {% if currentYear != postYear %}
           {% set currentYear = postYear %}
-          <h2 class="lg:text-xl mb-9">{{ postYear }}</h2>
+          <time class="text-xl">{{ postYear }}</time>
           {% endif %}
     {% endif %}
 
