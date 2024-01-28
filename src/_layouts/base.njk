@@ -21,6 +21,7 @@
     </head>
     <body class="md:flex-row lg:flex-row">
         <a href="#main" class="skip-link">Skip to main content</a>
+        {% include "toggles.njk" %}
         {{ content | safe }}
         {% include "footer.njk" %}
         <script src="/static/app.min.js" defer></script>
