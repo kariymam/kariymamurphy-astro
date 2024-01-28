@@ -13,7 +13,7 @@ Some of my interests are making playlists, cooking, gardening, researching techn
 
 ## Colophon
 
-Made with 11ty, <a href="https://randoma11y.com/apca">Random a11y</a>, PostCSS, & HyperUI. Starter template crafted by <a href="https://www.chrissy.dev">Chris Collins</a>.
+Made with 11ty, HyperUI, and Tailwind. Starter template crafted by <a href="https://www.chrissy.dev">Chris Collins</a>. Huge shoutout to all the 11ty contributers who provided a tutorials that broke me out of many many error messages.
 
 ### Typefaces
 
