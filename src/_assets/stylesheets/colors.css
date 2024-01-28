@@ -35,8 +35,8 @@
     --background: var(--color-gray-1);
 
 		--color-gray-3: rgba(253, 252, 246, 0.85);
-		--stone: rgb(12 10 9);
-		--border-primary: rgb(23, 23, 23);
+		--stone: rgb(20 19 15);
+		--border-primary: var(--stone);
 		--btn: var(--background);
 		/* --scrimOnHover: var(--color-gray-5); */
 
@@ -47,7 +47,11 @@
   }
 }
 
-html, body {
+html {
+	background-color: var(--stone);
+}
+
+body {
 	background-color: var(--background);
 	color: var(--text-color);
 }

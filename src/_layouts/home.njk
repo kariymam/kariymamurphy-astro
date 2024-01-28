@@ -1,6 +1,9 @@
 ---
 layout: base.njk
 ---
-<main id="main" class="mx-auto w-full flex flex-col lg:flex-row md:flex-row md:items-start lg:justify-center md:justify-start">
-  {{ content | safe }}
-</main>
+<div class="w-full flex flex-col">
+  {% include "header.njk" %}
+  <main id="main" class="mx-auto w-full flex flex-col md:items-start lg:justify-center md:justify-start">
+    {{ content | safe }}
+  </main>
+</div>

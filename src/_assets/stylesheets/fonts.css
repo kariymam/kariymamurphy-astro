@@ -1,9 +1,4 @@
-@font-face {
-	font-family: "VG5000";
-  src:
-    url("/static/fonts/VG5000-Regular_web.woff2") format("woff2"),
-    url("/static/fonts/VG5000-Regular_web.woff") format("woff");
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
 
 @font-face {
 	font-family: "FT88";
