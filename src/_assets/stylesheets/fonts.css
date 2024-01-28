@@ -30,7 +30,15 @@ h1 {
 	font-family: var(--display-font);
 }
 
-h2, h3, h4 {
+h2 {
+	font-family: var(--display-font);
+}
+
+h3 {
+	font-family: var(--body-font);
+}
+
+h4 {
 	font-family: var(--mono-font);
 }
 
