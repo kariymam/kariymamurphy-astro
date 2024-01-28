@@ -1,6 +1,6 @@
 module.exports = {
-	codepens: (collectionApi) => {
-		return collectionApi.getFilteredByTags("codepen");
+	drafts: (collectionApi) => {
+		return collectionApi.getFilteredByTags("drafts");
 	}
 	// // Credit: https://lea.verou.me/blog/2023/11ty-indices/#dynamic-postsbytag-collection
 	// postsByTag: (collectionApi) => {
