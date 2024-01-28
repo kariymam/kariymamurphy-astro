@@ -6,7 +6,7 @@
 
 
 		/* grays */
-		--color-gray-1: rgba(33, 31, 24, 0.85);
+		--color-gray-1: rgba(33, 31, 24, 0.90);
 		--color-gray-2: rgba(53, 50, 38, 0.85);
 		--color-gray-3: rgba(92, 90, 80, 0.85);
 		--color-gray-4: rgba(92, 90, 80, 0.25);
@@ -62,6 +62,11 @@ body {
 
 a {
 	color: var(--text-color);
+	opacity: 1;
+}
+
+a:hover {
+	opacity: 0.7;
 }
 
 .primary-color {

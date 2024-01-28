@@ -1,25 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
-
 @font-face {
-	font-family: "FT88";
+	font-family: 'FT88';
   src:
     url("/static/fonts/FT88-Regular.woff2") format("woff2"),
     url("/static/fonts/FT88-Regular.woff") format("woff");
 }
 
 @font-face {
-	font-family: "FT88-Serif";
+	font-family: 'FT88-Serif';
   src:
     url("/static/fonts/FT88-Serif.woff2") format("woff2"),
     url("/static/fonts/FT88-Serif.woff") format("woff");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
 
 :root {
   --display-font: 'DM Sans', monospace, Helvetica, Arial, sans-serif, serif, Icons;
 	--mono-font: 'DM Mono', Helvetica, Arial, sans-serif, serif, Icons;
   --body-font: 'DM Sans', Helvetica, Arial, sans-serif, serif, Icons;
-	--pixel-font: "FT88", Helvetica, Arial, sans-serif, serif, Icons;
+	--pixel-font: 'FT88', Helvetica, Arial, sans-serif, serif, Icons;
 }
 
 html, body {
@@ -31,7 +30,15 @@ h1 {
 	font-family: var(--display-font);
 }
 
-h2, h3, h4 {
+h2 {
+	font-family: var(--display-font);
+}
+
+h3 {
+	font-family: var(--body-font);
+}
+
+h4 {
 	font-family: var(--mono-font);
 }
 
