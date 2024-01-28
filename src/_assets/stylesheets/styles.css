@@ -67,7 +67,7 @@ h1 {
 
 h2 {
 	@apply text-xl;
-	@apply font-light;
+	@apply font-bold;
 }
 
 h3 {
@@ -111,8 +111,7 @@ a.post-tag {
 	transition-property: background-color, border, color;
 	transition-duration: 0.2s;
 	font-size: 0.8rem;
-	font-family: var(--mono-font);
-	text-transform: uppercase;
+	font-family: var(--pixel-font);
 	/* margin: 0.5rem 0 0.5rem 0; */
 }
 
@@ -167,18 +166,16 @@ div.postlist-item:nth-child(n+2) {
     pointer-events: none;
     text-align: right;
 		text-decoration: transparent;
+		position: absolute;
+    top: 0;
+		left: 0;
+		padding: 1rem;
+		font-family: var(--pixel-font);
 		/* width: 1rem; */
-		margin-left: 1rem;
 }
 
 .postlist-item-header:before {
 	@apply text-sm
-}
-
-h3.postlist-item-header {
-	text-indent: -2rem;
-  padding-left: 1rem;
-	display: inline-table;
 }
 
 .postlist-item-description > p {
@@ -195,18 +192,11 @@ h3.postlist-item-header {
 	.postlist-item-description > p {
 		max-width: calc(100% * 0.85);
 	 }
-	 h3.postlist-item-header {
-		max-width: calc(100% * 0.85);
-	 }
 }
 
 @media (max-width: 992px) {
 	.postlist-item-header:before {
 		margin-left: 0;
-	}
-	h3.postlist-item-header {
-		text-indent: -1rem;
-		padding-left: 1rem;
 	}
 }
 

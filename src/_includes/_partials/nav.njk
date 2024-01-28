@@ -3,7 +3,7 @@
   <ul class="md:flex items-center gap-6 lg:my-0 md:flex-row h-full">
     {%- for entry in collections.all | eleventyNavigation %}
     <li>
-      <a id="{{ entry.title }}" aria-label="{{ entry.description }}" class="z-10 text-2xl md:text-base displayFont" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+      <a id="{{ entry.title }}" aria-label="{{ entry.title }}" class="z-10 text-2xl md:text-base displayFont" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
     </li>
     {%- endfor %}
   </ul>

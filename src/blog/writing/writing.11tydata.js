@@ -1,7 +1,6 @@
 module.exports = {
 	tags: [
-		"posts",
-		"writing"
+		"posts"
 	],
 	"layout": "post.njk",
 	"permalink": "blog/{{ title | slugify }}/"

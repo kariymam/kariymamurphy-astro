@@ -1,3 +1,4 @@
+const path = require("path");
 const markdownIt = require("markdown-it");
 const { minify } = require("terser");
 const filters = require('./utils/filters.js')
@@ -9,8 +10,8 @@ module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
 	eleventyConfig.addPassthroughCopy("./src/fonts/");
-	eleventyConfig.addPassthroughCopy("./src/blog/imgs");
-	eleventyConfig.addPassthroughCopy("./src/codepens/imgs");
+	eleventyConfig.addPassthroughCopy("./src/blog/writing/imgs");
+	eleventyConfig.addPassthroughCopy("./src/blog/projects/imgs");
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {
