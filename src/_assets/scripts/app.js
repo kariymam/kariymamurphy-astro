@@ -13,35 +13,40 @@ burger.addEventListener('click', function() {
 
 // postlist animation finally working the way I need
 const headerHeight = (a, b) => a + b;
-tl = gsap.timeline();
+const postlistItem = document.querySelector(".postlist-item");
+
+const thumbAnimation = (thumbImg) => {
+	let paragraph = postlistItem.querySelector("p");
+	let moveY = headerHeight(paragraph.offsetHeight, 48);
+	tl = gsap.timeline({ paused: true });
+	tl.to(thumbImg, {
+		duration: 0.2,
+		ease: "sine.out",
+		top: `${moveY}px`
+	});
+	return tl;
+};
 
 gsap.utils.toArray(".postlist-item").forEach(post => {
 	const picture = post.querySelector('picture');
   const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
-  const paragraph = post.querySelector('p');
+ 	const animation = thumbAnimation(thumbImg)
 
-	post.addEventListener("mouseover", (e) => {
+	post.addEventListener("mouseover", () => {
     if (thumbImg) {
-      let moveY = headerHeight(paragraph.offsetHeight, 32);
-
-      tl.to(thumbImg, {
-        duration: 0.2,
-        ease: "sine.out",
-        top: `${moveY}px`
-      });
+			animation.play();
     }
-	},
+	});
 		post.addEventListener("mouseleave", () => {
-		// Check if the target element exists before animating
-		if (thumbImg) {
-			  tl.to(thumbImg, {
-			  duration: 0.1,
-			  ease: "sine.in",
-			  top: 0
-			});
-		}
-  })
-)});
+			if (thumbImg) {
+				animation.reverse();
+			}
+	});
+});
+
+
+
+
 
 const applyRandomFonts = (str, fontsArray) => {
   // Choose a random index for the fontsArray
