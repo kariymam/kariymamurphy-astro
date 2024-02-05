@@ -11,17 +11,15 @@ burger.addEventListener('click', function() {
 	toggleNav();
 });
 
-// postlist animation finally working the way I need
+// postlist animation finally working the way I need!!
 const headerHeight = (a, b) => a + b;
-const postlistItem = document.querySelector(".postlist-item");
 
-const thumbAnimation = (thumbImg) => {
-	let paragraph = postlistItem.querySelector("p");
+const thumbAnimation = (thumbImg, paragraph) => {
 	let moveY = headerHeight(paragraph.offsetHeight, 48);
 	tl = gsap.timeline({ paused: true });
 	tl.to(thumbImg, {
-		duration: 0.2,
-		ease: "sine.out",
+		duration: 0.3,
+		ease: "power2.inOut",
 		top: `${moveY}px`
 	});
 	return tl;
@@ -30,23 +28,16 @@ const thumbAnimation = (thumbImg) => {
 gsap.utils.toArray(".postlist-item").forEach(post => {
 	const picture = post.querySelector('picture');
   const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
- 	const animation = thumbAnimation(thumbImg);
+	const paragraph = post.querySelector("p");
 
-	post.addEventListener("mouseover", () => {
-    if (thumbImg) {
-			animation.play();
-    }
-	});
-		post.addEventListener("mouseleave", () => {
-			if (thumbImg) {
-				animation.reverse();
-			}
-	});
+	if (thumbImg) {
+		const animation = thumbAnimation(thumbImg, paragraph);
+		post.addEventListener("mouseover", (e) => { animation.play(); });
+		post.addEventListener("mouseleave", (e) => { animation.reverse(); });
+	}
 });
 
-
-
-
+//
 
 const applyRandomFonts = (str, fontsArray) => {
   // Choose a random index for the fontsArray
@@ -69,6 +60,8 @@ const applyRandomFonts = (str, fontsArray) => {
     }
   }).join('');
 };
+
+//
 
 const displayFonts = document.getElementsByClassName("displayFont");
 const fontOptions = ["FT88", "FT88-Serif"];
