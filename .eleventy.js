@@ -104,7 +104,7 @@ module.exports = function (eleventyConfig) {
 			data: "_data",
 			layouts: "_layouts"
 		},
-		templateFormats: ["html", "md", "njk"],
+		templateFormats: ["html", "md", "njk", "jpeg", "jpg"],
 		htmlTemplateEngine: "njk"
 
 		// // 1.1 Enable eleventy to pass dirs specified above

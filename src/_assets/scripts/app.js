@@ -12,10 +12,11 @@ burger.addEventListener('click', function() {
 });
 
 // postlist animation finally working the way I need!!
+//-------- postlist animation
 const headerHeight = (a, b) => a + b;
 
 const thumbAnimation = (thumbImg, paragraph) => {
-	let moveY = headerHeight(paragraph.offsetHeight, 48);
+	let moveY = headerHeight(paragraph.clientHeight, 32);
 	tl = gsap.timeline({ paused: true });
 	tl.to(thumbImg, {
 		duration: 0.3,
@@ -28,16 +29,16 @@ const thumbAnimation = (thumbImg, paragraph) => {
 gsap.utils.toArray(".postlist-item").forEach(post => {
 	const picture = post.querySelector('picture');
   const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
-	const paragraph = post.querySelector("p");
+	const paragraph = post.querySelector("p").closest("div");
 
 	if (thumbImg) {
 		const animation = thumbAnimation(thumbImg, paragraph);
-		post.addEventListener("mouseover", (e) => { animation.play(); });
-		post.addEventListener("mouseleave", (e) => { animation.reverse(); });
+		post.addEventListener("mouseover", () => { animation.play(); });
+		post.addEventListener("mouseleave", () => { animation.reverse(); });
 	}
 });
 
-//
+//-------- random
 
 const applyRandomFonts = (str, fontsArray) => {
   // Choose a random index for the fontsArray

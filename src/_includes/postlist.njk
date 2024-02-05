@@ -1,7 +1,7 @@
 
   <div
     reversed
-    class="postlist grid break-inside-avoid w-full border-l-2 border-t-2"
+    class="postlist grid md:grid-cols-3 break-inside-avoid w-full border-l-2 border-t-2"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
@@ -28,7 +28,7 @@
             <div
               class="postlist-item-description h-full transition-all"
             >
-            <div class="text-base mx-8 pb-12 lg:pb-0 max-w-xl">
+            <div class="text-base mx-8 pb-12 lg:pb-0 max-w-md">
               {% excerpt post %}</div
               >
             {% if post.data.thumb %}
