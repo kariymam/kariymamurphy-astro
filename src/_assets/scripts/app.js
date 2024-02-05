@@ -30,7 +30,7 @@ const thumbAnimation = (thumbImg) => {
 gsap.utils.toArray(".postlist-item").forEach(post => {
 	const picture = post.querySelector('picture');
   const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
- 	const animation = thumbAnimation(thumbImg)
+ 	const animation = thumbAnimation(thumbImg);
 
 	post.addEventListener("mouseover", () => {
     if (thumbImg) {
