@@ -11,9 +11,14 @@ const animations = () => {
 			return; // Exit the function if no matching ancestor is found
 		}
 
+		const childCount = () => {
+			let fchild = latestPostsList.firstElementChild.children.length;
+			return fchild -= 1;
+		}
+
 		let tr = 0;
 		let clickCounter = 0;
-		const maxClicks = 2;
+		const maxClicks = childCount();
 
 		const slideAnimation = (direction) => {
 			const slidePost = latestPostsList.querySelector(".postlist-heavyItem");

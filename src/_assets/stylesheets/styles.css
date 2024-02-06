@@ -266,6 +266,10 @@ h3 span {
 	}
 }
 
+summary:before {
+
+}
+
 details > summary {
 	list-style-type: '＋';
 }
@@ -289,3 +293,7 @@ details[open] > summary {
 .work-overlay:hover ion-icon {
 	color: white;
 }
+
+/* #latestPostsList > div > div:last-child{
+	border-right: solid 2px var(--border-primary);
+} */
