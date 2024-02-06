@@ -27,20 +27,8 @@ html, body {
 	font-family: var(--body-font);
 }
 
-h1 {
+h1, h2, h3, h4 {
 	font-family: var(--display-font);
-}
-
-h2 {
-	font-family: var(--display-font);
-}
-
-h3 {
-	font-family: var(--mono-font);
-}
-
-h4 {
-	font-family: var(--mono-font);
 }
 
 time, small {

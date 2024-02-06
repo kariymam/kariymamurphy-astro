@@ -1,40 +1,75 @@
-{% for post in postslist | reverse %}
-<article class="flex border-b-2 transition hover:shadow-xl mb-8">
-  <div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
-    <time
-      datetime="{{ post.date | htmlDateString }}"
-      class="flex items-center justify-between gap-4 text-xs font-bold uppercase">
-      {{ post.date | readableDate }}
-    </time>
-  </div>
-  {% if post.data.thumb %}
-  <div class="hidden sm:block sm:basis-56">
-    {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square h-full w-full object-cover" %}
-  </div>
-  {% endif %}
-  <div class="flex flex-1 flex-col justify-between">
-    <div class="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
-      <a href="#">
-        <h3>
-          <a href="{{ post.url | url }}">
-          {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-          </a>
-        </h3>
-      </a>
+<div class="overflow-hidden">
+  <div class="grid items-center">
+    <div id="latestPostsList" style="transform: translate(0px, 0px);">
+      <div class="flex flex-col gap-4 lg:gap-0 lg:flex-row min-h-[400px]">
+        {% for post in postslist | reverse %}
+        <div class="inline-block border-2 flex-shrink-0 md:border-0 lg:w-10/12 postlist-heavyItem">
+          {% if post.data.thumb %}
+          <article class="sm:grid sm:grid-cols-2 h-full">
+            <div>
+              <div class="relative h-80 sm:h-full self-center">
+                  <span class="overflow-hidden absolute h-full w-full">
+                      {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0" %}
+                  </span>
+              </div>
+            </div>
+            <div class="sm:p-6">
+              <div class="flex-col justify-between flex-1">
+                <div class="p-4 sm:p-6">
+                  <time
+                    datetime="{{ post.date | htmlDateString }}"
+                    class="text-sm"
+                    >{{ post.date | readableDate }}</time
+                  >
+                  <a href="{{ post.url | url }}">
+                    <h4>
+                      {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+                  </h4>
+                  </a>
+                  <ul class="flex flex-row flex-wrap gap-2">
+                    {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+                    <li>
+                      <a href="{{ tagUrl }}"
+                          title="{{ site.url}}{{ tagUrl }}"
+                            class="post-tag md:text-sm rounded-full"
+                            >{{ tag }}</a
+                          >
+                    </li>
+                    {% endfor %}
+                  </ul>
+                  <div class="max-w-sm mt-2">
+                    {% excerpt post %}
+                  </div>
 
-      <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-        {% excerpt post %}
-      </p>
-    </div>
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <article>
+              <div class="flex-col justify-between flex-1">
+                <div class="p-4 sm:p-6">
+                  <a href="{{ post.url | url }}">
+                    <h4>
+                      {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
+                  </h4>
+                  </a>
 
-    <div class="sm:flex sm:items-end sm:justify-end">
-      <a
-        href="{{ post.url | url }}"
-        class="block bg-yellow-300 px-5 py-3 text-center text-xs font-bold uppercase text-gray-900 transition hover:bg-yellow-400"
-        >
-        Read more
-      </a>
+                  <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+                    {% excerpt post %}
+                  </p>
+                </div>
+              </div>
+            {% endif %}
+          </article>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+    <button class="hidden right-14 lg:flex self-center absolute justify-self-end bg-[var(--primary)] rounded-full m-6 transition-transform">
+      <ion-icon name="arrow-forward-outline" class="text-xl text-white m-2 p-2"></ion-icon>
+    </button>
+    <button id="slideBack" class="hidden left-16 self-center absolute justify-self-start bg-[var(--primary)] rounded-full m-6 transition-transform">
+      <ion-icon name="arrow-back-outline" class="text-xl text-white m-2 p-2"></ion-icon>
+    </button>
   </div>
-</article>
-{% endfor %}
+</div>

@@ -1,5 +1,9 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
 
+import { animations } from './animations.js';
+
+animations();
+
 const burger = document.querySelector('#burger');
 const nav = document.querySelector('#mainNav');
 
@@ -9,33 +13,6 @@ function toggleNav() {
 
 burger.addEventListener('click', function() {
 	toggleNav();
-});
-
-// postlist animation finally working the way I need!!
-//-------- postlist animation
-const headerHeight = (a, b) => a + b;
-
-const thumbAnimation = (thumbImg, paragraph) => {
-	let moveY = headerHeight(paragraph.clientHeight, 32);
-	tl = gsap.timeline({ paused: true });
-	tl.to(thumbImg, {
-		duration: 0.3,
-		ease: "power2.inOut",
-		top: `${moveY}px`
-	});
-	return tl;
-};
-
-gsap.utils.toArray(".postlist-item").forEach(post => {
-	const picture = post.querySelector('picture');
-  const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
-	const paragraph = post.querySelector("p").closest("div");
-
-	if (thumbImg) {
-		const animation = thumbAnimation(thumbImg, paragraph);
-		post.addEventListener("mouseover", () => { animation.play(); });
-		post.addEventListener("mouseleave", () => { animation.reverse(); });
-	}
 });
 
 //-------- random
