@@ -1,8 +1,10 @@
 const animations = () => {
-	function lastestPostsSlider() {
 
+	function lastestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
-		const slideBtn = latestPostsList ? latestPostsList.closest(".grid").querySelector("button") : null;
+		const slideBtn = latestPostsList
+			? latestPostsList.closest(".grid").querySelector("button")
+			: null;
 		const slideBackBtn = document.getElementById("slideBack");
 
 		if (!slideBtn) {
@@ -14,7 +16,6 @@ const animations = () => {
 		const maxClicks = 2;
 
 		const slideAnimation = (direction) => {
-
 			const slidePost = latestPostsList.querySelector(".postlist-heavyItem");
 			const width = slidePost.clientWidth;
 			tr += direction === "forward" ? -width : width;
@@ -42,14 +43,14 @@ const animations = () => {
 			const tl = slideAnimation("forward");
 			tl.play();
 			clickCounter++;
-      checkClickCount();
+			checkClickCount();
 		};
 
 		const slideBack = () => {
 			const tl = slideAnimation("backward");
 			tl.play();
 			clickCounter--;
-      checkClickCount();
+			checkClickCount();
 		};
 
 		const checkClickCount = () => {
@@ -58,17 +59,17 @@ const animations = () => {
 			} else {
 				slideBtn.classList.add("lg:flex");
 			}
-	};
+		};
 
 		slideBtn.addEventListener("click", slideForward);
 		slideBackBtn.addEventListener("click", slideBack);
-		window.addEventListener('resize', () => {
+		window.addEventListener("resize", () => {
 			if (window.innerWidth <= 1024) {
-					// Reset the x property to 0 if the window width is less than or equal to 1024px
-					tr = 0;
-					gsap.to(latestPostsList, { x: tr, duration: 0 }); // Use GSAP to set x property instantly
+				// Reset the x property to 0 if the window width is less than or equal to 1024px
+				tr = 0;
+				gsap.to(latestPostsList, { x: tr, duration: 0 }); // Use GSAP to set x property instantly
 			}
-	});
+		});
 	}
 
 	function postlistImgs() {
@@ -80,20 +81,24 @@ const animations = () => {
 			postlistTL.to(thumbImg, {
 				duration: 0.3,
 				ease: "power2.inOut",
-				top: `${moveY}px`
+				top: `${moveY}px`,
 			});
 			return postlistTL;
 		};
 
-		gsap.utils.toArray(".postlist-item").forEach(post => {
-			const picture = post.querySelector('picture');
-			const thumbImg = picture ? picture.querySelector('.thumbImg') : null;
+		gsap.utils.toArray(".postlist-item").forEach((post) => {
+			const picture = post.querySelector("picture");
+			const thumbImg = picture ? picture.querySelector(".thumbImg") : null;
 			const paragraph = post.querySelector("p").closest("div");
 
 			if (thumbImg) {
 				const animation = thumbAnimation(thumbImg, paragraph);
-				post.addEventListener("mouseover", () => { animation.play(); });
-				post.addEventListener("mouseleave", () => { animation.reverse(); });
+				post.addEventListener("mouseover", () => {
+					animation.play();
+				});
+				post.addEventListener("mouseleave", () => {
+					animation.reverse();
+				});
 			}
 		});
 	}
