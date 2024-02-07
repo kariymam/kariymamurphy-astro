@@ -1,37 +1,37 @@
 <div class="overflow-hidden">
-  <div class="grid items-center">
+  <div class="grid items-center justify-between">
     <div id="latestPostsList" style="transform: translate(0px, 0px);">
       <div class="flex flex-col gap-4 lg:gap-0 lg:flex-row min-h-[400px]">
         {% for post in postslist | reverse %}
-        <div class="inline-block border-2 flex-shrink-0 md:border-0 lg:w-10/12 postlist-heavyItem border-r-2">
+        <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
           {% if post.data.thumb %}
           <article class="sm:grid sm:grid-cols-2 h-full">
             <div>
               <div class="relative h-80 sm:h-full self-center">
-                  <span class="overflow-hidden absolute h-full w-full">
-                      {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0" %}
+                  <span class="overflow-hidden absolute h-full w-full md:rounded-l-3xl">
+                      {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0 rounded-3xl sm:rounded-l-3xl sm:rounded-r-none" %}
                   </span>
               </div>
             </div>
-            <div class="sm:p-6">
+            <div class="p-6 sm:p-4">
               <div class="flex-col justify-between flex-1">
-                <div class="p-4 sm:p-6">
+                <div class="lg:p-6">
                   <time
                     datetime="{{ post.date | htmlDateString }}"
                     class="text-sm"
                     >{{ post.date | readableDate }}</time
                   >
                   <a href="{{ post.url | url }}">
-                    <h4>
+                    <h4 class="pb-2 leading-tight">
                       {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
                   </h4>
                   </a>
-                  <ul class="flex flex-row flex-wrap gap-2">
+                  <ul class="flex flex-row flex-wrap gap-2 pb-6">
                     {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                     <li>
                       <a href="{{ tagUrl }}"
                           title="{{ site.url}}{{ tagUrl }}"
-                            class="post-tag md:text-sm rounded-full"
+                            class="post-tag md:text-xs rounded-full"
                             >{{ tag }}</a
                           >
                     </li>
@@ -47,7 +47,7 @@
             {% else %}
             <article>
               <div class="flex-col justify-between flex-1">
-                <div class="p-4 sm:p-6">
+                <div class="p-6">
                   <a href="{{ post.url | url }}">
                     <h4>
                       {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
@@ -63,12 +63,15 @@
           </article>
         </div>
         {% endfor %}
+        <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
+          <p class="text-2xl p-12">See more in <a href="/blog/">Blog</a></p>
+          </div>
       </div>
     </div>
-    <button class="hidden right-14 lg:flex self-center absolute justify-self-end bg-[var(--primary)] rounded-full m-6 transition-transform">
+    <button class="hidden lg:flex absolute mx-4 right-0 left-auto bg-[var(--primary)] rounded-full transition-transform">
       <ion-icon name="arrow-forward-outline" class="text-xl text-white m-2 p-2"></ion-icon>
     </button>
-    <button id="slideBack" class="hidden left-16 self-center absolute justify-self-start bg-[var(--primary)] rounded-full m-6 transition-transform">
+    <button id="slideBack" class="hidden right-auto left-0 absolute mx-4 bg-[var(--primary)] rounded-full transition-transform">
       <ion-icon name="arrow-back-outline" class="text-xl text-white m-2 p-2"></ion-icon>
     </button>
   </div>

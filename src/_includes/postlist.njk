@@ -1,18 +1,18 @@
 
   <div
     reversed
-    class="postlist grid md:grid-cols-3 break-inside-avoid w-full border-l-2 border-t-2"
+    class="postlist grid md:grid-cols-3 break-inside-avoid w-full border-l-2 border-t-2 rounded-bl-3xl rounded-t-3xl"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
     <article
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 border-b-2"
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 rounded-r-3xl border-b-2 rounded-b-3xl"
     >
       <div
         class="flex flex-col relative justify-end h-full w-full min-h-fit"
       >
       <a href="{{ post.url }}" class="h-full w-full">
-        <div class="flex flex-col group relative h-full w-full transition-all border-2 border-transparent">
+        <div class="flex flex-col group relative h-full w-full transition-all">
           <div class="flex flex-col px-4 pt-4">
             <span class="flex flex-row flex-wrap gap-1 items-center justify-end">
               <time
@@ -28,14 +28,14 @@
             <div
               class="postlist-item-description h-full transition-all"
             >
-            <div class="text-base mx-8 pb-12 lg:pb-0 max-w-md">
+            <div class="mx-8 pb-12 lg:pb-0 max-w-md">
               {% excerpt post %}</div
               >
             {% if post.data.thumb %}
             <div
-              class="thumbImgContainer relative border-t-2 lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-hidden lg:z-10"
+              class="thumbImgContainer relative border-t-2 lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-hidden lg:z-10 rounded-b-3xl"
             >
-              {% image post.data.thumb, post.data.thumbAlt, "thumbImg h-full w-full lg:absolute lg:object-cover lg:inset-0 lg:top-0" %}
+              {% image post.data.thumb, post.data.thumbAlt, "thumbImg h-full w-full lg:absolute lg:object-cover lg:inset-0 lg:top-0 rounded-b-3xl" %}
             </div>
             {% endif %}
             </div>

@@ -1,6 +1,6 @@
 ---
 title: About me
-description: Known previously as graphic designer turned UX/UI designer
+description: Graphic designer turned UX/UI designer
 layout: page.njk
 permalink: /about/
 eleventyNavigation:

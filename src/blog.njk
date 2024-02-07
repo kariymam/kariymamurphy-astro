@@ -5,5 +5,10 @@ eleventyNavigationBreadcrumb:
   key: blog
   parent: home
 ---
-{% set postslist = collections.posts %}
-{% include "postlist.njk" %}
+<!-- {% set postslist = collections.posts %}
+{% include "postlist.njk" %} -->
+
+<div class="w-auto mx-6">
+  {% set postslist = collections.posts %}
+  {% include "postlist.njk" %}
+</div>

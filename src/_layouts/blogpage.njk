@@ -5,13 +5,13 @@ layout: home.njk
 {% set morePosts = postsCount - numberOfLatestPostsToShow %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 {% set postsCount = collections.posts | length %}
-{% if numberOfLatestPostsToShow and title == "Home" %}
+{% if numberOfLatestPostsToShow %}
 {% include 'intro.njk' %}
-  <h3 class="mb-1 p-6 border-t-2" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
+  <h3 class="mx-6 p-6 w-[calc(100%-3rem)]" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
     Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
     </h3>
 {% else %}
-    <h1 class="mb-1 p-6 md:px-6">
+    <h1 class="mx-6 p-6">
       {{ title }}
       </h1>
 {% endif %}
