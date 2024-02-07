@@ -33,7 +33,7 @@ const animations = () => {
 				x: `${tr}`,
 				onComplete: () => {
 					// Check if translation has reached the initial state
-					if (tr === 0) {
+					if (tr === 0 || clickCounter === 0) {
 						slideBackBtn.classList.remove("lg:flex");
 					} else {
 						slideBackBtn.classList.add("lg:flex");
@@ -64,6 +64,7 @@ const animations = () => {
 			} else {
 				slideBtn.classList.add("lg:flex");
 			}
+			return console.log(clickCounter);
 		};
 
 		slideBtn.addEventListener("click", slideForward);
@@ -73,6 +74,7 @@ const animations = () => {
 				// Reset the x property to 0 if the window width is less than or equal to 1024px
 				tr = 0;
 				gsap.to(latestPostsList, { x: tr, duration: 0 }); // Use GSAP to set x property instantly
+				clickCounter = 0
 			}
 		});
 	}
