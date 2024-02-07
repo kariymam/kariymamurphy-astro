@@ -1,5 +1,5 @@
-  <header id="navContainer" class="flex flex-col-reverse md:flex-row mx-6 mt-6 p-4 rounded-3xl hover:bg-white transition-colors border-2">
-    {%- if layout == "blogpage.njk" and title !== "Home"  %}
+  <header id="navContainer" class="flex flex-col-reverse md:flex-row mx-6 mt-6 p-6 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors border-2">
+    {%- if layout == "blogpage.njk" and permalink !== "/"  %}
     <div class="w-full">
       <div id="tagDrawer" class="pt-6 md:p-0 md:my-auto">
           <details class="rounded-3xl md:p-0 cursor-pointer transition-all" {%- if title != "All blog posts" %}open{%- endif -%}>
@@ -11,12 +11,19 @@
       </div>
     </div>
     {% elif layout == "post.njk" %}
-    <div class="w-auto flex gap-2 text-base">
-      <a href="/blog/">Blog</a> &#x2215;<h1 class="text-base">{{ title }}</h1>
+    <div class="w-auto flex-col gap-2">
+      <a href="/blog/">Blog</a> &#x2215;<h1>{{ title }}</h1>
+      <ul class="flex items-center">
+        <li class="mr-2"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
+        {%- for tag in tags | filterTagList %}
+        {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li class="inline-block"><a href="{{ tagUrl }}" class="post-tag text-xs relative block px-2 rounded-full">{{ tag }}</a></li>
+        {%- endfor %}
+      </ul>
     </div>
     {% else %}
     <div class="w-auto">
-      <h1 class="text-base">{{ title }}</h1>
+      <h1>{{ title }}</h1>
     </div>
     {% endif %}
     <div

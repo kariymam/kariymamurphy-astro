@@ -8,7 +8,7 @@
 		/* grays */
 		--color-gray-1: rgba(33, 31, 24, 0.90);
 		--color-gray-2: rgba(53, 50, 38, 0.85);
-		--color-gray-3: rgba(92, 90, 80, 0.85);
+		--color-gray-3: rgba(253, 252, 246, 0.85);
 		--color-gray-4: rgba(92, 90, 80, 0.25);
 		--color-gray-5: rgba(244, 244, 236, 0.85);
 		--stone: rgba(203, 203, 203, 0.859);
@@ -34,9 +34,9 @@
   :root {
     --background: var(--color-gray-1);
 
-		--color-gray-3: rgba(253, 252, 246, 0.85);
-		--stone: rgba(20, 19, 15, 0.923);
-		--border-primary: var(--stone);
+		--color-gray-3:#000;
+		--stone: rgba(25, 25, 20, 0.923);
+		--border-primary: #000;
 		--btn: var(--background);
 		/* --scrimOnHover: var(--color-gray-5); */
 

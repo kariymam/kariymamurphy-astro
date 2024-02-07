@@ -55,6 +55,10 @@ a:not(h1) {
 	@apply underline;
 }
 
+p {
+	@apply text-base
+}
+
 .postlist-item a:not(h3, small, time) {
 	text-decoration-line: none;
 	color: var(--text-color);
@@ -67,11 +71,16 @@ a:not(h1) {
 
 h1 {
 	@apply text-3xl;
-	@apply font-bold;
+}
+
+@media (max-width: 768px) {
+	h1 {
+		@apply text-base;
+	 }
 }
 
 h2 {
-	@apply text-xl;
+	@apply text-2xl;
 }
 
 h3, h4 {
@@ -236,7 +245,6 @@ h3 span {
 }
 
 .posttextBlock > p > img {
-	height: 500px;
 	width: auto;
 }
 
@@ -297,3 +305,7 @@ details[open] > summary {
 /* #latestPostsList > div > div:last-child{
 	border-right: solid 2px var(--border-primary);
 } */
+
+#latestPostsList {
+	margin: 0 0 0 1.5rem;
+}
