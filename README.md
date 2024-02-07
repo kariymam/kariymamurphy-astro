@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c8206ad9-e3a5-43a9-906a-b158c4331f90/deploy-status)](https://app.netlify.com/sites/dancing-wisp-92b180/deploys)
+
 # To-Do
 
 - [X] Pages templates & partials
