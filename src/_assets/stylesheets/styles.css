@@ -309,3 +309,9 @@ details[open] > summary {
 #latestPostsList {
 	margin: 0 0 0 1.5rem;
 }
+
+@media (max-width: 768px) {
+	#latestPostsList {
+		margin: 0 1.5rem 0 1.5rem;
+	}
+}
