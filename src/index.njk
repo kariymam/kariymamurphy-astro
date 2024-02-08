@@ -7,6 +7,11 @@ eleventyNavigation:
   key: home
   order: 1
 ---
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<h3 class="mx-6 p-6 w-[calc(100%-3rem)]" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
+  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+  </h3>
 <div class="overflow-hidden w-screen">
   {% set showYear = true %}
   {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}

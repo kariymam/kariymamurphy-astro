@@ -63,9 +63,15 @@
           </article>
         </div>
         {% endfor %}
+        {% if numberOfLatestPostsToShow %}
+        {% set postsCount = collections.posts | length %}
+        {% set morePosts = postsCount - numberOfLatestPostsToShow %}
+        {% if morePosts > 0 %}
         <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
           <p class="text-2xl p-12">See more in <a href="/blog/">Blog</a></p>
           </div>
+        {% endif %}
+        {% endif %}
       </div>
     </div>
     <button class="hidden lg:flex absolute mx-4 right-0 left-auto bg-[var(--primary)] rounded-full transition-transform">
