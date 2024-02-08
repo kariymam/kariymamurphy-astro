@@ -1,12 +1,12 @@
 
   <div
     reversed
-    class="postlist grid md:grid-cols-3 break-inside-avoid w-full border-l-2 border-t-2 rounded-bl-3xl rounded-t-3xl"
+    class="postlist grid md:grid-cols-3 break-inside-avoid w-full lg:border-l-2 lg:border-t-2 lg:rounded-bl-3xl lg:rounded-t-3xl"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
     <article
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full border-r-2 rounded-r-3xl border-b-2 rounded-b-3xl"
+      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full -mt-0.5 border-2 rounded-3xl lg:border-t-0 lg:border-l-0 lg:border-r-2 lg:border-b-2 lg:rounded-tr-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors"
     >
       <div
         class="flex flex-col relative justify-end h-full w-full min-h-fit"
