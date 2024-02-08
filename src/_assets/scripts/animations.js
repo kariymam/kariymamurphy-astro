@@ -3,7 +3,7 @@ const animations = () => {
 	function lastestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
 		const slideBtn = latestPostsList
-			? latestPostsList.closest(".grid").querySelector("button")
+			? latestPostsList.closest(".flex").querySelector("button")
 			: null;
 		const slideBackBtn = document.getElementById("slideBack");
 
