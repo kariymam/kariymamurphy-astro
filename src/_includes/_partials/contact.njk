@@ -1,6 +1,11 @@
 <section>
   <div>
-    <form class="flex flex-col gap-2" name="contact" netlify>
+    <form class="flex flex-col gap-2" name="contact" netlify-honeypot="bot-field" netlify>
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
       <p>
         <label for="name"><input class="w-full rounded-xl border-2 p-3 text-sm text-black"
           id="name"
@@ -20,11 +25,9 @@
           /></label>
       </p>
       <p>
-        <label class="sr-only" for="message">Message: <textarea name="message"></textarea></label>
-
+        <label class="sr-only" for="message">Message:</label>
         <textarea
           id="message"
-          type="textarea"
           name="message"
           class="w-full rounded-xl border-2 p-3 text-sm text-black"
           placeholder="Message"
