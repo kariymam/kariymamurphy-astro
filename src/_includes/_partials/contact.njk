@@ -1,0 +1,43 @@
+<section>
+  <div>
+    <form class="flex flex-col gap-2" name="contact" netlify>
+      <p>
+        <label for="name"><input class="w-full rounded-xl border-2 p-3 text-sm"
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Name"
+          required
+          /></label>
+      </p>
+      <p>
+        <label for="email"><input class="w-full rounded-xl border-2 p-3 text-sm"
+          id="email"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          /></label>
+      </p>
+      <p>
+        <label class="sr-only" for="message">Message: <textarea name="message"></textarea></label>
+
+        <textarea
+          id="message"
+          class="w-full rounded-xl border-2 p-3 text-sm"
+          placeholder="Message"
+          rows="8"
+          id="message"
+        ></textarea>
+      </p>
+      <p>
+        <button
+          type="submit"
+          class="inline-block w-full rounded-3xl bg-[var(--primary)] text-white p-4"
+          >
+          Send
+        </button>
+      </p>
+    </form>
+  </div>
+</section>
