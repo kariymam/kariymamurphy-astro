@@ -1,6 +1,6 @@
 	:root {
 		/* globals */
-		--primary: #000; /* use tailwind color instead */
+		--primary: #BE4400; /* use tailwind color instead */
 		--background: var(--stone);
 		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
 
