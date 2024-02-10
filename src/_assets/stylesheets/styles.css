@@ -68,16 +68,19 @@ p {
 	font-family: var(--body-font);
 }
 
+h1, h2, h3, h4 {
+	@apply font-bold;
+}
 
 h1 {
 	@apply text-3xl;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 	h1 {
 		@apply text-base;
 	 }
-}
+} */
 
 h2 {
 	@apply text-2xl;
@@ -85,7 +88,6 @@ h2 {
 
 h3, h4 {
 	@apply text-xl;
-	@apply font-bold;
 }
 
 h5, h6 {
@@ -211,10 +213,6 @@ h3 span {
 	background-color: var(--background);
 }
 
-.textblock {
-	@apply text-base
-}
-
 .textblock > ol li {
 	margin-block-end: 1rem;
 }
@@ -304,10 +302,6 @@ details[open] > summary {
 	color: white;
 }
 
-/* #latestPostsList > div > div:last-child{
-	border-right: solid 2px var(--border-primary);
-} */
-
 #latestPostsList {
 	margin: 0 0 0 1.5rem;
 }
@@ -316,6 +310,9 @@ details[open] > summary {
 	#latestPostsList {
 		margin: 0;
 		width: 100%;
+	}
+	#latestPostsList > div > div:nth-child(2){
+		margin-top: -2px;
 	}
 }
 

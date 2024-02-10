@@ -19,7 +19,7 @@
 		--btn: var(--background);
 		--btnHover: var(--primary);
 
-		--border-primary: var(--primary);
+		--border-primary: var(--color-gray-4);
 		/* text */
 		--text-color: var(--color-gray-1);
 		--text-color-link-active: var(--color-gray-5);
@@ -62,6 +62,10 @@ body {
 
 a {
 	color: var(--text-color);
+}
+
+hr {
+	border: 1px solid var(--primary);
 }
 
 .primary-color {
