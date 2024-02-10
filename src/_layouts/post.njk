@@ -2,17 +2,19 @@
 layout: home.njk
 date: Created
 ---
-<article class="w-[calc(100%-3rem)] mx-auto mt-6 flex flex-col md:flex-row">
-  <div class="w-full max-w-screen-md mx-auto posttextBlock">
+<article id="main" class="mx-auto">
+  <div class="max-w-prose px-6 posttextBlock">
+    <hr class="my-6">
       <div class="sm:relative sm:max-w-md sm:float-right">
         {% if thumb %}
         <figure class="flex flex-col p-6">
-          {% image thumb, thumbAlt, "thumbImg w-full h-full top-0 flex  object-cover inset-0 rounded-3xl" %}
+          {% image thumb, thumbAlt, "thumbImg w-full h-full top-0 flex  object-cover inset-0" %}
           <figcaption class="text-sm opacity-70">{{ thumbAlt }}</figcaption>
         </figure>
         {% endif %}
       </div>
       {{ content | safe }}
+    <hr class="my-6">
   </div>
 </article>
 <section class="textblock w-full">
@@ -20,7 +22,7 @@ date: Created
   {%- set previousPost = collections.posts | getPreviousCollectionItem %}
   {%- set nextPost = collections.posts | getNextCollectionItem %}
   {%- if nextPost or previousPost %}
-  <div class="w-[calc(100%-3rem)] mx-auto p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
+  <div class="md:mx-6 p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
     {%- if previousPost %}
             <div class="w-auto">Previous post: <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></div>
                 {% endif %}

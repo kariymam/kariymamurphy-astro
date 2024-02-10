@@ -3,9 +3,5 @@ layout: home.njk
 ---
 {% if numberOfLatestPostsToShow %}
 {% include 'intro.njk' %}
-{% else %}
-    <h1 class="mx-6 p-6">
-      {{ title }}
-      </h1>
 {% endif %}
 {{ content | safe }}

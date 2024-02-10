@@ -243,7 +243,7 @@ h3 span {
 }
 
 .posttextBlock > p > img {
-	width: auto;
+	padding: 3rem;
 }
 
 

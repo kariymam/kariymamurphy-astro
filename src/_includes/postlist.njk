@@ -1,7 +1,8 @@
 
   <div
     reversed
-    class="postlist grid md:grid-cols-3 break-inside-avoid w-full lg:border-l-2 lg:border-t-2 lg:rounded-bl-3xl lg:rounded-t-3xl"
+    id="main"
+    class="postlist mx-6 grid md:grid-cols-3 break-inside-avoid lg:border-l-2 lg:border-t-2 lg:rounded-bl-3xl lg:rounded-t-3xl"
     style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
   >
     {% for post in postslist | reverse %}
