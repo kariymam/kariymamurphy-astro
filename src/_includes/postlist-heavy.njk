@@ -1,7 +1,7 @@
 <div class="overflow-hidden">
   <div class="flex items-center justify-between">
     <div id="latestPostsList" style="transform: translate(0px, 0px);">
-      <div class="flex flex-col gap-4 lg:gap-0 lg:flex-row min-h-[400px]">
+      <div class="flex flex-col lg:flex-row min-h-[400px]">
         {% for post in postslist | reverse %}
         <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
           {% if post.data.thumb %}
@@ -16,8 +16,8 @@
               </div>
             </div>
             <div class="p-6 sm:p-4">
-              <div class="flex-col justify-between flex-1">
-                <div class="lg:p-6">
+              <div>
+                <div class="flex flex-col gap-4 lg:p-6">
                   <a href="{{ post.url | url }}"
                       class="opacity-80 hover:opacity-100">
                     <h4 class="pb-2 leading-tight">
@@ -35,7 +35,7 @@
                   datetime="{{ post.date | htmlDateString }}"
                   class="text-sm"
                   >{{ post.date | readableDate }}</time>
-                  <ul class="flex flex-row flex-wrap gap-2 pb-6">
+                  <ul class="flex flex-row flex-wrap gap-2 pt-6">
                     {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                     <li>
                       <a href="{{ tagUrl }}"
@@ -80,11 +80,11 @@
         {% endif %}
       </div>
     </div>
-    <button title="Next" class="hidden lg:flex absolute mx-4 right-0 left-auto bg-[var(--primary)] rounded-full transition-transform">
+    <button title="Next" aria-controls="latestPostsList" class="hidden lg:flex absolute mx-4 right-0 left-auto bg-[var(--primary)] rounded-full transition-transform">
       <ion-icon name="arrow-forward-outline" aria-labelledby="nextBtn" class="text-xl text-white m-2 p-2"></ion-icon>
     </button>
     <div id="nextBtn" class="sr-only">Slide to the right</div>
-    <button id="slideBack" title="Previous" class="hidden right-auto left-0 absolute mx-4 bg-[var(--primary)] rounded-full transition-transform">
+    <button id="slideBack" title="Previous" aria-controls="latestPostsList" class="hidden right-auto left-0 absolute mx-4 bg-[var(--primary)] rounded-full transition-transform">
       <ion-icon name="arrow-back-outline" aria-labelledby="backBtn" class="text-xl text-white m-2 p-2"></ion-icon>
     </button>
     <div id="backBtn" class="sr-only">Slide to the left</div>

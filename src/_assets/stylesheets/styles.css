@@ -248,10 +248,12 @@ h3 span {
 	width: auto;
 }
 
-.posttextBlock {
-	padding: 6rem 0;
-}
 
+@media (min-width: 992px) {
+	.posttextBlock {
+		padding: 6rem 0;
+	}
+}
 
 .intro>*+* {
 	margin-block-end: 0.5em;
@@ -326,3 +328,30 @@ details[open] > summary {
 	width: 0;
 	z-index: -1;
 }
+
+/* #burger .hamburger */
+
+
+
+#burger .line {
+	transition: 300ms;
+	transform-origin: center;
+}
+
+#burger .top.close {
+	transform: rotate(45deg) translateY(6px);
+}
+
+#burger .bottom.close {
+	transform: rotate(-45deg) translateY(-6px);
+}
+
+#burger .middle.close {
+	width: 1px;
+	transform: translate(45%,0);
+}
+
+/*- #burger[aria-expanded="true"] {
+
+} -*/
+

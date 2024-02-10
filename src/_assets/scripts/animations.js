@@ -1,5 +1,20 @@
 const animations = () => {
 
+	function menuClose() {
+		const menuBtn = document.getElementById('burger');
+		const hamburger = document.getElementById('burgerIcon');
+
+		const close = () => {
+			lines = hamburger.querySelectorAll('.line');
+			lines.forEach(function(rect) {
+				rect.classList.toggle("close");
+				menuBtn.ariaExpanded = menuBtn.ariaExpanded !== 'true';
+			})
+		}
+
+		menuBtn.addEventListener("click", close);
+	}
+
 	function lastestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
 		const slideBtn = latestPostsList
@@ -110,6 +125,7 @@ const animations = () => {
 		});
 	}
 
+	menuClose();
 	lastestPostsSlider();
 	postlistImgs();
 };

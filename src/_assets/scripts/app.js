@@ -5,7 +5,7 @@ import { animations } from './animations.js';
 animations();
 
 const burger = document.querySelector('#burger');
-const nav = document.querySelector('#mainNav');
+const nav = document.querySelector('#main-nav');
 
 function toggleNav() {
 	nav.classList.toggle('hidden');
