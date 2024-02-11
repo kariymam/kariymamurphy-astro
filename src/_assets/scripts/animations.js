@@ -1,97 +1,116 @@
-const animations = () => {
+const { isNull } = require("lodash");
 
+const animations = () => {
 	function menuClose() {
-		const menuBtn = document.getElementById('burger');
-		const hamburger = document.getElementById('burgerIcon');
+		const menuBtn = document.getElementById("burger");
+		const hamburger = document.getElementById("burgerIcon");
 
 		const close = () => {
-			lines = hamburger.querySelectorAll('.line');
-			lines.forEach(function(rect) {
+			lines = hamburger.querySelectorAll(".line");
+			lines.forEach(function (rect) {
 				rect.classList.toggle("close");
-				menuBtn.ariaExpanded = menuBtn.ariaExpanded !== 'true';
-			})
-		}
+				menuBtn.ariaExpanded = menuBtn.ariaExpanded !== "true";
+			});
+		};
 
 		menuBtn.addEventListener("click", close);
 	}
 
+	function addCurrent() {
+		function isElementInViewport(el) {
+			// console.log("Checking element:", el);
+			var rect = el.getBoundingClientRect();
+			var html = document.documentElement;
+			// console.log("Element rect:", rect);
+			// console.log("Window height:", window.innerHeight);
+			// console.log("Document height:", html.clientHeight);
+			return (
+				rect.left >= 0 && rect.right <= (window.innerWidth || html.clientWidth)
+			);
+		}
+
+		function runOnScroll(el) {
+			if (isElementInViewport(el)) {
+				// console.log("Element is in viewport:", el);
+				el.classList.add("current");
+			} else {
+				// console.log("Element is not in viewport:", el);
+				el.classList.remove("current");
+			}
+		}
+
+		const latestPostsList = document.querySelector("#latestPostsList");
+		const postlistHeavyItems = latestPostsList.querySelectorAll(
+			".postlist-heavyItem"
+		);
+
+		postlistHeavyItems.forEach((el) => {
+			latestPostsList.addEventListener(
+				"scroll",
+				function () {
+					runOnScroll(el);
+				},
+				{ passive: true }
+			);
+			window.addEventListener("load", runOnScroll(el));
+		});
+	}
+
 	function lastestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
-		const slideBtn = latestPostsList
-			? latestPostsList.closest(".flex").querySelector("button")
-			: null;
+		// the scroll forward button in latestPostsList
+		const slideNextBtn = document.getElementById("slideNext");
+		// the scroll back button
 		const slideBackBtn = document.getElementById("slideBack");
-
-		if (!slideBtn) {
+		if (!slideNextBtn) {
 			return; // Exit the function if no matching ancestor is found
 		}
 
-		const childCount = () => {
-			let fchild = latestPostsList.firstElementChild.children.length;
-			return fchild -= 1;
+		let tr = 800;
+		const scrollContainer = document.querySelector(".scroll-container");
+
+		const visible = () => {
+			let fchild = scrollContainer.firstElementChild;
+			let lchild = scrollContainer.lastElementChild;
+
+			if (fchild.classList.contains("current")) {
+				slideNextBtn.classList.add("md:flex");
+				slideBackBtn.classList.remove("md:flex");
+			} else {
+				slideBackBtn.classList.add("md:flex");
+			}
+
+			if (lchild.classList.contains("current")) {
+				slideBackBtn.classList.add("md:flex");
+				slideNextBtn.classList.remove("md:flex");
+			}
+		};
+
+		visible();
+
+		// Call visible function initially
+		window.addEventListener("load", visible);
+
+		// Add a scroll event listener to latestPostsList
+		latestPostsList.addEventListener("scroll", () => {
+			visible(); // Call visible function when scrolling finishes
+		});
+
+		latestPostsList.style.scrollBehavior = "smooth";
+
+		if (slideNextBtn) {
+			slideNextBtn.addEventListener("click", () => {
+				latestPostsList.scrollLeft += tr;
+				slideBackBtn.classList.add("md:flex");
+			});
 		}
 
-		let tr = 0;
-		let clickCounter = 0;
-		const maxClicks = childCount();
-
-		const slideAnimation = (direction) => {
-			const slidePost = latestPostsList.querySelector(".postlist-heavyItem");
-			const width = slidePost.clientWidth;
-			tr += direction === "forward" ? -width : width;
-
-			let slideTL = gsap.timeline({ paused: true });
-
-			slideTL.to(latestPostsList, {
-				duration: 0.3,
-				ease: "power2.inOut",
-				x: `${tr}`,
-				onComplete: () => {
-					// Check if translation has reached the initial state
-					if (tr === 0 || clickCounter === 0) {
-						slideBackBtn.classList.remove("lg:flex");
-					} else {
-						slideBackBtn.classList.add("lg:flex");
-					}
-				},
+		if (slideBackBtn) {
+			slideBackBtn.addEventListener("click", () => {
+				latestPostsList.scrollLeft -= tr;
+				visible(); // Call visible function when slideBackBtn is clicked
 			});
-
-			return slideTL;
-		};
-
-		const slideForward = () => {
-			const tl = slideAnimation("forward");
-			tl.play();
-			clickCounter++;
-			checkClickCount();
-		};
-
-		const slideBack = () => {
-			const tl = slideAnimation("backward");
-			tl.play();
-			clickCounter--;
-			checkClickCount();
-		};
-
-		const checkClickCount = () => {
-			if (clickCounter >= maxClicks) {
-				slideBtn.classList.remove("lg:flex");
-			} else {
-				slideBtn.classList.add("lg:flex");
-			}
-			return console.log(clickCounter);
-		};
-
-		slideBtn.addEventListener("click", slideForward);
-		slideBackBtn.addEventListener("click", slideBack);
-		window.addEventListener("resize", () => {
-			if (window.innerWidth <= 1024) {
-				// Reset the x property to 0 if the window width is less than or equal to 1024px
-				tr = 0;
-				gsap.to(latestPostsList, { x: tr, duration: 0 }); // Use GSAP to set x property instantly
-				clickCounter = 0
-			}
-		});
+		}
 	}
 
 	function postlistImgs() {
@@ -125,6 +144,7 @@ const animations = () => {
 		});
 	}
 
+	addCurrent();
 	menuClose();
 	lastestPostsSlider();
 	postlistImgs();
