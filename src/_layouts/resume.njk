@@ -3,12 +3,12 @@ title: Contact me
 layout: home.njk
 date: git Created
 ---
-<div class=" md:mx-6 mt-6 flex flex-col md:flex-row">
-  <div class="w-1/2 px-6">
+<div class="w-full mt-6 gap-8 md:gap-4 flex flex-col md:flex-row">
+  <div class="px-6">
    {% include "_partials/contact.njk" %}
   </div>
   <div class="w-full textblock px-6 pb-6 max-w-prose rounded-3xl overflow-hidden">
-    <iframe srcdoc="{{ content }}" src="" class="h-[calc(100vh_-_12em)] w-full rounded-3xl border-2">
+    <iframe srcdoc="{{ content }}" src="" class="hidden h-[calc(100vh_-_12em)] w-full rounded-3xl border-2  md:block">
       <p>Your browser does not support iframes.</p>
     </iframe>
     <!-- link to download  -->

@@ -2,7 +2,7 @@
   <h2 class="sr-only">Top level navigation menu</h2>
   <ul class="md:flex items-center lg:my-0 md:flex-row h-full">
     {%- for entry in collections.all | eleventyNavigation %}
-    <li class="mb-6 md:w-full md:text-center">
+    <li class="md:w-full md:text-center">
       <a id="{{ entry.title }}"
          aria-label="{{ entry.title }}"
          class="post-tag z-10 text-3xl rounded-3xl md:text-base displayFont {% if entry.url == page.url %}active{% endif %}"
