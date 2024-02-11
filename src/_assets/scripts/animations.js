@@ -83,6 +83,8 @@ const animations = () => {
 			if (lchild.classList.contains("current")) {
 				slideBackBtn.classList.add("md:flex");
 				slideNextBtn.classList.remove("md:flex");
+			} else {
+				slideNextBtn.classList.add("md:flex");
 			}
 		};
 
