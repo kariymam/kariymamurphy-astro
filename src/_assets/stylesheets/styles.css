@@ -286,21 +286,6 @@ details[open] > summary {
 	list-style-type: '－';
 }
 
-.work-overlay {
-	background-color: transparent;
-}
-
-.work-overlay:hover {
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-.work-overlay:hover ion-icon {
-	color: transparent;
-}
-
-.work-overlay:hover ion-icon {
-	color: white;
-}
 
 #latestPostsList {
 	margin: 0 0 0 1.5rem;
