@@ -133,7 +133,6 @@ const animations = () => {
 			} else {
 				slideBtn.classList.add("lg:flex");
 			}
-			return console.log(clickCounter);
 		};
 
 		if (slideBtn) {
