@@ -316,6 +316,21 @@ details[open] > summary {
 	}
 }
 
+#latestPostsList ul {
+	display: grid;
+  grid-auto-flow: column;
+}
+
+#latestPostsList li {
+	min-width: 80vw;
+}
+
+.postlist-heavyItem {
+	scroll-snap-align: start;
+}
+
+/* honey pot */
+
 .specialsauce {
 	opacity: 0;
 	position: absolute;
@@ -327,8 +342,6 @@ details[open] > summary {
 }
 
 /* #burger .hamburger */
-
-
 
 #burger .line {
 	transition: 300ms;
