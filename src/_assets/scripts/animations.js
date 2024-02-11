@@ -40,6 +40,11 @@ const animations = () => {
 		}
 
 		const latestPostsList = document.querySelector("#latestPostsList");
+
+		if (!latestPostsList) {
+					return; // Exit the function if no matching ancestor is found
+				}
+
 		const postlistHeavyItems = latestPostsList.querySelectorAll(
 			".postlist-heavyItem"
 		);
@@ -56,18 +61,17 @@ const animations = () => {
 		});
 	}
 
-	function lastestPostsSlider() {
+	function latestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
-		// the scroll forward button in latestPostsList
 		const slideNextBtn = document.getElementById("slideNext");
-		// the scroll back button
 		const slideBackBtn = document.getElementById("slideBack");
-		if (!slideNextBtn) {
-			return; // Exit the function if no matching ancestor is found
-		}
 
 		let tr = 800;
 		const scrollContainer = document.querySelector(".scroll-container");
+
+		if (!slideNextBtn || !slideBackBtn || !latestPostsList) {
+			return; // Exit the function if no matching ancestor is found
+		}
 
 		const visible = () => {
 			let fchild = scrollContainer.firstElementChild;
@@ -81,19 +85,12 @@ const animations = () => {
 			}
 
 			if (lchild.classList.contains("current")) {
-				slideBackBtn.classList.add("md:flex");
 				slideNextBtn.classList.remove("md:flex");
-			} else {
-				slideNextBtn.classList.add("md:flex");
 			}
 		};
 
 		visible();
 
-		// Call visible function initially
-		window.addEventListener("load", visible);
-
-		// Add a scroll event listener to latestPostsList
 		latestPostsList.addEventListener("scroll", () => {
 			visible(); // Call visible function when scrolling finishes
 		});
@@ -110,6 +107,7 @@ const animations = () => {
 		if (slideBackBtn) {
 			slideBackBtn.addEventListener("click", () => {
 				latestPostsList.scrollLeft -= tr;
+				slideNextBtn.classList.add("md:flex");
 				visible(); // Call visible function when slideBackBtn is clicked
 			});
 		}
@@ -148,7 +146,7 @@ const animations = () => {
 
 	addCurrent();
 	menuClose();
-	lastestPostsSlider();
+	latestPostsSlider();
 	postlistImgs();
 };
 
