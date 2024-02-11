@@ -58,88 +58,58 @@ const animations = () => {
 
 	function lastestPostsSlider() {
 		const latestPostsList = document.querySelector("#latestPostsList");
-		// the current .postlist-heavyItem
-		const current = latestPostsList.querySelector(".current");
-
 		// the scroll forward button in latestPostsList
-		const slideBtn = latestPostsList
-			? latestPostsList.closest(".flex").querySelector("button")
-			: null;
-
+		const slideNextBtn = document.getElementById("slideNext");
 		// the scroll back button
 		const slideBackBtn = document.getElementById("slideBack");
-
-		if (!slideBtn) {
+		if (!slideNextBtn) {
 			return; // Exit the function if no matching ancestor is found
 		}
 
-		const childCount = () => {
-			let fchild = latestPostsList.firstElementChild.children.length;
-			return (fchild -= 1);
+		let tr = 800;
+		const scrollContainer = document.querySelector(".scroll-container");
+
+		const visible = () => {
+			let fchild = scrollContainer.firstElementChild;
+			let lchild = scrollContainer.lastElementChild;
+
+			if (fchild.classList.contains("current")) {
+				slideNextBtn.classList.add("md:flex");
+				slideBackBtn.classList.remove("md:flex");
+			} else {
+				slideBackBtn.classList.add("md:flex");
+			}
+
+			if (lchild.classList.contains("current")) {
+				slideBackBtn.classList.add("md:flex");
+				slideNextBtn.classList.remove("md:flex");
+			}
 		};
 
-		let tr = 0;
-		let clickCounter = 0;
-		const maxClicks = childCount();
+		visible();
 
-		const slideAnimation = (direction) => {
-			const width = current.clientWidth;
-			tr += direction === "forward" ? -width : width;
-			let slideTL = gsap.timeline({ paused: true });
-			latestPostsList.style.scrollSnapType = "none";
+		// Call visible function initially
+		window.addEventListener("load", visible);
 
-			slideTL.to(".scroll-container", {
-				duration: 0.3,
-				ease: "power2.inOut",
-				snap: 0.5,
-				x: `${tr}`,
-				onComplete: () => {
-					latestPostsList.style.scrollSnapType = "x mandatory";
-					// Check if translation has reached the initial state
-					if (tr === 0 || clickCounter === 0) {
-						slideBackBtn.classList.remove("lg:flex");
-					} else {
-						slideBackBtn.classList.add("lg:flex");
-					}
-				},
+		// Add a scroll event listener to latestPostsList
+		latestPostsList.addEventListener("scroll", () => {
+			visible(); // Call visible function when scrolling finishes
+		});
+
+		latestPostsList.style.scrollBehavior = "smooth";
+
+		if (slideNextBtn) {
+			slideNextBtn.addEventListener("click", () => {
+				latestPostsList.scrollLeft += tr;
+				slideBackBtn.classList.add("md:flex");
 			});
-
-			return slideTL;
-		};
-
-		const slideForward = () => {
-			const nextSibling = current.nextElementSibling;
-			if (nextSibling !== null) {
-				console.log("There is a next sibling"); // slide forward
-				const tl = slideAnimation("forward");
-				tl.play();
-				clickCounter++;
-				checkClickCount();
-			} else {
-				console.log("There is no next sibling");
-			}
-		};
-
-		const slideBack = () => {
-				const tl = slideAnimation("backward");
-				tl.play();
-				clickCounter--;
-				checkClickCount();
-		};
-
-		const checkClickCount = () => {
-			if (clickCounter >= maxClicks) {
-				slideBtn.classList.remove("lg:flex");
-			} else {
-				slideBtn.classList.add("lg:flex");
-			}
-		};
-
-		if (slideBtn) {
-			slideBtn.addEventListener("click", slideForward);
 		}
+
 		if (slideBackBtn) {
-			slideBackBtn.addEventListener("click", slideBack);
+			slideBackBtn.addEventListener("click", () => {
+				latestPostsList.scrollLeft -= tr;
+				visible(); // Call visible function when slideBackBtn is clicked
+			});
 		}
 	}
 
