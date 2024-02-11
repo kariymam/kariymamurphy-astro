@@ -325,6 +325,13 @@ details[open] > summary {
   grid-auto-flow: column;
 }
 
+@media (max-width: 768px) {
+	#latestPostsList ul {
+		display: grid;
+		grid-auto-flow: row;
+	}
+}
+
 #latestPostsList li {
 	min-width: 80vw;
 }
