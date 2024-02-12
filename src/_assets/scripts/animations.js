@@ -117,7 +117,7 @@ const animations = () => {
 		const headerHeight = (a, b) => a + b;
 
 		const thumbAnimation = (thumbImg, paragraph) => {
-			let moveY = headerHeight(paragraph.clientHeight, 32);
+			let moveY = headerHeight(paragraph, 32);
 			postlistTL = gsap.timeline({ paused: true });
 			postlistTL.to(thumbImg, {
 				duration: 0.3,
@@ -130,7 +130,8 @@ const animations = () => {
 		gsap.utils.toArray(".postlist-item").forEach((post) => {
 			const picture = post.querySelector("picture");
 			const thumbImg = picture ? picture.querySelector(".thumbImg") : null;
-			const paragraph = post.querySelector("p").closest("div");
+			const excerpt = document.querySelector(".postlist-item-description");
+			const paragraph = excerpt ? excerpt.firstElementChild.offsetHeight : null;
 
 			if (thumbImg) {
 				const animation = thumbAnimation(thumbImg, paragraph);

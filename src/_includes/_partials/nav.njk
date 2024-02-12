@@ -5,7 +5,7 @@
     <li class="md:w-full md:text-center">
       <a id="{{ entry.title }}"
          aria-label="{{ entry.title }}"
-         class="post-tag z-10 text-3xl rounded-3xl md:text-base displayFont {% if entry.url == page.url %}active{% endif %}"
+         class="post-tag z-10 text-5xl md:text-xl rounded-3xl displayFont {% if entry.url == page.url %}active{% endif %}"
          href="{{ entry.url }}"
          {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
     </li>

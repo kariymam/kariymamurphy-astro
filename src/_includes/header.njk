@@ -1,27 +1,12 @@
-  <header class="flex flex-col-reverse md:flex-row md:mx-6 md:mt-6 p-6 rounded-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors border-2">
-    {%- if layout == "blogpage.njk" and permalink !== "/"  %}
-    <div class="w-full">
-      <div id="tagDrawer" class="pt-6 md:p-0 md:my-auto">
-        <h1>{{ title }}</h1>
-          <details class="rounded-3xl md:p-0 cursor-pointer transition-all" {%- if title != "All blog posts" %}open{%- endif -%}>
-            <summary class="text-base pt-2 md:ml-2">
-              Tags
-            </summary>
-            {% include "_partials/taglist.njk" %}
-          </details>
-      </div>
-    </div>
-    {% elif layout == "post.njk" %}
-    <div class="w-auto flex-col gap-2">
-      <a href="/blog/">Blog</a> &#x2215;
-      <h1>{{ title }}</h1>
-      <h2>{{ description }}</h2>
-    </div>
+  <header class="flex flex-col-reverse md:flex-row md:mx-6 md:mt-6 p-6 rounded-3xl">
+    <div class="w-auto flex flex-col md:flex-row gap-3 items-center justify-center">
+    {%- if layout == "blogpage.njk" and permalink !== "/" or layout == "post.njk" %}
+      <a href="/blog/" class="decoration-transparent opacity-50">Blog</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
+      <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
     {% else %}
-    <div class="w-auto">
-      <h1>{{ title }}</h1>
-    </div>
+      <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
     {% endif %}
+    </div>
     <div
       class="w-full ml-auto mb-auto md:w-auto md:items-center gap-8"
     >
