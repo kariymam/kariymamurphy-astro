@@ -1,0 +1,86 @@
+<div
+reversed
+id="main"
+class="mx-6 grid md:grid-cols-3 break-inside-avoid lg:border-l-2 lg:border-t-2 lg:rounded-bl-3xl lg:rounded-t-3xl"
+>
+  {% set portfolio = collections.work %}
+  {% for work in portfolio %}
+  <article
+    class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} h-full w-full -mt-0.5 border-2 rounded-3xl lg:border-t-0 lg:border-l-0 lg:border-r-2 lg:border-b-2 lg:rounded-tr-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors"
+  >
+    <div
+      class="flex flex-col relative justify-end h-full w-full min-h-fit"
+    >
+    {% if work.data.penUrl %}
+    <a
+    href="{{ work.data.penUrl }}"
+    aria-label="Link to Codepen"
+    target="_blank"
+    rel="noopener"
+    class="flex flex-col h-full w-full">
+      <div class="h-auto flex flex-col px-4 pt-4">
+        <h2 class="break-words px-4 pt-4">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+        {% if work.data.formats %}
+        <ul class="px-4 pt-4">
+          <li><time>{{ work.data.dates }}</time></li>
+          <li>{{ work.data.formats }}</li>
+        </ul>
+        {% endif %}
+      </div>
+      {% if work.data.thumb %}
+      <div class="w-full flex items-center justify-center overflow-hidden">
+        <span class="absolute w-28 flex flex-col items-center p-6 rounded-full bg-[var(--primary)] text-center" aria-labelledby="logo-codepen">Open<ion-icon title="codepen" name="logo-codepen" class="text-4xl"></ion-icon></span>
+        <div id="logo-codepen" class="sr-only">Codepen logo</div>
+          <span class="w-full overflow-hidden rounded-b-3xl">
+              {% image work.data.thumb, work.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0 rounded-b-3xl" %}
+          </span>
+      </div>
+      {% endif %}
+    {% else %}
+    <a href="{{ work.url }}" class="h-full w-full">
+      <div class="flex flex-col group relative h-full w-full transition-all">
+        <div class="h-auto flex flex-col px-4 pt-4">
+          <h2 class="break-words px-4 pt-4">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+          {% if work.data.audience %}
+          <ul class="px-4 pt-4">
+            <li><time>{{ work.data.dates }}</time></li>
+            <li>{{ work.data.formats }}</li>
+          </ul>
+          {% endif %}
+        </div>
+        <div class="relative w-full h-full">
+          <div
+            class="postlist-item-description h-full transition-all"
+          >
+          <div class="mx-8 pb-12 lg:pb-0 max-w-md">
+            {% excerpt work %}</div
+            >
+          {% if work.data.thumb %}
+          <div>
+            <div class="relative h-full self-center overflow-hidden">
+              <span class="overflow-hidden rounded-b-3xl">
+                  {% image work.data.thumb, work.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0 rounded-b-3xl" %}
+              </span>
+            </div>
+          </div>
+          {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </a>
+    </div>
+    <ul class="page-tags-list px-4 pb-4 absolute max-w-sm lg:bg-transparent flex flex-row flex-wrap z-20 gap-2">
+          {% for tag in work.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+          <li>
+            <a href="{{ tagUrl }}"
+                title="{{ site.url}}{{ tagUrl }}"
+                  class="post-tag md:text-sm rounded-full"
+                  >{{ tag }}</a
+                >
+          </li>
+          {% endfor %}
+    </ul>
+  </article>
+  {% endfor %}
+</div>

@@ -2,6 +2,15 @@
 layout: home.njk
 date: Created
 ---
+<section class="w-full md:px-6">
+  <ul class="w-full flex flex-wrap items-center gap-2 list-none px-6 border-2 rounded-3xl -mt-0.5">
+    {%- for tag in tags | filterTagList %}
+    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <li class="inline-block"><a href="{{ tagUrl }}" class="post-tag relative block px-2 rounded-full">{{ tag }}</a></li>
+    {%- endfor %}
+    <li class="justify-end ml-auto"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
+  </ul>
+</section>
 <article id="main" class="mx-auto">
   <div class="max-w-prose px-6 posttextBlock">
     <hr class="my-6">
