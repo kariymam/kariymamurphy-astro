@@ -1,4 +1,4 @@
-  <header class="flex flex-col-reverse md:flex-row md:mx-6 md:mt-6 p-6 rounded-3xl">
+  <header class="flex flex-col-reverse sm:flex-row md:mx-6 md:mt-6 p-6 rounded-3xl">
     <div class="w-auto flex flex-col md:flex-row gap-3 items-center justify-center">
     {%- if layout == "blogpage.njk" and permalink !== "/" or layout == "post.njk" %}
       <a href="/blog/" class="decoration-transparent opacity-50">Blog</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
@@ -8,14 +8,14 @@
     {% endif %}
     </div>
     <div
-      class="w-full ml-auto mb-auto md:w-auto md:items-center gap-8"
+      class="w-full ml-auto mb-auto sm:w-auto sm:items-center gap-8"
     >
-      <div class="w-full p-0 md:p-3 md:items-center justify-end md:justify-between">
+      <div class="w-full p-0 md:p-3 sm:items-center justify-end sm:justify-between">
         <button
           id="burger"
           aria-controls="main-nav"
           aria-expanded="false"
-          class="ml-auto relative block bg-[var(--primary)] p-2.5 border-2 rounded md:hidden"
+          class="ml-auto relative block bg-[var(--primary)] p-2.5 border-2 rounded sm:hidden"
         >
           <span class="sr-only">Toggle menu</span>
           <svg
