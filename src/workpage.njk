@@ -1,0 +1,11 @@
+---
+title: Work & play
+layout: home.njk
+eleventyNavigation:
+  key: portfolio
+  order: 2
+---
+<div class="w-full -mt-0.5">
+  {% set portfolio = collections.work %}
+  {% include "worklist.njk" %}
+</div>
