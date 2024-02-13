@@ -16,8 +16,7 @@
             <div class="p-6 sm:p-4">
               <div>
                 <div class="flex flex-col gap-4 lg:p-6">
-                  <a href="{{ post.url | url }}"
-                      class="opacity-80 hover:opacity-100">
+                  <a href="{{ post.url | url }}">
                     <h4 class="pb-2 leading-tight">
                       {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
                     </h4>
@@ -33,7 +32,7 @@
                   datetime="{{ post.date | htmlDateString }}"
                   class="text-sm"
                   >{{ post.date | readableDate }}</time>
-                  <ul class="flex flex-row flex-wrap gap-2 pt-6">
+                  <ul class="flex flex-wrap gap-2 pt-6">
                     {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                     <li>
                       <a href="{{ tagUrl }}"

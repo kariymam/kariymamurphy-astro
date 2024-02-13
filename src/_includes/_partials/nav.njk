@@ -1,11 +1,11 @@
-<nav id="main-nav" aria-label="Global" class="hidden md:flex w-full md:border-b-0 justify-end lg:w-[calc(5.875*5)]">
+<nav id="main-nav" aria-label="Global" class="hidden sm:flex w-full sm:border-b-0 justify-end lg:w-[calc(5.875*5)]">
   <h2 class="sr-only">Top level navigation menu</h2>
-  <ul class="gap-2 flex flex-col items-center my-6 lg:my-0 md:flex-row h-full">
+  <ul id="navContainer" class="absolute gap-2 flex flex-col my-6 sm:static sm:my-0 sm:flex-row h-full">
     {%- for entry in collections.all | eleventyNavigation %}
-    <li class="md:w-full md:text-center">
+    <li class="sm:w-full sm:text-center">
       <a id="{{ entry.title }}"
          aria-label="{{ entry.title }}"
-         class="post-tag z-10 text-3xl rounded-3xl md:text-base displayFont {% if entry.url == page.url %}active{% endif %}"
+         class="post-tag z-0 text-5xl sm:text-xl rounded-3xl displayFont {% if entry.url == page.url %}active{% endif %}"
          href="{{ entry.url }}"
          {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
     </li>

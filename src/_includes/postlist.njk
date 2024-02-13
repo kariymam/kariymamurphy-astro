@@ -29,7 +29,7 @@
             <div
               class="postlist-item-description h-full transition-all"
             >
-            <div class="mx-8 pb-12 lg:pb-0 max-w-md">
+            <div class="mx-8 lg:h-1/4 py-6 max-w-md">
               {% excerpt post %}</div
               >
             {% if post.data.thumb %}
@@ -44,7 +44,7 @@
         </div>
       </a>
       </div>
-      <ul class="page-tags-list px-4 pb-4 absolute max-w-sm lg:bg-transparent flex flex-row flex-wrap z-20 gap-2">
+      <ul class="page-tags-list px-4 pb-4 absolute max-w-sm lg:bg-transparent flex flex-row flex-wrap z-0 gap-2">
             {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
             <li>
               <a href="{{ tagUrl }}"
