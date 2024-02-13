@@ -73,7 +73,7 @@ src/_includes/styles.min.css
 
 # Drafts
 src/blog/_drafts
-src/blog/_templates
 
-# Obsidian
+#Obsidian
 .obsidian
+src/blog/_templates
