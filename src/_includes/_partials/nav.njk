@@ -1,6 +1,6 @@
 <nav id="main-nav" aria-label="Global" class="hidden sm:flex w-full sm:border-b-0 justify-end lg:w-[calc(5.875*5)]">
   <h2 class="sr-only">Top level navigation menu</h2>
-  <ul class="gap-2 flex flex-col items-center my-6 lg:my-0 sm:flex-row h-full">
+  <ul id="navContainer" class="absolute gap-2 flex flex-col my-6 sm:static sm:my-0 sm:flex-row h-full">
     {%- for entry in collections.all | eleventyNavigation %}
     <li class="sm:w-full sm:text-center">
       <a id="{{ entry.title }}"

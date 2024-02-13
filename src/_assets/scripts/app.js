@@ -6,9 +6,15 @@ animations();
 
 const burger = document.querySelector('#burger');
 const nav = document.querySelector('#main-nav');
+const navContainer = document.querySelector('#navContainer');
+const navScrim = document.querySelector('#navScrim');
+const body = document.querySelector('body');
 
 function toggleNav() {
 	nav.classList.toggle('hidden');
+	navContainer.classList.toggle('left-6');
+	navScrim.classList.toggle('hidden');
+	body.classList.toggle('overflow-hidden');
 };
 
 burger.addEventListener('click', function() {
