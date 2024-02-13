@@ -43,7 +43,7 @@ class="mx-6 grid md:grid-cols-3 break-inside-avoid lg:border-l-2 lg:border-t-2 l
           <h2 class="break-words px-4 pt-4">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
           {% if work.data.audience %}
           <ul class="px-4 pt-4">
-            <li><time>{{ work.data.dates }}</time></li>
+            <li><time class="text-sm">{{ work.data.dates }}</time></li>
             <li>{{ work.data.formats }}</li>
           </ul>
           {% endif %}
