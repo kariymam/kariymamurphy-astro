@@ -6,11 +6,11 @@
     "clean": "del dist",
 		"copy-images": "node utils/copyImages.js",
     "dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/styles.min.css --watch --verbose",
-    "dev:scripts": "esbuild src/_assets/scripts/app.js --bundle --watch --outfile=src/static/app.min.js",
+    "dev:scripts": "esbuild src/_assets/scripts/app.js --bundle --watch --outfile=src/static/app.min.js copy-images",
     "dev:11ty": "eleventy --serve --watch",
     "build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
     "build:11ty": "ELEVENTY_ENV=production eleventy",
-    "build:scripts": "esbuild src/_assets/scripts/app.js --bundle --minify --outfile=dist/static/app.min.js copy-images",
+    "build:scripts": "esbuild src/_assets/scripts/app.js --bundle --minify --outfile=dist/static/app.min.js",
     "start": "run-p dev:*",
     "build": "run-s clean build:*"
   },
