@@ -1,10 +1,11 @@
-  <header class="z-20 sticky top-0 flex md:mx-6 md:mt-6 p-6 rounded-3xl">
+  <header class="z-20 sticky top-0 flex md:mx-6 md:mt-6 p-6">
     <div class="w-full flex flex-col justify-center md:flex-row gap-2 md:items-center md:justify-start">
     {%- if layout == "blogpage.njk" and permalink !== "/" or layout == "post.njk" %}
       <a href="/blog/" class="decoration-transparent opacity-50">Blog</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
       <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
     {% else %}
-      <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
+    <a href="/" class="decoration-transparent opacity-50">kariyma murphy</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
+    <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
     {% endif %}
     </div>
     <div
@@ -38,4 +39,5 @@
         {% include "_partials/nav.njk" %}
       </div>
     </div>
+    <div id="headerScrim" class="absolute top-0 left-0 flex w-full h-full"></div>
   </header>

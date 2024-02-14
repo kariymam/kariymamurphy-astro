@@ -112,7 +112,7 @@ a.post-tag {
 	transition-property: background-color, border, color;
 	transition-duration: 0.2s;
 	margin: 0.5rem 0 0.5rem 0;
-	padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+	padding: 0.5rem;
 }
 
 a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
@@ -319,6 +319,13 @@ details[open] > summary {
 	height: 0;
 	width: 0;
 	z-index: -1;
+}
+
+/* header bg */
+header > #headerScrim {
+	mask-image: linear-gradient(180deg, rgba(203, 203, 203, 0.06) 0%, rgba(203, 203, 203, 1) 0.15%, rgba(203, 203, 203, 0.88) 34.79%, rgba(203, 203, 203, 0.00) 95.09%);
+	backdrop-filter: blur(5px);
+	z-index: -10;
 }
 
 /* #burger .hamburger */
