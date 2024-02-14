@@ -1,5 +1,4 @@
 ---
-title: I'm [ka ree mah]
 layout: blogpage.njk
 permalink: /
 numberOfLatestPostsToShow: 3
@@ -7,6 +6,7 @@ eleventyNavigation:
   key: home
   order: 1
 ---
+<hr class="lg:ml-12">
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h3 class="md:mx-6 p-6" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">

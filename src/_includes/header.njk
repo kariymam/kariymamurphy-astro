@@ -1,11 +1,20 @@
   <header class="z-20 sticky top-0 flex md:mx-6 md:mt-6 p-6">
     <div class="w-full flex flex-col justify-center md:flex-row gap-2 md:items-center md:justify-start">
+      <a href="/blog/" class="decoration-transparent opacity-70">
     {%- if layout == "blogpage.njk" and permalink !== "/" or layout == "post.njk" %}
-      <a href="/blog/" class="decoration-transparent opacity-50">Blog</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
+      Blog
+      </a>
+      {%- if title %}
+      <span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
       <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
+      {% endif %}
     {% else %}
-    <a href="/" class="decoration-transparent opacity-50">kariyma murphy</a><span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
-    <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
+      kariyma murphy
+      </a>
+      {%- if title %}
+      <span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
+      <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
+      {% endif %}
     {% endif %}
     </div>
     <div
