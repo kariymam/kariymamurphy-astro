@@ -2,13 +2,13 @@
 layout: home.njk
 date: git Created
 ---
-<div id="main" class="mr-auto lg:ml-[184px] flex flex-col lg:flex-row max-w-screen-xl pt-16 md:pt-0">
+<div id="main" class="mr-auto lg:ml-[184px] flex flex-col lg:flex-row max-w-screen-xl py-16">
   {% if description %}
   <div class="md:max-w-sm mb-1 pl-6">
     <h2 class="leading-tight">{{ description }}</h2>
   </div>
   {% endif %}
-  <div class="px-6 pb-16 textblock max-w-prose">
+  <div class="px-6 textblock max-w-prose">
     {{ content | safe }}
   </div>
 </div>
