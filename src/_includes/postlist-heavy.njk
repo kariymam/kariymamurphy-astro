@@ -8,9 +8,9 @@
           <article class="sm:grid sm:grid-cols-2 h-full">
             <div>
               <div class="relative h-80 sm:h-full self-center">
-                <span class="overflow-hidden absolute h-full w-full md:rounded-l-3xl">
-                    {% image post.data.thumb, post.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0 rounded-3xl sm:rounded-l-3xl sm:rounded-r-none" %}
-                </span>
+                <a href="{{ post.url | url }}" class="postlist-heavyImg overflow-hidden absolute h-full w-full rounded-t-3xl sm:rounded-tr-none md:rounded-l-3xl">
+                    {% image post.data.thumb, post.data.thumbAlt, "thumbImg" %}
+                </a>
               </div>
             </div>
             <div class="p-6 sm:p-4">

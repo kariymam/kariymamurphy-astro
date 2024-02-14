@@ -77,16 +77,27 @@ const animations = () => {
 			let fchild = scrollContainer.firstElementChild;
 			let lchild = scrollContainer.lastElementChild;
 
+			// if (fchild.classList.contains("current")) {
+			// 	slideNextBtn.classList.add("md:flex");
+			// 	slideBackBtn.classList.remove("md:flex");
+			// } else {
+			// 	slideBackBtn.classList.add("md:flex");
+			// }
+
+			// if (lchild.classList.contains("current")) {
+			// 	slideNextBtn.classList.remove("md:flex");
+			// }
+
 			if (fchild.classList.contains("current")) {
 				slideNextBtn.classList.add("md:flex");
 				slideBackBtn.classList.remove("md:flex");
+			} else if (lchild.classList.contains("current")) {
+				slideBackBtn.classList.add("md:flex");
+				slideNextBtn.classList.remove("md:flex");
 			} else {
 				slideBackBtn.classList.add("md:flex");
 			}
 
-			if (lchild.classList.contains("current")) {
-				slideNextBtn.classList.remove("md:flex");
-			}
 		};
 
 		visible();

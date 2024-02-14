@@ -309,6 +309,14 @@ details[open] > summary {
 	scroll-snap-align: start;
 }
 
+.postlist-heavyImg {
+	display: flex;
+}
+
+.postlist-heavyImg > picture {
+	align-self: center;
+}
+
 /* honey pot */
 
 .specialsauce {
