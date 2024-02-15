@@ -77,27 +77,9 @@ const animations = () => {
 			let fchild = scrollContainer.firstElementChild;
 			let lchild = scrollContainer.lastElementChild;
 
-			// if (fchild.classList.contains("current")) {
-			// 	slideNextBtn.classList.add("md:flex");
-			// 	slideBackBtn.classList.remove("md:flex");
-			// } else {
-			// 	slideBackBtn.classList.add("md:flex");
-			// }
 
-			// if (lchild.classList.contains("current")) {
-			// 	slideNextBtn.classList.remove("md:flex");
-			// }
-
-			if (fchild.classList.contains("current")) {
-				slideNextBtn.classList.add("md:flex");
-				slideBackBtn.classList.remove("md:flex");
-			} else if (lchild.classList.contains("current")) {
-				slideBackBtn.classList.add("md:flex");
-				slideNextBtn.classList.remove("md:flex");
-			} else {
-				slideBackBtn.classList.add("md:flex");
-			}
-
+			slideBackBtn.classList.toggle("md:flex", !fchild.classList.contains("current"));
+			slideNextBtn.classList.toggle("md:flex", !lchild.classList.contains("current"));
 		};
 
 		visible();
@@ -108,20 +90,16 @@ const animations = () => {
 
 		latestPostsList.style.scrollBehavior = "smooth";
 
-		if (slideNextBtn) {
-			slideNextBtn.addEventListener("click", () => {
-				latestPostsList.scrollLeft += tr;
-				slideBackBtn.classList.add("md:flex");
-			});
-		}
+		slideNextBtn && slideNextBtn.addEventListener("click", () => {
+			latestPostsList.scrollLeft += tr;
+			slideBackBtn.classList.add("md:flex");
+		});
 
-		if (slideBackBtn) {
-			slideBackBtn.addEventListener("click", () => {
-				latestPostsList.scrollLeft -= tr;
-				slideNextBtn.classList.add("md:flex");
-				visible(); // Call visible function when slideBackBtn is clicked
-			});
-		}
+		slideBackBtn && slideBackBtn.addEventListener("click", () => {
+			latestPostsList.scrollLeft -= tr;
+			slideNextBtn.classList.add("md:flex");
+			visible(); // Call visible function when slideBackBtn is clicked
+		});
 	}
 
 	function postlistImgs() {

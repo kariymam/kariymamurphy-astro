@@ -2,17 +2,14 @@
 layout: blogpage.njk
 permalink: /
 numberOfLatestPostsToShow: 3
-eleventyNavigation:
-  key: home
-  order: 1
 ---
 <hr class="lg:ml-12">
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h3 class="md:mx-6 p-6" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
+<h3 class="md:mx-6 p-6 lg:ml-[184px]" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
   Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
   </h3>
-<div class="w-full overflow-auto">
+<div class="overflow-auto">
   {% set showYear = true %}
   {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
   {% set postslistCounter = postsCount %}

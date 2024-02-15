@@ -14,10 +14,10 @@ date: Created
 <article id="main">
   <div class="max-w-prose mx-auto px-6 posttextBlock">
     <hr class="my-6">
-      <div class="sm:relative sm:max-w-md sm:float-right">
+      <div class="sm:relative sm:max-w-md sm:float-right sm:w-1/2">
         {% if thumb %}
         <figure class="flex flex-col p-6">
-          {% image thumb, thumbAlt, "thumbImg w-full h-full top-0 flex  object-cover inset-0" %}
+          {% image thumb, thumbAlt, "thumbImg" %}
           <figcaption class="text-sm opacity-70">{{ thumbAlt }}</figcaption>
         </figure>
         {% endif %}
