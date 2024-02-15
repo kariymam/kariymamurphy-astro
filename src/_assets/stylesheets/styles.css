@@ -294,7 +294,7 @@ details[open] > summary {
 #latestPostsList ul.scroll-container {
 	display: grid;
   grid-auto-flow: column;
-	padding-left: 12rem;
+	padding-left: 25%;
 }
 
 @media (max-width: 768px) {

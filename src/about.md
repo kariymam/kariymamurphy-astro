@@ -1,6 +1,6 @@
 ---
 title: About me
-description: I'm Kariyma Murphy
+description: Opinionated designer and self-appointed media critic
 layout: page.njk
 permalink: /about/
 eleventyNavigation:
@@ -8,13 +8,11 @@ eleventyNavigation:
   order: 4
 ---
 
-Creating digital media and dreaming up ideas for counterstorytelling in the intersections of race, tech, and corporate bullshit. Also making a playlist every now and then.
-
-Some of my interests are making playlists, cooking, gardening, and learning Spanish on and off.
+Kariyma Murphy is making connections, creating digital media and dreaming short fiction in the intersections of race, tech, and corporate bullshit. And making a playlist every now and then.
 
 ## Colophon
 
-Made with 11ty, HyperUI, and Tailwind. Starter template crafted by <a href="https://www.chrissy.dev">Chris Collins</a>. Huge shoutout to all the 11ty contributers who provided a tutorials that broke me out of many many error messages.
+Made with 11ty. Starter template crafted by <a href="https://www.chrissy.dev">Chris Collins</a>. (Huge thank you to all the 11ty contributers who provided a tutorial or submitted an issue on github or figured something out and graciously posted about it.)
 
 ### Typefaces
 
