@@ -17,6 +17,7 @@ const animations = () => {
 	}
 
 	function addCurrent() {
+
 		function isElementInViewport(el) {
 			// console.log("Checking element:", el);
 			var rect = el.getBoundingClientRect();
@@ -25,7 +26,9 @@ const animations = () => {
 			// console.log("Window height:", window.innerHeight);
 			// console.log("Document height:", html.clientHeight);
 			return (
-				rect.left >= 0 && rect.right <= (window.innerWidth || html.clientWidth)
+        rect.left >= 0 && // Check if left side of the element is greater than or equal to 0
+        rect.right <= (window.innerWidth || html.clientWidth) &&
+        rect.left <= window.innerWidth // Check if left side of the element is within the window width
 			);
 		}
 
@@ -65,8 +68,9 @@ const animations = () => {
 		const latestPostsList = document.querySelector("#latestPostsList");
 		const slideNextBtn = document.getElementById("slideNext");
 		const slideBackBtn = document.getElementById("slideBack");
+		const width = latestPostsList ? latestPostsList.querySelector(".current").clientWidth : 0;
 
-		let tr = 800;
+		let tr = width;
 		const scrollContainer = document.querySelector(".scroll-container");
 
 		if (!slideNextBtn || !slideBackBtn || !latestPostsList) {

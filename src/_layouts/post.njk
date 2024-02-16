@@ -32,14 +32,22 @@ date: Created
 {%- if nextPost or previousPost %}
 {%- if previousPost %}
 <section class="textblock w-full">
-  <div class="flex flex-col gap-4 md:flex-row md:mx-6 p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
-            <div class="w-full"><ion-icon name="arrow-back-outline" class="align-middle"></ion-icon> <a href="{{ previousPost.url }}" class="py-4">{{ previousPost.data.title }}</a></div>
+  <div class="flex flex-col gap-4 items-center md:flex-row md:mx-6 p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
+            <div class="w-full">
+              <ion-icon name="arrow-back-outline"></ion-icon>
+              <span>Previous: </span>
+              <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+            </div>
           </section>
 {% endif %}
 {%- if nextPost %}
 <section class="textblock w-full">
-  <div class="flex flex-col gap-4 md:flex-row md:mx-6 p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
-    <div class="w-full md:text-end"><a href="{{ nextPost.url }}" class="py-4">{{ nextPost.data.title }} <ion-icon name="arrow-forward-outline" class="align-middle"></ion-icon></a></div>
+  <div class="flex flex-col gap-4 items-center md:flex-row md:mx-6 p-6 -mt-0.5 border-2 rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors">
+    <div class="w-full md:text-end">
+      <span>Next: </span>
+      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+    </div>
   </div>
 </section>
 {% endif %}
