@@ -294,14 +294,12 @@ details[open] > summary {
 	display: grid;
   grid-auto-flow: column;
   width: calc(100% * 1.5);
-  margin-left: 6rem;
-  margin-right: 6rem;
 }
 
 @media (max-width: 768px) {
 	#latestPostsList ul.scroll-container {
 		grid-auto-flow: row;
-		padding-left: 0;
+		width: 100%;
 	}
 }
 
