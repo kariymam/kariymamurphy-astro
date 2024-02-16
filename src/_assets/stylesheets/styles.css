@@ -273,8 +273,7 @@ details[open] > summary {
 
 #latestPostsList {
 	touch-action: none;
-	/* width: calc(100% - 6rem); */
-	margin: auto;
+	width: 100%
 }
 
 @media (max-width: 768px) {
@@ -294,19 +293,26 @@ details[open] > summary {
 #latestPostsList ul.scroll-container {
 	display: grid;
   grid-auto-flow: column;
-	padding-left: 25%;
+  width: calc(100% * 1.5);
+  margin-left: 6rem;
+  margin-right: 6rem;
 }
 
 @media (max-width: 768px) {
 	#latestPostsList ul.scroll-container {
-		display: grid;
 		grid-auto-flow: row;
 		padding-left: 0;
 	}
 }
 
 #latestPostsList li.postlist-heavyItem {
-	min-width: 80vw;
+	min-width: 6rem;
+}
+
+@media (max-width: 768px) {
+	#latestPostsList li.postlist-heavyItem {
+		min-width: 100%;
+	}
 }
 
 .postlist-heavyItem {

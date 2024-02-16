@@ -75,5 +75,6 @@ src/_includes/styles.min.css
 src/blog/_drafts
 
 #Obsidian
-.obsidian
 src/blog/_templates
+src/blog/.obsidian/
+README.md

@@ -47,6 +47,9 @@ module.exports = function (eleventyConfig) {
 	const pluginImages = require("./utils/images.js");
 	eleventyConfig.addPlugin(pluginImages);
 
+	const embedEverything = require("eleventy-plugin-embed-everything");
+  eleventyConfig.addPlugin(embedEverything);
+
 	eleventyConfig.setFrontMatterParsingOptions({
     excerpt: true,
     excerpt_separator: "<!-- excerpt -->",
@@ -111,4 +114,3 @@ module.exports = function (eleventyConfig) {
 		// passthroughFileCopy: true
 	};
 };
-
