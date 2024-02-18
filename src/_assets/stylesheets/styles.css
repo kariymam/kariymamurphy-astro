@@ -211,6 +211,12 @@ h3 span {
 	z-index: 20;
 }
 
+@media (max-width: 768px) {
+	.page-tags-list {
+		z-index: 0;
+	}
+}
+
 .textblock > ol li {
 	margin-block-end: 1rem;
 }
