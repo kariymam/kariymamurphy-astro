@@ -1,16 +1,11 @@
-  <header class="z-20 sticky top-0 flex md:mx-6 md:mt-6 p-6">
+  <header class="z-20 sticky top-0 flex w-full md:px-12 md:py-0 p-4">
     <div class="w-full flex flex-col justify-center md:flex-row gap-2 md:items-center md:justify-start">
       <a href="/" class="decoration-transparent opacity-70">
       kariyma murphy
       </a>
       {% if title %}
-        {% if layout == "post.njk"%}
-        <span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
+      <span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
         <h1 class="text-base sm:text-xl">{{ title }}</h1>
-        {% else %}
-        <span class="hidden border-l-2 w-1 h-6 mx-1 md:block"></span>
-        <h1 class="text-xl sm:text-3xl">{{ title }}</h1>
-        {% endif %}
       {% endif %}
     </div>
     <div
@@ -46,3 +41,38 @@
     </div>
     <div id="headerScrim" class="absolute top-0 left-0 flex w-full h-full -z-10"></div>
   </header>
+  {% if layout == "post.njk" %}
+  <section class="w-full md:px-12 px-2 mb-12">
+    <ul class="flex flex-wrap items-center list-none -mt-0.5">
+      {%- for tag in tags | filterTagList %}
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+     <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="relative block text-sm opacity-70">{{ tag }}</a></li>
+     {%- endfor %}
+
+      <li class="justify-end ml-auto"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
+    </ul>
+  </section>
+{% endif %}
+{%- if layout == "blogpage.njk" and permalink !== "/"  %}
+<section id="tagDrawer" class="w-full md:px-12 px-2 mb-12">
+  <div class="flex flex-wrap items-center gap-2 list-none -mt-0.5">
+    <details class="rounded-3xl cursor-pointer transition-all">
+      <summary class="text-base py-2 font-bold">
+        Tags
+      </summary>
+      {% include "_partials/taglist.njk" %}
+    </details>
+  </div>
+</section>
+{% endif %}
+{% if layout == "work.njk" %}
+<section class="w-full md:px-12 px-2 mb-12">
+  <ul class="flex flex-wrap items-center list-none -mt-0.5">
+    {%- for tag in tags | filterTagList %}
+    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <li class="inline-block"><a href="{{ tagUrl }}" class="post-tag relative block px-2 rounded-full">{{ tag }}</a></li>
+    {%- endfor %}
+    <li class="justify-end ml-auto"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
+  </ul>
+</section>
+{% endif %}

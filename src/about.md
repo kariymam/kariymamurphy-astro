@@ -3,9 +3,6 @@ title: About me
 description: Opinionated designer and self-appointed media critic
 layout: page.njk
 permalink: /about/
-eleventyNavigation:
-  key: about
-  order: 4
 ---
 
 Kariyma Murphy is making connections, creating digital media and dreaming short fiction in the intersections of race, tech, and corporate bullshit. And making a playlist every now and then.

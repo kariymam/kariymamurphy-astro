@@ -2,6 +2,9 @@
 layout: blogpage.njk
 permalink: /
 numberOfLatestPostsToShow: 3
+eleventyNavigation:
+  key: home
+  order: 1
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}

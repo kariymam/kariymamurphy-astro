@@ -1,14 +1,20 @@
 <nav id="main-nav" aria-label="Global" class="hidden sm:flex w-full sm:border-b-0 justify-end lg:w-[calc(5.875*5)]">
   <h2 class="sr-only">Top level navigation menu</h2>
-  <ul id="navContainer" class="absolute flex flex-col my-6 sm:static sm:my-0 sm:flex-row h-full gap-4 sm:gap-0">
+  <ul id="navContainer" class="absolute flex flex-col md:items-center my-6 sm:static sm:my-0 sm:flex-row h-full gap-4">
     {%- for entry in collections.all | eleventyNavigation %}
     <li class="sm:w-full sm:text-center">
       <a id="{{ entry.title }}"
          aria-label="{{ entry.title }}"
-         class="post-tag text-5xl sm:text-2xl rounded-3xl displayFont {% if entry.url == page.url %}active{% endif %}"
+         class=" text-5xl sm:text-xl rounded-3xl displayFont px-2 {% if entry.url == page.url %}active{% endif %}"
          href="{{ entry.url }}"
          {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
     </li>
     {%- endfor %}
+    <li class="decoration-transparent">
+      <a class=" transition hover:/75" href="/about/"> about </a>
+    </li>
+    <li class="decoration-transparent">
+      <a class=" transition hover:/75" href="/archive/"> archive </a>
+    </li>
   </ul>
 </nav>
