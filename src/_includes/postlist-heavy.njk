@@ -1,6 +1,6 @@
 
 <div class="flex items-center justify-between mx-6 md:mx-0">
-  <div id="latestPostsList" class="overflow-x-scroll" style="scroll-snap-type: x mandatory;">
+  <div id="latestPostsList" class="lg:overflow-x-scroll">
     <ul class="scroll-container grid min-h-[400px] lg:mx-24">
       {% for post in postslist | reverse %}
       <li class="postlist-heavyItem border-2 rounded-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
