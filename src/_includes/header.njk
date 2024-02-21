@@ -1,17 +1,17 @@
   <header class="z-20 sticky top-0 lg:absolute flex w-full p-6">
-    <div class="w-full flex flex-col justify-center lg:flex-row gap-2 lg:items-center lg:justify-start">
+    <div class="w-full flex flex-col justify-center gap-2 lg:justify-start">
       <a href="/" class="decoration-transparent opacity-70">
       kariyma murphy
       </a>
       {% if title %}
       <span class="hidden border-l-2 w-1 h-6 mx-1 lg:block"></span>
-        <h1 class="text-base sm:text-xl opacity-70">{{ title }}</h1>
+        <h1 class="text-base sm:text-xl">{{ title }}</h1>
       {% endif %}
     </div>
     <div
       class="w-auto sm:w-full ml-auto sm:items-center gap-8"
     >
-      <div class="w-full p-0 md:py-3 sm:items-center justify-end sm:justify-between">
+      <div class="w-full p-0">
         <button
           id="burger"
           aria-controls="main-nav"

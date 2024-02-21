@@ -44,7 +44,8 @@ html {
 body {
 	display: flex;
 	flex-direction: column;
-	text-rendering: optimizeLegibility
+	text-rendering: optimizeLegibility;
+	font-size: 120%;
 }
 
 a {
@@ -56,15 +57,12 @@ a:not(h1) {
 }
 
 p {
-	@apply text-base
+	max-width: 68ch;
 }
 
 .postlist-item a:not(h3, small, time) {
 	text-decoration-line: none;
 	color: var(--text-color);
-}
-
-.postlist-item a p {
 	font-family: var(--body-font);
 }
 
@@ -125,8 +123,8 @@ a.post-tag {
 
 a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
 	border-color: var(--btnHover);
-  background-color: var(--border-primary);
-	/* color: var(--text-color-link-active); */
+  background-color: var(--btnHover);
+	color: var(--text-color-link-active);
 }
 
 .postlist-item > .post-tag {

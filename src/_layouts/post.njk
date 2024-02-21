@@ -3,7 +3,7 @@ layout: home.njk
 date: Created
 ---
 <section>
-  <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto lg:mr-auto lg:ml-[184px] mb-6 max-w-prose">
+  <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-prose">
     {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
@@ -13,7 +13,7 @@ date: Created
   </ul>
 </section>
 <article id="main">
-  <div class="max-w-prose mx-auto lg:mr-auto lg:ml-[184px] posttextBlock">
+  <div class="max-w-prose mx-auto posttextBlock">
     <hr class="my-6">
       <div class="sm:relative sm:max-w-md sm:float-right sm:w-1/2">
         {% if thumb %}
@@ -26,7 +26,7 @@ date: Created
       {{ content | safe }}
   </div>
 </article>
-<div class="flex items-center justify-between max-w-prose mx-auto lg:mr-auto lg:ml-[184px] mt-6">
+<div class="flex items-center justify-between max-w-prose mx-auto mt-6">
   {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}

@@ -1,7 +1,7 @@
 <div
 reversed
 id="main"
-class="mx-6 grid md:grid-cols-3 break-inside-avoid"
+class="mx-6 grid md:grid-cols-3 gap-4 break-inside-avoid"
 >
   {% set portfolio = collections.work %}
   {% for work in portfolio %}
@@ -11,57 +11,48 @@ class="mx-6 grid md:grid-cols-3 break-inside-avoid"
     <div
       class="flex flex-col relative justify-end h-full w-full min-h-fit"
     >
-    {% if work.data.penUrl %}
+
     <a
-    href="{{ work.data.penUrl }}"
+    href="{%- if work.data.type == "codepen" -%}{{ work.data.penUrl }}{%- elif work.data.type == "video" -%}{{ work.data.videoUrl }}{%- else -%}{{ work.url }}{%- endif -%}"
     aria-label="Link to Codepen"
     target="_blank"
     rel="noopener"
     class="flex flex-col h-full w-full">
-      {% if work.data.thumb %}
-      <div class="flex items-center justify-center overflow-hidden h-full">
-        <span class="absolute w-28 flex flex-col items-center p-6 rounded-full bg-[var(--primary)] text-center" aria-labelledby="logo-codepen">Open<ion-icon title="codepen" name="logo-codepen" class="text-4xl"></ion-icon></span>
-        <div id="logo-codepen" class="sr-only">Codepen logo</div>
-          <span class="h-full overflow-hidden rounded-3xl">
+    <div class="h-auto flex flex-col p-4">
+      <ul class="flex items-center mb-6 opacity-70">
+        <li class="min-w-max"><p class="text-sm">{{ work.data.formats }}</p></li>
+        {% if work.data.type == "jobExp" %}
+        <li class="flex items-end justify-end w-full"><time class="text-sm">{{ work.data.dates }}</time></li>
+        {% endif %}
+      </ul>
+      <h2 class="break-words px-4">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
+      <p class="p-4">{{ work.data.description }}</p>
+      {% if work.data.thumb %} <!-- with image -->
+      </div>
+      <div class="flex items-end justify-end overflow-hidden h-full">
+        <span class="absolute flex items-center p-2 rounded-br-3xl bg-gradient-to-tl text-white text-center"
+        {%- if work.data.type == "codepen" -%}aria-labelledby="logo-codepen"
+        {%- elif work.data.type == "video" -%}aria-labelledby="logo-vimeo"{%- endif -%}>
+          {%- if work.data.type == "codepen" -%}
+          <ion-icon title="codepen" name="logo-codepen" class="text-4xl"></ion-icon>
+          <div id="logo-codepen" class="sr-only">Codepen logo</div>
+          {%- elif work.data.type == "video" -%}
+          <ion-icon title="vimeo" name="logo-vimeo" class="text-4xl"></ion-icon>
+          <div id="logo-vimeo" class="sr-only">Vimeo logo</div>
+          {% else %}
+          <ion-icon name="link-outline"></ion-icon>
+          {%- endif -%}
+        </span>
+          <span class="h-full overflow-hidden rounded-b-3xl">
               {% image work.data.thumb, work.data.thumbAlt, "thumbImg h-full object-cover" %}
           </span>
       </div>
-      {% endif %}
-    {% else %}
-    <a href="{{ work.url }}" class="h-full w-full">
-      <div class="flex flex-col group relative h-full w-full transition-all">
-        <div class="h-auto flex flex-col px-4 pt-4">
-          <h2 class="break-words px-4 pt-4">{% if work.data.title %}{{ work.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
-          {% if work.data.audience %}
-          <ul class="px-4 pt-4">
-            <li><time class="text-sm">{{ work.data.dates }}</time></li>
-            <li>{{ work.data.formats }}</li>
-          </ul>
-          {% endif %}
-        </div>
-        <div class="relative w-full h-full">
-          <div
-            class="postlist-item-description h-full transition-all"
-          >
-          <div class="mx-8 pb-12 lg:pb-0 max-w-md">
-            {{ work.data.description }}</div
-            >
-          {% if work.data.thumb %}
-          <div>
-            <div class="relative h-full self-center overflow-hidden">
-              <span class="overflow-hidden rounded-b-3xl">
-                  {% image work.data.thumb, work.data.thumbAlt, "thumbImg aspect-square w-full max-w-full min-h-full object-cover inset-0 rounded-b-3xl" %}
-              </span>
-            </div>
-          </div>
-          {% endif %}
-          </div>
-        </div>
+      {% else %} <!-- without image -->
       </div>
       {% endif %}
     </a>
     </div>
-    <ul class="page-tags-list px-4 pb-4 absolute max-w-sm lg:bg-transparent flex flex-row flex-wrap gap-2">
+    <ul class="px-4 pb-4 absolute max-w-sm lg:bg-transparent flex flex-row flex-wrap gap-2">
           {% for tag in work.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
           <li>
             <a href="{{ tagUrl }}"

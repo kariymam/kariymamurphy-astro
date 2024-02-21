@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 {% include "header.njk" %}
-<main class="mx-6 lg:mx-0 lg:my-36 {% if layout == "blogpage.njk" and permalink !== "/" %}lg:ml-[184px] lg:flex{% endif %}">
+<main class="lg:my-36">
   {{ content | safe }}
 </main>
 {% include "footer.njk" %}
