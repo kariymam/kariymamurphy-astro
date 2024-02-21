@@ -37,5 +37,9 @@ module.exports = {
 		},
 	},
 	plugins: [],
-	content: ['./src/**/*.html', 'src/**/*.njk', 'src/**/*.js']
+	content: ['./src/**/*.html', 'src/**/*.njk', 'src/**/*.js'],
+	purge: {
+    layers: ['components', 'utilities'],
+    content: ['./src/**/*.njk'],
+  }
 }

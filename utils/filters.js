@@ -13,7 +13,10 @@ module.exports = {
 		}).toFormat('yyyy-LL-dd');
 	},
 	readableDate: (dateObj, format, zone) => {
-		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLL dd yyyy");
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL L, yyyy");
+	},
+	agoDate: (dateObj, zone) => {
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toRelative();
 	},
 	filterTagList: function filterTagList(tags) {
 		return (tags || []).filter(tag => ["all", "nav", "post", "posts", "drafts", "work", "now"].indexOf(tag) === -1);

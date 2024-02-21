@@ -12,7 +12,8 @@ const body = document.querySelector('body');
 
 function toggleNav() {
 	nav.classList.toggle('hidden');
-	navContainer.classList.toggle('left-6');
+	// navContainer.classList.toggle('left-4');
+	['left-0', 'top-24'].map(cl => navContainer.classList.toggle(cl));
 	navScrim.classList.toggle('show');
 	// ['hidden', 'show'].map(cl => navScrim.classList.toggle(cl));
 	body.classList.toggle('overflow-hidden');

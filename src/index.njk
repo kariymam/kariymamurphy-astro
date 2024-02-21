@@ -1,5 +1,6 @@
 ---
 layout: blogpage.njk
+title: Home
 permalink: /
 numberOfLatestPostsToShow: 3
 eleventyNavigation:
@@ -8,9 +9,12 @@ eleventyNavigation:
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h3 class="md:mx-6 p-6" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
-  Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-  </h3>
+<div class="flex items-center lg:ml-[184px]">
+  <h3 class="text-end my-6 mr-6 min-w-max" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
+    Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+    </h3>
+  <hr class="w-full mr-6">
+</div>
 <div class="overflow-auto">
   {% set showYear = true %}
   {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}

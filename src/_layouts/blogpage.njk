@@ -1,6 +1,13 @@
 ---
 layout: home.njk
 ---
+{%- if permalink !== "/"  %}
+<section id="tagDrawer">
+  <div class="flex flex-wrap items-center gap-2 list-none mb-8">
+    {% include "_partials/taglist.njk" %}
+  </div>
+</section>
+{% endif %}
 {% if numberOfLatestPostsToShow %}
 {% include 'intro.njk' %}
 {% endif %}
