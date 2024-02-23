@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_drafts/WWMS?.md",
+                "file": "work/Capital One.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 431
   },
   "right": {
     "id": "8372acb89145d31f",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_drafts/WWMS?.md",
+                "file": "work/Capital One.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_drafts/WWMS?.md",
+                "file": "work/Capital One.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_drafts/WWMS?.md"
+                "file": "work/Capital One.md"
               }
             }
           }
@@ -148,17 +148,26 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
+    "_templates/Untitled.md",
+    "work/Capital One.md",
+    "_templates",
+    "work/Truist.md",
+    "work/img/magic-8-sep-2023.jpg",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
+    "Screenshot.md",
+    "work/img/web-images_truist_3.png",
+    "work/img/web-images_truist_2.png",
+    "work/img/web-images_truist_1.png",
+    "work/img/template_optimized.gif",
+    "_drafts/WWMS?.md",
     "work/GFA.md",
     "work/GFA",
     "now/Now Playing.md",
     "now/now.11tydata.js",
     "now",
     "writing/Third Post.md",
-    "_drafts/WWMS?.md",
     "writing/First Post.md",
     "writing/Second Post.md",
-    "work/Capital One.md",
     "work/magic8.md",
     "``````.md"
   ]

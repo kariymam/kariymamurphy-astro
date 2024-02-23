@@ -4,8 +4,8 @@
       kariyma murphy
       </a>
       {% if title %}
-      <span class="hidden border-l-2 w-1 h-6 mx-1 lg:block"></span>
-        <h1 class="text-base sm:text-xl">{{ title }}</h1>
+      <span class="hidden w-1 h-6 mx-1 lg:block"></span>
+        <h1 class="text-base {% if permalink !== "/" %}sm:text-3xl{% endif %}">{{ title }}</h1>
       {% endif %}
     </div>
     <div

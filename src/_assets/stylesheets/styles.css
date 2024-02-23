@@ -7,10 +7,6 @@
 	border-color: var(--border-primary);
 }
 
-html {
-	font-size: 100%;
-	}
-
 /* Credit https://css-tricks.com/custom-tailwind-css/ */
 
 @layer base {
@@ -45,7 +41,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	text-rendering: optimizeLegibility;
-	font-size: 120%;
+	font-size: 110%;
 }
 
 a {
@@ -113,6 +109,7 @@ a.post-tag {
 	padding: 0.25rem;
 	z-index: 20;
 	border-radius: 0.5rem;
+	font-family: var(--mono-font)!important;
 }
 
 @media (max-width: 768px) {
@@ -121,10 +118,15 @@ a.post-tag {
 	}
 }
 
-a.post-tag:hover, a.post-tag:active, a.post-tag:focus, a.active {
+a.post-tag:hover, a.post-tag:active, a.post-tag:focus {
 	border-color: var(--btnHover);
   background-color: var(--btnHover);
 	color: var(--text-color-link-active);
+}
+
+a.active {
+	color: var(--text-color-link-active);
+	background-color: var(--btnHover);
 }
 
 .postlist-item > .post-tag {

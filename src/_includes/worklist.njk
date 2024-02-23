@@ -20,7 +20,7 @@ class="mx-6 grid md:grid-cols-3 gap-4 break-inside-avoid"
     class="flex flex-col h-full w-full">
     <div class="h-auto flex flex-col p-4">
       <ul class="flex items-center mb-6 opacity-70">
-        <li class="min-w-max"><p class="text-sm">{{ work.data.formats }}</p></li>
+        <li class="min-w-max"><p class="text-sm displayFont">{{ work.data.formats }}</p></li>
         {% if work.data.type == "jobExp" %}
         <li class="flex items-end justify-end w-full"><time class="text-sm">{{ work.data.dates }}</time></li>
         {% endif %}
@@ -57,7 +57,7 @@ class="mx-6 grid md:grid-cols-3 gap-4 break-inside-avoid"
           <li>
             <a href="{{ tagUrl }}"
                 title="{{ site.url}}{{ tagUrl }}"
-                  class="post-tag md:text-sm rounded-full"
+                  class="displayFont post-tag md:text-sm rounded-full"
                   >{{ tag }}</a
                 >
           </li>

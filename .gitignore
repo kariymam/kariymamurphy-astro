@@ -76,5 +76,5 @@ src/blog/_drafts
 
 #Obsidian
 src/blog/_templates
-src/blog/.obsidian/
+src/blog/.obsidian
 README.md
