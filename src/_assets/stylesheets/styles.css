@@ -242,7 +242,6 @@ h3 span {
 }
 
 .posttextBlock > * + * {
-	max-width: 768px;
 	margin-block-end: 1rem;
 	margin-left: auto;
 	margin-right: auto;
@@ -404,4 +403,18 @@ header > #headerScrim {
 	visibility: visible;
 	opacity: 1;
 	backdrop-filter: blur(5px);
+}
+
+.postlist-lite-item {
+	counter-increment: start-from -1;
+}
+
+.postlist-lite-item:before {
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	font-family: var(--pixel-font);
+	opacity: 0.7;
+	position: absolute;
+	text-indent: -1.875rem;
+	margin-top: 14px;
+	@apply text-sm
 }

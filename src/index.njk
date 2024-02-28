@@ -9,11 +9,11 @@ eleventyNavigation:
 ---
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<div class="flex items-center">
+<div class="flex items-center mx-auto max-w-screen-xl">
   <h3 class="text-end mx-6 mb-6 min-w-max" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
     Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
     </h3>
-  <hr class="w-full">
+  <hr class="w-full ml-6">
 </div>
 <div class="overflow-auto">
   {% set showYear = true %}

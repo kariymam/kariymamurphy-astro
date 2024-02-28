@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 {% include "header.njk" %}
-<main class="lg:my-36">
+<main class="lg:my-32 w-full {% if permalink !== "/" %}lg:mx-auto max-w-screen-xl{% endif %}">
   {{ content | safe }}
 </main>
 {% include "footer.njk" %}

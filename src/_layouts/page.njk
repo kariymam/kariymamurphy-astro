@@ -4,11 +4,11 @@ date: git Created
 ---
 <div id="main" class="flex flex-col lg:flex-row max-w-screen-xl">
   {% if description %}
-  <div class="max-w-full lg:max-w-sm mb-6 pl-6">
+  <div class="mb-6 pl-6 lg:max-w-prose">
     <h2>{{ description }}</h2>
   </div>
   {% endif %}
-  <div class="px-6 textblock max-w-prose lg:max-w-lg">
+  <div class="px-6 textblock w-full">
     {{ content | safe }}
   </div>
 </div>

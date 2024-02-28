@@ -1,5 +1,5 @@
 {% set currentYear = "" %}
-  <ol reversed class="list-none">
+  <ol reversed class="list-none postlist-lite w-full" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
     {% for post in postslist | reverse %}
     <li class="mb-4">
     {% if showYear %}
@@ -9,8 +9,24 @@
           <time class="text-xl">{{ postYear }}</time>
           {% endif %}
     {% endif %}
+    <div class="flex flex-col">
+      <div class="flex items-center justify-between">
+          <h3 class="postlist-lite-item">
+            <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+          </h3>
+          <time datetime="{{ post.date | htmlDateString }}" class="text-sm min-w-max">{{ post.date | readableDate }}</time>
+        </div>
+        {% if post.data.description %}
+        <p class="w-full">{{ post.data.description }}</p>
+        {% endif %}
+        <div>
+          {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
+          {% endfor %}
+        </div>
+    </div>
 
-        <h3><a href="{{ post.url | url }}"><time datetime="{{ post.date | htmlDateString }}" class="text-sm">{{ post.date | readableDate }}</time> {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a></h3>
+
       </li>
     {% endfor %}
     </ol>
