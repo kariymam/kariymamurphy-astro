@@ -30,7 +30,7 @@
                 <time
                 datetime="{{ post.date | htmlDateString }}"
                 class="text-sm"
-                >{{ post.date | readableDate }}</time>
+                >{{ post.date | agoDate }}</time>
                 <ul class="flex flex-wrap gap-2 pt-6">
                   {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
                   <li>
