@@ -5,7 +5,7 @@ thumb: 'img/magic-8-sep-2023.jpg'
 thumbAlt: Image of my project
 type: codepen
 formats: Web
-penUrl: https://codepen.io/kariymam/full/poqErya
+externalLink: https://codepen.io/kariymam/full/poqErya
 tags:
   - GSAP
 ---

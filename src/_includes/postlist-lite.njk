@@ -1,5 +1,5 @@
 {% set currentYear = "" %}
-  <ol reversed class="list-none postlist-lite w-full" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  <ol reversed class="list-none postlist-lite mx-6 xl:mx-0" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
     {% for post in postslist | reverse %}
     <li class="mb-4">
     {% if showYear %}
@@ -9,15 +9,15 @@
           <time class="text-xl">{{ postYear }}</time>
           {% endif %}
     {% endif %}
-    <div class="flex flex-col">
-      <div class="flex items-center justify-between">
+    <div class="flex flex-col py-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between">
           <h3 class="postlist-lite-item">
             <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
           </h3>
           <time datetime="{{ post.date | htmlDateString }}" class="text-sm min-w-max">{{ post.date | readableDate }}</time>
         </div>
         {% if post.data.description %}
-        <p class="w-full">{{ post.data.description }}</p>
+        <p class="w-full mt-4">{{ post.data.description }}</p>
         {% endif %}
         <div>
           {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}

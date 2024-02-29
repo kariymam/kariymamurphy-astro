@@ -5,7 +5,7 @@
     <li class="sm:w-full sm:text-center">
       <a id="{{ entry.title }}"
          aria-label="{{ entry.title }}"
-         class="decoration-transparent text-5xl sm:text-xl rounded-3xl px-2 {% if entry.url == page.url %}active{% endif %}"
+         class="displayFont decoration-transparent text-5xl sm:text-xl rounded-3xl px-2 {% if entry.url == page.url %}active{% endif %}"
          href="{{ entry.url }}"
          {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
     </li>

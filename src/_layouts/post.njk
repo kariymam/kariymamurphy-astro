@@ -2,7 +2,7 @@
 layout: home.njk
 date: Created
 ---
-<section>
+<section class="mx-6 md:mx-0">
   <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-prose">
     {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
@@ -12,7 +12,7 @@ date: Created
     <li class="justify-end ml-auto"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
   </ul>
 </section>
-<article id="main">
+<article id="main" class="mx-6 md:mx-0">
   <div class="max-w-prose mx-auto posttextBlock">
     <hr class="my-6">
       <div class="sm:relative sm:max-w-md sm:float-right sm:w-1/2">
@@ -26,7 +26,7 @@ date: Created
       {{ content | safe }}
   </div>
 </article>
-<div class="flex items-center justify-between max-w-prose mx-auto mt-6">
+<div class="flex items-center justify-between max-w-prose mx-6 md:mx-auto mt-6">
   {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
