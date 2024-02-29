@@ -41,7 +41,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	text-rendering: optimizeLegibility;
-	font-size: 110%;
 }
 
 a {
