@@ -2,7 +2,7 @@
 layout: home.njk
 date: git Last Modified
 ---
-<section class="mx-6 md:mx-0">
+<section id="metadata" class="mx-6 md:mx-0">
   <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-prose">
     {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
@@ -15,14 +15,6 @@ date: git Last Modified
 <article id="main" class="mx-6 md:mx-0">
   <div class="max-w-prose mx-auto posttextBlock">
     <hr class="my-6">
-      <div class="sm:relative sm:max-w-md sm:float-right sm:w-1/2">
-        {% if thumb %}
-        <figure class="p-6">
-          {% image thumb, thumbAlt, "thumbImg" %}
-          <figcaption class="text-sm opacity-70">{{ thumbAlt }}</figcaption>
-        </figure>
-        {% endif %}
-      </div>
       {{ content | safe }}
   </div>
 </article>
