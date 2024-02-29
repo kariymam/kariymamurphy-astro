@@ -11,39 +11,6 @@ class="mx-6 grid md:grid-cols-3 gap-4 break-inside-avoid"
     <div
       class="flex flex-col relative justify-end h-full w-full min-h-fit"
     >
-
-    <a
-    href="{%- if work.data.externalLink -%}{{ work.data.externalLink }}{%- else -%}{{ work.url }}{%- endif -%}"
-    aria-label="Link to Codepen"
-    target="_blank"
-    rel="noopener"
-    class="flex flex-col h-full w-full">
-    <div class="absolute scrim top-0 w-full rounded-t-3xl h-auto flex flex-col px-4">
-      <ul class="flex items-center mb-6 {% if work.data.thumb %}text-white{% endif %}">
-        <li class="w-full h-9 flex items-center"><p class="text-sm displayFont">{{ work.data.formats }}</p></li>
-        <li class="flex items-end justify-end">
-          <span class="rounded-3xl ml-auto pt-2 bg-gradient-to-tl text-white text-center"
-          {%- if work.data.externalLink -%}aria-labelledby="external-link"{%- endif -%}>
-            {%- if work.data.externalLink -%}
-            <ion-icon name="arrow-forward-outline" class="h-9 w-9 -rotate-45"></ion-icon>
-            <div id="external-link" class="sr-only">External link icon</div>
-            {%- endif -%}
-          </span>
-        </li>
-      </ul>
-      {% if work.data.thumb %} <!-- with image -->
-      </div>
-      <div class="flex items-start justify-end overflow-hidden h-full rounded-3xl">
-          <span class="h-full overflow-hidden scrim2">
-              {% image work.data.thumb, work.data.thumbAlt, "thumbImg h-full object-cover" %}
-          </span>
-      </div>
-      {% else %} <!-- without image -->
-      </div>
-      <span class="h-60 bg-transparent"></span>
-      {% endif %}
-    </a>
-    </div>
     <div class="absolute flex rounded-b-3xl lg:bg-transparent">
       <div class="flex flex-col w-full">
         {% if work.data.title %}<h2 class="p-4 {% if work.data.thumb %}text-white{% endif %}">{{ work.data.title }}</h2>{% else %}<code>{{ work.url }}</code>{% endif %}
@@ -58,6 +25,55 @@ class="mx-6 grid md:grid-cols-3 gap-4 break-inside-avoid"
             </li>
             {% endfor %}
         </ul>
+      </div>
+    </div>
+      <a
+        href="{%- if work.data.externalLink -%}{{ work.data.externalLink }}{%- else -%}{{ work.url }}{%- endif -%}"
+        aria-label="Link to Codepen"
+        target="_blank"
+        rel="noopener"
+        class="flex flex-col h-full w-full"
+        >
+        <div class="absolute scrim top-0 w-full rounded-t-3xl h-auto flex flex-col px-4">
+          <ul class="flex items-center mb-6 {% if work.data.thumb %}text-white{% endif %}">
+            <li class="w-full h-9 flex items-center"><p class="text-sm displayFont">{{ work.data.formats }}</p></li>
+            <li class="flex items-end justify-end">
+              <span class="rounded-3xl ml-auto pt-2 bg-gradient-to-tl text-white text-center"
+              {%- if work.data.externalLink -%}aria-labelledby="external-link"{%- endif -%}>
+                {%- if work.data.externalLink -%}
+                <ion-icon name="arrow-forward-outline" class="h-9 w-9 -rotate-45"></ion-icon>
+                <div id="external-link" class="sr-only">External link icon</div>
+                {%- endif -%}
+              </span>
+            </li>
+          </ul>
+        {% if work.data.thumb %} <!-- with image -->
+        </div>
+        <div class="flex items-start justify-end overflow-hidden h-full rounded-3xl">
+            <span class="h-full overflow-hidden scrim2">
+                {% image work.data.thumb, work.data.thumbAlt, "thumbImg h-full object-cover" %}
+            </span>
+        </div>
+        {% else %} <!-- without image -->
+        </div>
+        <span class="h-60 bg-transparent"></span>
+        {% endif %}
+      </a>
+      <div class="absolute flex rounded-b-3xl lg:bg-transparent">
+        <div class="flex flex-col w-full">
+          {% if work.data.title %}<h2 class="p-4 {% if work.data.thumb %}text-white{% endif %}">{{ work.data.title }}</h2>{% else %}<code>{{ work.url }}</code>{% endif %}
+          <ul class="px-4 pb-4 flex flex-wrap gap-2">
+              {% for tag in work.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+              <li>
+                <a href="{{ tagUrl }}"
+                    title="{{ site.url}}{{ tagUrl }}"
+                      class="post-tag md:text-sm rounded-full"
+                      >{{ tag }}</a
+                    >
+              </li>
+              {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
   </article>
