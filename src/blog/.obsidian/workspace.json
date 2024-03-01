@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "writing/Second Post.md",
+                "file": "_templates/new Blogpost.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 431
+    "width": 200
   },
   "right": {
     "id": "8372acb89145d31f",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "writing/Second Post.md",
+                "file": "_templates/new Blogpost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "writing/Second Post.md",
+                "file": "_templates/new Blogpost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "writing/Second Post.md"
+                "file": "_templates/new Blogpost.md"
               }
             }
           }
@@ -143,12 +143,26 @@
       "canvas:Create new canvas": true,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": true,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
+    "writing/A new title-202403010846.md",
+    "_templates/new Blogpost.md",
+    "writing/A new title-202403010845.md",
+    "writing/Untitled-202403010844.md",
+    "writing/A new title-202403010844.md",
+    "writing/Untitled-202403010843.md",
+    "writing/Untitled",
+    "writing/Untitled-202403010841.md",
+    "writing/Untitled 1-202403010843.md",
+    "writing/Untitled 1-202403010840.md",
+    "writing/img/Untitled-202403010840.md",
+    "writing/[object Promise]-202403010839.md",
     "writing/Third Post.md",
+    "work/Capital One.md",
     "writing/Second Post.md",
     "work/Truist.md",
     "work/magic8.md",
@@ -157,9 +171,7 @@
     "work/img/web-images_truist_3.png",
     "work/img/template_optimized.gif",
     "work/img/magic-8-sep-2023.jpg",
-    "work/Capital One.md",
     "work/GFA.md",
-    "_templates/Untitled.md",
     "_templates",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
     "Screenshot.md",
