@@ -2,14 +2,13 @@
 layout: home.njk
 date: git Last Modified
 ---
-<section id="metadata" class="mx-6 md:mx-0">
+<section id="metadata" class="mx-6 sm:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
   <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-screen-xl">
+    <li class="justify-end mr-4"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">Last updated: {{ page.date | readableDate }}</time></li>
     {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
     {%- endfor %}
-
-    <li class="justify-end ml-auto"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">{{ page.date | readableDate }}</time></li>
   </ul>
 </section>
 <article id="main" class="mx-6 md:mx-0">
@@ -17,27 +16,3 @@ date: git Last Modified
       {{ content | safe }}
   </div>
 </article>
-<div class="flex items-center justify-between max-w-screen-xl mx-6 md:mx-auto mt-6">
-  {%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
-{%- if nextPost or previousPost %}
-{%- if previousPost %}
-<section id="previousPost" class="min-w-max w-full h-10">
-  <div class="flex flex-col w-full items-center md:flex-row md:justify-start">
-      <ion-icon name="arrow-back-outline"></ion-icon>
-      <a href="{{ previousPost.url }}" class="displayFont">{{ previousPost.data.title }}</a>
-    </div>
-  </section>
-{% endif %}
-{%- if nextPost %}
-<section id="nextPost" class="min-w-max w-full h-10">
-  <div class="flex flex-col items-center md:flex-row md:justify-end">
-      <a href="{{ nextPost.url }}" class="displayFont">{{ nextPost.data.title }}</a>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
-    </div>
-  </section>
-{% endif %}
-{%- endif %}
-{%- endif %}
-</div>

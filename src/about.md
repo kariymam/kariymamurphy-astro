@@ -1,9 +1,10 @@
 ---
 title: About me
-description: Kariyma Murphy is an opinionated designer who writes arguments about media and arguments between fictional characters.
-layout: page.njk
+layout: post.njk
 permalink: /about/
 ---
+
+## Kariyma Murphy is an opinionated designer who writes arguments about media and arguments between fictional characters.
 
 ### Also designs on the web, sometimes with code.
 

@@ -1,5 +1,5 @@
 {% set currentYear = "" %}
-  <ol reversed class="list-none postlist-lite mx-6 xl:mx-0" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  <ol reversed class="list-none postlist-lite mx-6 sm:mx-auto max-w-prose" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
     {% for post in postslist | reverse %}
     <li class="mb-4">
     {% if showYear %}

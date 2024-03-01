@@ -2,19 +2,36 @@
   <div class="relative p-6">
       <nav id="footer-nav" aria-label="footer">
         <ul
-          class="flex flex-col flex-wrap items-end text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-end"
+          class="flex flex-col items-center text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-start"
         >
+          {% if layout == "post.njk" %}
+          {%- if collections.posts %}
+          {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+          {%- set nextPost = collections.posts | getNextCollectionItem %}
+          {%- if nextPost or previousPost %}
+          {%- if previousPost %}
+          <li id="previousPost" class="flex w-full items-center min-w-max h-10">
+            <div class="flex w-full items-center md:flex-row md:justify-start">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+                <a href="{{ previousPost.url }}" class="displayFont">{{ previousPost.data.title }}</a>
+              </div>
+            </li>
+          {% endif %}
+          {%- if nextPost %}
+          <li id="nextPost" class="flex items-center min-w-max h-10">
+            <div class="flex items-center md:flex-row md:justify-end">
+                <a href="{{ nextPost.url }}" class="displayFont">{{ nextPost.data.title }}</a>
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+              </div>
+            </li>
+          {% endif %}
+          {%- endif %}
+          {%- endif %}
+          {% endif %}
+        </ul>
+        <ul class="flex flex-col flex-wrap items-center text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-start">
           <li class="flex items-center gap-1 decoration-transparent">
-            <a class="transition hover:/75" href="https://read.cv/oohnice.design">Read.cv</a><ion-icon name="reader-outline" aria-label="Read.cv"></ion-icon>
-          </li>
-          <li class="flex items-center gap-1 decoration-transparent">
-            <a class=" transition hover:/75" href="https://www.linkedin.com/in/kariymamurphy">LinkedIn</a><ion-icon name="logo-linkedin" aria-label="LinkedIn"></ion-icon>
-          </li>
-          <li class="flex items-center gap-1 decoration-transparent">
-            <a class="transition hover:/75" href="https://github.com/kariymam">Github</a><ion-icon name="logo-github" aria-label="Github"></ion-icon>
-          </li>
-          <li class="decoration-transparent">
-            <a class=" transition hover:/75" href="/blog/"> Blog </a>
+            <a class="transition hover:/75" href="/resume/">Contact me</a>
           </li>
         </ul>
       </nav>
