@@ -19,7 +19,11 @@ module.exports = function (eleventyConfig) {
   })
   .use(markdownItEleventyImg, {
 		imgOptions: {
-			outputDir: "dist/img/"
+			widths: [400, 800, 1600],
+			outputDir: 'dist/img/'
+		},
+		globalAttributes: {
+			sizes: ["50vw", "100vw"]
 		},
 		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath)
 	}));
