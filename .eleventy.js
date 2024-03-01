@@ -1,15 +1,28 @@
 const path = require("path");
-const markdownIt = require("markdown-it");
 const { minify } = require("terser");
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
 const excerpt = require('./utils/excerpt.js');
+const markdownIt = require('markdown-it');
+const markdownItEleventyImg = require("markdown-it-eleventy-img");
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
 	eleventyConfig.addPassthroughCopy("./src/fonts/");
+
+	eleventyConfig.setLibrary('md', markdownIt ({
+    html: true,
+    breaks: true,
+    linkify: true
+  })
+  .use(markdownItEleventyImg, {
+		imgOptions: {
+			outputDir: "dist/img/"
+		},
+		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath)
+	}));
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {
