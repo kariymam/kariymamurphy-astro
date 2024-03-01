@@ -3,7 +3,7 @@ layout: home.njk
 date: git Last Modified
 ---
 <section id="metadata" class="mx-6 md:mx-0">
-  <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-prose">
+  <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-screen-xl">
     {%- for tag in tags | filterTagList %}
     {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
@@ -14,34 +14,29 @@ date: git Last Modified
 </section>
 <article id="main" class="mx-6 md:mx-0">
   <div class="max-w-prose mx-auto posttextBlock">
-    <hr class="my-6">
       {{ content | safe }}
   </div>
 </article>
-<div class="flex items-center justify-between max-w-prose mx-6 md:mx-auto mt-6">
+<div class="flex items-center justify-between max-w-screen-xl mx-6 md:mx-auto mt-6">
   {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- if nextPost or previousPost %}
 {%- if previousPost %}
-<section id="previousPost" class="min-w-max mr-6">
-  <div class="flex flex-col w-full gap-4 items-center md:flex-row">
-            <div class="flex items-center w-full md:justify-start h-10">
-              <ion-icon name="arrow-back-outline"></ion-icon>
-              <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-            </div>
-          </section>
+<section id="previousPost" class="min-w-max w-full h-10">
+  <div class="flex flex-col w-full items-center md:flex-row md:justify-start">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+      <a href="{{ previousPost.url }}" class="displayFont">{{ previousPost.data.title }}</a>
+    </div>
+  </section>
 {% endif %}
-<hr class="w-full">
 {%- if nextPost %}
-<section id="nextPost" class="min-w-max ml-6">
-  <div class="flex flex-col gap-4 items-center md:flex-row">
-    <div class="flex items-center w-full md:justify-end">
-      <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+<section id="nextPost" class="min-w-max w-full h-10">
+  <div class="flex flex-col items-center md:flex-row md:justify-end">
+      <a href="{{ nextPost.url }}" class="displayFont">{{ nextPost.data.title }}</a>
       <ion-icon name="arrow-forward-outline"></ion-icon>
     </div>
-  </div>
-</section>
+  </section>
 {% endif %}
 {%- endif %}
 {%- endif %}

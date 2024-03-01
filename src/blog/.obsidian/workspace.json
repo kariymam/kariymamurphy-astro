@@ -11,8 +11,12 @@
             "id": "7450fb1650fd6bfa",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "work/Truist.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "work/Truist.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "work/Truist.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "work/Truist.md"
+              }
             }
           }
         ]
@@ -141,10 +149,13 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
-    "work/My blog.md",
-    "work/Something.md",
+    "work/Truist.md",
+    "work/Truist.md",
     "_templates/new Work.md",
     "_templates/new Blogpost.md",
+    "work/a new note.md",
+    "work/My blog.md",
+    "work/Something.md",
     "work/GFA.md",
     "writing/First Post.md",
     "work/Title.md",
@@ -153,7 +164,6 @@
     "writing/Third Post.md",
     "work/Capital One.md",
     "work/magic8.md",
-    "work/Truist.md",
     "writing/A new title-202403010846.md",
     "writing/A new title-202403010845.md",
     "writing/Untitled-202403010844.md",
@@ -172,9 +182,7 @@
     "work/img/magic-8-sep-2023.jpg",
     "_templates",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
-    "Screenshot.md",
     "work/img/web-images_truist_2.png",
-    "_drafts/WWMS?.md",
     "work/GFA",
     "now/now.11tydata.js",
     "now"

@@ -41,7 +41,7 @@
     <div id="headerScrim" class="absolute top-0 left-0 flex w-full h-full -z-10"></div>
   </header>
 {% if layout == "post.njk" and thumb %}
-  <section id="thumbHero" class="pb-6">
+  <div id="thumbHero">
     <div class="relative w-screen h-[500px] min-w-fit self-center">
       {% if thumb %}
       <div class="flex overflow-hidden absolute h-full w-full items-center justify-cente scrim3">
@@ -49,5 +49,5 @@
       </div>
       {% endif %}
     </div>
-</section>
+  </div>
 {% endif %}

@@ -2,7 +2,7 @@
 layout: base.njk
 ---
 {% include "header.njk" %}
-<main class="{% if layout !== "post.njk" %}lg:my-32{% endif %} w-full {% if permalink !== "/" %}lg:mx-auto max-w-screen-xl{% endif %}">
+<main class="{% if layout == "post.njk" and thumb %}lg:my-0 lg:mb-32{% else %}lg:my-32{% endif %} w-full {% if permalink !== "/" %}lg:mx-auto max-w-screen-xl{% endif %}">
   {{ content | safe }}
 </main>
 {% include "footer.njk" %}
