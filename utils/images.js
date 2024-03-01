@@ -2,6 +2,7 @@ const path = require("path");
 const eleventyImage = require("@11ty/eleventy-img");
 
 module.exports = eleventyConfig => {
+	// let's see if this works
 	function relativeToInputPath(inputPath, relativeFilePath) {
 		let split = inputPath.split("/");
 		split.pop();
