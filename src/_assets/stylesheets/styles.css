@@ -42,10 +42,6 @@ body {
 	flex-direction: column;
 }
 
-a {
-	font-family: var(--mono-font);
-}
-
 a:not(h1) {
 	@apply underline;
 }
@@ -170,7 +166,7 @@ div.postlist-item:nth-child(n+2) {
     top: 0;
 		left: 0;
 		padding: 1rem;
-		font-family: var(--pixel-font);
+		font-family: var(--mono-font);
 		opacity: 0.7;
 		/* width: 1rem; */
 }
@@ -245,6 +241,10 @@ h3 span {
 
 .posttextBlock > p > img {
 	padding: 3rem;
+}
+
+.posttextBlock h2 {
+	margin-bottom: 1.5rem;
 }
 
 .intro>*+* {
@@ -408,7 +408,7 @@ header > #headerScrim {
 
 .postlist-lite-item:before {
 	content: "" counter(start-from, decimal-leading-zero) ". ";
-	font-family: var(--pixel-font);
+	font-family: var(--mono-font);
 	opacity: 0.7;
 	position: absolute;
 	text-indent: -1.875rem;
