@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/Capital One.md"
+                "file": "writing/Second Post.md"
               }
             }
           }
@@ -148,27 +148,28 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
-    "_templates/Untitled.md",
-    "work/Capital One.md",
-    "_templates",
+    "writing/Third Post.md",
+    "writing/Second Post.md",
     "work/Truist.md",
+    "work/magic8.md",
+    "_drafts/Why you should give bad data.md",
+    "work/img/web-images_truist_1.png",
+    "work/img/web-images_truist_3.png",
+    "work/img/template_optimized.gif",
     "work/img/magic-8-sep-2023.jpg",
+    "work/Capital One.md",
+    "work/GFA.md",
+    "_templates/Untitled.md",
+    "_templates",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
     "Screenshot.md",
-    "work/img/web-images_truist_3.png",
     "work/img/web-images_truist_2.png",
-    "work/img/web-images_truist_1.png",
-    "work/img/template_optimized.gif",
     "_drafts/WWMS?.md",
-    "work/GFA.md",
     "work/GFA",
     "now/Now Playing.md",
     "now/now.11tydata.js",
     "now",
-    "writing/Third Post.md",
     "writing/First Post.md",
-    "writing/Second Post.md",
-    "work/magic8.md",
     "``````.md"
   ]
 }
