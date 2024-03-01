@@ -62,5 +62,18 @@ for (let i = 0; i < displayFonts.length; i++) {
   displayFonts[i].innerHTML = result;
 };
 
+//-------- close
+function modal() {
+	let modal = document.querySelector(".modal");
+	const contact = document.querySelector("#contact")
+	const closeBtn = document.querySelector("#close");
 
+	function open() {
+		modal.classList.toggle('hidden');
+	}
 
+	closeBtn.addEventListener('click', open);
+	contact.addEventListener('click', open);
+}
+
+modal();

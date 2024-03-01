@@ -1,0 +1,64 @@
+{% extends "src/_layouts/contact.njk" %}
+{% block contact %}
+<div class="p-6 bg-white rounded-3xl">
+  <div class="flex flex-col">
+    <div class="flex items-center">
+      <h3 class="w-full">I can help you</h3>
+      <button id="close" title="Close" aria-controls="contact">
+        <ion-icon name="close-outline" class="text-5xl"></ion-icon>
+      </button>
+    </div>
+    <ul class="list-disc ml-8 my-6">
+      <li>Craft reports for research findings.</li>
+      <li>Make testable and interactive mockups.</li>
+      <li>Design reusable UI components.</li>
+      <li>Create polished and reusable slideshow templates.</li>
+      <li>Edit corporate videos with motion graphics.</li>
+    </ul>
+  </div>
+  <form class="flex flex-col text-xl gap-4" name="contact" netlify-honeypot="bot-field" netlify>
+    <p class="specialsauce">
+      <label for="e-mail">
+        Your e-mail <input
+        autocomplete="off" type="email" id="e-mail" name="e-mail" placeholder="Your e-mail here" />
+      </label>
+    </p>
+    <p>
+      <label for="name"><input class="w-full rounded-xl border-2 p-3 text-sm text-black"
+        id="name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+        /></label>
+    </p>
+    <p>
+      <label for="email"><input class="w-full rounded-xl border-2 p-3 text-sm text-black"
+        id="email"
+        type="email"
+        name="email"
+        placeholder="Your email address"
+        required
+        /></label>
+    </p>
+    <p>
+      <label class="sr-only" for="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        class="w-full rounded-xl border-2 p-3 text-sm text-black"
+        placeholder="Your message"
+        rows="8"
+      ></textarea>
+    </p>
+    <p>
+      <button
+        type="submit"
+        class="w-full rounded-full font-bold bg-[var(--primary)] text-[var(--text-color)] p-4"
+        >
+        Send
+      </button>
+    </p>
+  </form>
+</div>
+{% endblock %}
