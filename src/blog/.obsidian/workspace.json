@@ -11,12 +11,8 @@
             "id": "7450fb1650fd6bfa",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_templates/new Blogpost.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -69,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 230
   },
   "right": {
     "id": "8372acb89145d31f",
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_templates/new Blogpost.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_templates/new Blogpost.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "_templates/new Blogpost.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -149,8 +141,20 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
-    "writing/A new title-202403010846.md",
+    "work/My blog.md",
+    "work/Something.md",
+    "_templates/new Work.md",
     "_templates/new Blogpost.md",
+    "work/GFA.md",
+    "writing/First Post.md",
+    "work/Title.md",
+    "writing/Second Post.md",
+    "writing/Put this together-202403010850.md",
+    "writing/Third Post.md",
+    "work/Capital One.md",
+    "work/magic8.md",
+    "work/Truist.md",
+    "writing/A new title-202403010846.md",
     "writing/A new title-202403010845.md",
     "writing/Untitled-202403010844.md",
     "writing/A new title-202403010844.md",
@@ -161,27 +165,18 @@
     "writing/Untitled 1-202403010840.md",
     "writing/img/Untitled-202403010840.md",
     "writing/[object Promise]-202403010839.md",
-    "writing/Third Post.md",
-    "work/Capital One.md",
-    "writing/Second Post.md",
-    "work/Truist.md",
-    "work/magic8.md",
     "_drafts/Why you should give bad data.md",
     "work/img/web-images_truist_1.png",
     "work/img/web-images_truist_3.png",
     "work/img/template_optimized.gif",
     "work/img/magic-8-sep-2023.jpg",
-    "work/GFA.md",
     "_templates",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
     "Screenshot.md",
     "work/img/web-images_truist_2.png",
     "_drafts/WWMS?.md",
     "work/GFA",
-    "now/Now Playing.md",
     "now/now.11tydata.js",
-    "now",
-    "writing/First Post.md",
-    "``````.md"
+    "now"
   ]
 }
