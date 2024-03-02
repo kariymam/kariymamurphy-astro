@@ -309,10 +309,8 @@ details[open] > summary {
 }
 
 #latestPostsList ul.scroll-container {
-	display: grid;
-  grid-auto-flow: column;
 	gap: 1em;
-  width: calc(100% * 1.5);
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -323,7 +321,8 @@ details[open] > summary {
 }
 
 #latestPostsList li.postlist-heavyItem {
-	min-width: 6rem;
+	min-width: 768px;
+	max-width: 83%;
 }
 
 @media (max-width: 768px) {
