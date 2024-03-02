@@ -453,3 +453,8 @@ header > #headerScrim {
 	.modal {
 		z-index: 100;
 	}
+
+	.modal .bg-blur {
+		backdrop-filter: blur(1rem);
+		-webkit-backdrop-filter: blur(1rem);
+	}
