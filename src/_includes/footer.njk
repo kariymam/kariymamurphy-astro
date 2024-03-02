@@ -1,11 +1,11 @@
 {% include "drawer.njk" %}
 <footer class="h-auto mt-8 sm:mt-0 lg:mx-auto lg:w-full max-w-screen-xl left-0 right-0 bottom-0 lg:fixed">
-  <div class="relative p-6 opacity-70">
+  <div class="relative p-6">
       <nav id="footer-nav" aria-label="footer">
+        {% if layout == "post.njk" %}
         <ul
           class="flex flex-col items-center text-sm gap-2 py-8 sm:my-0 sm:flex-row sm:gap-8 sm:justify-start"
         >
-          {% if layout == "post.njk" %}
           {%- if collections.posts %}
           {%- set previousPost = collections.posts | getPreviousCollectionItem %}
           {%- set nextPost = collections.posts | getNextCollectionItem %}
@@ -34,11 +34,11 @@
           {% endif %}
           {%- endif %}
           {%- endif %}
-          {% endif %}
         </ul>
+        {% endif %}
         <ul class="flex flex-col flex-wrap items-center text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-start">
           <li class="flex items-center gap-1 decoration-transparent">
-            <button id="contact" class="transition hover:/75">Contact me</button>
+            <a id="contact" href="#contactModal" class="transition hover:/75">Contact me</a>
           </li>
           <li class="flex items-center gap-1 decoration-transparent">
             Kariyma Murphy &copy; 2024. All rights reserved.
