@@ -444,3 +444,7 @@ header > #headerScrim {
 			background: transparent;
 		}
 	}
+
+	.modal {
+		z-index: 100;
+	}

@@ -65,6 +65,7 @@ for (let i = 0; i < displayFonts.length; i++) {
 //-------- close
 function modal() {
 	let modal = document.querySelector(".modal");
+	const body = document.querySelector("body");
 	const contact = document.querySelector("#contact")
 	const closeBtn = document.querySelector("#close");
 
