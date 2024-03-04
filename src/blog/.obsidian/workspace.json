@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/Truist.md",
+                "file": "work/Capital One.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/Truist.md",
+                "file": "work/Capital One.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/Truist.md",
+                "file": "work/Capital One.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/Truist.md"
+                "file": "work/Capital One.md"
               }
             }
           }
@@ -149,21 +149,23 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
+    "work/GFA.md",
+    "work/magic8.md",
     "work/Truist.md",
-    "work/Truist.md",
+    "work/Capital One.md",
+    "_drafts/Building a blog with Eleventy and Obsidian taught me Javascript.md",
+    "_drafts/WWMS?.md",
+    "_drafts/Why you should give bad data.md",
     "_templates/new Work.md",
     "_templates/new Blogpost.md",
     "work/a new note.md",
     "work/My blog.md",
     "work/Something.md",
-    "work/GFA.md",
     "writing/First Post.md",
     "work/Title.md",
     "writing/Second Post.md",
     "writing/Put this together-202403010850.md",
     "writing/Third Post.md",
-    "work/Capital One.md",
-    "work/magic8.md",
     "writing/A new title-202403010846.md",
     "writing/A new title-202403010845.md",
     "writing/Untitled-202403010844.md",
@@ -174,8 +176,6 @@
     "writing/Untitled 1-202403010843.md",
     "writing/Untitled 1-202403010840.md",
     "writing/img/Untitled-202403010840.md",
-    "writing/[object Promise]-202403010839.md",
-    "_drafts/Why you should give bad data.md",
     "work/img/web-images_truist_1.png",
     "work/img/web-images_truist_3.png",
     "work/img/template_optimized.gif",

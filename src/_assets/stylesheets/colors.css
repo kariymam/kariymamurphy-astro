@@ -1,17 +1,15 @@
 	:root {
 		/* globals */
 		--primary: #BE4400; /* use tailwind color instead */
-		--background: var(--stone);
+		--background: var(--sandstone);
 		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
 
 
 		/* grays */
 		--color-gray-1: rgba(33, 31, 24, 0.90);
 		--color-gray-2: rgba(53, 50, 38, 0.85);
-		--color-gray-3: rgba(253, 252, 246, 0.85);
 		--color-gray-4: rgba(92, 90, 80, 0.25);
-		--color-gray-5: rgba(244, 244, 236, 0.85);
-		--stone: rgba(244, 244, 232, 0.85);
+		--sandstone: rgba(244, 244, 236, 0.85);
 
 		/* color */
 		--light-teal: rgba(2, 174, 143, 0.85);
@@ -22,33 +20,30 @@
 		--border-primary: var(--color-gray-4);
 		/* text */
 		--text-color: var(--color-gray-1);
-		--text-color-link-active: var(--color-gray-5);
+		--text-color-link-active: var(--sandstone);
 		--text-color-link-visited: var(--primary);
 		--text-color-link: var(--primary);
 
 		/*dynamic*/
-		--nav-indicator-hover: var(--color-gray-5);
+		--nav-indicator-hover: var(--sandstone);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--color-gray-1);
 
-		--color-gray-3:#000;
-		--stone: rgba(25, 25, 20, 0.923);
+		--sandstone: rgba(25, 25, 20, 0.923);
 		--border-primary: #000;
 		--btn: var(--background);
-		/* --scrimOnHover: var(--color-gray-5); */
 
-    --text-color: var(--color-gray-5);
-		/* --text-color-link-visited: var(--primary);
-    --text-color-link-active: var(--color-gray-1); */
-		--hr: 1px solid var(--color-gray-224);
+    --text-color: var(--sandstone);
+		--text-color-link-visited: var(--primary);
+    --text-color-link-active: var(--primary);
   }
 }
 
 html {
-	background-color: var(--stone);
+	background-color: var(--background);
 }
 
 body {
@@ -70,7 +65,7 @@ hr {
 
 
 .background-color {
-	background-color: var(--color-gray-5);
+	background-color: var(--sandstone);
 }
 
 .gradient-color {

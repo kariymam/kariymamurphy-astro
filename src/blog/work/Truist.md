@@ -1,12 +1,12 @@
 ---
-title: Truis2
+title: Truist
 description: 
 externalLink: 
-status: tinkering
+status: tactile
 tags:
-- ux/ui
+  - ux/ui
 thumb: 
-thumbAlt: 
+thumbAlt:
 ---
 I was brought on the Commerical Banking team as a Senior UI Designer to support the redesign SunTrust's commerical banking mobile app; specifically the payments and transfers feature on Android and iOS. 
 

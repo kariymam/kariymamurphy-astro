@@ -3,7 +3,7 @@
   <div id="latestPostsList" class="relative lg:min-h-[348px] lg:overflow-hidden lg:overflow-x-scroll">
     <ul class="scroll-container max-w-screen-xl flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto px-6">
       {% for post in postslist | reverse %}
-      <li class="postlist-heavyItem border-2 rounded-3xl lg:hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
+      <li class="postlist-heavyItem border-2 rounded-3xl transition-colors lg:-mr-0.5">
         {% if post.data.thumb %}
         <article class="sm:grid sm:grid-cols-2 h-full">
           <div>
@@ -68,7 +68,7 @@
       {% set postsCount = collections.posts | length %}
       {% set morePosts = postsCount - numberOfLatestPostsToShow %}
       {% if morePosts > 0 %}
-      <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl hover:bg-[var(--color-gray-3)] transition-colors lg:-mr-0.5">
+      <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl transition-colors lg:-mr-0.5">
         <p class="text-2xl p-12">See more in <a href="/blog/">Blog</a></p>
         </div>
       {% endif %}
