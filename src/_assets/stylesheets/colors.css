@@ -1,6 +1,6 @@
 	:root {
 		/* globals */
-		--primary: #BE4400; /* use tailwind color instead */
+		--primary: rgb(152, 54, 0); /* HEX #983600 */
 		--background: var(--sandstone);
 		--gradient: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
 
@@ -30,7 +30,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-		--color-gray-1: rgba(255, 255, 255,0.75);
+		--color-gray-1: rgba(255, 255, 255, 0.75);
 		--sandstone: rgba(25, 25, 20, 0.923);
 		--border-primary: #000;
 		--btn: var(--background);
