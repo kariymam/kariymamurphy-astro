@@ -20,7 +20,7 @@
 		--border-primary: var(--color-gray-4);
 		/* text */
 		--text-color: var(--color-gray-1);
-		--text-color-link-active: var(--sandstone);
+		--text-color-link-active: var(--color-gray-1);
 		--text-color-link-visited: var(--primary);
 		--text-color-link: var(--primary);
 
@@ -30,15 +30,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--color-gray-1);
-
+		--color-gray-1: rgba(255, 255, 255,0.75);
 		--sandstone: rgba(25, 25, 20, 0.923);
 		--border-primary: #000;
 		--btn: var(--background);
 
-    --text-color: var(--sandstone);
+    --text-color: var(--color-gray-1);
 		--text-color-link-visited: var(--primary);
-    --text-color-link-active: var(--primary);
+    --text-color-link-active: var(--color-gray-1);
   }
 }
 
