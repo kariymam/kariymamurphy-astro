@@ -1,5 +1,5 @@
 ---
-layout: blogpage.njk
+layout: home.njk
 title: Home
 permalink: /
 numberOfLatestPostsToShow: 3
@@ -7,16 +7,6 @@ eleventyNavigation:
   key: home
   order: 1
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<div class="flex items-center justify-center mx-auto max-w-screen-xl">
-  <h3 class="mx-6 mb-6 min-w-max w-full" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
-    Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-    </h3>
-</div>
-<div class="overflow-auto">
-  {% set showYear = true %}
-  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-  {% set postslistCounter = postsCount %}
-  {% include "postlist-heavy.njk" %}
-</div>
+Hello! I’m an opinionated designer and writer who can't stop thinking about politics,
+Black digital footprints, and government services. This is my space for tinkering, researching,
+or making tactile things. 👩🏾‍💻

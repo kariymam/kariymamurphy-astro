@@ -1,8 +1,24 @@
----
-layout: base.njk
----
-{% include "header.njk" %}
-<main class="{% if layout == "post.njk" and thumb %}lg:my-0 lg:mb-32{% else %}lg:my-32{% endif %} w-full {% if permalink !== "/" %}lg:mx-auto max-w-screen-xl{% endif %}">
-  {{ content | safe }}
-</main>
-{% include "footer.njk" %}
+{% extends 'src/_layouts/base.njk' %}
+{% block intro %}
+<div class="mx-auto p-6 max-w-screen-xl min-h-[16rem]">
+  <h2 class="max-w-prose">
+    {{ content | safe }}
+  </h2>
+  <a href="/about/">about me</a>
+</div>
+{% endblock %}
+{% block latestPosts %}
+{% set postsCount = collections.posts | length %}
+{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
+<div class="flex items-center justify-center mx-auto max-w-screen-xl">
+  <h3 class="mx-6 mb-6 min-w-max w-full" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
+    Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
+    </h3>
+</div>
+<div class="overflow-auto">
+  {% set showYear = true %}
+  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+  {% set postslistCounter = postsCount %}
+  {% include "postlist-heavy.njk" %}
+</div>
+{% endblock %}

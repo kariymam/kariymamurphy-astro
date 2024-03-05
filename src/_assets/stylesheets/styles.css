@@ -132,8 +132,10 @@ a.active {
 	width: 100%;
 }
 
-.postlist {
-  height: 100%;
+@media (max-width: 992px) {
+	.postlist .postlist-item:first-child {
+		grid-row: span 2;
+	}
 }
 
 div.postlist-item:nth-child(n+2) {
@@ -145,9 +147,6 @@ div.postlist-item:nth-child(n+2) {
 	counter-increment: start-from -1;
 	align-self: center;
   background-color: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 @media (min-width: 1024px) {
@@ -199,16 +198,6 @@ div.postlist-item:nth-child(n+2) {
 
 h3 span {
 	background-color: var(--background);
-}
-
-.page-tags-list {
-	z-index: 20;
-}
-
-@media (max-width: 768px) {
-	.page-tags-list {
-		z-index: 0;
-	}
 }
 
 .textblock > ol li {
@@ -268,13 +257,6 @@ h3 span {
 
 }
 
-@media (min-width: 1024px) {
-	.postlist {
-		grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-	}
-}
-
-
 details > summary {
 	list-style-type: '＋';
 }
@@ -321,8 +303,7 @@ details[open] > summary {
 }
 
 #latestPostsList li.postlist-heavyItem {
-	min-width: 768px;
-	max-width: 83%;
+	min-width: 75%;
 }
 
 @media (max-width: 768px) {
