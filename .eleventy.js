@@ -5,6 +5,7 @@ const transforms = require('./utils/transforms.js')
 const collections = require('./utils/collections.js')
 const excerpt = require('./utils/excerpt.js');
 const markdownIt = require('markdown-it');
+const markdownItAnchor = require('markdown-it-anchor');
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
 
 module.exports = function (eleventyConfig) {
@@ -27,6 +28,21 @@ module.exports = function (eleventyConfig) {
 		},
 		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath)
 	}));
+
+	eleventyConfig.amendLibrary("md", mdLib => {
+		mdLib.use(markdownItAnchor, {
+			permalink: markdownItAnchor.permalink.ariaHidden({
+				placement: "after",
+				class: "header-anchor",
+				symbol: "#",
+				ariaHidden: false,
+			}),
+			level: [1,2,3,4],
+			slugify: eleventyConfig.getFilter("slugify")
+		});
+		// mdLib.use(markdownItFootnotes);
+		// mdLib.use(markdownItAttrs);
+	});
 
 	// Filters
 	Object.keys(filters).forEach((filterName) => {

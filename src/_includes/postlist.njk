@@ -15,13 +15,15 @@
       <a href="{{ post.url }}" class="h-full w-full">
         <div class="flex flex-col group relative h-full w-full transition-all">
           <div class="flex flex-col px-4 pt-4">
-            <span class="flex flex-row flex-wrap gap-1 items-center justify-end">
+            <div class="flex flex-row flex-wrap gap-1 items-center justify-end"
+            >
               <time
                     datetime="{{ post.date | htmlDateString }}"
                     class="text-sm opacity-70"
+                    aria-label="number of days blogpost posted ago" title="blogpost date"
                     >{{ post.date | agoDate }}</time
                   >
-            </span>
+          </div>
             <h3 class="postlist-item-header break-words px-4 pt-4">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
             <h4 class="mx-4 pb-4">{{ post.data.description }}</h4>
           </div>

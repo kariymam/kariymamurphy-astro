@@ -1,6 +1,10 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
 
 import { animations } from './animations.js';
+import A11yDialog from 'a11y-dialog'
+
+const container = document.querySelector('#contact_modal')
+const dialog = new A11yDialog(container)
 
 animations();
 
@@ -62,19 +66,17 @@ for (let i = 0; i < displayFonts.length; i++) {
   displayFonts[i].innerHTML = result;
 };
 
-//-------- close
-function modal() {
-	let modal = document.querySelector(".modal");
-	const body = document.querySelector("body");
-	const contact = document.querySelector("#contact")
-	const closeBtn = document.querySelector("#close");
+// //-------- close
+// function modal() {
+// 	let modal = document.querySelector(".modal");
+// 	const body = document.querySelector("body");
+// 	const contact = document.querySelector("#contact")
+// 	const closeBtn = document.querySelector("#close");
 
-	function open() {
-		modal.classList.toggle('hidden');
-	}
+// 	function open() {
+// 		modal.classList.toggle('hidden');
+// 	}
 
-	closeBtn.addEventListener('click', open);
-	contact.addEventListener('click', open);
-}
-
-modal();
+// 	closeBtn.addEventListener('click', open);
+// 	contact.addEventListener('click', open);
+// }

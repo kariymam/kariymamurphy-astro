@@ -1,49 +1,6 @@
-{% include "drawer.njk" %}
-<footer class="h-auto lg:mx-auto lg:w-full max-w-screen-xl left-0 right-0 bottom-0 lg:fixed">
+<footer role="main" class="h-auto lg:mx-auto lg:w-full max-w-screen-xl left-0 right-0 bottom-0 lg:fixed">
   <div class="relative p-6">
-      <nav id="footer-nav" aria-label="footer">
-        {% if layout == "post.njk" %}
-        <ul
-          class="flex flex-col lg:items-center text-sm gap-2 py-8 sm:my-0 sm:flex-row sm:gap-8 sm:justify-start"
-        >
-          {%- if collections.posts %}
-          {%- set previousPost = collections.posts | getPreviousCollectionItem %}
-          {%- set nextPost = collections.posts | getNextCollectionItem %}
-          {%- if nextPost or previousPost %}
-          {%- if previousPost %}
-          <li id="previousPost" class="flex sm:w-full items-center min-w-max h-10">
-            <div class="flex flex-col w-full md:justify-start">
-              <p class="text-xs">Previous post</p>
-              <div class="flex w-full items-center md:flex-row md:justify-start">
-                <ion-icon name="arrow-back-outline"></ion-icon>
-                <a href="{{ previousPost.url }}" class="displayFont">{{ previousPost.data.title }}</a>
-              </div>
-              </div>
-            </li>
-          {% endif %}
-          {%- if nextPost %}
-          <li id="nextPost" class="flex items-center min-w-max h-10">
-            <div class="flex flex-col w-full md:justify-start">
-              <p class="text-xs">Next post</p>
-              <div class="flex w-full items-center md:flex-row md:justify-start">
-                <a href="{{ nextPost.url }}" class="displayFont">{{ nextPost.data.title }}</a>
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </div>
-              </div>
-            </li>
-          {% endif %}
-          {%- endif %}
-          {%- endif %}
-        </ul>
-        {% endif %}
-        <ul class="flex flex-col items-center text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-start">
-          <li class="flex items-center gap-1 decoration-transparent min-w-max">
-            <a id="contact" href="#contactModal" class="transition hover:/75">send me a note</a>
-          </li>
-          <li class="flex items-center gap-1 decoration-transparent w-full justify-center sm:justify-end">
-            <p class="opacity-70">Kariyma Murphy &copy; 2024</p>
-          </li>
-        </ul>
-      </nav>
+
   </div>
 </footer>
+{% include '_partials/copyright.njk' %}
