@@ -1,20 +1,25 @@
-<ul class="flex flex-row flex-wrap gap-2 items-center">
-  {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-  <li>
-    <a href="{{ tagUrl }}"
-        title="{{ site.url}}{{ tagUrl }}"
-          class="post-tag text-sm relative block {% if page.url == tagUrl %}active{% endif %}"
-          >{{ tag }}</a
-        >
-  </li>
-  {% endfor %}
-  {%- if title !== "Tag" and numberOfTagsToShow %}
-  {% set tagCount = collections.all | getAllTags | filterTagList | length %}
-  {% set moreTags = tagCount - numberOfTagsToShow  %}
-  {% if moreTags > 0 %}
-  <li>
-    <a href="/tags/">View taglist</a>
-  </li>
-  {% endif %}
-  {% endif %}
-</ul>
+<section id="tagDrawer" class="mt-6 mx-6 lg:mt-0 max-w-screen-xl">
+  <h4>Topics</h4>
+  <div class="flex flex-wrap items-center gap-2 list-none mb-8">
+    <ul class="flex flex-row flex-wrap gap-2 items-center">
+      {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li>
+        <a href="{{ tagUrl }}"
+            title="{{ site.url}}{{ tagUrl }}"
+              class="post-tag text-sm relative block {% if page.url == tagUrl %}active{% endif %}"
+              >{{ tag }}</a
+            >
+      </li>
+      {% endfor %}
+      {%- if title !== "Tag" and numberOfTagsToShow %}
+      {% set tagCount = collections.all | getAllTags | filterTagList | length %}
+      {% set moreTags = tagCount - numberOfTagsToShow  %}
+      {% if moreTags > 0 %}
+      <li>
+        <a href="/tags/">View taglist</a>
+      </li>
+      {% endif %}
+      {% endif %}
+    </ul>
+  </div>
+</section>

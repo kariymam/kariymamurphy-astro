@@ -6,6 +6,6 @@ eleventyNavigation:
   order: 2
 numberOfTagsToShow: 10
 ---
-
 {% set postslist = collections.posts %}
-{% include "postlist.njk" %}
+{% include 'postlist.njk' %}
+{% include "_partials/taglist.njk" %}

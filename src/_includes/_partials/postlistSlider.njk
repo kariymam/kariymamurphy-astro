@@ -1,0 +1,58 @@
+<li class="postlist-heavyItem border-2 rounded-3xl transition-colors lg:-mr-0.5">
+  {% if articleImg %}
+  <article class="sm:grid sm:grid-cols-2 h-full">
+      <div class="relative sm:h-full self-center">
+        <a href="{{ articleUrl | url }}" class="postlist-heavyImg overflow-hidden absolute h-full w-full rounded-t-3xl sm:rounded-tr-none md:rounded-l-3xl">
+            {% image articleImg, articleImgAlt, "thumbImg" %}
+        </a>
+      </div>
+    <div class="p-6 sm:p-4">
+        <div class="flex flex-col gap-4 lg:p-6">
+          <a href="{{ articleUrl | url }}">
+            <h4 class="pb-2 leading-tight">
+              {% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}
+            </h4>
+          </a>
+          <div class="max-w-sm mt-2">
+              <a href="{{ articleUrl | url }}"
+                class="opacity-80 hover:opacity-100 decoration-transparent"
+                style="font-family:var(--body-font);">
+              {% excerpt post %}
+            </a>
+            </div>
+          <time
+          datetime="{{ articleDate | htmlDateString }}"
+          class="text-sm"
+          >{{ articleDate | agoDate }}</time>
+          <ul class="flex flex-wrap gap-2 pt-6">
+            {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+            <li>
+              <a href="{{ tagUrl }}"
+                  title="{{ site.url}}{{ tagUrl }}"
+                    class="post-tag md:text-xs rounded-full"
+                    >{{ tag }}</a
+                  >
+            </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+    </div>
+    {% else %}
+    <article>
+      <div class="flex-col justify-between flex-1">
+        <div class="p-6">
+          <a href="{{ articleUrl | url }}">
+            <h4>
+              {% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}
+          </h4>
+          </a>
+
+          <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
+            {% excerpt post %}
+          </p>
+        </div>
+      </div>
+    {% endif %}
+  </article>
+</li>

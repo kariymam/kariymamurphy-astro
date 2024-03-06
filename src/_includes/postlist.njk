@@ -1,56 +1,13 @@
-
-  <div
-    reversed
-    id="main"
-    class="postlist m-6 grid gap-2 grid-flow-row-dense md:grid-cols-2 lg:grid-flow-row lg:grid-rows-4 lg:grid-cols-4"
-    style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}"
-  >
-    {% for post in postslist | reverse %}
-    <article
-      class="postlist-item{% if post.url == url %} postlist-item-active{% endif %} flex border-2 rounded-3xl overflow-hidden h-full"
-    >
-      <a href="{{ post.url }}" class="flex flex-col relative w-full">
-          <div class="flex flex-col px-4 pt-4">
-            <div class="flex flex-row flex-wrap gap-1 items-center justify-end"
-            >
-              <time
-                    datetime="{{ post.date | htmlDateString }}"
-                    class="text-sm opacity-70"
-                    aria-label="number of days blogpost posted ago" title="blogpost date"
-                    >{{ post.date | agoDate }}</time
-                  >
-          </div>
-            <h3 class="postlist-item-header break-words px-4 pt-4">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
-            <h4 class="mx-4 pb-4">{{ post.data.description }}</h4>
-          </div>
-          <div class="relative flex h-full">
-            <div
-              class="postlist-item-description w-full h-full transition-all"
-            >
-            <div class="mx-8 py-6 max-w-md">
-              {% excerpt post %}</div
-              >
-            {% if post.data.thumb %}
-            <div
-              class="thumbImgContainer relative border-t-2 lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-hidden lg:z-10"
-            >
-              {% image post.data.thumb, post.data.thumbAlt, "thumbImg h-full w-full lg:absolute lg:object-cover lg:inset-0 lg:top-0" %}
-            </div>
-            {% endif %}
-            </div>
-          </div>
-      </a>
-      <ul class="page-tags-list max-w-xs flex flex-row flex-wrap z-0 sm:z-10 px-4 pb-4 absolute lg:bg-transparent gap-2 place-self-end self-end">
-            {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-            <li>
-              <a href="{{ tagUrl }}"
-                  title="{{ site.url}}{{ tagUrl }}"
-                    class="post-tag md:text-sm rounded-full"
-                    >{{ tag }}</a
-                  >
-            </li>
-            {% endfor %}
-      </ul>
-    </article>
-    {% endfor %}
-  </div>
+<section reversed class="postlist m-6 grid gap-2 grid-flow-row-dense md:grid-cols-2 lg:grid-flow-row" style="counter-reset: start-from {{ (postslist.length) + 1 }}"
+>
+{% asyncEach post in postslist | reverse %}
+  {% set articleUrl = post.url %}
+  {% set articleDate = post.date %}
+  {% set articleTitle = post.data.title %}
+  {% set articleDescription = post.data.description %}
+  {% set articleImg = post.data.thumb %}
+  {% set articleImgAlt = post.data.thumbAlt %}
+  {% set articleTags = post.data.tags %}
+  {% include "_partials/postlistCard.njk" %}
+{% endeach %}
+</section>

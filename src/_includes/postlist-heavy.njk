@@ -1,67 +1,16 @@
-
 <div class="flex items-center justify-between mx-6">
   <div id="latestPostsList" class="relative lg:min-h-[348px] lg:overflow-hidden lg:overflow-x-scroll">
     <ul class="scroll-container max-w-screen-xl flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto px-6">
-      {% for post in postslist | reverse %}
-      <li class="postlist-heavyItem border-2 rounded-3xl transition-colors lg:-mr-0.5">
-        {% if post.data.thumb %}
-        <article class="sm:grid sm:grid-cols-2 h-full">
-            <div class="relative sm:h-full self-center">
-              <a href="{{ post.url | url }}" class="postlist-heavyImg overflow-hidden absolute h-full w-full rounded-t-3xl sm:rounded-tr-none md:rounded-l-3xl">
-                  {% image post.data.thumb, post.data.thumbAlt, "thumbImg" %}
-              </a>
-            </div>
-          <div class="p-6 sm:p-4">
-              <div class="flex flex-col gap-4 lg:p-6">
-                <a href="{{ post.url | url }}">
-                  <h4 class="pb-2 leading-tight">
-                    {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-                  </h4>
-                </a>
-                <div class="max-w-sm mt-2">
-                    <a href="{{ post.url | url }}"
-                      class="opacity-80 hover:opacity-100 decoration-transparent"
-                      style="font-family:var(--body-font);">
-                    {% excerpt post %}
-                  </a>
-                  </div>
-                <time
-                datetime="{{ post.date | htmlDateString }}"
-                class="text-sm"
-                >{{ post.date | agoDate }}</time>
-                <ul class="flex flex-wrap gap-2 pt-6">
-                  {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                  <li>
-                    <a href="{{ tagUrl }}"
-                        title="{{ site.url}}{{ tagUrl }}"
-                          class="post-tag md:text-xs rounded-full"
-                          >{{ tag }}</a
-                        >
-                  </li>
-                  {% endfor %}
-                </ul>
-
-              </div>
-          </div>
-          {% else %}
-          <article>
-            <div class="flex-col justify-between flex-1">
-              <div class="p-6">
-                <a href="{{ post.url | url }}">
-                  <h4>
-                    {% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}
-                </h4>
-                </a>
-
-                <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-700">
-                  {% excerpt post %}
-                </p>
-              </div>
-            </div>
-          {% endif %}
-        </article>
-      </li>
-      {% endfor %}
+      {% asyncEach post in postslist | reverse %}
+        {% set articleUrl = post.url %}
+        {% set articleDate = post.date %}
+        {% set articleTitle = post.data.title %}
+        {% set articleDescription = post.data.description %}
+        {% set articleImg = post.data.thumb %}
+        {% set articleImgAlt = post.data.thumbAlt %}
+        {% set articleTags = post.data.tags %}
+        {% include "_partials/postlistSlider.njk" %}
+      {% endeach %}
       {% if numberOfLatestPostsToShow %}
       {% set postsCount = collections.posts | length %}
       {% set morePosts = postsCount - numberOfLatestPostsToShow %}

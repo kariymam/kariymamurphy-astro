@@ -151,7 +151,7 @@ div.postlist-item:nth-child(n+2) {
 
 @media (min-width: 1024px) {
 	.postlist-item {
-		min-height: 30rem;
+		min-height: 24rem;
 	}
 }
 
@@ -174,19 +174,21 @@ div.postlist-item:nth-child(n+2) {
 	@apply text-sm
 }
 
-.postlist-item-description > p {
-	padding-left: 1.2rem;
-	padding-bottom: 1rem;
+.postlist-item-description div > p {
 	width: 100%;
+	font-size: 2em;
+	padding-bottom: 1em;
 }
 
-.postlist-item-description > span {
-	font-weight: 700;
+@media (max-width: 992px) {
+	.postlist-item-description div > p {
+		@apply text-2xl;
+	}
 }
 
 @media (max-width: 1024px) {
 	.postlist-item-description > p {
-		max-width: calc(100% * 0.85);
+		max-width: calc(100% * 0.95);
 	 }
 }
 

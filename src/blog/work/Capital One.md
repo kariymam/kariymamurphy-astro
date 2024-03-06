@@ -9,8 +9,6 @@ tags:
   - ux/ui
 ---
 
-I joined Capital One as a Senior UI/UX Designer in February 2021 to design UI for privacy decision-making and enhancements to the consumer data request portal.
-
 ### What
 
 1. Design user flow for an overhaul of the privacy decision-making business process; specifically, determining whether a dataset contained personally identifiable information (PII) that consumers could request to download, correct, or delete.

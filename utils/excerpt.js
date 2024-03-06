@@ -7,8 +7,8 @@
 		let excerpt = post.data?.page?.excerpt;
 		let content = post.templateContent;
 		let title = post.data.title;
-		const charCount = 134;
-		const readMore = `<p class="break-keep opacity-70">Read <i>${title}</i></p>` ;
+		const charCount = 148;
+		const readMore = `<span class="break-keep opacity-70">Read ${title}</span>` ;
 
 		excerpt = striptags(content)
 			.substring(0, charCount)
