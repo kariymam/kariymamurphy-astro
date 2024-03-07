@@ -1,4 +1,4 @@
-<section reversed class="postlist m-6 grid gap-2 grid-flow-row-dense md:grid-cols-2 lg:grid-flow-row" style="counter-reset: start-from {{ (portfolio.length) + 1 }}"
+<section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
 >
 {% asyncEach work in portfolio | reverse %}
   {% set articleUrl = work.url %}
@@ -8,6 +8,7 @@
   {% set articleImg = work.data.thumb %}
   {% set articleImgAlt = work.data.thumbAlt %}
   {% set articleTags = work.data.tags %}
+  {% set articleLink = work.data.externalLink %}
   {% include "_partials/postlistCard.njk" %}
 {% endeach %}
 </section>
