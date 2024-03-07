@@ -8,26 +8,23 @@
         class="postlist-item-description w-full h-full transition-all"
       >
         {% if post %}
-        <div class="flex flex-col px-4 py-6 mt-2 w-[35ch] lg:h-full">
+        <div class="flex flex-col px-4 py-6 mt-2 lg:w-[35ch] lg:h-full">
           {% excerpt post %}
         </div>
           {% elif work %}
           {% endif %}
         {% if articleImg %}
         <div
-          class="thumbImgContainer scrim2 relative lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-scroll"
+          class="thumbImgContainer relative lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-scroll"
         >
           {% image articleImg, articleImgAlt, "thumbImg h-full w-full lg:absolute lg:object-cover lg:inset-0 lg:top-0" %}
         </div>
         {% endif %}
       </div>
     </div>
-    <div class="flex flex-col lg:flex-row px-4 pt-4 bg-[var(--primary)] border-t-2">
+    <div class="flex flex-col lg:flex-row px-4 pt-6 lg:pt-4 bg-[var(--border-primary)] border-t-2">
         <h3 class="postlist-item-header break-words w-full lg:text-base">{% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}</h3>
         <div class="flex w-full pb-4 lg:justify-end">
-            <!-- {% if post %}
-            <h4 class="pb-2 text-base w-full">{{ articleDescription }}</h4>
-            {% endif %} -->
             <time
                   datetime="{{ articleDate | htmlDateString }}"
                   class="text-sm opacity-70 min-w-max"
@@ -37,7 +34,7 @@
           </div>
       </div>
   </a>
-  <ul class="page-tags-list max-w-xs flex flex-row flex-wrap z-0 lg:z-10 mx-4 py-2 xl:absolute lg:bg-transparent gap-2 lg:place-self-end lg:self-end">
+  <ul class="page-tags-list w-full lg:w-auto lg:max-w-xs flex flex-row flex-wrap z-0 bg-[var(--border-primary)] lg:z-10 px-4 py-4 lg:py-2 xl:absolute lg:bg-transparent gap-2 lg:place-self-end lg:self-end">
         {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
         <li>
           <a href="{{ tagUrl }}"

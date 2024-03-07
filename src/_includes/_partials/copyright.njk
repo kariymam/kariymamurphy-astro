@@ -1,17 +1,19 @@
 {% include "contact.njk" %}
 <div class="h-auto lg:mx-auto lg:w-full max-w-screen-xl left-0 right-0 bottom-0 lg:fixed">
   <div class="relative p-6">
-      <nav id="footer-nav" aria-label="footer">
-        <ul class="flex flex-col items-center text-sm gap-6 sm:flex-row sm:gap-8 sm:justify-start">
+      <div>
+        <h4 class="text-sm text-center sm:text-left">Links</h4>
+        <ul class="flex flex-col items-center gap-6 sm:flex-row sm:gap-8 sm:justify-start">
           <li class="flex items-center gap-1 min-w-max">
             <button type="button" data-a11y-dialog-show="contact_modal" class="transition">
-              send me a note
+              send a note
             </button>
+            <ion-icon name="send-outline"></ion-icon>
           </li>
-          <li class="flex items-center gap-1 decoration-transparent w-full justify-center sm:justify-end">
+          <li class="flex items-center gap-1 decoration-transparent w-full justify-center sm:justify-end text-sm">
             <p class="opacity-70">Kariyma Murphy &copy; 2024</p>
           </li>
         </ul>
-      </nav>
+      </div>
   </div>
 </div>

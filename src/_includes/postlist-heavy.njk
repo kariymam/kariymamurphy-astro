@@ -1,6 +1,6 @@
 <div class="flex items-center justify-between mx-6">
   <div id="latestPostsList" class="relative lg:min-h-[348px] lg:overflow-hidden lg:overflow-x-scroll">
-    <ul class="scroll-container max-w-screen-xl flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto px-6">
+    <ul class="scroll-container max-w-screen-xl h-full flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto">
       {% asyncEach post in postslist | reverse %}
         {% set articleUrl = post.url %}
         {% set articleDate = post.date %}

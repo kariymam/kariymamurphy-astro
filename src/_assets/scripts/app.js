@@ -26,6 +26,9 @@ function toggleNav() {
 burger.addEventListener('click', function() {
 	toggleNav();
 });
+navScrim.addEventListener('click', function() {
+	toggleNav();
+});
 
 //-------- random
 
