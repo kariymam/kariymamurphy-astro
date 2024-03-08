@@ -27,7 +27,9 @@ module.exports = function (eleventyConfig) {
 			sizes: ["50vw", "100vw"]
 		},
 		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath)
-	}));
+	})
+	.use(require('markdown-it-footnote'))
+	);
 
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
@@ -42,6 +44,12 @@ module.exports = function (eleventyConfig) {
 		});
 		// mdLib.use(markdownItFootnotes);
 		// mdLib.use(markdownItAttrs);
+		mdLib.renderer.rules.footnote_block_open = () => (
+			'<hr>' +
+			'<h4 class="text-sm opacity-70 mt-3">Footnotes</h4>\n' +
+			'<footer class="footnotes">\n' +
+			'<ol class="footnotes-list">\n'
+		);
 	});
 
 	// Filters

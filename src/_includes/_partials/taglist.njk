@@ -1,6 +1,6 @@
-<section id="tagDrawer" class="mt-6 mx-6 p-6 lg:mx-auto max-w-screen-xl">
+<section id="tagDrawer" class="mt-6 mx-6 px-6 pb-2 pt-6 lg:mx-auto max-w-screen-xl">
   <h4>Topics</h4>
-  <div class="flex flex-wrap items-center gap-2 list-none mb-8">
+  <div class="flex flex-wrap items-center gap-2 list-none">
     <ul class="flex flex-row flex-wrap gap-2 items-center">
       {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
       <li>

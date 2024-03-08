@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "writing/Second Post.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/Capital One.md"
+                "file": "writing/Second Post.md"
               }
             }
           }
@@ -149,10 +149,10 @@
   },
   "active": "7450fb1650fd6bfa",
   "lastOpenFiles": [
+    "work/Capital One.md",
     "work/GFA.md",
     "work/magic8.md",
     "work/Truist.md",
-    "work/Capital One.md",
     "_drafts/Building a blog with Eleventy and Obsidian taught me Javascript.md",
     "_drafts/WWMS?.md",
     "_drafts/Why you should give bad data.md",

@@ -15,13 +15,12 @@ date: git Last Modified
   <div class="max-w-prose mx-auto posttextBlock">
       {{ content | safe }}
   </div>
-  <footer id="endnotes" role="footnotes"></footer>
 </article>
+{%- if collections.posts and layouts == "post.njk" %}
 <section id="post-nav" class="max-w-prose mx-6 md:mx-auto">
   <ul
     class="flex flex-col lg:items-center text-sm gap-2 py-8 sm:my-0 sm:flex-row sm:gap-8 sm:justify-start"
   >
-    {%- if collections.posts %}
     {%- set previousPost = collections.posts | getPreviousCollectionItem %}
     {%- set nextPost = collections.posts | getNextCollectionItem %}
     {%- if nextPost or previousPost %}
@@ -48,6 +47,6 @@ date: git Last Modified
       </li>
     {% endif %}
     {%- endif %}
-    {%- endif %}
   </ul>
 </section>
+{%- endif %}
