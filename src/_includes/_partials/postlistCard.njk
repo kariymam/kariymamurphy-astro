@@ -2,7 +2,7 @@
   class="{% if postslist %}postlist-item h-full {% elif portfolio %}worklist-item {% endif %}{% if articleUrl == url %}postlist-item-active {% endif %}flex flex-col rounded-lg overflow-hidden border-2 bg-[var(--border-primary)]"
   style="counter-increment: start-from -1;"
 >
-  <a href="{% if post %}{{ articleUrl }}{% elif work %}{{ articleLink }}{% endif %}" class="flex flex-col relative w-full h-full" {% if work %}target="_blank" rel="noopener noreferrer"{% endif %}>
+  <a href="{% if post %}{{ articleUrl }}{% elif work and articleLink %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-full" {% if work %}target="_blank" rel="noopener noreferrer"{% endif %}>
     <div class="{% if post %}relative {% endif %}flex h-full">
       <div
         class="postlist-item-description w-full h-full transition-all"

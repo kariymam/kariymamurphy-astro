@@ -22,7 +22,7 @@
     <body>
         <a href="#main" class="skip-link">Skip to main content</a>
           {% include "header.njk" %}
-          <main class="mx-auto max-w-screen-xl w-full mt-32">
+          <main class="mx-auto {% if permalink !== "/" %}max-w-screen-xl{% endif %} w-full my-32">
             {% block intro %}{% endblock %}
             {% block latestPosts %}{% endblock %}
             {% if permalink !== '/' %}

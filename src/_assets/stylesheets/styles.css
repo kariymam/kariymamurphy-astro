@@ -72,10 +72,6 @@ h5, h6 {
 	@apply text-base;
 }
 
-ol {
-	@apply pl-6
-}
-
 .indicator {
 	display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@
 layout: base.njk
 date: git Last Modified
 ---
-<section id="metadata" class="mt-6 mx-6 lg:mt-0 lg:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
+<aside id="metadata" class="mt-6 mx-6 lg:mt-0 lg:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
   <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-screen-xl">
     <li class="justify-end mr-4"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">Last updated: {{ page.date | readableDate }}</time></li>
     {%- for tag in tags | filterTagList %}
@@ -10,7 +10,7 @@ date: git Last Modified
     <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
     {%- endfor %}
   </ul>
-</section>
+</aside>
 <article id="main" class="mx-6 md:mx-0">
   <div class="max-w-prose mx-auto posttextBlock">
       {{ content | safe }}
