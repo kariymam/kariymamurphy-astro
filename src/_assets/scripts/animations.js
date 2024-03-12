@@ -110,7 +110,7 @@ const animations = () => {
 		const headerHeight = (a, b) => a + b;
 
 		const thumbAnimation = (thumbImg, paragraph) => {
-			let moveY = headerHeight(paragraph, 32);
+			let moveY = headerHeight(paragraph, 24);
 			postlistTL = gsap.timeline({ paused: true });
 			postlistTL.to(thumbImg, {
 				duration: 0.3,

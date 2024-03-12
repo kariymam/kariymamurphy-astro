@@ -1,52 +1,55 @@
 <article
-  class="{% if postslist %}postlist-item h-full {% elif portfolio %}worklist-item {% endif %}{% if articleUrl == url %}postlist-item-active {% endif %}flex flex-col rounded-lg overflow-hidden border-2 bg-[var(--border-primary)]"
+  class="{% if postslist %}postlist-item {% elif portfolio %}worklist-item {% endif %}{% if articleUrl == url %}postlist-item-active {% endif %}flex flex-col max-h-96 h-full"
   style="counter-increment: start-from -1;"
 >
-  <a href="{% if post %}{{ articleUrl }}{% elif work and articleLink %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-full" {% if work %}target="_blank" rel="noopener noreferrer"{% endif %}>
-    <div class="{% if post %}relative {% endif %}flex h-full">
-      <div
-        class="postlist-item-description w-full h-full transition-all"
-      >
-        {% if post %}
-        <div class="flex flex-col px-4 py-6 mt-2 lg:w-[35ch] lg:h-full">
-          {% excerpt post %}
-        </div>
-          {% elif work %}
-          {% endif %}
-        {% if articleImg %}
-        <div
-          class="thumbImgContainer relative lg:flex items-end justify-end w-full lg:h-full top-0 lg:absolute lg:overflow-scroll"
-        >
-          {% image articleImg, articleImgAlt, "thumbImg h-full w-full lg:absolute lg:object-cover lg:inset-0 lg:top-0" %}
-        </div>
+{% if articleImg %}
+  <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-full aspect-square overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
+    <div class="postlist-item-description relative flex h-full bg-[var(--border-primary)] border-x w-full transition-all">
+      {% if post %}
+      <div class="flex flex-col p-6 absolute">
+        {% excerpt post %}
+      </div>
+        {% elif work %}
         {% endif %}
+
+      <div
+        class="thumbImgContainer flex w-full h-full scrim2"
+      >
+        {% image articleImg, articleImgAlt, "thumbImg h-full object-cover top-0 bottom-0 left-0 right-0 absolute" %}
       </div>
     </div>
-    <div class="flex flex-col lg:flex-row px-4 py-6 lg:pt-4 border-t-2">
-        <div class="flex flex-col w-full">
-          <h3 class="postlist-item-header break-words w-full lg:text-base">{% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}</h3>
-          <p>{{ articleDescription }}</p>
-        </div>
-        <div class="flex pb-4 lg:justify-end">
-            <time
-                  datetime="{{ articleDate | htmlDateString }}"
-                  class="text-sm opacity-70 min-w-max"
-                  aria-label="number of days blogpost posted ago" title="blogpost date"
-                  >{{ articleDate | agoDate }}</time
-                >
-          </div>
-      </div>
+    {% else %}
+    {% endif %}
   </a>
-  <ul class="page-tags-list w-full lg:w-auto lg:max-w-xs flex flex-row flex-wrap z-0 lg:z-10 px-4 py-4 lg:py-2 xl:absolute lg:bg-transparent gap-2 lg:place-self-end lg:self-end">
-        {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-        <li>
-          <a href="{{ tagUrl }}"
-              title="{{ site.url}}{{ tagUrl }}"
-                class="postlist-tag md:text-sm rounded-full"
-                >{{ tag }}</a
-              >
-        </li>
-        {% endfor %}
-  </ul>
+  <div class="relative flex {% if articleImg is not defined %}h-full{% endif %}">
+    <div class="flex flex-col justify-end gap-1 px-4 py-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute w-full z-[2] bottom-0 text-white{% endif %}">
+      {% if articleTitle %}
+      <h3 class="postlist-item-header break-words max-w-xs text-base">
+        <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          {% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}
+        </a>
+      </h3>
+      {% endif %}
+      {% if articleDescription %}<p class="max-w-[35ch] mr-4">{{ articleDescription }}</p>{% endif %}
+    </div>
+  </div>
+  <div class="flex items-center pb-6">
+    <ul class="flex flex-wrap w-full gap-2 px-4 pt-2">
+      {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li>
+        <a href="{{ tagUrl }}"
+            title="{{ site.url}}{{ tagUrl }}"
+              class="post-tag rounded-full text-xs"
+              >{{ tag }}</a
+            >
+      </li>
+      {% endfor %}
+    </ul>
+    <time
+    datetime="{{ articleDate | htmlDateString }}"
+    class="text-xs opacity-70 min-w-max px-4"
+    aria-label="number of days blogpost posted ago" title="blogpost date"
+    >{{ articleDate | agoDate }}</time>
+  </div>
+
 </article>
-</div>

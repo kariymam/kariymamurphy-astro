@@ -50,12 +50,6 @@ p {
 	max-width: 68ch;
 }
 
-.postlist-item a:not(h3, small, time) {
-	text-decoration-line: none;
-	color: var(--text-color);
-	font-family: var(--body-font);
-}
-
 h1 {
 	@apply text-3xl;
 }
@@ -160,18 +154,19 @@ div.postlist-item:nth-child(n+2) {
 }
 
 .postlist-item-header:before  {
-    content: "" counter(start-from,decimal-leading-zero) ".\00a0";
+    content: "" counter(start-from,decimal-leading-zero);
     line-height: 100%;
     pointer-events: none;
     text-align: right;
 		text-decoration: transparent;
-		position: absolute;
-    top: 0;
-		left: 0;
-		padding: 1rem;
 		font-family: var(--mono-font);
 		opacity: 0.7;
 		/* width: 1rem; */
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		margin: 1rem;
+		@apply text-xs
 }
 
 @media (max-width: 768px) {
@@ -181,15 +176,11 @@ div.postlist-item:nth-child(n+2) {
 	}
 }
 
-.postlist-item-header:before {
-	@apply text-sm
-}
-
-.postlist-item-description div > p {
+/* .postlist-item-description div > p {
 	width: 100%;
 	font-size: 1em;
 	margin: auto;
-}
+} */
 
 @media (max-width: 1024px) {
 	.postlist-item-description > p {
@@ -434,7 +425,7 @@ header > #headerScrim {
   height: 100%;
 	border-bottom-left-radius:1.5rem;
 	border-bottom-right-radius:1.5rem;
-	background: linear-gradient(0deg, rgba(244, 244, 244, 0.00) 0%, rgba(162, 162, 162, 0.00) 43.53%, rgba(0, 0, 0, 0.30) 98.28%, rgba(255, 255, 255, 0.00) 102.42%);
+	background: linear-gradient(180deg, rgba(244, 244, 244, 0.00) 0%, rgba(162, 162, 162, 0.00) 43.53%, rgba(0, 0, 0, 0.30) 98.28%, rgba(255, 255, 255, 0.00) 102.42%);
 	z-index: 1;
 }
 

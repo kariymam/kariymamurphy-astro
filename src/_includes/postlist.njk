@@ -8,6 +8,7 @@
   {% set articleImg = post.data.thumb %}
   {% set articleImgAlt = post.data.thumbAlt %}
   {% set articleTags = post.data.tags %}
+  {% set articleLink = post.data.externalLink %}
   {% include "_partials/postlistCard.njk" %}
 {% endeach %}
 </section>

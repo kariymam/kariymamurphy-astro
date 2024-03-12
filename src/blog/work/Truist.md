@@ -4,8 +4,6 @@ description:
 status: tactile
 tags:
   - ux/ui
-thumb:
-thumbAlt:
 ---
 I was brought on the Commerical Banking team as a Senior UI Designer to support the redesign SunTrust's commerical banking mobile app; specifically the payments and transfers feature on Android and iOS.
 
