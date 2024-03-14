@@ -1,5 +1,3 @@
-<section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
->
 {% asyncEach work in portfolio | reverse %}
   {% set articleUrl = work.url %}
   {% set articleDate = work.date %}
@@ -11,4 +9,3 @@
   {% set articleLink = work.data.externalLink %}
   {% include "_partials/postlistCard.njk" %}
 {% endeach %}
-</section>

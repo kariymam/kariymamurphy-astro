@@ -21,7 +21,7 @@
     {% else %}
     {% endif %}
   </a>
-  <div class="relative flex {% if articleImg is not defined %}h-full{% endif %}">
+  <div class="relative flex {% if articleImg is not defined %}h-[327px]{% endif %}">
     <div class="flex flex-col justify-end gap-1 px-4 py-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute w-full z-[2] bottom-0 text-white{% endif %}">
       {% if articleTitle %}
       <h3 class="postlist-item-header break-words max-w-xs text-base">

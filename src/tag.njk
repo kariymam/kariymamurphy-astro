@@ -18,5 +18,12 @@ permalink: /tags/{{ tag | slugify }}/
 numberOfTagsToShow: 10
 ---
 {% set postslist = collections[ tag ] %}
-{% include 'postlist.njk' %}
-{% include "_partials/taglist.njk" %}
+<section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
+>
+  <h2 class="border p-6 mb-14 rounded-3xl">{{ tag }}</h2>
+  {% include 'postlist.njk' %}
+</section>
+<section id="tagDrawer" class="mt-6 mx-6 pb-2 pt-6 lg:mx-auto max-w-screen-xl">
+  <h2>Tags</h2>
+  {% include "_partials/taglist.njk" %}
+</section>

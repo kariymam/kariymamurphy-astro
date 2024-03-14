@@ -1,4 +1,5 @@
-<footer class="flex flex-col lg:flex-row h-auto mt-auto lg:mx-auto lg:w-full max-w-screen-xl lg:pb-20">
+{% include "contact.njk" %}
+<footer class="flex flex-col lg:flex-row h-auto mt-auto lg:mx-auto lg:w-full max-w-screen-xl">
   <nav id="footer-nav" aria-label="footer" class="w-full p-6">
     <h4 class="opacity-70 text-sm text-center sm:text-left">Pages</h4>
     <ul class="flex flex-col items-center gap-6 sm:flex-row sm:gap-8 sm:justify-start">
@@ -16,12 +17,16 @@
       <li class="decoration-transparent">
         <a class=" transition hover:/75" href="/archive/"> archive </a>
       </li>
+      <li class="flex items-center gap-1 min-w-max">
+        <button type="button" data-a11y-dialog-show="contact_modal" class="transition">
+          send a note
+        </button>
+      </li>
     </ul>
   </nav>
   <div class="flex flex-col lg:flex-row sm:min-w-max p-6 lg:items-end text-sm">
     <p class="text-center sm:text-left">
-    Made with 11ty, served on Netlify, analytics via <a href="https://plausible.io/" target="_blank" rel="noopener noreferrer">Plausible</a>.
+      Kariyma Murphy &copy; 2024. Made with 11ty, served on Netlify, analytics via <a href="https://plausible.io/" target="_blank" rel="noopener noreferrer">Plausible</a>.
     </p>
   </div>
 </footer>
-{% include '_partials/copyright.njk' %}

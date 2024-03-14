@@ -1,5 +1,3 @@
-<section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
->
 {% asyncEach post in postslist | reverse %}
   {% set articleUrl = post.url %}
   {% set articleDate = post.date %}
@@ -11,4 +9,3 @@
   {% set articleLink = post.data.externalLink %}
   {% include "_partials/postlistCard.njk" %}
 {% endeach %}
-</section>
