@@ -1,7 +1,10 @@
 <div class="flex items-center justify-between mx-6">
-  <div id="latestPostsList" class="relative lg:min-h-[348px] lg:overflow-hidden lg:overflow-x-scroll">
-    <ul class="scroll-container max-w-screen-xl h-full flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto">
+  <div id="latestPostsList" class="relative lg:min-h-[372px] lg:overflow-hidden lg:overflow-x-scroll">
+    <ul class="scroll-container max-w-screen-xl h-full flex flex-col lg:left-0 lg:right-0 lg:absolute lg:flex-row justify-start lg:mx-auto"
+      style="counter-reset: start-from {{ (postslist.length or postsCount) + 1 }};"
+      >
       {% asyncEach post in postslist | reverse %}
+        {% set postsCount = collections.posts | length %}
         {% set articleUrl = post.url %}
         {% set articleDate = post.date %}
         {% set articleTitle = post.data.title %}
@@ -9,10 +12,11 @@
         {% set articleImg = post.data.thumb %}
         {% set articleImgAlt = post.data.thumbAlt %}
         {% set articleTags = post.data.tags %}
-        {% include "_partials/postlistSlider.njk" %}
+        <li class="postlist-heavyItem">
+          {% include "_partials/postlistCard.njk" %}
+        </li>
       {% endeach %}
       {% if numberOfLatestPostsToShow %}
-      {% set postsCount = collections.posts | length %}
       {% set morePosts = postsCount - numberOfLatestPostsToShow %}
       {% if morePosts > 0 %}
       <div class="inline-block border-2 flex-shrink-0 lg:w-10/12 postlist-heavyItem rounded-3xl transition-colors lg:-mr-0.5">

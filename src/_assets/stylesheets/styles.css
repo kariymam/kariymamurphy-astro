@@ -42,10 +42,6 @@ body {
 	flex-direction: column;
 }
 
-a:not(h1) {
-	@apply underline;
-}
-
 p {
 	max-width: 68ch;
 }
@@ -314,7 +310,7 @@ details[open] > summary {
 }
 
 #latestPostsList li.postlist-heavyItem {
-	min-width: 75%;
+	min-width: 50%;
 }
 
 @media (max-width: 768px) {

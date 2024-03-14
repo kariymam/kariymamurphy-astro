@@ -35,8 +35,12 @@ time, small {
 	font-family: var(--mono-font);
 }
 
-a h3 {
-	@apply underline
+a :not(h1, p) {
+	font-family: var(--body-font);
+}
+
+a {
+	font-family: var(--mono-font);
 }
 
 .displayFont {
