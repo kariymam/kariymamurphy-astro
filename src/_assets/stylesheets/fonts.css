@@ -39,12 +39,12 @@ a :not(h1, p) {
 	font-family: var(--body-font);
 }
 
-a {
+.postlist h3 a, .scroll-container h3 a {
 	font-family: var(--mono-font);
 }
 
-.displayFont {
-	font-family: var(--mono-font);
+.displayFont:not(a) {
+	font-family: var(--body-font);
 }
 
 .gradient-line {

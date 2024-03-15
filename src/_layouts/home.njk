@@ -1,24 +1,31 @@
 {% extends 'src/_layouts/base.njk' %}
 {% block intro %}
-<div class="mx-auto p-6 max-w-screen-xl min-h-[16rem]">
-  <h2 class="max-w-prose">
+<section class="mx-auto p-6 max-w-screen-xl min-h-[16rem]">
+  <h2 class="max-w-prose text-5xl displayFont">
     {{ content | safe }}
   </h2>
-  <a href="/about/">about me</a>
-</div>
+  <a href="/about/">what gives her the right?</a>
+</section>
 {% endblock %}
 {% block latestPosts %}
+<hr class="mb-6">
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<div class="flex items-center justify-center mx-auto max-w-screen-xl">
-  <h3 class="mx-6 mb-6 min-w-max w-full" aria-label="Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}">
-    Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}
-    </h3>
-</div>
-<div class="overflow-auto">
-  {% set showYear = true %}
-  {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-  {% set postslistCounter = postsCount %}
-  {% include "postlist-heavy.njk" %}
-</div>
+<section class="overflow-auto">
+    {% set showYear = true %}
+    {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
+    {% set postslistCounter = postsCount %}
+    {% include "postlist-heavy.njk" %}
+  </section>
+{% endblock %}
+{% block portfolio %}
+<hr>
+{% set portfolio = collections.work %}
+  <section reversed class="postlist m-6 p-6 gap-2 lg:mx-auto" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
+  >
+  <h3 class="border p-6 mb-6 lg:mb-14 rounded-3xl text-5xl displayFont" aria-label="Work">
+      Recent work
+      </h3>
+    {% include 'worklist.njk' %}
+  </section>
 {% endblock %}

@@ -22,7 +22,7 @@
     {% endif %}
   </a>
   <div class="relative flex {% if articleImg is not defined %}h-[327px]{% endif %}">
-    <div class="flex flex-col justify-end gap-1 px-4 py-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl z-[1] bottom-0 text-white{% endif %}">
+    <div class="flex flex-col justify-end gap-1 p-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-white{% endif %}">
       {% if articleTitle %}
       <h3 class="postlist-item-header break-words max-w-xs text-base">
         <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>

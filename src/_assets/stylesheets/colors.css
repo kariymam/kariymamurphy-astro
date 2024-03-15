@@ -42,11 +42,11 @@
 }
 
 html {
-	background-color: var(--background);
+	background: var(--background);
 }
 
 body {
-	background-color: var(--background);
+	background: var(--background);
 	color: var(--text-color);
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 hr {
-	border: 1px solid var(--primary);
+	border: 0.5px solid var(--border-primary);
 }
 
 

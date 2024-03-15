@@ -1,6 +1,6 @@
 ---
 title: Work
-description: Some projects and experience in professional realms
+description: Work & experience
 layout: blogpage.njk
 eleventyNavigation:
   key: work
@@ -9,6 +9,6 @@ eleventyNavigation:
 {% set portfolio = collections.work %}
 <section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
 >
-  <h2 class="border p-6 mb-14 rounded-3xl">{{ description }}</h2>
+  <h2 class="border p-6 mb-14 rounded-3xl text-5xl displayFont">{{ description }}</h2>
   {% include 'worklist.njk' %}
 </section>
