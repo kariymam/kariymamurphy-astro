@@ -62,6 +62,10 @@ h5, h6 {
 	@apply text-base;
 }
 
+a {
+	transition: all 200ms ease-in allow-discrete;
+}
+
 .indicator {
 	display: flex;
   flex-direction: column;
@@ -124,6 +128,11 @@ a.active {
 	background-color: var(--btnHover);
 }
 
+a:hover {
+	color: var(--text-color-link-active);
+	background-color: var(--btnHover);
+}
+
 .postlist-item > .post-tag {
   align-self: center;
 }
@@ -143,11 +152,11 @@ div.postlist-item:nth-child(n+2) {
 	align-self: center;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
 	.postlist-item, .worklist-item {
 		min-height: 24rem;
 	}
-}
+} */
 
 .postlist-item-header:before  {
     content: "" counter(start-from,decimal-leading-zero);
@@ -188,10 +197,6 @@ div.postlist-item:nth-child(n+2) {
 	.postlist-item-header:before {
 		margin-left: 0;
 	}
-}
-
-h3 span {
-	background-color: var(--background);
 }
 
 .thumbImgContainer {
@@ -304,10 +309,12 @@ details[open] > summary {
 }
 
 #latestPostsList li.postlist-heavyItem {
-	width: calc(375px * 2);
+	width: calc(384px * 2);
+  grid-row: 1;
+	margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 	#latestPostsList li.postlist-heavyItem {
 		width: 100%;
 	}
@@ -387,6 +394,10 @@ header > #headerScrim {
 	visibility: visible;
 	opacity: 1;
 	backdrop-filter: blur(5px);
+}
+
+ol.postlist-lite li:nth-child(n+2) {
+	border-top: solid 1px var(--border-primary);
 }
 
 .postlist-lite-item {

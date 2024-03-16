@@ -1,6 +1,9 @@
 module.exports = {
 	drafts: (collectionApi) => {
 		return collectionApi.getFilteredByTags("drafts");
+	},
+	featuredPosts: (collection) => {
+		return collection.getAll().filter((item) => item.data.featured);
 	}
 	// // Credit: https://lea.verou.me/blog/2023/11ty-indices/#dynamic-postsbytag-collection
 	// postsByTag: (collectionApi) => {

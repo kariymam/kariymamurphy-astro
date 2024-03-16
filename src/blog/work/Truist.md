@@ -1,7 +1,7 @@
 ---
 title: Truist
 description:
-status: tactile
+featured: true
 tags:
   - ux/ui
 ---

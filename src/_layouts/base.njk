@@ -24,10 +24,11 @@
           {% include "header.njk" %}
           <main class="mx-auto {% if permalink !== "/" %}max-w-screen-xl{% endif %} w-full lg:my-32">
             {% block intro %}{% endblock %}
-            {% block latestPosts %}{% endblock %}
+            {% block featuredPosts %}{% endblock %}
               {% if permalink !== '/' %}
               {{ content | safe }}
               {% endif %}
+            {% block latestPosts %}{% endblock %}
             {% block portfolio %}{% endblock %}
           </main>
           {% include "footer.njk" %}

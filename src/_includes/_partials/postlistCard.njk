@@ -3,7 +3,7 @@
   style="counter-increment: start-from -1;"
 >
 {% if articleImg %}
-  <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-full aspect-square overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
+  <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-[327px] aspect-square overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
     <div class="postlist-item-description relative flex h-full bg-[var(--border-primary)] border-x w-full transition-all">
       {% if post %}
       <div class="flex flex-col p-6 absolute">
@@ -22,7 +22,7 @@
     {% endif %}
   </a>
   <div class="relative flex {% if articleImg is not defined %}h-[327px]{% endif %}">
-    <div class="flex flex-col justify-end gap-1 p-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-white{% endif %}">
+    <div class="flex flex-col justify-end gap-1 p-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
       {% if articleTitle %}
       <h3 class="postlist-item-header break-words max-w-xs text-base">
         <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
@@ -33,7 +33,7 @@
       {% if articleDescription %}<p class="max-w-[35ch] ml-5 md:ml-0 mr-4">{{ articleDescription }}</p>{% endif %}
     </div>
   </div>
-  <div class="flex items-center pb-6">
+  <div class="flex items-center">
     <ul class="flex flex-wrap w-full gap-2 px-4 pt-2">
       {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
       <li>

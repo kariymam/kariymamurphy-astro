@@ -1,6 +1,7 @@
 ---
 title: Monumental
 description: Trying to fix 11ty issues
+featured: true
 tags:
   - exhibition-notes
 thumb: 'src/img/IMG_7283.jpeg'
