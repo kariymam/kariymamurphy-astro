@@ -10,7 +10,7 @@ numberOfTagsToShow: 10
 {% set postslist = collections.posts %}
 <section reversed class="postlist m-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
 >
-  <h2 class="border p-6 mb-6 lg:mb-14 rounded-3xl text-5xl displayFont">{{ description }}</h2>
+  <h2 class="border p-6 lg:mb-14 rounded-3xl text-5xl displayFont">{{ description }}</h2>
   {% include 'postlist.njk' %}
 </section>
 <section id="tagDrawer" class="m-6 max-w-screen-xl">

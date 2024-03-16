@@ -84,6 +84,13 @@ a {
 	grid-auto-flow: row dense;
 }
 
+@media (max-width:992px){
+	.postlist {
+		grid-template-columns: 1fr;
+	}
+}
+
+
 /* POST TAGS */
 
 a.postlist-tag {

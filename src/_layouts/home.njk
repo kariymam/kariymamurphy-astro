@@ -12,9 +12,9 @@
 {% block featuredPosts %}
 {% set featuredPosts = collections.featuredPosts %}
 {% set featuredPostsCount = featuredPosts | length %}
-<section id="featured_posts" class="flex flex-col w-full gap-2 lg:gap-0 lg:grid mx-6 lg:pl-6 lg:mx-auto"
+<section id="featured_posts" class="flex flex-col w-full gap-2 lg:gap-0 lg:grid"
   style="grid-template-columns:repeat(auto-fill, minmax(375px, 1fr));">
-  <h3 class="border p-6 rounded-3xl displayFont" aria-label="{{ featuredPostsCount }} featured brain dump{% if featuredPostsCount != 1 %}s{% endif %}">
+  <h3 class="border mx-6 lg:ml-6 lg:mr-0 p-6 rounded-3xl displayFont" aria-label="{{ featuredPostsCount }} featured brain dump{% if featuredPostsCount != 1 %}s{% endif %}">
       {{ featuredPostsCount }} featured post{% if featuredPostsCount != 1 %}s{% endif %}
     </h3>
       {% include "postlist-featured.njk" %}
