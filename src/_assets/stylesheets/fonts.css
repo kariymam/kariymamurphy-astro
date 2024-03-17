@@ -16,10 +16,8 @@
 }
 
 :root {
-  --display-font: 'DM Sans', monospace, Helvetica, Arial, sans-serif, serif, Icons;
-	--mono-font: 'DM Mono', Helvetica, Arial, sans-serif, serif, Icons;
+  --display-font: 'DM Sans', Helvetica, Arial, sans-serif, serif, Icons;
   --body-font: 'DM Sans', Helvetica, Arial, sans-serif, serif, Icons;
-	--pixel-font: 'FT88', Helvetica, Arial, sans-serif, serif, Icons;
 }
 
 html, body {
@@ -31,20 +29,8 @@ h1, h2, h3, h4 {
 	font-family: var(--display-font);
 }
 
-time, small {
-	font-family: var(--mono-font);
-}
-
-a :not(h1, p) {
-	font-family: var(--body-font);
-}
-
-.postlist h3 a, .scroll-container h3 a {
-	font-family: var(--mono-font);
-}
-
-.displayFont:not(a) {
-	font-family: var(--body-font);
+a {
+	font-weight: 500;
 }
 
 .gradient-line {

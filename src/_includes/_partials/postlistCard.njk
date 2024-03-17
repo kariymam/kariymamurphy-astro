@@ -4,7 +4,7 @@
 >
 {% if articleImg %}
   <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-[327px] aspect-square border overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
-    <div class="postlist-item-description relative flex h-full bg-[var(--border-primary)] w-full transition-all">
+    <div class="postlist-item-description relative flex h-full w-full transition-all">
       {% if post %}
       <div class="flex flex-col p-6 absolute">
         {% excerpt post %}
@@ -30,7 +30,7 @@
         </a>
       </h3>
       {% endif %}
-      {% if articleDescription %}<p class="max-w-[35ch] ml-5 md:ml-0 mr-4">{{ articleDescription }}</p>{% endif %}
+      {% if articleDescription %}<p class="max-w-[35ch]">{{ articleDescription }}</p>{% endif %}
     </div>
   </div>
   <div class="flex items-center">

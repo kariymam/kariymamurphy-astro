@@ -55,20 +55,6 @@ const applyRandomFonts = (str, fontsArray) => {
 };
 
 //
-
-const displayFonts = document.getElementsByClassName("displayFont");
-const fontOptions = ["FT88", "FT88-Serif"];
-
-for (let i = 0; i < displayFonts.length; i++) {
-  const inputString = displayFonts[i].innerText;
-
-  // Apply random fonts to the input string
-  const result = applyRandomFonts(inputString, fontOptions);
-
-  // Set the inner HTML of the current element with the modified string
-  displayFonts[i].innerHTML = result;
-};
-
 // //-------- close
 // function modal() {
 // 	let modal = document.querySelector(".modal");

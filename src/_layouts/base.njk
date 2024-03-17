@@ -28,8 +28,8 @@
               {% if permalink !== '/' %}
               {{ content | safe }}
               {% endif %}
-            {% block latestPosts %}{% endblock %}
             {% block portfolio %}{% endblock %}
+            {% block latestPosts %}{% endblock %}
           </main>
           {% include "footer.njk" %}
         <div id="navScrim" aria-hidden="true" class="dialog-overlay" data-a11y-dialog-hide></div>

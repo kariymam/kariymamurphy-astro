@@ -1,7 +1,7 @@
 {% set currentYear = "" %}
   <ol reversed class="list-none postlist-lite mx-6 lg:mx-auto" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
     {% for post in postslist | reverse %}
-    <li class="mb-4 px-6">
+    <li class="flex flex-col py-4">
     {% if showYear %}
           {% set postYear = post.date.getFullYear() %}
           {% if currentYear != postYear %}
@@ -9,24 +9,24 @@
           <time class="text-xl">{{ postYear }}</time>
           {% endif %}
     {% endif %}
-    <div class="flex flex-col py-4 pl-8">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between">
-          <h3 class="postlist-lite-item">
-            <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-          </h3>
-          <div class="min-w-max">
-            {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-            <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
-            {% endfor %}
-          </div>
-        </div>
-        {% if post.data.description %}
-        <p class="w-full mt-4">{{ post.data.description }}</p>
-        {% endif %}
+    <div class="flex flex-col sm:flex-row mx-4 mb-6">
+      <div class="flex flex-col w-full">
+        <h3 class="postlist-lite-item">
+          <a href="{{ post.url | url }}">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+        </h3>
         <time datetime="{{ post.date | htmlDateString }}" class="text-sm min-w-max opacity-70">{{ post.date | readableDate }}</time>
+      </div>
+      <ul class="min-w-max mb-4 lg:my-0">
+        <li class="mr-4 lg:mr-8">
+          {% for tag in post.data.tags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+          <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
+          {% endfor %}
+        </li>
+      </ul>
     </div>
-
-
+      {% if post.data.description %}
+      <p class="w-full mx-4">{{ post.data.description }}</p>
+      {% endif %}
       </li>
     {% endfor %}
     </ol>
