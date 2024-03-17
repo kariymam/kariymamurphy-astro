@@ -17,7 +17,7 @@
 		--btn: var(--background);
 		--btnHover: var(--primary);
 
-		--border-primary: var(--color-gray-4);
+		--border-primary: #000;
 		/* text */
 		--text-color: var(--color-gray-1);
 		--text-color-link-active: rgb(244, 244, 236);
@@ -32,7 +32,7 @@
   :root {
 		--color-gray-1: rgba(255, 255, 255, 0.75);
 		--sandstone: rgb(25, 25, 20);
-		--border-primary: #000;
+		--border-primary: #fff;
 		--btn: var(--background);
 
     --text-color: var(--color-gray-1);
@@ -52,10 +52,6 @@ body {
 
 body {
 	min-height: 100vh;
-}
-
-hr {
-	border: 0.5px solid var(--border-primary);
 }
 
 

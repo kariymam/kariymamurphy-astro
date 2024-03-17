@@ -1,29 +1,30 @@
 {% extends 'src/_layouts/base.njk' %}
 
 {% block intro %}
-<section id="intro" class="mx-auto p-6 max-w-screen-xl min-h-[16rem]">
+<section id="intro" class="mx-auto p-6 lg:p-10 hero-bg-image">
   <h2 class="max-w-prose text-5xl">
     {{ content | safe }}
   </h2>
-  <a href="/about/">what gives her the right?</a>
 </section>
 {% endblock %}
 
 {% block featuredPosts %}
 {% set featuredPosts = collections.featuredPosts %}
 {% set featuredPostsCount = featuredPosts | length %}
-<section id="featured_posts" class="flex flex-col w-full gap-2 lg:gap-0 lg:grid"
+<section id="featured_posts" class="flex flex-col w-full gap-2 lg:gap-0 -mt-0.5">
+  <!--
+    <section id="featured_posts" class="flex flex-col w-full gap-2 lg:gap-0 lg:grid -mt-0.5"
   style="grid-template-columns:repeat(auto-fill, minmax(375px, 1fr));">
-  <h3 class="border mx-6 lg:ml-6 lg:mr-0 p-6 rounded-3xl displayFont" aria-label="{{ featuredPostsCount }} featured brain dump{% if featuredPostsCount != 1 %}s{% endif %}">
+    <h3 class="border mx-6 lg:ml-6 lg:mr-0 p-6 rounded-3xl displayFont" aria-label="{{ featuredPostsCount }} featured brain dump{% if featuredPostsCount != 1 %}s{% endif %}">
       {{ featuredPostsCount }} featured post{% if featuredPostsCount != 1 %}s{% endif %}
-    </h3>
+    </h3> -->
       {% include "postlist-featured.njk" %}
   </section>
 {% endblock %}
 
 {% block latestPosts %}
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-<section id="other_posts" class="postlist mx-6 py-2 lg:mt-2 lg:px-6 lg:py-0 gap-2 lg:mx-auto">
+<section id="other_posts" class="postlist m-6 lg:px-6 lg:py-0 gap-2 lg:mx-auto">
     {% set postsCount = collections.posts | length %}
     {% set morePosts = postsCount - numberOfLatestPostsToShow %}
     <div class="border rounded-3xl {% if morePosts > 0 %}col-span-3{% else %}col-span-full{% endif %}">
@@ -43,9 +44,10 @@
 
 {% block portfolio %}
 {% set portfolio = collections.work %}
-  <section id="portfolio" reversed class="postlist mx-6 lg:px-6 gap-2 lg:mt-2 lg:mx-auto" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
+<hr>
+  <section id="portfolio" reversed class="postlist m-6 lg:px-6 lg:py-0 gap-2 lg:mx-auto" style="counter-reset: start-from {{ (portfolio.length) + 1 }};"
   >
-  <h3 class="border p-6 mb-6 rounded-3xl h-full">
+  <h3 class="border p-6 rounded-3xl h-full text-5xl">
     Recent work
   </h3>
     {% include 'worklist.njk' %}

@@ -265,15 +265,26 @@ div.postlist-item:nth-child(n+2) {
 	margin-block-end: 0.5em;
 }
 
-.bg-image {
-	height: 500px;
+.hero-bg-image {
+	background-image: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/c5b7c714-0859-454d-7acf-53b19601c800/public);
+	display: flex;
+	background-position: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	max-height: 768px;
+	height: 100vh;
 }
 
-@media (max-width: 992px) {
-	.bg-image {
-		height: 200px;
+@media (max-width: 1028px) {
+	.hero-bg-image {
+		height: 598px;
 	}
+}
 
+@media (max-width: 768px) {
+	.hero-bg-image {
+		height: 584px;
+	}
 }
 
 details > summary {
@@ -318,7 +329,6 @@ details[open] > summary {
 #latestPostsList li.postlist-heavyItem {
 	width: calc(384px * 2);
   grid-row: 1;
-	margin: auto;
 }
 
 @media (max-width: 992px) {

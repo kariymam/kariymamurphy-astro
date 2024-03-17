@@ -1,8 +1,13 @@
-<div class="flex items-center justify-between lg:col-start-2 lg:col-span-4 mx-6 lg:mx-0">
+<div class="flex items-center justify-between lg:col-start-2 lg:col-span-4 mx-6 lg:mx-0 lg:border-b">
   <div id="latestPostsList" class="relative w-full lg:min-h-[384px] lg:overflow-x-scroll">
-    <ul class="scroll-container flex flex-col lg:grid lg:h-full gap-2 lg:px-6 lg:absolute justify-start lg:m-auto"
+    <ul class="scroll-container flex flex-col gap-2 lg:gap-0 lg:grid lg:h-full lg:px-6 lg:absolute justify-start lg:m-auto"
       style="counter-reset: start-from {{ (featuredPostsCount) + 1 }};"
       >
+      <li class="postlist-heavyItem">
+        <h3 class="border lg:h-[327px] p-6 text-5xl rounded-3xl displayFont" aria-label="{{ featuredPostsCount }} featured brain dump{% if featuredPostsCount != 1 %}s{% endif %}">
+          {{ featuredPostsCount }} featured post{% if featuredPostsCount != 1 %}s{% endif %}
+        </h3>
+      </li>
       {% asyncEach post in featuredPosts | reverse %}
         {% set postsCount = collections.posts | length %}
         {% set articleUrl = post.url %}
