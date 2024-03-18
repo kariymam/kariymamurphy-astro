@@ -30,29 +30,20 @@ navScrim.addEventListener('click', function() {
 	toggleNav();
 });
 
-//-------- random
+function fadeIn() {
+	if (!window.AnimationEvent) { return; }
+	const fader = document.getElementById('fader');
+	setTimeout(() => {
+		fader.classList.add('fade-in');
+		observer.unobserve(fader.target); // stop observing the element
+		}, 500)
+}
 
-const applyRandomFonts = (str, fontsArray) => {
-  // Choose a random index for the fontsArray
-  const randomIndex = Math.floor(Math.random() * fontsArray.length);
+fadeIn();
 
-  // Choose a random character index in the string
-  const randomCharIndex = Math.floor(Math.random() * str.length);
-
-  return str.split('').map((char, index) => {
-    // Check if the character is a space, if so, leave it unchanged
-    if (char === ' ') {
-      return char;
-    }
-
-    // Apply the font to the character at the randomCharIndex
-    if (index === randomCharIndex) {
-      return `<span style="font-family: ${fontsArray[randomIndex]}">${char}</span>`;
-    } else {
-      return char;
-    }
-  }).join('');
-};
+document.addEventListener('DOMContentLoaded', function() {
+	if (!window.AnimationEvent) { return; }
+}
 
 //
 // //-------- close

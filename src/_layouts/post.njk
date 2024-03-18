@@ -2,7 +2,25 @@
 layout: base.njk
 date: git Last Modified
 ---
-<aside id="metadata" class="mt-6 mx-6 lg:mt-0 lg:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
+<div id="thumbHero">
+  <div class="flex relative w-full h-full min-h-[568px] min-w-fit self-center">
+    <div class="flex flex-col w-full justify-center mx-6">
+      <div class="flex flex-col justify-center lg:ml-6 z-[1] h-full lg:w-1/2">
+        <h1 class="text-5xl">{{ title }}</h1>
+        <h2>{{ description }}</h2>
+      </div>
+      <div class="flex flex-col rounded-t-3xl lg:max-w-prose mt-auto ml-2 mr-auto z-[1] rounded-3xl">
+        <p class="p-2 text-xs text-white">{{ thumbAlt }}</p>
+      </div>
+    </div>
+    {% if thumb %}
+    <div class="flex absolute mx-6 left-0 right-0 overflow-hidden rounded-3xl border h-full scrim3">
+      {% image thumb, thumbAlt, "thumbImg h-full w-full object-cover top-0 bottom-0 aspect-video absolute" %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+<aside id="metadata" class="mt-6 mx-6 md:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
   <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-screen-xl">
     <li class="justify-end mr-4"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">Last updated: {{ page.date | readableDate }}</time></li>
     {%- for tag in tags | filterTagList %}
@@ -16,18 +34,19 @@ date: git Last Modified
       {{ content | safe }}
   </div>
 </article>
-{%- if collections.posts and layouts == "post.njk" %}
+{%- if collections.posts %}
 <section id="post-nav" class="max-w-prose mx-6 md:mx-auto">
+  <hr>
   <ul
-    class="flex flex-col lg:items-center text-sm gap-2 py-8 sm:my-0 sm:flex-row sm:gap-8 sm:justify-start"
+    class="flex flex-col lg:items-center gap-2 py-4 sm:my-0 sm:flex-row sm:gap-8 sm:justify-start"
   >
     {%- set previousPost = collections.posts | getPreviousCollectionItem %}
     {%- set nextPost = collections.posts | getNextCollectionItem %}
     {%- if nextPost or previousPost %}
     {%- if previousPost %}
-    <li id="previousPost" class="flex sm:w-full items-center min-w-max h-10">
+    <li id="previousPost" class="flex sm:w-full items-center min-w-max">
       <div class="flex flex-col w-full md:justify-start">
-        <p class="text-xs">Previous post</p>
+        <p class="text-xs mb-4 opacity-70">Previous post</p>
         <div class="flex w-full items-center md:flex-row md:justify-start">
           <ion-icon name="arrow-back-outline"></ion-icon>
           <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
@@ -36,9 +55,9 @@ date: git Last Modified
       </li>
     {% endif %}
     {%- if nextPost %}
-    <li id="nextPost" class="flex items-center min-w-max h-10">
+    <li id="nextPost" class="flex items-center min-w-max">
       <div class="flex flex-col w-full md:justify-start">
-        <p class="text-xs">Next post</p>
+        <p class="text-xs mb-4 opacity-70">Next post</p>
         <div class="flex w-full items-center md:flex-row md:justify-start">
           <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
           <ion-icon name="arrow-forward-outline"></ion-icon>
