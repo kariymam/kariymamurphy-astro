@@ -5,12 +5,12 @@ date: git Last Modified
 <div id="thumbHero">
   <div class="flex relative w-full h-full min-h-[568px] min-w-fit self-center">
     <div class="flex flex-col w-full justify-center mx-6">
-      <div class="flex flex-col justify-center lg:ml-6 z-[1] h-full lg:w-1/2">
+      <div class="flex flex-col justify-center ml-6 z-[1] h-full lg:w-1/2">
         <h1 class="text-5xl">{{ title }}</h1>
         <h2>{{ description }}</h2>
       </div>
       <div class="flex flex-col rounded-t-3xl lg:max-w-prose mt-auto ml-2 mr-auto z-[1] rounded-3xl">
-        <p class="p-2 text-xs text-white">{{ thumbAlt }}</p>
+        <p class="p-4 text-xs text-white">{{ thumbAlt }}</p>
       </div>
     </div>
     {% if thumb %}
@@ -20,20 +20,28 @@ date: git Last Modified
     {% endif %}
   </div>
 </div>
-<aside id="metadata" class="mt-6 mx-6 md:mx-auto max-w-prose {% if thumb %}mt-6{% endif %}">
-  <ul class="flex flex-wrap items-center list-none -mt-0.5 mx-auto mb-6 max-w-screen-xl">
-    <li class="justify-end mr-4"><time datetime="{{ page.date | htmlDateString }}" class="text-sm">Last updated: {{ page.date | readableDate }}</time></li>
-    {%- for tag in tags | filterTagList %}
-    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
-    {%- endfor %}
-  </ul>
+<aside id="metadata" class="m-6 p-4 relative lg:sticky lg:top-0 {% if thumb %}mt-6{% endif %}">
+  <div class="flex justify-center items-center">
+    <div class="relative  lg:absolute lg:left-6">
+      <p class="text-xs mb-4 opacity-70">Table of contents</p>
+      {{ content | toc | safe }}
+    </div>
+    <ul class="flex flex-wrap items-center list-none -mt-0.5 ml-auto max-w-screen-xl">
+      {%- for tag in tags | filterTagList %}
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
+      {%- endfor %}
+    </ul>
+  </div>
 </aside>
 <article id="main" class="mx-6 md:mx-0">
   <div class="max-w-prose mx-auto posttextBlock">
       {{ content | safe }}
   </div>
 </article>
+<div class="m-6 md:mx-auto max-w-prose">
+  <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>
+</div>
 {%- if collections.posts %}
 <section id="post-nav" class="max-w-prose mx-6 md:mx-auto">
   <hr>

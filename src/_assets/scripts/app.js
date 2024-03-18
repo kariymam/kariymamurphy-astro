@@ -30,20 +30,20 @@ navScrim.addEventListener('click', function() {
 	toggleNav();
 });
 
-function fadeIn() {
-	if (!window.AnimationEvent) { return; }
-	const fader = document.getElementById('fader');
-	setTimeout(() => {
-		fader.classList.add('fade-in');
-		observer.unobserve(fader.target); // stop observing the element
-		}, 500)
-}
+// function fadeIn() {
+// 	if (!window.AnimationEvent) { return; }
+// 	const fader = document.getElementById('fader');
+// 	setTimeout(() => {
+// 		fader.classList.add('fade-in');
+// 		observer.unobserve(fader.target); // stop observing the element
+// 		}, 500)
+// }
 
-fadeIn();
+// fadeIn();
 
-document.addEventListener('DOMContentLoaded', function() {
-	if (!window.AnimationEvent) { return; }
-}
+// document.addEventListener('DOMContentLoaded', function() {
+// 	if (!window.AnimationEvent) { return; }
+// }
 
 //
 // //-------- close

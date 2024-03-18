@@ -7,6 +7,7 @@ const excerpt = require('./utils/excerpt.js');
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItEleventyImg = require("markdown-it-eleventy-img");
+const tocPlugin = require("eleventy-plugin-toc");
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
@@ -95,6 +96,13 @@ module.exports = function (eleventyConfig) {
     excerpt: true,
     excerpt_separator: "<!-- excerpt -->",
   });
+
+	eleventyConfig.addPlugin(tocPlugin, {
+		tags: ["h2", "h3"],
+		wrapper: 'ol',
+		wrapperClass: 'toc',
+		flat: true
+	});
 
 	eleventyConfig.addShortcode('excerpt', (post) => {
     return excerpt(post);

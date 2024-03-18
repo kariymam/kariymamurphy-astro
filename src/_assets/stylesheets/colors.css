@@ -17,7 +17,7 @@
 		--btn: var(--background);
 		--btnHover: var(--primary);
 
-		--border-primary: #000;
+		--border-primary: rgba(33 ,36, 35, 1);
 		/* text */
 		--text-color: var(--color-gray-1);
 		--text-color-link-active: rgb(244, 244, 236);
@@ -26,18 +26,21 @@
 
 		/*dynamic*/
 		--nav-indicator-hover: var(--sandstone);
+		--nav-scrim: rgba(244, 244, 236, 0.9);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
 		--color-gray-1: rgba(255, 255, 255, 0.75);
-		--sandstone: rgb(25, 25, 20);
-		--border-primary: #fff;
-		--btn: var(--background);
+		--sandstone: rgb(25, 25, 25);
+		--border-primary: rgba(255, 255, 255, 0.75);
+		--btn: rgba(33 ,36, 35, 1);
 
     --text-color: var(--color-gray-1);
 		--text-color-link-visited: var(--primary);
     --text-color-link-active: var(--color-gray-1);
+
+		--nav-scrim: rgba(33 ,36, 35, 0.9);
   }
 }
 

@@ -3,10 +3,6 @@
 @import 'fonts.css';
 @import 'colors.css';
 
-* {
-	border-color: var(--border-primary);
-}
-
 /* Credit https://css-tricks.com/custom-tailwind-css/ */
 
 @layer base {
@@ -101,7 +97,7 @@ a {
 
 a.post-tag {
 	text-decoration-color: transparent;
-	border: 1px solid var(--border-primary);
+	border: 1px solid;
 	background-color: var(--btn);
 	color: var(--text-color);
 	transition-property: background-color, border, color;
@@ -119,7 +115,6 @@ a.post-tag {
 }
 
 a.post-tag:hover, a.post-tag:active, a.post-tag:focus {
-	border-color: var(--btnHover);
   background-color: var(--btnHover);
 	color: var(--text-color-link-active);
 }
@@ -263,7 +258,7 @@ div.postlist-item:nth-child(n+2) {
 }
 
 .hero-bg-image {
-	background-image: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/c5b7c714-0859-454d-7acf-53b19601c800/public);
+	background-image: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public);
 	display: flex;
 	background-position: bottom;
 	background-size: cover;
@@ -440,7 +435,7 @@ details[open] > summary {
 }
 
 ol.postlist-lite li:nth-child(n+2) {
-	border-top: solid 1px var(--border-primary);
+	@apply border-t
 }
 
 .postlist-lite-item {
@@ -531,7 +526,7 @@ ol.postlist-lite li:nth-child(n+2) {
 		-webkit-backdrop-filter: blur(0rem);
 	}
 	to {
-		background-color: rgba(244, 244, 236,0.5); /*-sandstone--*/
+		background-color: var(--nav-scrim); /*-sandstone--*/
 		backdrop-filter: blur(0.35rem);
 		-webkit-backdrop-filter: blur(0.35rem);
 	}
@@ -553,7 +548,7 @@ ol.postlist-lite li:nth-child(n+2) {
 .headerHr::after {
 	display: block;
   content: '';
-	border-left: solid 2px var(--border-primary);
+	border-left: solid 2px;
 	height: 14px;
 	margin: auto;
 }
