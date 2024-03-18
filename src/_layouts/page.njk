@@ -2,13 +2,18 @@
 layout: base.njk
 date: git Created
 ---
-<div id="main" class="flex flex-col lg:flex-row max-w-screen-xl">
+<div id="main" class="flex flex-col p-6 gap-8 lg:flex-row">
   {% if description %}
-  <div class="mb-6 pl-6 lg:max-w-prose">
-    <h2>{{ description }}</h2>
-  </div>
+  <aside class="px-6 max-w-[55ch]">
+    <h2 class="mb-6">{{ description }}</h2>
+    {% set tags = collections.all | getAllTags  %}
+    {% if 'work' in tags %}
+    <p class="text-xs mb-4 opacity-70">Table of contents</p>
+    {{ content | toc | safe }}
+    {% endif %}
+  </aside>
   {% endif %}
-  <div class="px-6 textblock w-full">
+  <div class="mx-6 textblock w-full max-w-prose">
     {{ content | safe }}
   </div>
 </div>

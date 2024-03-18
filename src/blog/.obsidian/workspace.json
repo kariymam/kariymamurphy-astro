@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "work/Editorial (ARCHIVE).md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "work/Editorial (ARCHIVE).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work/Capital One.md",
+                "file": "work/Editorial (ARCHIVE).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work/Capital One.md"
+                "file": "work/Editorial (ARCHIVE).md"
               }
             }
           }
@@ -163,17 +163,21 @@
   "active": "06797394d721ab15",
   "lastOpenFiles": [
     "work/Truist.md",
+    "work/magic8.md",
+    "work/Editorial (ARCHIVE).md",
+    "_templates/new Work.md",
+    "_templates/new Blogpost.md",
     "work/img/typecon.png",
     "work/Capital One.md",
+    "work/img/web-images_truist_2.png",
+    "work/img/web-images_truist_1.png",
+    "work/img/web-images_truist_3.png",
     "work/img/template_optimized.gif",
     "work/GFA.md",
     "writing/First Post.md",
     "writing/Second Post.md",
     "writing/Third Post.md",
-    "work/magic8.md",
     "_drafts/Untitled.md",
-    "_templates/new Work.md",
-    "_templates/new Blogpost.md",
     "_drafts/Building a blog with Eleventy and Obsidian taught me Javascript.md",
     "_drafts/WWMS?.md",
     "_drafts/Why you should give bad data.md",
@@ -189,13 +193,9 @@
     "writing/Untitled-202403010843.md",
     "writing/Untitled",
     "writing/Untitled-202403010841.md",
-    "writing/Untitled 1-202403010843.md",
-    "work/img/web-images_truist_1.png",
-    "work/img/web-images_truist_3.png",
     "work/img/magic-8-sep-2023.jpg",
     "_templates",
     "work/img/Screenshot 2024-02-21 at 12.16.50 AM.png",
-    "work/img/web-images_truist_2.png",
     "work/GFA",
     "now/now.11tydata.js",
     "now"

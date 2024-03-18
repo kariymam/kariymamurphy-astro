@@ -27,7 +27,20 @@ module.exports = function (eleventyConfig) {
 		globalAttributes: {
 			sizes: ["50vw", "100vw"]
 		},
-		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath)
+		resolvePath: (filepath, env) => path.join(path.dirname(env.page.inputPath), filepath),
+		renderImage(image, attributes) {
+			const [ Image, options ] = image;
+			const [ src, attrs ] = attributes;
+
+			Image(src, options);
+
+			const metadata = Image.statsSync(src, options);
+			const imageMarkup = Image.generateHTML(metadata, attrs, {
+				whitespaceMode: "inline"
+			});
+
+			return `<button aria-expanded="false" class="textblockImg">${imageMarkup}</button>`;
+		}
 	})
 	.use(require('markdown-it-footnote'))
 	);
@@ -40,7 +53,7 @@ module.exports = function (eleventyConfig) {
 				symbol: "#",
 				ariaHidden: false,
 			}),
-			level: [1,2,3,4],
+			level: [2,3],
 			slugify: eleventyConfig.getFilter("slugify")
 		});
 		// mdLib.use(markdownItFootnotes);

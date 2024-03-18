@@ -1,13 +1,8 @@
 ---
 title: About me
-layout: post.njk
+description: Kariyma Murphy helped organizations define and build digital products and services as a UI/UX designer before going all in on digital humanities and media studies.
+layout: page.njk
 permalink: /about/
----
-
-## Kariyma Murphy helped organizations define and build digital products and services as a UI/UX designer before going all in on digital humanities and media studies.
-
-Kariyma is pivoting to tinkering, researching, or making tactile things about digital media.
-
 ---
 
 ### Colophon

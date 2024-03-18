@@ -1,5 +1,5 @@
 <div class="flex flex-wrap items-center gap-2 list-none">
-  <ul class="flex flex-row flex-wrap gap-2 items-center">
+  <ul class="flex flex-row flex-wrap gap-2 items-center" role="list">
     {% for tag in collections.all | getAllTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
     <li>
       <a href="{{ tagUrl }}"
