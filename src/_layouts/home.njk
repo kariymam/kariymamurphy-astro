@@ -30,17 +30,18 @@
 <hr>
 {% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
 <section id="other_posts" class="postlist m-6 lg:px-6 lg:py-0 gap-2 lg:mx-auto">
+  <h3 class="border p-6 rounded-3xl h-full text-5xl">
+    Latest posts
+  </h3>
     {% set postsCount = collections.posts | length %}
     {% set morePosts = postsCount - numberOfLatestPostsToShow %}
-    <div class="border rounded-3xl {% if morePosts > 0 %}col-span-3{% else %}col-span-full{% endif %}">
+    <div class="border rounded-3xl col-span-1 sm:col-span-2">
       {% include "postlist-lite.njk" %}
     </div>
     {% if numberOfLatestPostsToShow %}
       {% if morePosts > 0 %}
-      <a href="/blog/" class="col-span-1">
-        <h3 class="border p-6 mb-6 rounded-3xl h-full">
+      <a href="/blog/" class="border p-6 mb-6 rounded-3xl h-full">
           See more in Blog
-        </h3>
       </a>
       {% endif %}
     {% endif %}

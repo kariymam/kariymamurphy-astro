@@ -20,9 +20,9 @@ date: git Last Modified
     {% endif %}
   </div>
 </div>
-<aside id="metadata" class="m-6 p-4 relative lg:sticky lg:top-0 {% if thumb %}mt-6{% endif %}">
-  <div class="flex justify-center items-center">
-    <div class="relative  lg:absolute lg:left-6">
+<aside id="metadata" class="m-6 p-4 relative lg:top-0 {% if thumb %}mt-6{% endif %}">
+  <div class="flex justify-center items-start">
+    <div class="relative max-w-xs lg:absolute lg:left-6">
       <p class="text-xs mb-4 opacity-70">Table of contents</p>
       {{ content | toc | safe }}
     </div>
@@ -34,10 +34,8 @@ date: git Last Modified
     </ul>
   </div>
 </aside>
-<article id="main" class="mx-6 md:mx-0">
-  <div class="max-w-prose mx-auto posttextBlock">
+<article id="main" class="mx-6 md:mx-0 max-w-prose lg:mx-auto">
       {{ content | safe }}
-  </div>
 </article>
 <div class="m-6 md:mx-auto max-w-prose">
   <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>

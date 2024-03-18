@@ -53,3 +53,7 @@ a {
 .textblock > p ul li {
 	@apply leading-tight
 }
+
+.toc > ol li {
+	@apply text-sm
+}

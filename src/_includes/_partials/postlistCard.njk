@@ -6,7 +6,7 @@
   <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="flex flex-col relative w-full h-[327px] aspect-square border overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
     <div class="postlist-item-description relative flex h-full w-full transition-all">
       {% if post %}
-      <div class="flex flex-col p-6 absolute">
+      <div class="flex flex-col pt-12 px-6 absolute">
         {% excerpt post %}
       </div>
         {% elif work %}
@@ -21,8 +21,8 @@
     {% else %}
     {% endif %}
   </a>
-  <div class="relative flex {% if articleImg is not defined %}h-[327px]{% endif %}">
-    <div class="flex flex-col bg-[var(--background)] justify-end gap-1 p-6 lg:pt-4 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
+  <div class="relative flex w-full {% if articleImg is not defined %}h-[327px]{% endif %}">
+    <div class="flex flex-col bg-[var(--background)] justify-end gap-1 py-4 px-6 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
       {% if articleTitle %}
       <h3 class="postlist-item-header break-words max-w-xs text-base">
         <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
@@ -30,11 +30,11 @@
         </a>
       </h3>
       {% endif %}
-      {% if articleDescription %}<p class="max-w-[35ch]">{{ articleDescription }}</p>{% endif %}
+      {% if articleDescription is defined %}<p class="max-w-[35ch]">{{ articleDescription }}</p>{% endif %}
     </div>
   </div>
-  <div class="flex items-center">
-    <ul class="flex flex-wrap w-full gap-2 px-4 pt-2" role="list">
+  <div class="flex items-center max-w-sm absolute">
+    <ul class="flex flex-wrap w-full gap-2 p-4" role="list">
       {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
       <li>
         <a href="{{ tagUrl }}"
@@ -45,11 +45,11 @@
       </li>
       {% endfor %}
     </ul>
-    <time
-    datetime="{{ articleDate | htmlDateString }}"
-    class="text-xs opacity-70 min-w-max px-4"
-    aria-label="number of days blogpost posted ago" title="blogpost date"
-    >{{ articleDate | agoDate }}</time>
   </div>
+  <time
+  datetime="{{ articleDate | htmlDateString }}"
+  class="text-xs opacity-70 min-w-max px-4"
+  aria-label="number of days blogpost posted ago" title="blogpost date"
+  >{{ articleDate | agoDate }}</time>
 
 </article>

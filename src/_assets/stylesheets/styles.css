@@ -60,7 +60,13 @@ h5, h6 {
 
 a {
 	transition: all 200ms ease-in allow-discrete;
+	border-bottom: solid 1px transparent;
 }
+
+a:hover {
+	border-bottom: solid 1px var(--primary);
+}
+
 
 .indicator {
 	display: flex;
@@ -105,7 +111,7 @@ a.post-tag {
 	transition-duration: 0.2s;
 	margin: 0.25rem 0 0.25rem 0;
 	padding: 0.25rem;
-	z-index: 20;
+	z-index: 1;
 	border-radius: 0.5rem;
 }
 
@@ -120,10 +126,12 @@ a.post-tag:active, a.post-tag:focus {
 	color: var(--text-color-link-active);
 }
 
-a:hover, a.active  {
+a.active, a.post-tag:hover  {
 	color: var(--text-color-link-active);
 	background-color: var(--btnHover);
 }
+
+
 
 .postlist-item > .post-tag {
   align-self: center;
@@ -144,12 +152,6 @@ div.postlist-item:nth-child(n+2) {
 	align-self: center;
 }
 
-/* @media (min-width: 1024px) {
-	.postlist-item, .worklist-item {
-		min-height: 24rem;
-	}
-} */
-
 .postlist-item-header:before  {
     content: "" counter(start-from,decimal-leading-zero);
     line-height: 100%;
@@ -164,19 +166,6 @@ div.postlist-item:nth-child(n+2) {
 		margin: 1rem;
 		@apply text-xs
 }
-
-/* @media (max-width: 768px) {
-	.postlist-item-header:before {
-		position: relative;
-		margin: 0;
-	}
-} */
-
-/* .postlist-item-description div > p {
-	width: 100%;
-	font-size: 1em;
-	margin: auto;
-} */
 
 @media (max-width: 1024px) {
 	.postlist-item-description > p {
@@ -199,19 +188,7 @@ div.postlist-item:nth-child(n+2) {
 	display: none;
 }
 
-.textblock > ol li {
-	margin-block-end: 1rem;
-}
-
-.textblock > ul li {
-	margin-block-end: 1rem;
-}
-
-.textblock > * + * {
-	margin-block-end: 1rem;
-}
-
-.textblock button.textblockImg {
+article.textblock button.textblockImg {
   all: initial;
   display: block;
   width: 100%;
@@ -220,7 +197,7 @@ div.postlist-item:nth-child(n+2) {
   cursor: zoom-in;
 }
 
-.textblock button.textblockImg > img {
+article button.textblockImg > img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -263,7 +240,7 @@ button.fullsize img {
   }
 }
 
-.posttextBlock > ol li  {
+article > ol li  {
 	margin-block-end: 1rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -271,7 +248,7 @@ button.fullsize img {
 	list-style: decimal!important;
 }
 
-.posttextBlock > ul li {
+article> ul li {
 	margin-block-end: 1rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -279,17 +256,16 @@ button.fullsize img {
 	list-style: disc!important;
 }
 
-.posttextBlock > * + * {
-	margin-block-end: 1rem;
+article > * + * {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.posttextBlock > p > img {
+article > p > img {
 	padding: 3rem;
 }
 
-.posttextBlock h2 {
+article h2 {
 	margin-bottom: 1.5rem;
 }
 
@@ -438,7 +414,7 @@ details[open] > summary {
 	-webkit-transition: opacity 200ms ease-in;
 	-moz-transition: opacity 200ms ease-in;
 	transition: opacity 200ms ease-in;
-
+	z-index: 1;
 }
 
 #navScrim.show {
@@ -602,11 +578,28 @@ ol.postlist-lite li:nth-child(n+2) {
 }
 
 .header-anchor {
-	display: block;
-	position: absolute;
-	margin-left: -20px;
-	opacity: 0.7;
+	display: inline-block;
 	padding: 0 2px;
-	border-radius: 99px;
 	@apply text-sm
+}
+
+sup> a:target::before {
+	content: "";
+  display: inline-flex;
+  height: 100px; /* fixed header height */
+  margin: -100px 0 0; /* negative fixed header height */
+	width: 1px;
+}
+
+:is(h2, h3, h4):target::before, li.footnote-item:target::before {
+	content: "";
+  display: block;
+  height: 100px; /* fixed header height */
+  margin: -100px 0 0; /* negative fixed header height */
+	width: 1px;
+}
+
+li.footnote-item:target > p, sup> a:target {
+	color: var(--text-color-link-active);
+	background: var(--primary);
 }
