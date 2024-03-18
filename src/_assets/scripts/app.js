@@ -35,10 +35,12 @@ function expand(el){
 	el.ariaExpanded = "true";
 }
 
-const textblockImg = document.querySelector('.textblockImg');
-textblockImg.addEventListener('click', function() {
-	expand(this);
-});
+const textblockImg = document.querySelectorAll('.textblockImg');
+textblockImg.forEach(function(el) {
+	el.addEventListener('click', function() {
+		expand(this);
+	});
+})
 // function fadeIn() {
 // 	if (!window.AnimationEvent) { return; }
 // 	const fader = document.getElementById('fader');

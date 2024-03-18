@@ -227,17 +227,27 @@ div.postlist-item:nth-child(n+2) {
 	transform: scale(0);
 }
 
-button.fullsize img {
+button.fullsize picture {
+	display: flex;
+	justify-content: center;
+}
+
+button.fullsize span {
 	cursor: zoom-out;
-	position: absolute;
+	position: fixed;
 	left: 0;
+	top: 0;
 	right: 0;
 	bottom: 0;
-	top: 0;
-	width: 100vw;
 	z-index: 99;
 	padding: 1rem;
-	background: var(--background);
+	background: rgba(0, 0, 0, 0.50);
+	height: 100vh;
+	overflow: scroll;
+}
+
+button.fullsize img {
+	height: auto;
 }
 
 .fullsize img {
