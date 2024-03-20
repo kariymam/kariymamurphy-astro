@@ -160,7 +160,7 @@ module.exports = function (eleventyConfig) {
 	// Watch Targets
 	eleventyConfig.addWatchTarget('./src/_assets/stylesheets/');
 	eleventyConfig.addWatchTarget('./src/_assets/scripts/');
-	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg}");
+	eleventyConfig.addWatchTarget("content/**/*.{svg,webp,png,jpeg,gif}");
 
 	return {
 		dir: {
