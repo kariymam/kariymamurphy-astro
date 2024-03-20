@@ -1,0 +1,34 @@
+backend:
+  name: git-gateway
+  branch: cms # Branch to update (optional; defaults to master)
+media_folder: "src/img/"
+publish_mode: editorial_workflow
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/blog/writing" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Layout", name: "layout", widget: "hidden" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Feature", name: "featured_image", widget: "boolean", default: false }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Date", name: "date", widget: "git Last Modified" }
+      - { label: "Featured Image", name: "thumb", widget: "image" }
+      - { label: "Featured Image Alt Text", name: "thumbAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "work"
+    label: "Portfolio"
+    folder: "src/blog/work"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Feature", name: "featured_image", widget: "boolean", default: false }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Date", name: "date", widget: "git Last Modified" }
+      - { label: "Featured Image", name: "thumb", widget: "image" }
+      - { label: "Featured Image Alt Text", name: "thumbAlt", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
