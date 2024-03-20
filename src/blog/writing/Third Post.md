@@ -1,9 +1,8 @@
 ---
 title: A third post
-description: Trying to fix 11ty issues
+description: A test post
 tags:
-  - random
-  - another tag
+  - musing
 ---
 
 Hi
