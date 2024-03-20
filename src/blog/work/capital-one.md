@@ -3,6 +3,8 @@ title: Capital One
 featured_image: false
 tags:
   - ux/ui
+thumb: /src/img/template_optimized.gif
+thumbAlt: Some alt text
 ---
 ### What
 
