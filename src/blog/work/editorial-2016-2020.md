@@ -8,7 +8,9 @@ thumbAlt: 'Mockup of a magazine spread with an article titled "Driving
   Sideways." The article features images of vintage cars with illustrative
   sketches on top. '
 ---
- ## Type Con (2017)
+
+ 
+### Innovation Right Now (2017)
 
 ![A mockup of a magazine on a baby blue background with technical drawing style illustrations on grid paper with the heading: "Innovation Right Now: A 21st Century Guide"](./img/innovationrightnow_00005.png)
 
@@ -18,6 +20,6 @@ thumbAlt: 'Mockup of a magazine spread with an article titled "Driving
 
 ![Full interior page of the Innovation Right Now magazine featuring a photo of a Lumix camera and a technical drawing of a camera](./img/innovationrightnow_00004.jpg)
 
-## Type Con (2016)
+### Type Con (2016)
 
 ![My hands holding a booklet with a slot-machine themed typographic design for a fake typography conference held in Las Vegas](./img/typecon.png)
