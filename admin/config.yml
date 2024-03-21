@@ -26,7 +26,7 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden" }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Feature", name: "featured_image", widget: "boolean", default: false }
+      - { label: "Feature", name: "featured_image", widget: "boolean", required: false, default: false }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Date", name: "date", widget: "git Last Modified" }
       - { label: "Featured Image", name: "thumb", widget: "image" }
