@@ -1,5 +1,6 @@
 const {	DateTime } = require('luxon');
 const markdownIt = require("markdown-it");
+const crypto = require('crypto');
 
 module.exports = {
 	//Markdownit
@@ -41,6 +42,15 @@ module.exports = {
 		}
 		return Array.from(tagSet);
 	}
+	// randomStr: (length) => {
+	// 	let string = "";
+	// 	const possible = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+	// 	for (i = 0; i < length; i++) {
+	// 		string += possible.charAt(Math.floor(Math.random() * (possible.length - 0) + 0));
+	// 	}
+	// 	const nonce = string
+	// 	return nonce;
+	// }
 	// // getAllTags: (collection) => {
 	// // 	let tagSet = new Set();
   // // 	collection.getAll().forEach(function(item) {
