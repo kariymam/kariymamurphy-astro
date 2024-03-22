@@ -1,12 +1,14 @@
   <header class="rounded-3xl border my-2 bg-[var(--background)] z-10 sticky top-0 left-0 right-0 lg:absolute lg:border-transparent flex lg:mx-6">
-    <div class="w-full flex-col sm:flex-row sm:items-center flex justify-center gap-2 sm:justify-start py-4 px-6">
+    <div class="w-full flex-col sm:flex-row sm:items-center flex gap-2 sm:justify-start py-4 px-6">
+      <div class="flex gap-2 items-center">
       <a href="/" class="sm:block decoration-transparent self-start {% if permalink !== "/" %}hidden opacity-70{% endif %}">
       kariyma murphy
       </a>
       {% if title and permalink !== "/" %}
-        <span class="hidden headerHr w-1 h-full md:flex" aria-label="dividing line" title="dividing line"></span>
-        <h1 class="text-base self-start">{{ title }}</h1>
-      {% endif %}
+          |
+          <h1 class="text-base self-start">{{ title }}</h1>
+          {% endif %}
+        </div>
     </div>
     <div
       class="w-auto sm:w-full ml-auto sm:items-center gap-8 py-4 px-6"

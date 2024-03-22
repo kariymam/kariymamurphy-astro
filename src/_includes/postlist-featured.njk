@@ -18,7 +18,7 @@
         {% set articleImgAlt = post.data.thumbAlt %}
         {% set articleTags = post.data.tags %}
         <li class="postlist-heavyItem">
-          {% include "_partials/postlistCard.njk" %}
+          {% include "_partials/card.njk" %}
         </li>
       {% endeach %}
       {% if numberOfLatestPostsToShow %}

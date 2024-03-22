@@ -40,7 +40,7 @@ module.exports = function (eleventyConfig) {
 				whitespaceMode: "inline"
 			});
 
-			return `<button aria-expanded="false" class="textblockImg"><span>${imageMarkup}</span></button>`;
+			return `<button tabindex="0" aria-expanded="false" class="textblockImg"><span>${imageMarkup}</span></button>`;
 		}
 	})
 	.use(require('markdown-it-footnote'))

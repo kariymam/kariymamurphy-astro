@@ -1,4 +1,5 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
+import { forEach } from 'lodash';
 import { animations } from './animations.js';
 import A11yDialog from 'a11y-dialog'
 
@@ -29,12 +30,16 @@ navScrim.addEventListener('click', function() {
 	toggleNav();
 });
 
-function expand(el){
-	el.classList.toggle("fullsize");
-	el.ariaExpanded = "true";
-}
 
 const textblockImg = document.querySelectorAll('.textblockImg');
+
+function expand(el){
+	textblockImg.forEach((el) => {
+	  el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') == 'true' ? 'false' : 'true');
+	});
+	el.classList.toggle("fullsize");
+}
+
 textblockImg.forEach(function(el) {
 	el.addEventListener('click', function() {
 		expand(this);

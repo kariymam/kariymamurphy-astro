@@ -9,6 +9,7 @@ pagination:
     - posts
     - tagList
     - work
+    - project
     - now
   addAllPagesToCollections: true
 layout: blogpage.njk
@@ -21,7 +22,17 @@ numberOfTagsToShow: 10
 <section reversed class="postlist mx-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
 >
   <h2 class="border p-6 rounded-3xl text-5xl">{{ tag }}</h2>
-  {% include 'postlist.njk' %}
+  {% asyncEach post in postslist | reverse %}
+    {% set articleUrl = post.url %}
+    {% set articleDate = post.date %}
+    {% set articleTitle = post.data.title %}
+    {% set articleDescription = post.data.description %}
+    {% set articleImg = post.data.thumb %}
+    {% set articleImgAlt = post.data.thumbAlt %}
+    {% set articleTags = post.data.tags %}
+    {% set articleLink = post.data.externalLink %}
+    {% include "_partials/card.njk" %}
+  {% endeach %}
 </section>
 <section id="tagDrawer" class="m-6 max-w-screen-xl">
   <h2>Tags</h2>

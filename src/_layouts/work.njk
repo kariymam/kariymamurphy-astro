@@ -14,21 +14,13 @@ date: Created
 <article class="items-center md:px-6 md:pt-6">
   <div class="flex flex-col lg:flex-row border-b-2">
     <div class="max-w-prose lg:min-w-fit mb-1 p-6 md:px-9">
-      <h2>{{ description }}</h2>
-      <ul class="px-4 pt-4">
-        <li><time>{{ work.data.dates }}</time></li>
-        <li>{{ work.data.status }}</li>
-        <li>{{ work.data.audience }}</li>
-      </ul>
       {{ content | safe }}
     </div>
     <div class="w-full">
-      {% if thumb %}
-        <figure class="flex flex-col p-6">
-          {% image thumb, thumbAlt, "thumbImg w-full h-full top-0 flex  object-cover inset-0" %}
-          <figcaption class="text-sm opacity-70">{{ thumbAlt }}</figcaption>
-        </figure>
-        {% endif %}
-  </div>
+      <h2>{{ title }}</h2>
+      <ul class="px-4 pt-4">
+        <li>{{ description }}</li>
+      </ul>
+    </div>
   </div>
 </article>

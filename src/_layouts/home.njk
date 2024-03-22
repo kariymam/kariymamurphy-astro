@@ -17,12 +17,22 @@
 {% endblock %}
 
 {% block portfolio %}
-{% set portfolio = collections.work %}
+{% set projects = collections.project %}
   <section id="portfolio" reversed class="postlist m-6 lg:px-6 lg:py-0 gap-2 lg:mx-auto" style="counter-reset: start-from {{ (portfolio.length) + 1 }};">
   <h3 class="border p-6 rounded-3xl h-full text-5xl">
     Recent work
   </h3>
-    {% include 'worklist.njk' %}
+  {% asyncEach project in projects | reverse %}
+    {% set articleUrl = project.url %}
+    {% set articleDate = project.date %}
+    {% set articleTitle = project.data.title %}
+    {% set articleDescription = project.data.description %}
+    {% set articleImg = project.data.thumb %}
+    {% set articleImgAlt = project.data.thumbAlt %}
+    {% set articleTags = project.data.tags %}
+    {% set articleLink = project.data.externalLink %}
+    {% include "_partials/card.njk" %}
+  {% endeach %}
   </section>
 {% endblock %}
 
@@ -36,7 +46,19 @@
     {% set postsCount = collections.posts | length %}
     {% set morePosts = postsCount - numberOfLatestPostsToShow %}
     <div class="border rounded-3xl col-span-1 sm:col-span-2">
-      {% include "postlist-lite.njk" %}
+      <ol reversed class="list-none postlist-lite mx-6 lg:mx-auto" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+        {% asyncEach post in postslist | reverse %}
+          {% set articleUrl = post.url %}
+          {% set articleDate = post.date %}
+          {% set articleTitle = post.data.title %}
+          {% set articleDescription = post.data.description %}
+          {% set articleImg = post.data.thumb %}
+          {% set articleImgAlt = post.data.thumbAlt %}
+          {% set articleTags = post.data.tags %}
+          {% set articleLink = post.data.externalLink %}
+          {% include "_partials/list.njk" %}
+        {% endeach %}
+        </ol>
     </div>
     {% if numberOfLatestPostsToShow %}
       {% if morePosts > 0 %}
