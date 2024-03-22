@@ -1,5 +1,4 @@
 console.log(`I was loaded at ${Date(Date.now()).toString()}`);
-
 import { animations } from './animations.js';
 import A11yDialog from 'a11y-dialog'
 

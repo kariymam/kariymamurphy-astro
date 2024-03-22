@@ -1,4 +1,5 @@
 const { isNull } = require("lodash");
+import { gsap } from "gsap";
 
 const animations = () => {
 	function menuClose() {
