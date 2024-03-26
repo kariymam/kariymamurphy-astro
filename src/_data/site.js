@@ -12,6 +12,6 @@ module.exports = {
 		"twitter": "@chrissy_dev",
 		"opengraph_default": "/static/opengraph-default.jpg"
 	},
-	"contentSecurityPolicy": "script-src-attr 'self' 'sha256-5Q8RNJikjaqeyhUBIQkfXmRXMiv8+CaIXSlMRpOOiTE=' cdnjs.cloudflare.com fonts.googleapis.com unpkg.com/decap-cms@^3.0.0 unpkg.com/ionicons@7.1.0 plausible.io identity.netlify.com; font-src 'self' fonts.gstatic.com; img-src 'self' imagedelivery.net;",
+	"contentSecurityPolicy": "script-src 'self' 'sha256-5Q8RNJikjaqeyhUBIQkfXmRXMiv8+CaIXSlMRpOOiTE=' cdnjs.cloudflare.com fonts.googleapis.com unpkg.com/decap-cms@^3.0.0 unpkg.com/ionicons@7.1.0 plausible.io identity.netlify.com; font-src 'self' fonts.gstatic.com; img-src 'self' imagedelivery.net;",
 	"env": process.env.ELEVENTY_ENV === 'production'
 }
