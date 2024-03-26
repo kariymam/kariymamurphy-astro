@@ -2,14 +2,11 @@ backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "src/img/"
-public: "/img"
 publish_mode: editorial_workflow
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/blog/writing" # The path to the folder where the documents are stored
-    media_folder: '/img'
-    public_folder: '/img'
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -25,8 +22,6 @@ collections:
   - name: "work"
     label: "Portfolio"
     folder: "src/blog/work"
-    media_folder: '/img'
-    public_folder: '/img'
     create: true
     slug: "{{slug}}"
     fields:
