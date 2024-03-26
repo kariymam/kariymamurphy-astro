@@ -23,7 +23,9 @@
       <svg id="fader"></svg>
         <a href="#main" class="skip-link">Skip to main content</a>
           {% include "header.njk" %}
-          <main class="border rounded-3xl py-6 mx-auto w-full lg:my-[4.8rem] {% if layout == 'post.njk' %}flex items-center{% endif %}">
+          {% block aside %}{% endblock %}
+          {% block article %}
+          <main class="border rounded-3xl py-6 sm:mx-6 {% if layout !== 'work.njk' %}lg:my-[4.8rem]{% endif %} {% if layout == 'post.njk' %}flex items-center{% endif %}">
             {% block intro %}{% endblock %}
             {% block featuredPosts %}{% endblock %}
               {% if permalink !== '/' %}
@@ -32,6 +34,7 @@
             {% block portfolio %}{% endblock %}
             {% block latestPosts %}{% endblock %}
           </main>
+          {% endblock %}
           {% include "footer.njk" %}
         <svg id="navScrim" aria-hidden="true" class="dialog-overlay" data-a11y-dialog-hide></svg>
         <script src="/static/app.min.js" defer></script>

@@ -38,7 +38,7 @@ body {
 	flex-direction: column;
 }
 
-p {
+article:not(:is(.gallery)) p {
 	max-width: 68ch;
 }
 
@@ -610,4 +610,9 @@ sup> a:target::before {
 li.footnote-item:target > p, sup> a:target {
 	color: var(--text-color-link-active);
 	background: var(--primary);
+}
+
+article.gallery h3 {
+	width: 100%;
+  text-align: center;
 }

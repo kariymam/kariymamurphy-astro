@@ -19,27 +19,8 @@ date: git Last Modified
   <div id="backBtn" class="sr-only">Slide to the left</div>
 </div>
 {% endif %}
-<div class="block w-full max-w-screen-xl mx-auto">
-  <div id="thumbHero">
-
-    <div class="flex relative h-full min-h-[568px] min-w-fit self-center items-center">
-        <div class="flex flex-col w-full pl-6 z-[1]">
-          <h1 class="text-5xl">{{ title }}</h1>
-        </div>
-        <div class="flex flex-col w-full rounded-t-3xl lg:max-w-prose mt-auto ml-2 z-[1] rounded-3xl items-end">
-          <p class="p-4 text-xs text-white">{{ thumbAlt }}</p>
-        </div>
-      {% if thumb %}
-      <div class="flex absolute left-0 right-0 overflow-hidden rounded-3xl border h-full">
-        {% image thumb, thumbAlt, "thumbImg h-full object-contain object-right bg-[var(--background)] right-0 top-0 bottom-0 absolute" %}
-      </div>
-      {% endif %}
-    </div>
-  </div>
-
   <article id="main" class="mx-6 md:mx-0 max-w-prose lg:mx-auto">
-    <h2>{{ description }}</h2>
-    <aside id="metadata" class="relative flex flex-col lg:flex-row">
+    <section id="metadata" class="relative flex flex-col lg:flex-row">
       <div class="max-w-sm">
         <p class="text-xs mb-4 opacity-70">Table of contents</p>
         {{ content | toc | safe }}
@@ -50,13 +31,17 @@ date: git Last Modified
         <li class="inline-flex items-center h-10"><a href="{{ tagUrl }}" class="post-tag relative block text-sm">{{ tag }}</a></li>
         {%- endfor %}
       </ul>
-    </aside>
+    </section>
+    <h1 class="text-5xl">{{ title }}</h1>
+    <h2>{{ description }}</h2>
+    {% image thumb, thumbAlt, "thumbImg object-contain object-right bg-[var(--background)]" %}
 
         {{ content | safe }}
+
+        <div class="m-6 md:mx-auto max-w-prose">
+          <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>
+        </div>
   </article>
-  <div class="m-6 md:mx-auto max-w-prose">
-    <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>
-  </div>
 </div>
 {%- if nextPost %}
 <div class="flex">
