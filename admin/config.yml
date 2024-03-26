@@ -33,7 +33,7 @@ collections:
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Feature", name: "featured_image", widget: "boolean", required: false, default: false }
       - { label: "Tags", name: "tags", widget: "list" }
-      - { label: "Date", name: "date", widget: "git Last Modified" }
+      - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumb", widget: "image" }
       - { label: "Featured Image Alt Text", name: "thumbAlt", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
