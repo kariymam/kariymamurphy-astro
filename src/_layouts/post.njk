@@ -6,18 +6,18 @@ date: git Last Modified
 {%- set nextPost = collections.posts | getNextCollectionItem %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
 {%- if nextPost or previousPost %}
-<div class="flex pl-4 w-full lg:w-2/12 justify-start">
+<div class="flex pl-4 w-full lg:w-2/12 justify-start lg:self-end">
 {%- if previousPost %}
-  <a href="{{ previousPost.url }}" class="flex gap-2 items-center">
+  <a href="{{ previousPost.url }}" class="flex gap-2 items-center md:hover:translate-x-[-0.5rem] transition-transform">
     <i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i>
     <div>
       <p class="text-xs">previous post</p>
       {{ previousPost.data.title }}
     </div>
   </a>
-  {% endif %}
+{% endif %}
 </div>
-  <article id="main" class="mx-6 my-8 md:mx-0 max-w-prose lg:mx-auto">
+  <article id="main" class="mx-6 md:mx-0 max-w-prose lg:mx-auto">
     <section id="metadata" class="relative flex flex-col lg:flex-row">
       <div class="max-w-sm">
         <p class="text-xs mb-4 opacity-70">Table of contents</p>
@@ -41,9 +41,9 @@ date: git Last Modified
         </div>
   </article>
 </div>
-<div class="flex pr-4 w-full lg:w-2/12 justify-end">
+<div class="flex pr-4 w-full lg:w-2/12 justify-end lg:self-end">
   {%- if nextPost %}
-  <a href="{{ nextPost.url }}" class="flex gap-2 items-center">
+  <a href="{{ nextPost.url }}" class="flex gap-2 items-center md:hover:translate-x-[0.5rem] transition-transform">
     <div>
       <p class="text-xs">next post</p>
       {{ nextPost.data.title }}
@@ -51,8 +51,8 @@ date: git Last Modified
     <i class="fa fa-arrow-circle-right fa-3x" aria-hidden="true"></i>
   </a>
   {% else %}
-  <p class="flex items-center opacity-70">
-    (This is my most recent post.)
+  <p class="flex text-xs items-center opacity-70">
+    You're all caught up!
   </p>
   {% endif %}
 </div>

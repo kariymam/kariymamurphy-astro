@@ -25,7 +25,7 @@
           {% include "header.njk" %}
           {% block aside %}{% endblock %}
           {% block article %}
-          <main class="border rounded-3xl py-6 sm:mx-6 {% if layout !== 'work.njk' %}lg:my-2{% endif %} {% if layout == 'post.njk' %}flex flex-col lg:flex-row items-center{% endif %}">
+          <main class="rounded-3xl py-6 {% if layout !== 'work.njk' %}lg:my-2{% endif %} {% if layout == 'post.njk' %}flex flex-col lg:flex-row items-center{% endif %}">
             {% block intro %}{% endblock %}
             {% block featuredPosts %}{% endblock %}
               {% if permalink !== '/' %}
