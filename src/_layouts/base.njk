@@ -23,7 +23,7 @@
       <svg id="fader"></svg>
         <a href="#main" class="skip-link">Skip to main content</a>
           {% include "header.njk" %}
-          <main class="border rounded-3xl py-6 mx-auto w-full lg:my-[4.8rem]">
+          <main class="border rounded-3xl py-6 mx-auto w-full lg:my-[4.8rem] {% if layout == 'post.njk' %}flex items-center{% endif %}">
             {% block intro %}{% endblock %}
             {% block featuredPosts %}{% endblock %}
               {% if permalink !== '/' %}

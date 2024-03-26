@@ -58,15 +58,18 @@ h5, h6 {
 	@apply text-base;
 }
 
-a {
+/* a :not(.card) {
 	transition: all 200ms ease-in allow-discrete;
 	border-bottom: solid 1px transparent;
-}
+} */
 
-a:hover {
+a:hover:not(:is(.card)) {
 	border-bottom: solid 1px var(--primary);
 }
 
+a.card:hover {
+	border-color: var(--primary);
+}
 
 .indicator {
 	display: flex;

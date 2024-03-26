@@ -48,14 +48,15 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.amendLibrary("md", mdLib => {
 		mdLib.use(markdownItAnchor, {
-			permalink: markdownItAnchor.permalink.ariaHidden({
-				placement: "before",
-				class: "header-anchor",
-				symbol: "#",
-				ariaHidden: false,
-			}),
-			level: [2,3],
-			slugify: eleventyConfig.getFilter("slugify")
+			// permalink: markdownItAnchor.permalink.ariaHidden({
+			// 	placement: "before",
+			// 	class: "header-anchor",
+			// 	symbol: "#",
+			// 	ariaHidden: true,
+			// }),
+			// level: [2,3],
+			// slugify: eleventyConfig.getFilter("slugify")
+			permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
 		});
 		// mdLib.use(markdownItFootnotes);
 		// mdLib.use(markdownItAttrs);

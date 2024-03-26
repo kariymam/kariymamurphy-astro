@@ -3,7 +3,7 @@ title: Editorial (2016-2020)
 featured_image: false
 tags:
   - graphic-design
-thumb: /src/img/innovationrightnow_00007.png
+thumb: src/img/innovationrightnow_00007.png
 thumbAlt: 'Mockup of a magazine spread with an article titled "Driving
   Sideways." The article features images of vintage cars with illustrative
   sketches on top. '
