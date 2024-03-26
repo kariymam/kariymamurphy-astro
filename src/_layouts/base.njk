@@ -11,7 +11,7 @@
         {% else %}
             <link rel="stylesheet" href="/static/styles.min.css">
         {% endif %}
-
+        <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.min.css">
         <!-- Try and serve Google Fonts in the most efficent way possible -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;500&family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
@@ -25,7 +25,7 @@
           {% include "header.njk" %}
           {% block aside %}{% endblock %}
           {% block article %}
-          <main class="border rounded-3xl py-6 sm:mx-6 {% if layout !== 'work.njk' %}lg:my-2{% endif %} {% if layout == 'post.njk' %}flex items-center{% endif %}">
+          <main class="border rounded-3xl py-6 sm:mx-6 {% if layout !== 'work.njk' %}lg:my-2{% endif %} {% if layout == 'post.njk' %}flex flex-col lg:flex-row items-center{% endif %}">
             {% block intro %}{% endblock %}
             {% block featuredPosts %}{% endblock %}
               {% if permalink !== '/' %}
