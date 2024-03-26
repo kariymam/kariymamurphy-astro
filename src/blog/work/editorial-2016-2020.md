@@ -1,5 +1,5 @@
 ---
-title: Editorial (2016-2020)
+title: Maryland Institute College of Art (2013 – 2017)
 featured_image: false
 tags:
   - graphic-design
