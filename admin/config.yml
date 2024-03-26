@@ -8,8 +8,9 @@ collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "src/blog/writing" # The path to the folder where the documents are stored
+    media_folder: '/img'
+    public_folder: '/img'
     create: true # Allow users to create new documents in this collection
-    media_folder: 'src/blog/writing/img/'
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
       - { label: "Layout", name: "layout", widget: "hidden" }
@@ -24,8 +25,9 @@ collections:
   - name: "work"
     label: "Portfolio"
     folder: "src/blog/work"
+    media_folder: '/img'
+    public_folder: '/img'
     create: true
-    media_folder: 'src/blog/work/img/'
     slug: "{{slug}}"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden" }
