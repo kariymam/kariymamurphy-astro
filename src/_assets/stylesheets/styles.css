@@ -64,7 +64,7 @@ h5, h6 {
 } */
 
 a:hover:not(:is(.card, .decoration-transparent)) {
-	border-bottom: solid 1px var(--primary);
+	text-decoration: underline var(--primary);
 }
 
 a.card:hover {

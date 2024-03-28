@@ -36,6 +36,7 @@
       {% if description %}
       <h2>{{ description }}</h2>
       {% endif %}
+      {% image thumb, thumbAlt, "thumbImg object-contain object-right bg-[var(--background)]" %}
       {{ content | safe }}
       <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>
     </article>
