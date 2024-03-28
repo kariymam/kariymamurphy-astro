@@ -20,12 +20,12 @@
       </div>
       {% endif %}
     </div>
-    <ul class="min-w-max mb-4 lg:my-0">
-      <li class="mr-4 lg:mr-8">
-        {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+    <ul class="flex flex-wrap min-w-max mb-4 lg:my-0">
+      {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+      <li>
         <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
-        {% endfor %}
       </li>
+      {% endfor %}
     </ul>
   </div>
   {% if articleDescription %}

@@ -37,6 +37,7 @@
       <h2>{{ description }}</h2>
       {% endif %}
       {{ content | safe }}
+      <time datetime="{{ page.date | htmlDateString }}" class="text-xs opacity-70">Last updated: {{ page.date | readableDate }}</time>
     </article>
     <div class="flex pr-4 w-full p-2 lg:w-2/12 justify-end lg:self-end">
       {%- if nextPost %}

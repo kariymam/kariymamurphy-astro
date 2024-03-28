@@ -4,8 +4,11 @@ description: I joined Capital One as a Senior UI/UX Designer in February 2021 to
   design UI for privacy decision-making and enhancements to the consumer data
   request portal.
 featured_image: false
+position: Senior UI Designer
+start_date: 2024-03-27
+end_date: 2024-03-27
 date: 2024-03-27T13:41:14.312Z
-thumb: /src/img/template_optimized.gif
+thumb: src/img/template_optimized.gif
 thumbAlt: Alt text
 ---
 ### What
@@ -18,8 +21,8 @@ thumbAlt: Alt text
 - To **assess, lift and shift** components from SunTrust—and BB&T—commercial mobile banking without losing functionality post-merger.
 
 ### How
-- Designed a mobile-first responsive UI interface for +200 payments and transfer screens, specifically addressing slight content variations between BB&T and SunTrust, for commercial banking's app relaunch on Android and iOS. 
-- Maintained a decision log posted weekly to Slack after recognizing the challenges facing the team in tracking frequent, often cascading, change to the enterprise design system. 
+- Designed a mobile-first responsive UI interface for +200 payments and transfer screens, specifically addressing slight content variations between BB&T and SunTrust, for commercial banking's app relaunch on Android and iOS.
+- Maintained a decision log posted weekly to Slack after recognizing the challenges facing the team in tracking frequent, often cascading, change to the enterprise design system.
 - The log enabled the team to centralize knowledge, make recommendations and improve delivery tracking.
 
 ![Some alt text](./img/template_optimized.gif)

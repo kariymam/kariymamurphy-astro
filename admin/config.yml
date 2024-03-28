@@ -29,6 +29,9 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "string", required: false }
       - { label: "Feature", name: "featured_image", widget: "boolean", required: false, default: false }
+      - { label: "Position", name: "position", widget: "string", required: false, default: false }
+      - { label: "Start Date", name: "start_date", widget: "datetime", required: false, default: "", date_format: "MMM YYYY" }
+      - { label: "End Date", name: "end_date", widget: "datetime", required: false, default: "", date_format: "MMM YYYY" }
       - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumb", widget: "image" }

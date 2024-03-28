@@ -1,6 +1,6 @@
 ---
 title: Work
-description: Who I've worked for
+description: Where I've worked
 layout: blogpage.njk
 eleventyNavigation:
   key: work
@@ -11,16 +11,19 @@ eleventyNavigation:
 >
   <h2 class="border p-6 rounded-3xl text-5xl">{{ description }}</h2>
   <div class="border rounded-3xl col-span-1 sm:col-span-2">
-    <ol reversed class="list-none postlist-lite mx-6 lg:mx-auto" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+    <ol reversed class="list-none postlist-lite mx-6" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
       {% asyncEach work in resume | reverse %}
         {% set articleUrl = work.url %}
-        {% set tenure = work.data.tenure %}
         {% set position = work.data.position %}
         {% set articleTitle = work.data.title %}
         {% set articleDescription = work.data.description %}
+        {% set articleImg = work.data.thumb %}
+        {% set articleImgAlt = work.data.thumbAlt %}
+        {% set start_date = work.data.start_date %}
+        {% set end_date = work.data.end_date %}
         {% set articleTags = work.data.tags %}
         {% set articleLink = work.data.externalLink %}
-        {% include "_partials/list.njk" %}
+        {% include "_partials/list_with-img.njk" %}
       {% endeach %}
       </ol>
   </div>
