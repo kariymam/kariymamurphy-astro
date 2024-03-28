@@ -5,11 +5,13 @@ description: I joined Capital One as a Senior UI/UX Designer in February 2021 to
   request portal.
 featured_image: false
 position: Senior UI Designer
-start_date: 2024-03-27
-end_date: 2024-03-27
+start_date: 2020-05-14T04:54:00.000Z
+end_date: 2020-12-04T05:00:00.000Z
+tags:
+  - ux/ui
 date: 2024-03-27T13:41:14.312Z
-thumb: src/img/template_optimized.gif
-thumbAlt: Alt text
+thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/9e418686-77e9-4a55-53c3-464b924e2f00/public
+thumbAlt: Truist logo on an off-white background
 ---
 ### What
 
@@ -25,4 +27,6 @@ thumbAlt: Alt text
 - Maintained a decision log posted weekly to Slack after recognizing the challenges facing the team in tracking frequent, often cascading, change to the enterprise design system.
 - The log enabled the team to centralize knowledge, make recommendations and improve delivery tracking.
 
-![Some alt text](./img/template_optimized.gif)
+![A moving gif of three iPhone wireframes; the first one is a Bill payment screen, the second is a transfers and payments Home Screen, and the third is a tool tip.](https://res.cloudinary.com/dvf7zwben/image/upload/v1711555428/eleventy-blog/gifs/template_2_jnt2z9.gif)
+
+![Screenshot of the Bill Pay statuses I worked on](./img/truist_adobexd.png)
