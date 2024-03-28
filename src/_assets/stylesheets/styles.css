@@ -39,7 +39,7 @@ body {
 }
 
 article:not(:is(.gallery)) p {
-	max-width: 68ch;
+	max-width: 65ch;
 }
 
 h1 {
@@ -63,7 +63,7 @@ h5, h6 {
 	border-bottom: solid 1px transparent;
 } */
 
-a:hover:not(:is(.card)) {
+a:hover:not(:is(.card, .decoration-transparent)) {
 	border-bottom: solid 1px var(--primary);
 }
 
@@ -197,6 +197,7 @@ div.postlist-item:nth-child(n+2) {
 	display: none;
 }
 
+/* Image zoom */
 article.textblock button.textblockImg {
   all: initial;
   display: block;
@@ -254,6 +255,7 @@ article > ol li  {
 	margin-bottom: 1.5rem;
 	margin-left: 2rem;
 	list-style: decimal!important;
+	max-width: 65ch;
 }
 
 article> ul li {
@@ -262,7 +264,14 @@ article> ul li {
 	margin-bottom: 1.5rem;
 	margin-left: 2rem;
 	list-style: disc!important;
+	max-width: 65ch;
 }
+
+article h3,
+article p {
+	width: 100%;
+}
+
 
 article > * + * {
 	margin-left: auto;
@@ -610,9 +619,4 @@ sup> a:target::before {
 li.footnote-item:target > p, sup> a:target {
 	color: var(--text-color-link-active);
 	background: var(--primary);
-}
-
-article.gallery h3 {
-	width: 100%;
-  text-align: center;
 }

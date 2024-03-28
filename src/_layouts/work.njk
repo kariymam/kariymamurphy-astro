@@ -1,7 +1,7 @@
 {% extends 'src/_layouts/base.njk' %}
 {% block aside %}
 <aside class="lg:sticky lg:top-0">
-  <ul class="flex flex-wrap items-start list-none -mt-0.5 py-4 px-6 gap-2">
+  <ul class="flex flex-wrap items-start relative w-auto lg:w-full lg:absolute list-none -mt-0.5 py-4 px-6 gap-2">
     <li class="justify-end mr-auto">
       <p class="text-xs my-2 opacity-70">Table of contents</p>
       {{ content | toc | safe }}
@@ -15,15 +15,15 @@
 </aside>
 {% endblock %}
 {% block article %}
-<main class="mt-4 py-6">
+<main class="py-6">
   {% if collections.work %}
   {%- set nextPost = collections.work | getNextCollectionItem %}
   {%- set previousPost = collections.work | getPreviousCollectionItem %}
   {%- if nextPost or previousPost %}
-  <div id="main" class="flex flex-col gap-8 lg:flex-row">
-    <div class="flex pl-4 w-full lg:w-2/12 justify-start lg:self-end">
+  <div class="flex flex-col gap-8 lg:flex-row">
+    <div class="flex pl-4 w-full p-2 lg:w-2/12 justify-start lg:self-end">
     {%- if previousPost %}
-      <a href="{{ previousPost.url }}" class="flex gap-2 items-center md:hover:translate-x-[-0.5rem] transition-transform">
+      <a href="{{ previousPost.url }}" class="flex gap-2 decoration-transparent items-center md:hover:translate-x-[-0.5rem] transition-transform">
         <i class="fa fa-arrow-circle-left fa-3x" aria-hidden="true"></i>
         <div>
           <p class="text-xs">previous post</p>
@@ -32,12 +32,15 @@
       </a>
     {% endif %}
     </div>
-    <article class="flex flex-wrap textblock gallery w-full">
+    <article id="main" class="textblock gallery w-full max-w-prose mx-auto my-8">
+      {% if description %}
+      <h2>{{ description }}</h2>
+      {% endif %}
       {{ content | safe }}
     </article>
-    <div class="flex pr-4 w-full lg:w-2/12 justify-end lg:self-end">
+    <div class="flex pr-4 w-full p-2 lg:w-2/12 justify-end lg:self-end">
       {%- if nextPost %}
-      <a href="{{ nextPost.url }}" class="flex gap-2 items-center md:hover:translate-x-[0.5rem] transition-transform">
+      <a href="{{ nextPost.url }}" class="flex gap-2 items-center decoration-transparent md:hover:translate-x-[0.5rem] transition-transform">
         <div>
           <p class="text-xs">next post</p>
           {{ nextPost.data.title }}
