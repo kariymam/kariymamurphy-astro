@@ -8,7 +8,7 @@ position: Senior UI Designer
 start_date: 2024-03-27
 end_date: 2024-03-27
 date: 2024-03-27T13:41:14.312Z
-thumb: src/img/template_optimized.gif
+thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/9e418686-77e9-4a55-53c3-464b924e2f00/public
 thumbAlt: Alt text
 ---
 ### What
@@ -25,4 +25,6 @@ thumbAlt: Alt text
 - Maintained a decision log posted weekly to Slack after recognizing the challenges facing the team in tracking frequent, often cascading, change to the enterprise design system.
 - The log enabled the team to centralize knowledge, make recommendations and improve delivery tracking.
 
-![Some alt text](./img/template_optimized.gif)
+![A moving gif of three iPhone wireframes; the first one is a Bill payment screen, the second is a transfers and payments Home Screen, and the third is a tool tip.](https://res.cloudinary.com/dvf7zwben/image/upload/v1711555428/eleventy-blog/gifs/template_2_jnt2z9.gif)
+
+![](./img/truist_adobexd.png)
