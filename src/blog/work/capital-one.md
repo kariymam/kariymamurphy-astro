@@ -1,18 +1,23 @@
 ---
 title: Capital One
+description: I joined Capital One as a Senior UI/UX Designer in February 2021 to
+  design UI for privacy decision-making and enhancements to the consumer data
+  request portal.
 featured_image: false
 position: Senior UX/UI Designer
-start_date: 2024-03-27
-end_date: 2024-03-27
+start_date: null
+end_date: null
 date: 2024-03-27T02:35:49.465Z
-thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/0d9e1e82-70be-42fa-8cd7-118a9de1c200/public
-thumbAlt: Sketch from a hazy memory of the UI I supported for Capital One
+thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/b4e2655b-e7ef-4c45-0977-1136eeebcb00/public
+thumbAlt: Capital One logo on an off-white background
 ---
 ### What
 
-- Supported UI design for a new business process to alleviate Capital One associates from time-consuming manual reviews of datasets, which made steps towards reducing costs of the fulfillment process across divisions of business using personal data.
+- I designed UI for a new business process to alleviate Capital One associates from a highly manual and repetitive side-of-desk task.
 
-- Reduced compliance risk and provided customers with more fine-grained privacy controls.
+- The new process eliminated time-consuming manual reviews of datasets, making progress towards reducing costs and consolidating the fulfillment process across lines of business.
+
+- Reduced compliance risk and provided customers with more fine-grained privacy controls for an enhanced privacy experience.
 
 ### Why
 
@@ -35,3 +40,5 @@ The new process featuring the UI components launched in a closed pilot which gen
 ### Feedback
 
 > "With much of our work being cross-team and involving alignment across different priorities, Kariyma is already great at understanding concerns and addressing them in the designs."
+
+![A mockup drawn from hazy memories and prototypes that has been genericized due to file-sharing and confidentiality restrictions.](https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/0d9e1e82-70be-42fa-8cd7-118a9de1c200/public)
