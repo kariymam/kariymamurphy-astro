@@ -13,9 +13,11 @@ thumbAlt: Sketch from a hazy memory of the UI I supported for Capital One
 ---
 ### What
 
-- Supported UI design for a new business process to alleviate Capital One associates from time-consuming manual reviews of datasets, which made steps towards reducing costs of the fulfillment process across divisions of business using personal data.
+- I designed UI for a new business process to alleviate Capital One associates from a highly manual and repetitive side-of-desk task.
 
-- Reduced compliance risk and provided customers with more fine-grained privacy controls.
+- The new process eliminated time-consuming manual reviews of datasets, making progress towards reducing costs and consolidating the fulfillment process across lines of business.
+
+- Reduced compliance risk and provided customers with more fine-grained privacy controls for an enhanced privacy experience.
 
 ### Why
 
@@ -38,3 +40,5 @@ The new process featuring the UI components launched in a closed pilot which gen
 ### Feedback
 
 > "With much of our work being cross-team and involving alignment across different priorities, Kariyma is already great at understanding concerns and addressing them in the designs."
+
+![A mockup drawn from hazy memories and prototypes that has been genericized due to file-sharing and confidentiality restrictions.](https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/0d9e1e82-70be-42fa-8cd7-118a9de1c200/public)
