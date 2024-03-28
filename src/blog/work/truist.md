@@ -7,6 +7,8 @@ featured_image: false
 position: Senior UI Designer
 start_date: 2020-05-14T04:54:00.000Z
 end_date: 2020-12-04T05:00:00.000Z
+tags:
+  - ux/ui
 date: 2024-03-27T13:41:14.312Z
 thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/9e418686-77e9-4a55-53c3-464b924e2f00/public
 thumbAlt: Truist logo on a off-white background
