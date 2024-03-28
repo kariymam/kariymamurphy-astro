@@ -9,7 +9,7 @@ start_date: null
 end_date: null
 date: 2024-03-27T02:35:49.465Z
 thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/b4e2655b-e7ef-4c45-0977-1136eeebcb00/public
-thumbAlt: Sketch from a hazy memory of the UI I supported for Capital One
+thumbAlt: Capital One logo on an off-white background
 ---
 ### What
 
