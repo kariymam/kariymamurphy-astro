@@ -11,7 +11,7 @@ tags:
   - ux/ui
 date: 2024-03-27T13:41:14.312Z
 thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/9e418686-77e9-4a55-53c3-464b924e2f00/public
-thumbAlt: Truist logo on a off-white background
+thumbAlt: Truist logo on an off-white background
 ---
 ### What
 
@@ -29,4 +29,4 @@ thumbAlt: Truist logo on a off-white background
 
 ![A moving gif of three iPhone wireframes; the first one is a Bill payment screen, the second is a transfers and payments Home Screen, and the third is a tool tip.](https://res.cloudinary.com/dvf7zwben/image/upload/v1711555428/eleventy-blog/gifs/template_2_jnt2z9.gif)
 
-![](./img/truist_adobexd.png)
+![Screenshot of the Bill Pay statuses I worked on](./img/truist_adobexd.png)
