@@ -5,11 +5,12 @@
 {% if articleImg %}
   <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" class="card flex flex-col relative w-full h-[327px] aspect-square border overflow-hidden rounded-3xl" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
     <div class="postlist-item-description relative flex h-full w-full transition-all">
-      {% if post or articleDescription is defined %}
       <div class="flex flex-col h-60 w-auto px-6 py-16 mx-auto absolute">
-        {{ articleDescription }}
+        <div class="relative m-auto">
+          <p><span class="postlist-item-title">{{ articleTitle }}</span><p>
+          <p>{{ articleDescription }}</p>
+        </div>
       </div>
-      {% endif %}
       <div
         class="thumbImgContainer flex w-full h-full"
       >
@@ -19,7 +20,7 @@
     {% else %}
   <a href="{% if articleLink is defined %}{{ articleLink }}{% else %}{{ articleUrl }}{% endif %}" aria-label="{% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}" class="card relative flex w-full {% if articleImg is not defined %}h-[327px]{% endif %}" {% if articleLink is defined %}target="_blank" rel="noopener noreferrer"{% endif %}>
     {% endif %}
-    <div class="flex flex-col bg-[var(--background)] justify-end gap-1 py-4 px-6 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
+    <div class="flex flex-col justify-end gap-1 py-4 px-6 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
       {% if articleDescription is defined %}<p class="w-3/4"><time
         datetime="{{ articleDate | htmlDateString }}"
         class="text-xs inline-block opacity-70 min-w-max"
