@@ -1,12 +1,4 @@
-{% set currentYear = "" %}
 <li class="flex flex-col py-4">
-{% if showYear %}
-      {% set postYear = post.date.getFullYear() %}
-      {% if currentYear != postYear %}
-      {% set currentYear = postYear %}
-      <time class="text-xl mx-4 opacity-70 mb-8">{{ postYear }}</time>
-      {% endif %}
-{% endif %}
   <div class="flex flex-col sm:flex-row mx-4 mb-6">
     <div class="block mr-auto">
       <a href="{{ articleUrl | url }}" class="text-3xl">{% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}</a>
@@ -21,9 +13,9 @@
       {% endif %}
     </div>
     <ul class="flex flex-wrap min-w-max mb-4 lg:my-0">
-      {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
+      {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
       <li>
-        <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
+        <a href="{{ tagUrl }}" class="post-tag text-xs">{{ tag }}</a>
       </li>
       {% endfor %}
     </ul>

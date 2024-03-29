@@ -2,6 +2,6 @@ module.exports = {
 	tags: [
 		"project"
 	],
-	"layout": "page.njk",
+	"layout": "work.njk",
 	"permalink": "project/{{ title | slugify }}/"
 };

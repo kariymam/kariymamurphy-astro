@@ -42,6 +42,13 @@ article:not(:is(.gallery)) p {
 	max-width: 65ch;
 }
 
+/* summary::-webkit-details-marker { display: none; pointer-events: none; }
+
+@media (max-width: 768px) {
+	summary::-webkit-details-marker { display: inline-block; }
+} */
+
+
 h1 {
 	@apply text-3xl;
 }
@@ -58,13 +65,18 @@ h5, h6 {
 	@apply text-base;
 }
 
-/* a :not(.card) {
+a {
 	transition: all 200ms ease-in allow-discrete;
-	border-bottom: solid 1px transparent;
-} */
+	/* text-decoration: underline transparent; */
+	text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+  text-decoration-color: transparent;
+  -webkit-text-decoration-color: transparent;
+}
 
 a:hover:not(:is(.card, .decoration-transparent)) {
-	text-decoration: underline var(--primary);
+	text-decoration-color: var(--primary);
+  -webkit-text-decoration-color: var(--primary);
 }
 
 a.card:hover {
@@ -117,7 +129,7 @@ a.post-tag {
 	background-color: var(--btn);
 	color: var(--text-color);
 	transition-property: background-color, border, color;
-	transition-duration: 0.2s;
+	transition-duration: 100ms;
 	margin: 0.25rem 0 0.25rem 0;
 	padding: 0.25rem;
 	z-index: 1;
@@ -139,8 +151,6 @@ a.active, a.post-tag:hover  {
 	color: var(--text-color-link-active);
 	background-color: var(--btnHover);
 }
-
-
 
 .postlist-item > .post-tag {
   align-self: center;

@@ -6,11 +6,6 @@ date: git Created
   {% if description %}
   <aside class="px-6 max-w-[55ch]">
     <h2 class="mb-6">{{ description }}</h2>
-    {% set tags = collections.all | getAllTags  %}
-    {% if 'work' in tags %}
-    <p class="text-xs mb-4 opacity-70">Table of contents</p>
-    {{ content | toc | safe }}
-    {% endif %}
   </aside>
   {% endif %}
   <article class="inline-block mx-6 textblock w-full max-w-prose">

@@ -1,5 +1,5 @@
 {% set currentYear = "" %}
-<li class="flex flex-col sm:flex-row py-4">
+<li class="flex flex-col sm:flex-row p-4">
 {% if showYear %}
       {% set postYear = post.date.getFullYear() %}
       {% if currentYear != postYear %}
@@ -7,32 +7,43 @@
       <time class="text-xl mx-4 opacity-70 mb-8">{{ postYear }}</time>
       {% endif %}
 {% endif %}
-  <div class="flex flex-col mx-4 sm:w-1/2 min-h-full">
+  <div class="flex flex-col sm:w-1/2 min-h-full">
     <div class="flex flex-col mr-auto h-full">
       <a href="{{ articleUrl | url }}" class="text-3xl mb-2">
         {% if articleTitle %}{{ articleTitle }}{% else %}<code>{{ articleUrl }}</code>{% endif %}
       </a>
-        {% if articleDescription %}<p class="mb-4">{{ articleDescription }}</p>{% endif %}
+        {% if articleDescription %}<p class="mb-4 mr-4">{{ articleDescription }}</p>{% endif %}
       <div class="flex flex-col text-xs opacity-70 sm:flex-row sm:gap-2 sm:items-center mt-auto">
+        {% if position %}
         <div class="flex items-center">
           <time datetime="{{ start_date | htmlDateString }}">{{ start_date | readableDate }}</time>—<time datetime="{{ end_date | htmlDateString }}">{{ end_date | readableDate }}</p>
         </div>
-        {% if position %}<span class="hidden sm:block">|</span>
+        <span class="hidden sm:block">|</span>
         <p>{{ position }}</p>
         {% endif %}
       </div>
     </div>
   </div>
-  <div class="relative sm:w-1/2 border hover:border-[var(--primary)] rounded-3xl mt-5 sm:m-0 ">
-    <ul class="flex flex-wrap absolute p-4 left-0">
-      {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slug }}/{% endset %}
-      <li class="relative">
-        <a href="{{ tagUrl | url }}" class="post-tag text-xs">{{ tag }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-    <a href="{{ articleUrl | url }}" class="thumbImgContainer decoration-transparent flex rounded-3xl">
-      {% image articleImg, articleImgAlt, "thumbImg object-cover h-full aspect-video rounded-3xl" %}
-    </a>
-  </div>
+  {% if articleImg %}
+    <div class="relative sm:w-1/2 border hover:border-[var(--primary)] rounded-3xl mt-5 sm:m-0 ">
+      <ul class="flex flex-wrap absolute p-4 z-[1] left-0">
+        {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <li class="relative">
+          <a href="{{ tagUrl }}" class="post-tag text-xs">{{ tag }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <a href="{{ articleUrl | url }}" class="thumbImgContainer decoration-transparent flex rounded-3xl">
+        {% image articleImg, articleImgAlt, "thumbImg object-cover h-full aspect-video rounded-3xl" %}
+      </a>
+    </div>
+  {% else %}
+  <ul class="flex flex-wrap p-4 items-end justify-end">
+    {% for tag in articleTags | filterTagList %} {% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+    <li class="relative">
+      <a href="{{ tagUrl }}" class="post-tag text-xs">{{ tag }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
 </li>

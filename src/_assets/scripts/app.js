@@ -75,3 +75,21 @@ textblockImg.forEach(function(el) {
 // 	closeBtn.addEventListener('click', open);
 // 	contact.addEventListener('click', open);
 // }
+
+const details = document.getElementById('tagDrawer');
+
+function openTagDrawer() {
+	if (!details) {
+		return
+	} else {
+		let minmql = window.matchMedia("(min-width: 768px)");
+		let maxmql = window.matchMedia("(max-width: 768px)");
+		if(maxmql.matches) {
+			details.open = false;
+		} else {
+		details.open = true;
+		}
+	}
+}
+
+window.addEventListener("resize", openTagDrawer);

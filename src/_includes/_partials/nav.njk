@@ -1,14 +1,17 @@
+{% include "contact.njk" %}
 <nav id="main-nav" aria-label="Global" class="hidden sm:flex w-full sm:border-b-0 justify-end lg:w-[calc(5.875*5)]">
   <h2 class="sr-only">Top level navigation menu</h2>
-  <ul id="navContainer" class="w-full h-full absolute flex flex-col p-4 sm:p-0 sm:h-auto sm:w-auto md:items-center sm:static sm:my-0 sm:flex-row gap-2">
-    {%- for entry in collections.all | eleventyNavigation %}
-    <li class="border rounded-3xl bg-[var(--background)] sm:w-full sm:text-center">
-      <a id="{{ entry.title }}"
-         aria-label="{{ entry.title }}"
-         class="decoration-transparent text-5xl sm:text-xl rounded-3xl px-2 mx-[2px] {% if entry.url == page.url %}active{% endif %}"
-         href="{{ entry.url }}"
-         {% if entry.url == page.url %} aria-current="page"{% endif %}>{{ entry.title }}</a>
+  <ul id="navContainer" class="w-full h-full absolute flex flex-col p-4 sm:p-0 sm:h-auto sm:w-auto md:items-center sm:static sm:my-0 sm:flex-row sm:gap-8 gap-2">
+    <li class="decoration-transparent">
+      <a class=" transition hover:/75" href="/archive/"> archive </a>
     </li>
-    {%- endfor %}
+    <li class="decoration-transparent">
+      <a class=" transition hover:/75" href="/about/"> about me </a>
+    </li>
+    <li class="flex items-center gap-1 min-w-max">
+      <button type="button" data-a11y-dialog-show="contact_modal" class="transition">
+        send a note
+      </button>
+    </li>
   </ul>
 </nav>

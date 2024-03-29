@@ -12,16 +12,15 @@ pagination:
     - project
     - now
   addAllPagesToCollections: true
-layout: blogpage.njk
+layout: bloglist.njk
 eleventyComputed:
-  title: Tagged “{{ tag }}”
+  title: Blog
+  description: Tagged “{{ tag }}”
 permalink: /tags/{{ tag | slugify }}/
 numberOfTagsToShow: 10
 ---
-{% set postslist = collections[ tag ] %}
-<section reversed class="postlist mx-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
->
-  <h2 class="border p-6 rounded-3xl text-5xl">{{ tag }}</h2>
+<ol reversed role="list" class="list-none postlist-lite" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  {% set postslist = collections[ tag ] %}
   {% asyncEach post in postslist | reverse %}
     {% set articleUrl = post.url %}
     {% set articleDate = post.date %}
@@ -31,10 +30,6 @@ numberOfTagsToShow: 10
     {% set articleImgAlt = post.data.thumbAlt %}
     {% set articleTags = post.data.tags %}
     {% set articleLink = post.data.externalLink %}
-    {% include "_partials/card.njk" %}
+    {% include "_partials/list_with-img.njk" %}
   {% endeach %}
-</section>
-<section id="tagDrawer" class="m-6 max-w-screen-xl">
-  <h2>Tags</h2>
-  {% include "_partials/taglist.njk" %}
-</section>
+</ol>

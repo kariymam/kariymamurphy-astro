@@ -1,30 +1,23 @@
 ---
-title: Work
-description: Where I've worked
-layout: blogpage.njk
+title: Where I've worked
+layout: bloglist.njk
 eleventyNavigation:
   key: work
-  order: 3
+  order: 4
 ---
-{% set resume = collections.work %}
-<section reversed class="postlist mx-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
->
-  <h2 class="border p-6 rounded-3xl text-5xl">{{ description }}</h2>
-  <div class="border rounded-3xl col-span-1 sm:col-span-2">
-    <ol reversed class="list-none postlist-lite mx-6" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-      {% asyncEach work in resume | reverse %}
-        {% set articleUrl = work.url %}
-        {% set position = work.data.position %}
-        {% set articleTitle = work.data.title %}
-        {% set articleDescription = work.data.description %}
-        {% set articleImg = work.data.thumb %}
-        {% set articleImgAlt = work.data.thumbAlt %}
-        {% set start_date = work.data.start_date %}
-        {% set end_date = work.data.end_date %}
-        {% set articleTags = work.data.tags %}
-        {% set articleLink = work.data.externalLink %}
-        {% include "_partials/list_with-img.njk" %}
-      {% endeach %}
-      </ol>
-  </div>
-</section>
+<ol reversed role="list" class="list-none postlist-lite" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  {% set resume = collections.work %}
+  {% asyncEach work in resume | reverse %}
+    {% set articleUrl = work.url %}
+    {% set position = work.data.position %}
+    {% set articleTitle = work.data.title %}
+    {% set articleDescription = work.data.description %}
+    {% set articleImg = work.data.thumb %}
+    {% set articleImgAlt = work.data.thumbAlt %}
+    {% set start_date = work.data.start_date %}
+    {% set end_date = work.data.end_date %}
+    {% set articleTags = work.data.tags %}
+    {% set articleLink = work.data.externalLink %}
+    {% include "_partials/list_with-img.njk" %}
+  {% endeach %}
+</ol>

@@ -1,0 +1,38 @@
+---
+layout: blogpage.njk
+---
+{% set postslist = collections.posts %}
+{% set resume = collections.work %}
+{% set projects = collections.project %}
+{% set i = 0 %}
+<div reversed class="postlist mx-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
+>
+<div class="flex flex-col gap-4 border p-6 rounded-3xl">
+  <details id="categoriesDrawer" open>
+    <summary class="mb-2">
+      Search by categories
+    </summary>
+    <ul>
+      <li class="h-9">
+        <a href="/blog/" class="py-2 h-full">Articles <span class="text-xs">({{ (postslist.length) + i }})</span></a>
+      </li>
+      <li class="h-9">
+        <a href="/resume/" class="py-2 w-full">Work experience <span class="text-xs">({{ (resume.length) + i }})</span></a>
+      </li>
+      <li class="h-9">
+        <a href="/projects/" class="py-2 w-full">Projects <span class="text-xs">({{ (projects.length) + i }})</span></a>
+      </li>
+    </ul>
+  </details>
+  <details id="tagDrawer" open>
+    <summary class="mb-2">
+      Search by tag
+    </summary>
+    {% include "_partials/taglist.njk" %}
+  </details>
+  {% if description %}<p>{{ description }}</p>{% endif %}
+</div>
+<section class="border rounded-3xl col-span-1 sm:col-span-3">
+  {{ content | safe }}
+</section>
+</div>

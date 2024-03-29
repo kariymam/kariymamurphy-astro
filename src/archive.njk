@@ -1,30 +1,37 @@
 ---
-layout: blogpage.njk
+layout: bloglist.njk
 eleventyComputed:
   title: Archive
-  description: All blog posts
+  description: Showing all blog posts
+eleventyNavigation:
+  key: archive
+  order: 2
+numberOfTagsToShow: 10
 permalink: /archive/
 eleventyImport:
   collections: ["post"]
 ---
-{% set showYear = true %}
-{% set postslist = collections.posts %}
-<section reversed class="postlist mx-6 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
->
-  <h2 class="border p-6 rounded-3xl text-5xl">{{ description }}</h2>
-  <div class="border rounded-3xl col-span-1 sm:col-span-2">
-    <ol reversed class="list-none postlist-lite mx-6 lg:mx-auto" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
-      {% asyncEach post in postslist | reverse %}
-        {% set articleUrl = post.url %}
-        {% set articleDate = post.date %}
-        {% set articleTitle = post.data.title %}
-        {% set articleDescription = post.data.description %}
-        {% set articleImg = post.data.thumb %}
-        {% set articleImgAlt = post.data.thumbAlt %}
-        {% set articleTags = post.data.tags %}
-        {% set articleLink = post.data.externalLink %}
-        {% include "_partials/list.njk" %}
-      {% endeach %}
-      </ol>
-  </div>
-</section>
+<ol reversed role="list" class="list-none postlist m-6 gap-2" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
+  {% set archive = collections.post  %}
+  {% asyncEach post in archive | reverse %}
+    {% set articleUrl = post.url %}
+    {% set articleDate = post.date %}
+    {% set articleTitle = post.data.title %}
+    {% set articleDescription = post.data.description %}
+    {% set articleImg = post.data.thumb %}
+    {% set articleImgAlt = post.data.thumbAlt %}
+    {% set start_date = post.data.start_date %}
+    {% set end_date = post.data.end_date %}
+    {% set articleTags = post.data.tags %}
+    {% set articleLink = post.data.externalLink %}
+    <!-- {% set currentYear = "" %}
+    {% if showYear %}
+          {% set postYear = post.date.getFullYear() %}
+          {% if currentYear != postYear %}
+          {% set currentYear = postYear %}
+          <time class="text-xl mx-4 opacity-70 mb-8">{{ postYear }}</time>
+          {% endif %}
+    {% endif %} -->
+    {% include "_partials/card.njk" %}
+  {% endeach %}
+</ol>
