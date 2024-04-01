@@ -13,4 +13,4 @@ date: 2024-04-01T13:46
 thumb: /src/img/bcan_we-own-this_socialmedia.png
 thumbAlt: Image of the flyer I created
 ---
-I created a series of vector portraits using an expressive variable font to create an engaging and flexible branding system.
+I created a series of vector portraits and used an expressive variable font to create an engaging and flexible flyer that featured elements that were reused for the event's brand.
