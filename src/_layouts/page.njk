@@ -2,13 +2,13 @@
 layout: base.njk
 date: git Created
 ---
-<div id="main" class="flex flex-col p-6 gap-8 lg:flex-row">
+<div id="main" class="flex flex-col gap-8 lg:flex-row">
   {% if description %}
   <aside class="px-6 max-w-[55ch]">
     <h2 class="mb-6">{{ description }}</h2>
   </aside>
   {% endif %}
-  <article class="inline-block mx-6 textblock w-full max-w-prose">
+  <article class="inline-block px-6 max-w-[55ch] textblock w-full">
     {{ content | safe }}
   </article>
 </div>

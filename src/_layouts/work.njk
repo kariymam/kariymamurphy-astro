@@ -1,17 +1,17 @@
 {% extends 'src/_layouts/base.njk' %}
 {% block aside %}
 <aside class="lg:sticky lg:top-0">
-  <ul class="flex flex-wrap items-start relative w-auto lg:w-full lg:absolute list-none -mt-0.5 py-4 px-6 gap-2">
-    <li class="justify-end mr-auto">
-      <p class="text-xs my-2 opacity-70">Table of contents</p>
+  <div class="flex flex-wrap items-start relative w-auto lg:w-full lg:absolute list-none -mt-0.5 py-4 px-6 gap-2">
+    <div class="justify-end mr-auto">
       {{ content | toc | safe }}
-    </li>
-    {%- for tag in tags | filterTagList %}
-    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-    <li class="inline-block my-2">
-      <a href="{{ tagUrl }}" class="post-tag relative block px-2 rounded-full">{{ tag }}</a></li>
-    {%- endfor %}
-  </ul>
+    </div>
+    <ul class="inline-block gap-2">
+      {%- for tag in tags | filterTagList %}
+      {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+      <li>
+        <a href="{{ tagUrl }}" class="post-tag relative block rounded-full">{{ tag }}</a></li>
+      {%- endfor %}
+    </ul>
 </aside>
 {% endblock %}
 {% block article %}

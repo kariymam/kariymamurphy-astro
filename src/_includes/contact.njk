@@ -7,24 +7,17 @@
   <!-- 2. The dialog overlay -->
   <div class="dialog-overlay" data-a11y-dialog-hide></div>
   <!-- 3. The actual dialog -->
-  <div class="dialog-content p-6 rounded-3xl" role="document">
-    <div class="flex flex-row-reverse">
-      <button type="button" data-a11y-dialog-hide aria-label="Close dialog">
-        <i class="fa fa-times-circle-o fa-3x" aria-hidden="true"></i>
+  <div class="dialog-content p-6 border rounded-3xl" role="document">
+    <div>
+      <button type="button" class="flex items-center gap-1" data-a11y-dialog-hide aria-label="Close dialog">
+        <i class="fa fa-times-circle-o" aria-hidden="true"></i> <span class="font-bold">Close</span>
       </button>
-      <h1 id="send_me_a_note" class="w-full">Send me a note</h1>
+      <h1 id="send_me_a_note" class="mt-4 lg:max-w-sm lg:text-5xl">Want to work together?</h1>
     </div>
     <div class="flex flex-col">
-      <h2 class="w-full">I can help you</h2>
-      <ul class="list-disc ml-8 my-6">
-        <li>Craft reports for research findings.</li>
-        <li>Make testable and interactive mockups.</li>
-        <li>Design reusable UI components.</li>
-        <li>Create polished and reusable slideshow templates.</li>
-        <li>Edit corporate videos with motion graphics.</li>
-      </ul>
+      <h2 class="lg:max-w-sm mb-6 text-base sm:text-2xl">Complete the form below to send your enquiry.</h2>
       <form
-        class="flex flex-col text-xl gap-4"
+        class="flex flex-col max-w-sm text-xl gap-4"
         name="contact"
         netlify-honeypot="e-mail"
         netlify
@@ -43,8 +36,9 @@
         </p>
         <p>
           <label for="name"
-            ><input
-              class="w-full rounded-xl border-2 p-3 text-sm text-black"
+            > Name
+            <input
+              class="w-full rounded-xl border p-3 text-sm text-black"
               id="name"
               type="text"
               name="name"
@@ -54,8 +48,9 @@
         </p>
         <p>
           <label for="email"
-            ><input
-              class="w-full rounded-xl border-2 p-3 text-sm text-black"
+            > Email
+            <input
+              class="w-full rounded-xl border p-3 text-sm text-black"
               id="email"
               type="email"
               name="email"
@@ -65,10 +60,11 @@
         </p>
         <p>
           <label class="sr-only" for="message">Message:</label>
+          Describe your project
           <textarea
             id="message"
             name="message"
-            class="w-full rounded-xl border-2 p-3 text-sm text-black"
+            class="w-full rounded-xl border p-3 text-sm text-black"
             placeholder="Your message"
             rows="6"
           ></textarea>
@@ -76,7 +72,7 @@
         <p>
           <button
             type="submit"
-            class="w-full rounded-full font-bold bg-[var(--primary)] text-[var(--text-color)] p-4"
+            class="mx-auto w-1/2 rounded-full font-bold bg-[var(--primary)] text-[var(--text-color)] p-4"
           >
             Send
           </button>

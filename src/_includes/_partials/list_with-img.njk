@@ -14,7 +14,7 @@
       </a>
         {% if articleDescription %}<p class="mb-4 mr-4">{{ articleDescription }}</p>{% endif %}
       <div class="flex flex-col text-xs opacity-70 sm:flex-row sm:gap-2 sm:items-center mt-auto">
-        {% if position %}
+        {% if start_date and position %}
         <div class="flex items-center">
           <time datetime="{{ start_date | htmlDateString }}">{{ start_date | resumeDate }}</time><span class="m-[2px]">&#8211;</span><time datetime="{{ end_date | htmlDateString }}">{{ end_date | resumeDate }}</p>
         </div>

@@ -55,5 +55,5 @@ a:is(:not(.card)) {
 }
 
 .toc > ol li {
-	@apply text-sm
+	@apply text-base
 }
