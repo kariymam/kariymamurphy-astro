@@ -4,7 +4,6 @@
   "description": "Eleventy Web Starter is a lightweight Eleventy boilerplate utilising, ESBuild Tailwind and PostCSS",
   "scripts": {
     "clean": "del dist",
-    "copy-images": "node utils/copyImages.js",
     "dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/styles.min.css --watch --verbose",
     "dev:scripts": "esbuild src/_assets/scripts/app.js --bundle --watch --outfile=src/static/app.min.js",
     "dev:11ty": "eleventy --serve --watch",
@@ -12,7 +11,7 @@
     "build:11ty": "ELEVENTY_ENV=production eleventy",
     "build:scripts": "esbuild src/_assets/scripts/app.js --bundle --minify --outfile=dist/static/app.min.js",
     "start": "run-p dev:*",
-    "build": "run-s clean copy-images build:*"
+    "build": "run-s clean build:*"
   },
   "author": "Chris Collins",
   "license": "ISC",

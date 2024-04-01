@@ -12,7 +12,7 @@ const tocPlugin = require("eleventy-plugin-toc");
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
-	eleventyConfig.addPassthroughCopy("./src/fonts/");
+	eleventyConfig.addPassthroughCopy("src/fonts/");
 	eleventyConfig.addPassthroughCopy("./admin/*");
 
 	eleventyConfig.setLibrary('md', markdownIt ({
@@ -23,9 +23,8 @@ module.exports = function (eleventyConfig) {
   .use(markdownItEleventyImg, {
 		imgOptions: {
 			widths: [400, 800, 1600],
-			urlPath: "/img/",
-			outputDir: 'dist/img/',
-			formats: ["webp", "jpeg"]
+			formats: ["jpeg", "png"],
+			outputDir: "dist/img"
 		},
 		globalAttributes: {
 			sizes: ["50vw", "100vw"]
