@@ -1,8 +1,9 @@
 ---
 title: Maryland Institute College of Art (2013 – 2017)
+description: Projects from undergraduate
 featured_image: false
-start_date: 2024-03-27
-end_date: 2024-03-27
+start_date: 2013-08-27
+end_date: 2017-05-16
 tags:
   - graphic-design
 thumb: src/img/innovationrightnow_00007.png

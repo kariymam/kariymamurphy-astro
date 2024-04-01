@@ -23,7 +23,7 @@
     <div class="flex flex-col justify-end gap-1 py-4 px-6 {% if articleImg is not defined %} w-full h-full border rounded-3xl{% else %}absolute scrim2 w-full rounded-b-3xl bottom-0 text-[var(--text-color-link-active)]{% endif %}">
       {% if articleDescription is defined %}<p class="w-3/4"><time
         datetime="{{ articleDate | htmlDateString }}"
-        class="text-xs inline-block opacity-70 min-w-max"
+        class="text-xs inline-block min-w-max"
         aria-label="number of days blogpost posted ago" title="blogpost date"
         >{{ articleDate | agoDate }}</time></p>{% endif %}
     </div>

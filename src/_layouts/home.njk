@@ -47,7 +47,7 @@
   </h3>
     {% set postsCount = collections.posts | length %}
     {% set morePosts = postsCount - numberOfLatestPostsToShow %}
-    <div class="border rounded-3xl col-span-1 sm:col-span-2">
+    <div class="grid-col">
       <ol reversed class="list-none postlist-lite mx-6 lg:mx-auto" style="counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }}">
         {% asyncEach post in postslist | reverse %}
           {% set articleUrl = post.url %}

@@ -16,6 +16,9 @@ module.exports = {
 	readableDate: (dateObj, format, zone) => {
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLLL L, yyyy");
 	},
+	resumeDate: (dateObj, format, zone) => {
+		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toFormat(format || "LLL yyyy");
+	},
 	agoDate: (dateObj, zone) => {
 		return DateTime.fromJSDate(dateObj, { zone: zone || "utc" }).toRelative();
 	},

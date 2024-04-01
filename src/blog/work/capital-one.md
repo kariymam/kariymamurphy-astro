@@ -5,8 +5,8 @@ description: I joined Capital One as a Senior UI/UX Designer in February 2021 to
   request portal.
 featured_image: false
 position: Senior UX/UI Designer
-start_date: null
-end_date: null
+start_date: 2021-02-16
+end_date: 2022-08-16
 date: 2024-03-27T02:35:49.465Z
 thumb: https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/b4e2655b-e7ef-4c45-0977-1136eeebcb00/public
 thumbAlt: Capital One logo on an off-white background
