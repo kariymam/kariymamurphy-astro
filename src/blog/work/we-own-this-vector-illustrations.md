@@ -1,5 +1,5 @@
 ---
-title: We Own This! Vector illustrations
+title: We Own This!
 description: I was hired to brand and design social media flyer for We Own This!
   A Celebration of Female Founders hosted by Baltimore Creatives Acceleration
   Network (BCAN).
