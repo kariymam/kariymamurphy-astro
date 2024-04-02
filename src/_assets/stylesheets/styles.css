@@ -217,6 +217,7 @@ div.postlist-item:nth-child(n+2) {
 }
 
 .thumbImgContainer {
+	position: relative;
 	-ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
@@ -331,7 +332,7 @@ article h2 {
 }
 
 .hero-bg-image {
-	background: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public), var(--color-gray-1);
+	background: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public), rgba(26, 8, 0, 1);
   background-blend-mode: screen;
 	background-position: bottom;
 	background-size: cover;
