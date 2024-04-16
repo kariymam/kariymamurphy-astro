@@ -54,6 +54,7 @@ article:not(:is(.gallery)) p {
 
 h1 {
 	@apply text-3xl;
+	@apply leading-tight
 }
 
 h2 {
@@ -85,6 +86,10 @@ a:hover:not(:is(.card, .decoration-transparent)) {
 
 a.card:hover {
 	border-color: var(--primary);
+}
+
+a:is(:not(.card)) {
+	font-weight: 600;
 }
 
 .indicator {

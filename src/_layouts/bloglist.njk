@@ -7,32 +7,34 @@ layout: blogpage.njk
 {% set i = 0 %}
 <div reversed class="postlist m-2 gap-2" style="counter-reset: start-from {{ (postslist.length) + 1 }};"
 >
-<div class="flex flex-col gap-4 border p-6 rounded-3xl">
-  <details id="categoriesDrawer" open>
-    <summary class="mb-2">
-      Search by categories
-    </summary>
-    <ul>
-      <li class="h-9">
-        <a href="/blog/" class="py-2 h-full">Articles <span class="text-xs">{% if postslist.length > 0 %}({{ (postslist.length) + i }}){% else %}(0){% endif %}</span></a>
-      </li>
-      <li class="h-9">
-        <a href="/resume/" class="py-2 w-full">Work experience <span class="text-xs">{% if resume.length > 0 %}({{ (resume.length) + i }}){% else %}(0){% endif %}</span></a>
-      </li>
-      <li class="h-9">
-        <a href="/projects/" class="py-2 w-full">Projects <span class="text-xs">{% if projects.length > 0 %}({{ (projects.length) + i }}){% else %}(0){% endif %}</span></a>
-      </li>
-    </ul>
-  </details>
-  <details id="tagDrawer" open>
-    <summary class="mb-2">
-      Search by tag
-    </summary>
-    {% include "_partials/taglist.njk" %}
-  </details>
-  {% if description %}<p>{{ description }}</p>{% endif %}
+<div class="border p-6 rounded-3xl">
+  <div>
+    <div id="categories">
+      <p class="mb-2">
+        Search by categories
+      </p>
+      <ul>
+        <li class="h-9">
+          <a href="/blog/" class="py-2 h-full">Articles <span class="text-xs">{% if postslist.length > 0 %}({{ (postslist.length) + i }}){% else %}(0){% endif %}</span></a>
+        </li>
+        <li class="h-9">
+          <a href="/resume/" class="py-2 w-full">Work experience <span class="text-xs">{% if resume.length > 0 %}({{ (resume.length) + i }}){% else %}(0){% endif %}</span></a>
+        </li>
+        <li class="h-9">
+          <a href="/projects/" class="py-2 w-full">Projects <span class="text-xs">{% if projects.length > 0 %}({{ (projects.length) + i }}){% else %}(0){% endif %}</span></a>
+        </li>
+      </ul>
+    </div>
+    <details id="tagDrawer" open>
+      <summary class="mb-2">
+        Search by tag
+      </summary>
+      {% include "_partials/taglist.njk" %}
+    </details>
+    {% if description %}<p>{{ description }}</p>{% endif %}
+  </div>
 </div>
-<section class="rounded-3xl grid-col">
+<section id="bloglist" class="rounded-3xl grid-col">
   {{ content | safe }}
 </section>
 </div>

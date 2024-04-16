@@ -6,7 +6,7 @@
       </a>
       {% if title and permalink !== "/" %}
           <span class="{% if permalink !== "/" %}sm:block{% endif %} hidden opacity-70">|</span>
-          <h1 class="text-base self-start">{{ title }}</h1>
+          <div class="text-base self-start"><span>{{ title }}</span></div>
           {% endif %}
         </div>
     </div>

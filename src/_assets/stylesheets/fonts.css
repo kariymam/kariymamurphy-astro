@@ -29,10 +29,6 @@ h1, h2, h3, h4 {
 	font-family: var(--display-font);
 }
 
-a:is(:not(.card)) {
-	font-weight: 600;
-}
-
 .gradient-line {
 	background: linear-gradient(56deg, rgba(0, 0, 0, 0.00) 49.9%, var(--border-primary) 49.91%, var(--border-primary) 50.05%, rgba(0, 0, 0, 0.00) 50.06%);
 }
