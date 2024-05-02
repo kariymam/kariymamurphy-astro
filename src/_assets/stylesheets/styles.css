@@ -337,7 +337,7 @@ article h2 {
 }
 
 .hero-bg-image {
-	background: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public), rgba(26, 8, 0, 1);
+	background: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public);
   background-blend-mode: screen;
 	background-position: bottom;
 	background-size: cover;
@@ -345,6 +345,7 @@ article h2 {
 	display: flex;
 	max-height: 768px;
 	height: 100vh;
+	border-bottom: solid 1px var(--border-primary);
 }
 
 @media (max-width: 1028px) {
