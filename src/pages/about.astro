@@ -1,30 +1,32 @@
 ---
+import Base from "../layouts/base.astro";
 
+const pageTitle = "About Me";
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skillColor = "navy";
+const fontWeight = 700;
+const textCase = "uppercase";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="/about/">About</a>
-            </li>
-            <li>
-                <a href="/blog/">Blog</a>
-            </li>
-        </ul>
-		<h1>About Me</h1>
-        <p>
-            I’m Kariyma, and when I’m not defining and building for organizations looking to unlock the power of digital media and products, I’m here writing and reviewing.
-        </p>
-	</body>
-</html>
+<Base title={pageTitle}>
+    <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/about/">About</a>
+        </li>
+        <li>
+          <a href="/blog/">Blog</a>
+        </li>
+      </ul>
+      <p>
+        I’m Kariyma, and when I’m not defining and building for organizations
+        looking to unlock the power of digital media and products, I’m here
+        writing and reviewing.
+      </p>
+      <p>My skills:</p>
+      <ul>
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+      </ul>
+</Base>
