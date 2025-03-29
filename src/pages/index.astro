@@ -1,7 +1,16 @@
 ---
 import Base from '../layouts/base.astro';
-import '../styles/global.scss';
+import '../styles/global.css';
+import HeroImage from '../components/HeroImage'
+import Footer from '../components/Footer';
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 <Base title="Home">
-	Home page
+	<main class="bg-orange-500">
+		<HeroImage client:only="react" imageURL='https://i.imgur.com/j05Azo0.png' imageAlt='Placeholder image' pageTitle='Placeholder' mobile mobileImgUrl='https://i.imgur.com/wBgQPt1.png'/>
+		<h1>{title}</h1>
+		<slot />
+	</main>
+	<Footer client:only="react" />
 </Base>

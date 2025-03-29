@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+main {
+	z-index: 4;
+	position: relative;
+    height: 100vh;
+    margin-bottom: 80vh;
+}

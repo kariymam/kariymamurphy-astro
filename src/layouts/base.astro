@@ -1,18 +1,36 @@
 ---
-import '../styles/global.scss';
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.css";
 const { title } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<h1>{title}</h1>
-        <slot />
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+	<Navigation/>
+    <div class="scroller">
+      <slot />
+    </div>
+  </body>
 </html>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+  const revealFooter = gsap.timeline({
+    paused: true,
+    scrollTrigger: {
+      start: "bottom bottom",
+      end: "+=80%",
+	  trigger: ".scroller",
+      markers: true,
+    },
+  });
+</script>
