@@ -1,13 +1,24 @@
 footer {
   display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  height: 80vh;
+  grid-template-columns: 1fr;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  background-color: rgb(232, 150, 135);
+}
+
+footer #footer-contact {
+  grid-area: 1/1;
+  place-self: center;
+}
+
+footer .footer-background {
+  display: grid;
+  grid-area: 1/1;
+  grid-template-rows: 1fr auto 1fr;
+  height: 80vh;
+//   background-color: rgb(232, 150, 135);
 }
 
 footer hr {
@@ -15,16 +26,38 @@ footer hr {
   color: black;
 }
 
-footer div#footer-links {
+footer .footer-background div#footer-links {
   flex-grow: 1;
   background-color: rgb(210, 182, 206);
+  color: rgb(232, 150, 135);
 }
 
-footer div#footer-contact {
+#footer-image {
   flex-grow: 1;
   height: 100%;
   background-image: url(https://imagedelivery.net/POqXXFhNBxBRY7E1RGhA0g/41e47f9b-632e-44a3-088a-7d152b3dba00/public);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.marquee.inside.one,
+.marquee.inside.three {
+  transform: translateX(0);
+}
+
+.marquee.inside.two {
+  transform: translateX(-50%);
+}
+
+footer span {
+    font-size: clamp(4em, 8vw, 6em);
+}
+
+span, span::after {
+    line-height: 1;
+}
+
+footer span::after {
+    content: '→';
 }
