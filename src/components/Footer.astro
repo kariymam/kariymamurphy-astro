@@ -14,13 +14,13 @@ const count = ["one", "two", "three"];
 <footer class="main">
   <div
     id="footer-contact"
-    class="max-w-full flex flex-col gap-4 md:w-xl p-8 bg-slate-950 text-white z-[1]"
+    class="max-w-full w-full flex flex-col gap-4 md:w-xl p-8 bg-slate-950 text-white z-[1]"
   >
-    <h2 class="text-5xl">Interested in working together? <a class="underline" href={`mailto:${myEmail}`}>Email me</a> or book a call.</h2>
+    <h2>Interested in working together? <a class="underline" href={`mailto:${myEmail}`}>Email me</a> or book a call.</h2>
   </div>
   <div class="footer-background">
     <div id="footer-links">
-      <div class="marquee w-screen h-full">
+      <div class="marquee w-screen">
         {
           count.map((num) => {
             return (

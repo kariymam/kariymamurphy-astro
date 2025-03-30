@@ -12,7 +12,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-amber-50">
+  <body>
     <Navigation />
     <div class="scroller">
       <slot />
@@ -27,9 +27,8 @@ const { title } = Astro.props;
   const footerReveal = gsap.timeline({
     paused: true,
     scrollTrigger: {
-      start: "bottom center-=30%",
-      pin: "main",
-      end: "+=20%",
+      start: "bottom center",
+      end: "+=100% end",
       //   onUpdate: (self) => console.log("progress:", self.progress),
       trigger: ".scroller",
       markers: true,

@@ -1,5 +1,7 @@
 import "../styles/hero.scss";
 import { useRef, useState } from 'react';
+import DeviceToggleButton from "./DeviceToggleButton";
+import { Card } from "./ui/card";
 
 type Props = {
     imageURL: string;
@@ -30,8 +32,8 @@ export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pa
 
     return (
         <>
-            {mobile && (<button id="toggle" onClick={toggleView}>Switch to {current.toggleTo}</button>)}
-            <div id="intro">
+            {mobile && (<DeviceToggleButton toggleView={toggleView} toggleTo={current.toggleTo}/>)}
+            <Card id="intro">
                 <div id="hero" className={`${current.device} hero`}>
                     <div className="browser-window">
                         <div className="browser-ui device-grid">
@@ -78,7 +80,7 @@ export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pa
                     <img className="mobile" src={mobileImgUrl} alt={imageAlt} />
                     {/* <!--   <iframe title="Weather App" width="100%" height="100%" src="https://chic-swan-8ad817.netlify.app"></iframe> --> */}
                 </div>
-            </div>
+            </Card>
         </>
     )
 }

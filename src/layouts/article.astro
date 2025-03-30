@@ -1,0 +1,30 @@
+---
+import "../styles/article.scss";
+import Footer from "@/components/Footer.astro";
+import Base from "./base.astro";
+import HeroImage from "@/components/HeroImage";
+const { title, frontmatter } = Astro.props;
+---
+
+<Base title={title}>
+  <article>
+      {
+        frontmatter.deviceHero && (
+          <div class="standard-area block relative">
+            <HeroImage
+              client:only="react"
+              imageURL={frontmatter.image.url}
+              imageAlt={frontmatter.image.alt}
+              pageTitle={frontmatter.title}
+              mobile={frontmatter.mobile}
+              mobileImgUrl={frontmatter.mobile?.url}
+            />
+          </div>
+        )
+      }
+    <div class="article-grid">
+      <slot />
+    </div>
+  </article>
+  <Footer />
+</Base>

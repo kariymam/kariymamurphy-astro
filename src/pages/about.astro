@@ -1,14 +1,10 @@
 ---
+import Content from "@/layouts/content.astro";
 import Base from "../layouts/base.astro";
-
-const pageTitle = "About Me";
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const skillColor = "navy";
-const fontWeight = 700;
-const textCase = "uppercase";
 ---
 
-<Base title={pageTitle}>
+  <Content title="About Me">
     <ul>
         <li>
           <a href="/">Home</a>
@@ -32,4 +28,4 @@ const textCase = "uppercase";
       <ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
-</Base>
+  </Content>

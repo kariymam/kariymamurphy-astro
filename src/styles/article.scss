@@ -1,0 +1,75 @@
+.article-grid {
+  display: grid;
+  grid-template-rows: minmax(424px, 1fr);
+  grid-template-columns: max(5vw, 32px, 10vw) minmax(375px, 1024px) max(
+      5vw,
+      32px,
+      12vw
+    );
+  gap: 32px;
+  align-items: start;
+  align-content: stretch;
+  grid-auto-flow: row;
+  padding: 3em 0;
+  margin: 0 auto;
+  --standard-area: auto / 2 / auto / 3;
+  --wide-area: auto / 1 / auto / 4;
+
+  > *:not(.hero-area, .wide-area, .standard-area) {
+    margin: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    --base-size: 1.8rem;
+    --heading-size: calc(var(--base-size) * 1);
+    --heading: 700 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) / 1
+      sans-serif;
+    font: var(--heading);
+    grid-area: var(--standard-area);
+  }
+
+  h2 {
+    --heading-size: calc(var(--base-size) / 1.4);
+  }
+
+  h3 {
+    --heading-size: calc(var(--base-size) / 1.8);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  small,
+  p,
+  blockquote,
+  ol,
+  ul {
+    max-width: 65ch;
+    grid-area: var(--standard-area);
+  }
+}
+
+// .hero-area {
+//   grid-area: var(--standard-area);
+// }
+
+.wide-area {
+  grid-area: var(--wide-area);
+}
+
+.standard-area {
+    grid-area: var(--standard-area);
+}
+
+@media (max-width: 922px) {
+  .grid {
+    --template: 1rem 1fr 1rem;
+  }
+  .hero-area {
+    grid-area: var(--wide-area);
+  }
+}

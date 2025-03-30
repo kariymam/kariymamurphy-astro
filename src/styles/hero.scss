@@ -1,19 +1,6 @@
-// .grid {
-//  display: grid;
-//  grid-template-rows: auto;
-//  grid-template-columns: var(--template);
-//  align-items: start;
-//  align-content: stretch;
-//  grid-auto-flow: column;
-//  --template: max(5vw, 64px, 10vw) 1fr 1fr max(5vw, 64px, 12vw);
-//  --standard-area: auto / 2 / auto / 4;
-//  --wide-area: auto / 1 / auto / 5;
-// }
-
 #intro {
   margin: auto;
   aspect-ratio: 16/9;
-  // height: 100vh;
   height: auto;
   max-height: var(--hero-height);
   row-gap: 1rem;
@@ -82,6 +69,7 @@
  }
  
  #hero {
+  display: flex;
   grid-area: var(--wide-area);
   aspect-ratio: var(--device-ratio);
   border-radius: var(--border-radius);
@@ -91,7 +79,6 @@
   position: relative;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1),
    0px 0px 15px 4px rgba(20, 20, 24, 0.1);
-  // max-width: var(--device-width);
   overflow: hidden;
   margin: auto;
   height: 100%;
@@ -102,7 +89,7 @@
    display: block;
    height: 100%;
    object-fit: cover;
-   object-position: center bottom;
+   object-position: center top;
    border-radius: 0 0 var(--border-radius) var(--border-radius);
    margin: auto;
   }
@@ -125,7 +112,6 @@
      border-radius: 4em;
      align-items: center;
      justify-content: center;
-     // max-height: 16px;
      min-height: clamp(2vh, 4px, 12vh);
      margin: auto;
     }
