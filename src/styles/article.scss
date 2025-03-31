@@ -1,67 +1,42 @@
-.article-grid {
-  display: grid;
-  grid-template-rows: minmax(424px, 1fr);
-  grid-template-columns:
-    max(5vw, 32px, 10vw) minmax(var(--device-width), 1024px)
-    max(5vw, 32px, 12vw);
-  gap: 32px;
-  align-items: start;
-  align-content: stretch;
-  grid-auto-flow: row;
-  padding: 3em 0;
-  margin: 0 auto;
-  --standard-area: auto / 2 / auto / 3;
-  --wide-area: auto / 1 / auto / 4;
+// .article-grid {
+//   display: grid;
+//   grid-template-rows: minmax(424px, 1fr);
+//   grid-template-columns:
+//     max(5vw, 32px, 10vw) minmax(var(--device-width), 1024px)
+//     max(5vw, 32px, 12vw);
+//   gap: 32px;
+//   align-items: start;
+//   align-content: stretch;
+//   grid-auto-flow: row;
+//   padding: 3em 0;
+//   margin: 0 auto;
+//   --standard-area: auto / 2 / auto / 3;
+//   --wide-area: auto / 1 / auto / 4;
 
-  > *:not(.hero-area, .wide-area, .standard-area) {
-    margin: auto;
-  }
+//   > *:not(.hero-area, .wide-area, .standard-area) {
+//     margin: auto;
+//   }
 
-  ul li {
-    list-style-type: disc;
-    margin: 1em 1em;
-  }
-}
-// .hero-area {
+//   ul li {
+//     list-style-type: disc;
+//     margin: 1em 1em;
+//   }
+// }
+
+// .wide-area {
+//   grid-area: var(--wide-area);
+// }
+
+// .standard-area {
 //   grid-area: var(--standard-area);
 // }
 
-.wide-area {
-  grid-area: var(--wide-area);
-}
-
-.standard-area {
-  grid-area: var(--standard-area);
-}
-
-@media (max-width: 922px) {
-  .article-grid {
-    --template: 1rem 1fr 1rem;
-    grid-template-rows: 1fr;
-  }
-  .hero-area {
-    grid-area: var(--wide-area);
-  }
-}
-
-.gallery-card {
-  a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
-
-.gallery * {
-  grid-column: span 1;
-//   aspect-ratio: 1 / 1;
-}
-
-.gallery *:first-child,
-.gallery *:nth-child(4) {
-  grid-column: span 2;
-//   aspect-ratio: 16 / 9;
-}
+// @media (max-width: 922px) {
+//   .article-grid {
+//     --template: 1rem 1fr 1rem;
+//     grid-template-rows: 1fr;
+//   }
+//   .hero-area {
+//     grid-area: var(--wide-area);
+//   }
+// }

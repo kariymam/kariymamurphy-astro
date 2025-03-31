@@ -1,14 +1,13 @@
 ---
-import "../styles/article.scss";
 import Footer from "@/components/Footer.astro";
 import Base from "./base.astro";
 import HeroImage from "@/components/HeroImage";
-import Grid from "@/components/Grid";
+import ArticleGrid from "@/components/ArticleGrid";
 const { title, frontmatter } = Astro.props;
 ---
 
 <Base title={title}>
-  <article class="flex flex-col px-4 md:px-0 bg-accent">
+  <article class="flex flex-col px-4 pb-24 md:px-0 bg-accent">
     <h1 class="mx-auto py-14">{frontmatter.title}</h1>
       {
         frontmatter.deviceHero ? (
@@ -29,9 +28,9 @@ const { title, frontmatter } = Astro.props;
         )
       }
     <div class="wide-area place-self-center max-w-[1024px] w-full pt-8 mx-auto">
-      <Grid client:load column={2} gallery={frontmatter.gallery} tags={frontmatter.tags} tools={frontmatter.tools}>
+      <ArticleGrid client:load gallery={frontmatter.gallery} tags={frontmatter.tags} tools={frontmatter.tools} description={frontmatter.description}>
         <slot />
-      </Grid>
+      </ArticleGrid>
     </div>
   </article>
   <Footer />

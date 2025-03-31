@@ -1,5 +1,5 @@
 ---
-layout: "src/layouts/article.astro"
+layout: "src/layouts/work.astro"
 title: 'Case Study'
 pubDate: 2025-03-28
 description: 'This is the first work in my new Astro portfolio.'

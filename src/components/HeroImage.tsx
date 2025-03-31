@@ -34,7 +34,7 @@ export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pa
     return (
         <>
             {mobile && (<DeviceToggleButton toggleView={toggleView} toggleTo={current.toggleTo}/>)}
-            <div id="intro" className="bg-accent">
+            <div id="intro">
                 <div id="hero" className={`${current.device} hero`}>
                     <BrowserUI title={pageTitle}/>
                     <svg className="window-gradient">

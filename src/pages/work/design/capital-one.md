@@ -1,8 +1,8 @@
 ---
-layout: "src/layouts/article.astro"
+layout: "src/layouts/work.astro"
 title: 'Designing for data privacy and governance at Capital One'
 pubDate: 2025-03-28
-description: 'This is the first work in my new Astro portfolio.'
+description: 'I led UX/UI design for ensuring regulatory compliance with CPRA (California Privacy Act of 2020) before the law went into effect. I also provided product partners with design support for the new privacy scoping process with UI enhancements, which drove business efficiencies.'
 tags: ["ui design", "frontend", "learning in public"]
 tools: ["photoshop", "figma", "jira"]
 deviceHero: true

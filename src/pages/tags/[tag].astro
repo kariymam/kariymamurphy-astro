@@ -1,17 +1,28 @@
 ---
-import Base from '../../layouts/base.astro';
+import GalleryGrid from "@/components/GalleryGrid";
+import Content from "@/layouts/content.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const work = Object.values(import.meta.glob('../work/*.md', { eager: true }));
-  const allPosts = Object.assign(work, Object.values(import.meta.glob('../posts/*.md', { eager: true })));
+  const posts = Object.values(
+    import.meta.glob(["../posts/*.md", "../work/**/*.md"], { eager: true })
+  );
 
-  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+  const collection = await getCollection("work");
+  const uniqueTags = [
+    ...new Set(posts.map((post: any) => post.frontmatter.tags).flat()),
+  ];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post: any) => post.frontmatter.tags.includes(tag));
+    const filteredCollection = collection.filter(
+      (work): work is CollectionEntry<"work"> => work.data.tags.includes(tag)
+    );
+    const filteredPosts = posts.filter((post: any) =>
+      post.frontmatter.tags.includes(tag)
+    );
     return {
       params: { tag },
-      props: { posts: filteredPosts },
+      props: { posts: filteredPosts, collection: filteredCollection },
     };
   });
 }
@@ -19,7 +30,17 @@ export async function getStaticPaths() {
 //  /tags/astro
 
 const { tag } = Astro.params;
+const { collection } = Astro.props;
 ---
-<Base title={tag}>
-  <p>Posts tagged with {tag}</p>
-</Base>
+
+<Content title={tag}>
+  <div class="flex flex-col px-4 pb-24 md:px-0">
+    <h1 class="mx-auto pt-14">Posts tagged with "{tag}"</h1>
+    <div class="flex justify-center w-full my-8">
+      <a href="/gallery/" class="flex gap-2">
+        Back to Featured Work
+      </a>
+    </div>
+    <GalleryGrid collection={collection} />
+  </div>
+</Content>
