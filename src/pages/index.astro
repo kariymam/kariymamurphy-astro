@@ -1,7 +1,9 @@
 ---
-import Base from '../layouts/base.astro';
-import '../styles/global.scss';
+import Content from '@/layouts/content.astro';
+const { title } = Astro.props;
 ---
-<Base title="Home">
-	Home page
-</Base>
+<Content title="Home">
+	<h2>Home</h2>
+	<h2>I’m currently working on…</h2>
+	<!-- <HeroImage client:only="react" imageURL='https://i.imgur.com/j05Azo0.png' imageAlt='Placeholder image' pageTitle='Placeholder' mobile mobileImgUrl='https://i.imgur.com/wBgQPt1.png'/> -->
+</Content>

@@ -1,14 +1,9 @@
 ---
-import Base from "../layouts/base.astro";
-
-const pageTitle = "About Me";
+import Content from "@/layouts/content.astro";
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
-const skillColor = "navy";
-const fontWeight = 700;
-const textCase = "uppercase";
 ---
 
-<Base title={pageTitle}>
+  <Content title="About Me">
     <ul>
         <li>
           <a href="/">Home</a>
@@ -21,12 +16,10 @@ const textCase = "uppercase";
         </li>
       </ul>
       <p>
-        I’m Kariyma, and when I’m not defining and building for organizations
-        looking to unlock the power of digital media and products, I’m here
-        writing and reviewing.
+        I’m Kariyma, and I'm here to claim a little piece of the internet for myself. I'm a graphic designer turned <em>UI Engineer</em> with experience connecting designers, product managers, and developers to deliver excellent digital products. When I’m not studying, defining or implementing user interfaces for digital products, I’m here tinkering, writing or reviewing things I find interesting.
       </p>
       <p>My skills:</p>
       <ul>
         {skills.map((skill) => <li class="skill">{skill}</li>)}
       </ul>
-</Base>
+  </Content>

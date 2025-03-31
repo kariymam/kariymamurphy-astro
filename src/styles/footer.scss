@@ -1,0 +1,75 @@
+footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+footer #footer-contact {
+  grid-area: 1/1;
+  place-self: center;
+}
+
+footer .footer-background {
+  display: grid;
+  grid-area: 1/1;
+  grid-template-rows: 1fr auto 1fr;
+  height: 100vh;
+}
+
+footer hr {
+  margin: 0;
+  border-color: black;
+}
+
+footer .footer-background div#footer-links {
+  color: rgb(232, 150, 135);
+}
+
+div#footer-links, div#footer-image {
+  position: relative;
+  background-color: rgb(210, 182, 206);
+}
+
+// background: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
+
+#footer-image {
+  height: 100%;
+  background-image: url(/footer.svg), radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+div#footer-links .marquee {
+  transform: translate(0, 20%);
+}
+
+.marquee.inside.one,
+.marquee.inside.three {
+  transform: translateX(0);
+}
+
+.marquee.inside.two {
+  transform: translateX(-50%);
+}
+
+footer span {
+    font-size: clamp(4em, 8vw, 6em);
+}
+
+footer span, span::after {
+    line-height: 1;
+}
+
+footer span::after {
+    content: '→';
+}
+
+footer h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}

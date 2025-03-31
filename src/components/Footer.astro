@@ -1,0 +1,41 @@
+---
+import "../styles/footer.scss";
+const links = [
+  ["Github", "https://github.com/kariymam"],
+  ["Behance", "https://www.behance.net/kariymam"],
+  ["LinkedIn", "https://www.linkedin.com/in/kariymamurphy"],
+];
+const myEmail = import.meta.env.MY_EMAIL;
+const count = ["one", "two", "three"];
+---
+
+<footer class="main">
+  <div
+    id="footer-contact"
+    class="max-w-full w-full flex flex-col gap-4 md:w-xl p-8 bg-slate-950 text-white z-[1]"
+  >
+    <h2>Interested in working together? <a class="underline" href={`mailto:${myEmail}`}>Email me</a> or book a call.</h2>
+  </div>
+  <div class="footer-background">
+    <div id="footer-links">
+      <div class="marquee w-screen">
+        {
+          count.map((num) => {
+            return (
+              <div class={`marquee inside flex ${num}`}>
+                {links.map((link) => {
+                  return <a class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
+                })}
+                {links.map((link) => {
+                  return <a class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
+                })}
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+    <hr />
+    <div id="footer-image"></div>
+  </div>
+</footer>
