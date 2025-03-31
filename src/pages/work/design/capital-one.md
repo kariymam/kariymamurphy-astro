@@ -1,10 +1,10 @@
 ---
-layout: "src/layouts/tech_work.astro"
+layout: "src/layouts/article.astro"
 title: 'Designing for data privacy and governance at Capital One'
 pubDate: 2025-03-28
 description: 'This is the first work in my new Astro portfolio.'
-author: 'Kariyma Murphy'
 tags: ["ui design", "frontend", "learning in public"]
+tools: ["photoshop", "figma", "jira"]
 deviceHero: true
 image:
     url: '/portfolio-images/capital-one.png'

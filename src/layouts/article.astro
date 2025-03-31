@@ -3,13 +3,15 @@ import "../styles/article.scss";
 import Footer from "@/components/Footer.astro";
 import Base from "./base.astro";
 import HeroImage from "@/components/HeroImage";
+import Grid from "@/components/Grid";
 const { title, frontmatter } = Astro.props;
 ---
 
 <Base title={title}>
-  <article>
+  <article class="flex flex-col px-4 md:px-0 bg-accent">
+    <h1 class="mx-auto py-14">{frontmatter.title}</h1>
       {
-        frontmatter.deviceHero && (
+        frontmatter.deviceHero ? (
           <div class="standard-area block relative">
             <HeroImage
               client:only="react"
@@ -20,10 +22,16 @@ const { title, frontmatter } = Astro.props;
               mobileImgUrl={frontmatter.mobile?.url}
             />
           </div>
+        ) : (
+          <div class="mx-auto overflow-hidden aspect-video max-w-[1024px]">
+            <img class="w-full h-full object-contain rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt}/>
+          </div>
         )
       }
-    <div class="article-grid">
-      <slot />
+    <div class="wide-area place-self-center max-w-[1024px] w-full pt-8 mx-auto">
+      <Grid client:load column={2} gallery={frontmatter.gallery} tags={frontmatter.tags} tools={frontmatter.tools}>
+        <slot />
+      </Grid>
     </div>
   </article>
   <Footer />

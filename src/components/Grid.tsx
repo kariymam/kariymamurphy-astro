@@ -8,29 +8,44 @@ import {
 import { Card } from "./ui/card"
 
 type Props = {
-    title: string;
     children: React.ReactNode;
+    tags: string[];
     column?: number;
     gallery?: Array<{ image: string; alt: string }>;
+    tools?: string[];
 }
 
-const Grid = ({ title, column, gallery, children }: Props) => {
+const Grid = ({ column, gallery, tags, tools, children }: Props) => {
     if (column === 2) {
         return (
-            <div className="wide-area place-self-center">
-                <div className="grid md:grid-cols-2 md:grid-rows-auto mx-auto md:max-w-[1017px] gap-y-8 gap-x-8">
+            <>
+                <div className="grid grid-cols-1 max-w-full md:grid-cols-2 md:grid-rows-auto mx-auto gap-y-8 gap-x-8">
                     <Card className="p-8">
-                        <h1>{title}</h1>
                         <div>
                             {children}
                         </div>
                     </Card>
-                    <Card className="p-8">
-                        <div>Tags</div>
-                        <div>Tech Stack</div>
+                    <Card className="p-8 flex flex-col gap-8">
+                        <div className="flex flex-col gap-4">
+                            <h3>Tags</h3>
+                            <div className="flex gap-2">
+                                {tags.map((tag, i) => (
+                                    <a key={i} className="bg-accent text-accent-foreground hover:opacity-75 px-4 rounded-2xl" href={`/tags/${tag}`}>{tag}</a>
+                                ))}
+                            </div>
+                        </div>
+                        <div className="flex flex-col gap-4">
+                            <h3>Tech Stack</h3>
+                            <div className="flex">
+                                {tools && tools.map((tool, i) => (
+                                    <i key={i} className={`devicon-${tool.toLowerCase()}-plain text-4xl`}></i>
+                                ))}
+                            </div>
+                            {/* https://devicon.dev */}
+                        </div>
                         <div>Links </div>
                     </Card>
-                    <div className="row-start-2 col-start-1 col-span-2">
+                    <div className="md:row-start-2 md:col-start-1 md:col-span-2">
                         {gallery && (
                             <Card className="p-8">
                                 <Carousel className="translate-x-1">
@@ -51,12 +66,11 @@ const Grid = ({ title, column, gallery, children }: Props) => {
                         {/* TODO: Tags, Tech Stack, Links */}
                     </div>
                 </div>
-            </div>
+            </>
         )
     } else {
         return (
             <>
-                <h1>{title}</h1>
                 {children}
             </>
         )

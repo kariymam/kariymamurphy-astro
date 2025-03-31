@@ -26,21 +26,26 @@ footer hr {
 }
 
 footer .footer-background div#footer-links {
-  flex-grow: 1;
   color: rgb(232, 150, 135);
 }
 
 div#footer-links, div#footer-image {
+  position: relative;
   background-color: rgb(210, 182, 206);
 }
 
+// background: radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
+
 #footer-image {
-  flex-grow: 1;
   height: 100%;
-  background-image: url(/footer.svg);
+  background-image: url(/footer.svg), radial-gradient(109.5% 106.59% at 13.51% 90.18%, #FFF0A8 0%, #FFF9DB 33.33%, #ECF3EE 58.33%, #F4F2E8 81.77%, #F4CCA5 100%);
   background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+div#footer-links .marquee {
+  transform: translate(0, 20%);
 }
 
 .marquee.inside.one,
