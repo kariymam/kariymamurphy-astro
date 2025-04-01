@@ -75,5 +75,31 @@
 			"};"
 		],
 		"description": "Async function template"
-	}
+	},
+	"Markdown Template": {
+        "scope": "markdown, plaintext",
+        "prefix": "mdw",
+        "body": [
+            "---",
+            "layout: \"src/layouts/work.astro\"",
+            "title: \"${TM_FILENAME_BASE}\"",
+            "description:",
+            "tags: []",
+            "deviceFrame: false",
+			"image:",
+			"    url:",
+			"    alt:\n",
+			"# ---- Optional frontmatter",
+            "# tools: []\n",
+			"# mobile:",
+			"#     url:",
+			"#     alt:\n",
+			"# gallery:",
+			"#     image:",
+			"#     alt:",
+            "---",
+            "$0"
+        ],
+        "description": "Starter template for a work (w) template"
+    }
 }
