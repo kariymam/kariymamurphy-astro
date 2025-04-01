@@ -5,9 +5,9 @@ type Props = {
     post: CollectionEntry<'work'>
 }
 
-const GalleryItem = ({ post }: Props) => {
+const GalleryItem = ({ key, post }: Props) => {
     return (
-        <div className="gallery-card flex flex-col relative overflow-hidden border rounded-xl">
+        <div tabIndex={-1} className="gallery-card transition-all flex flex-col relative overflow-hidden border rounded-xl">
             <div className="py-0 h-full relative">
                 <img
                     className="object-cover w-full h-full"

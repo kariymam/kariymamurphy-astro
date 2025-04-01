@@ -8,7 +8,7 @@ const TagsContainer = ({ tags }: Props) => {
     return (
         <div className="flex gap-2">
             {tags.map((tag, i) => (
-                <a key={i} href={`/tags/${tag}`}>
+                <a className="tags" key={i} href={`/tags/${tag}`}>
                     <Badge variant="outline">{tag}</Badge>
                 </a>
             ))}

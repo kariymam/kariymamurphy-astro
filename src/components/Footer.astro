@@ -1,5 +1,6 @@
 ---
 import "../styles/footer.scss";
+import FooterContact from "./FooterContact";
 const links = [
   ["Github", "https://github.com/kariymam"],
   ["Behance", "https://www.behance.net/kariymam"],
@@ -10,12 +11,13 @@ const count = ["one", "two", "three"];
 ---
 
 <footer class="main">
-  <div
+  <!-- <div
     id="footer-contact"
     class="max-w-full w-full flex flex-col gap-4 md:w-xl p-8 bg-slate-950 text-white z-[1]"
   >
     <h2>Interested in working together? <a class="underline" href={`mailto:${myEmail}`}>Email me</a> or book a call.</h2>
-  </div>
+  </div> -->
+  <FooterContact client:load />
   <div class="footer-background">
     <div id="footer-links">
       <div class="marquee w-screen">
@@ -24,10 +26,10 @@ const count = ["one", "two", "three"];
             return (
               <div class={`marquee inside flex ${num}`}>
                 {links.map((link) => {
-                  return <a class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
+                  return <a tabindex={-1} class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
                 })}
                 {links.map((link) => {
-                  return <a class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
+                  return <a tabindex={-1} class="hover:underline hover:text-slate-950" href={link[1]}><span>{link[0]}</span></a>;
                 })}
               </div>
             );

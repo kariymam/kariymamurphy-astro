@@ -8,7 +8,7 @@ type Props = {
 
 const DeviceToggleButton = ({ toggleTo, toggleView }: Props) => {
     return (
-        <Toggle className="flex mx-auto mb-8" onClick={toggleView}>
+        <Toggle className="device-toggle border flex mx-auto mb-8" onClick={toggleView}>
             {
                 (toggleTo === 'mobile' ?
                     <Smartphone className="h-4 w-4" />

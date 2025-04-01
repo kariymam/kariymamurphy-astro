@@ -152,8 +152,8 @@ h3,
 h4 {
   --base-size: 1.8rem;
   --heading-size: calc(var(--base-size) * 1);
-  --heading: 400 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) / var(--leading-relaxed)
-    var(--font);
+  --heading: 400 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) /
+    var(--leading-relaxed) var(--font);
   font: var(--heading);
   grid-area: var(--standard-area);
 }
@@ -183,25 +183,36 @@ p,
 blockquote,
 ol li,
 ul li {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 small {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 .scroller {
-	overflow: hidden;
-	margin-bottom: 180vh;
+  overflow: hidden;
+  margin-bottom: 180vh;
 }
 
 .gallery-card {
-	a::after {
-	  content: "";
-	  position: absolute;
-	  left: 0;
-	  top: 0;
-	  right: 0;
-	  bottom: 0;
-	}
+  a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
   }
+}
+
+.gallery-card:focus,
+.gallery-card:hover,
+.gallery-card:focus-within,
+.gallery-card:focus-visible,
+.tags:focus span,
+.tags:hover span,
+.tags:focus-within span,
+.tags:focus-visible span {
+  box-shadow: 0 0 0 2px var(--ring);
+}

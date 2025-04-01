@@ -13,7 +13,7 @@ const { title, frontmatter } = Astro.props;
         frontmatter.deviceHero ? (
           <div class="standard-area block relative">
             <HeroImage
-              client:only="react"
+              client:load
               imageURL={frontmatter.image.url}
               imageAlt={frontmatter.image.alt}
               pageTitle={frontmatter.title}
