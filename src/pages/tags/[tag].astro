@@ -5,7 +5,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = Object.values(
-    import.meta.glob(["../posts/*.md", "../work/**/*.md"], { eager: true })
+    import.meta.glob("../work/**/*.md", { eager: true })
   );
 
   const collection = await getCollection("work");
@@ -17,16 +17,16 @@ export async function getStaticPaths() {
     const filteredCollection = collection.filter(
       (work): work is CollectionEntry<"work"> => work.data.tags.includes(tag)
     );
-    const filteredPosts = posts.filter((post: any) =>
-      post.frontmatter.tags.includes(tag)
-    );
+    // const filteredPosts = posts.filter((post: any) =>
+    //   post.frontmatter.tags.includes(tag)
+    // );
     return {
       params: { tag },
-      props: { posts: filteredPosts, collection: filteredCollection },
+      // props: { posts: filteredPosts, collection: filteredCollection },
+      props: { collection: filteredCollection },
     };
   });
 }
-
 //  /tags/astro
 
 const { tag } = Astro.params;

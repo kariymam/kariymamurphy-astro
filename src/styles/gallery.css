@@ -6,3 +6,9 @@
 .gallery *:nth-child(4) {
   grid-column: span 2;
 }
+
+@media (max-width: 922px) {
+  .gallery * {
+    grid-column: 1 / span 2;
+  }
+}

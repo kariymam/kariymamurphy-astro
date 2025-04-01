@@ -1,37 +1,73 @@
 ---
+import { Image } from "astro:assets";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
 import Footer from "@/components/Footer.astro";
 import Base from "./base.astro";
 import HeroImage from "@/components/HeroImage";
 import ArticleGrid from "@/components/ArticleGrid";
+
+dayjs.extend(utc);
+const lastModified = dayjs()
+  .utc(Astro.props.frontmatter.lastModified)
+  .format("MMMM DD YYYY");
+
 const { title, frontmatter } = Astro.props;
 ---
 
 <Base title={title}>
   <article class="flex flex-col px-4 pb-24 md:px-0 bg-accent">
     <h1 class="mx-auto py-14">{frontmatter.title}</h1>
-      {
-        frontmatter.deviceHero ? (
-          <div class="standard-area block relative">
-            <HeroImage
-              client:load
-              imageURL={frontmatter.image.url}
-              imageAlt={frontmatter.image.alt}
-              pageTitle={frontmatter.title}
-              mobile={frontmatter.mobile}
-              mobileImgUrl={frontmatter.mobile?.url}
+    {
+      frontmatter.deviceFrame ? (
+        <div class="block relative">
+          <HeroImage
+            client:load
+            pageTitle={frontmatter.title}
+            mobile={frontmatter.mobile}
+          >
+            <Image
+              class="desktop"
+              src={frontmatter.image.url}
+              width="1600"
+              height="900"
+              alt={frontmatter.image.alt}
             />
-          </div>
-        ) : (
-          <div class="mx-auto overflow-hidden aspect-video max-w-[1024px]">
-            <img class="w-full h-full object-contain rounded-xl" src={frontmatter.image.url} alt={frontmatter.image.alt}/>
-          </div>
-        )
-      }
-    <div class="wide-area place-self-center max-w-[1024px] w-full pt-8 mx-auto">
-      <ArticleGrid client:load gallery={frontmatter.gallery} tags={frontmatter.tags} tools={frontmatter.tools} description={frontmatter.description}>
+            {frontmatter.mobile && (
+              <Image
+                class="mobile"
+                src={frontmatter.mobile?.url}
+                width="375"
+                height="812"
+                alt={frontmatter.image.alt}
+              />
+            )}
+          </HeroImage>
+        </div>
+      ) : (
+        <div class="mx-auto overflow-hidden aspect-video max-w-[1024px]">
+          <img
+            class="w-full h-full object-contain rounded-xl"
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+          />
+        </div>
+      )
+    }
+    <div class="place-self-center max-w-[1024px] w-full pt-8 mx-auto">
+      <ArticleGrid
+        client:load
+        gallery={frontmatter.gallery}
+        tags={frontmatter.tags}
+        tools={frontmatter.tools}
+        description={frontmatter.description}
+      >
         <slot />
       </ArticleGrid>
     </div>
+    <p class="mx-auto my-8 text-slate-400">
+      Last updated {lastModified}
+    </p>
   </article>
   <Footer />
 </Base>

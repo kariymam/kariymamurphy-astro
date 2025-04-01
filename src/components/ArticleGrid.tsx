@@ -1,4 +1,3 @@
-import { Image } from 'astro:assets';
 import {
     Carousel,
     CarouselContent,
@@ -36,7 +35,7 @@ const Grid = ({ gallery, links, description, tags, tools, children }: Props) => 
                     </div>
                     {tools && (
                         <div className="flex flex-col gap-4">
-                            <span>Tech Stack</span>
+                            <span>Tool Stack</span>
                             <ToolsContainer tools={tools} />
                         </div>
                     )}

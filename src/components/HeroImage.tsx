@@ -1,18 +1,15 @@
 import "../styles/hero.scss";
 import { useRef, useState } from 'react';
 import DeviceToggleButton from "./DeviceToggleButton";
-import { Card } from "./ui/card";
 import BrowserUI from "./BrowserUI";
 
 type Props = {
-    imageURL: string;
-    imageAlt: string;
+    children: React.ReactNode;
     mobile?: boolean;
-    mobileImgUrl?: string;
     pageTitle: string;
 }
 
-export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pageTitle }: Props) {
+export default function HeroImage({ children, mobile, pageTitle }: Props) {
     const initialDevice = { device: "desktop", toggleTo: "mobile" }
 
     const isToggled = useRef(false);
@@ -33,10 +30,10 @@ export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pa
 
     return (
         <>
-            {mobile && (<DeviceToggleButton toggleView={toggleView} toggleTo={current.toggleTo}/>)}
+            {mobile && (<DeviceToggleButton toggleView={toggleView} toggleTo={current.toggleTo} />)}
             <div id="intro">
                 <div id="hero" className={`${current.device} hero`}>
-                    <BrowserUI title={pageTitle}/>
+                    <BrowserUI title={pageTitle} />
                     <svg className="window-gradient">
                         <defs>
                             <linearGradient id="deviceGradient" gradientTransform="rotate(90)">
@@ -45,9 +42,7 @@ export default function HeroImage({ imageURL, imageAlt, mobile, mobileImgUrl, pa
                             </linearGradient>
                         </defs>
                     </svg>
-                    <img className="desktop" src={imageURL} alt={imageAlt} />
-                    <img className="mobile" src={mobileImgUrl} alt={imageAlt} />
-                    {/* <!--   <iframe title="Weather App" width="100%" height="100%" src="https://chic-swan-8ad817.netlify.app"></iframe> --> */}
+                    {children}
                 </div>
             </div>
         </>

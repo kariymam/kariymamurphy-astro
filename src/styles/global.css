@@ -155,7 +155,6 @@ h4 {
   --heading: 400 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) /
     var(--leading-relaxed) var(--font);
   font: var(--heading);
-  grid-area: var(--standard-area);
 }
 
 h2 {
@@ -176,7 +175,6 @@ blockquote,
 ol,
 ul {
   max-width: 65ch;
-  grid-area: var(--standard-area);
 }
 
 p,
