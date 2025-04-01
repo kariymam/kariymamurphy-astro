@@ -96,7 +96,10 @@
 			"#     alt:\n",
 			"# gallery:",
 			"#     image:",
-			"#     alt:",
+			"#     alt:\n",
+			"# video: ",
+			"#     title:",
+			"#     videoCode:\n",
             "---",
             "$0"
         ],
