@@ -1,11 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import { CldVideoPlayer } from "astro-cloudinary";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import Footer from "@/components/Footer.astro";
 import Base from "./base.astro";
 import HeroImage from "@/components/HeroImage";
 import ArticleGrid from "@/components/ArticleGrid";
+import HeroVideo from "@/components/HeroVideo";
 
 dayjs.extend(utc);
 const lastModified = dayjs()
@@ -19,7 +21,7 @@ const { title, frontmatter } = Astro.props;
   <article class="flex flex-col px-4 pb-24 md:px-0 bg-accent">
     <h1 class="mx-auto py-14">{frontmatter.title}</h1>
     {
-      frontmatter.deviceFrame ? (
+      frontmatter.deviceFrame && !frontmatter.video ? (
         <div class="block relative">
           <HeroImage
             client:load
@@ -44,6 +46,15 @@ const { title, frontmatter } = Astro.props;
             )}
           </HeroImage>
         </div>
+      ) : frontmatter.video &&
+        (!frontmatter.deviceFrame || frontmatter.deviceFrame) ? (
+          <HeroVideo dimensions={frontmatter.video.dimensions}>
+            <CldVideoPlayer class="h-auto"
+              src={`${frontmatter.video.videoCode}`}
+              width={frontmatter.video.dimensions[0]}
+              height={frontmatter.video.dimensions[1]}
+            />
+          </HeroVideo>
       ) : (
         <div class="mx-auto overflow-hidden aspect-video max-w-[1024px]">
           <img
@@ -63,11 +74,11 @@ const { title, frontmatter } = Astro.props;
         description={frontmatter.description}
       >
         <slot />
+        <p class="mx-auto my-8 text-slate-400">
+          Last updated {lastModified}
+        </p>
       </ArticleGrid>
     </div>
-    <p class="mx-auto my-8 text-slate-400">
-      Last updated {lastModified}
-    </p>
   </article>
   <Footer />
 </Base>

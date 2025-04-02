@@ -137,6 +137,7 @@ article {
   position: relative;
   min-height: 100vh;
   margin-bottom: 80vh;
+  padding-bottom: 124px;
 }
 
 main,
@@ -213,4 +214,16 @@ small {
 .tags:focus-within span,
 .tags:focus-visible span {
   box-shadow: 0 0 0 2px var(--ring);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr clamp(50vw, 10vw, 1024px) 1fr;
+  grid-template-rows: auto;
+  grid-auto-rows: max-content;
+  background: var(--foreground);
+  > * {
+    grid-column-start: 2;
+    height: fit-content;
+  }
 }

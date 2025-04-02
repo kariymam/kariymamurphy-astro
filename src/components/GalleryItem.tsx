@@ -12,14 +12,14 @@ const GalleryItem = ({ children, key, post }: Props) => {
             <div className="py-0 h-full relative">
                 {children}
             </div>
-            {post.data.deviceFrame ? (
+            {post.data.deviceFrame && post.data.tools ?  (
                 <div className="p-8 mt-auto justify-end flex flex-col gap-4 rounded-b-xl w-full bg-background">
                     <h2 className="hover:underline">
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
                     </h2>
                     <p>{post.data.description}</p>
                     <div className="flex gap-1 text-slate-400">
-                        {post.data.tools &&
+                        {
                             post.data.tools.map((tool, i) => (
                                 <i
                                     key={i} className={`devicon-${tool.toLowerCase()}-plain text-xl`}
