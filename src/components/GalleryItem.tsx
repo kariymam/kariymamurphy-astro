@@ -1,14 +1,15 @@
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
+    galleryItem: string | undefined;
+    className?: React.CSSProperties;
     children: React.ReactNode;
-    key: number;
     post: CollectionEntry<'work'>
 }
 
-const GalleryItem = ({ children, key, post }: Props) => {
+const GalleryItem = ({ className, children, galleryItem, post }: Props) => {
     return (
-        <div tabIndex={-1} className="gallery-card transition-all flex flex-col relative overflow-hidden border rounded-xl">
+        <li tabIndex={-1} id={galleryItem} className={`${className}`}>
             <div className="py-0 h-full relative">
                 {children}
             </div>
@@ -34,7 +35,7 @@ const GalleryItem = ({ children, key, post }: Props) => {
                     </h2>
                 </div>
             )}
-        </div>
+        </li>
     )
 }
 

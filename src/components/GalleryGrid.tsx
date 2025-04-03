@@ -7,25 +7,23 @@ type Props = {
 
 export default function Gallery({ collection }: Props) {
   return (
-    <div className="article-grid">
-      <div className="gallery ">
-        <div
-          className="grid max-w-full md:grid-cols-3 md:grid-rows-auto mx-16 gap-y-8 gap-x-8 grid-flow-row"
-        >
-          {
-            collection.map((post, i) => (
-              <GalleryItem key={i} post={post}>
-                <img
-                  className="object-cover w-full h-full"
-                  src={post.data.image.url}
-                  alt={post.data.image.alt}
-                />
-              </GalleryItem>
+    <div id="gallery" className="gallery ">
+      <ul
+        className="masonry col-span-full gap-y-8"
+      >
+        {
+          collection.map((post, i) => (
+            <GalleryItem galleryItem={`gallery-item-${i + 1}`} post={post} className="gallery-card transition-all flex flex-col relative overflow-hidden border rounded-xl">
+              <img
+                className="object-cover w-full h-full"
+                src={post.data.image.url}
+                alt={post.data.image.alt}
+              />
+            </GalleryItem>
 
-            ))
-          }
-        </div>
-      </div>
+          ))
+        }
+      </ul>
     </div>
   )
 }
