@@ -1,3 +1,4 @@
+import '../styles/gallery.scss';
 import type { CollectionEntry } from 'astro:content';
 import GalleryItem from "./GalleryItem";
 
