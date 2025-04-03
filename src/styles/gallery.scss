@@ -35,8 +35,6 @@ $areas: a, b, c, d, e, f;
 @each $area in $areas {
   $i: list.index($areas, $area);
   #gallery-item-#{$i} {
-    display: flex;
-    height: max-content;
     grid-area: $area;
   }
   @media (max-width: 922px) {
