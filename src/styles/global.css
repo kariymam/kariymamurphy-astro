@@ -173,8 +173,8 @@ h4,
 small,
 p,
 blockquote,
-ol,
-ul {
+article ol,
+article ul {
   max-width: 65ch;
 }
 
