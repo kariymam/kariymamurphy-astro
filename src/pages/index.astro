@@ -1,11 +1,14 @@
 ---
+import TagsContainer from '@/components/TagsContainer';
 import Content from '@/layouts/content.astro';
 const { title } = Astro.props;
+const featuredTags = ["ux & ui design", "graphic design"]
 ---
 <Content title="Home">
 	<h1><em>Graphic Designer</em> turned <em>UI/UX Designer</em> turned <b>Frontend Developer</b> building bespoke digital products.</h1>
 	<h2>About me</h2>
 	<p>I'm an Baltimore-based Frontend Developer with over 7 years of experience designing for digital marketing and driving measurable improvements for digital products. fostering collaboration between design, product, and engineering — most recently at Capital One, Truist, and KPMG.
 	</p>
+	<TagsContainer tags={featuredTags}/>
 	<a href="/public/Kariyma_Murphy_Resume.pdf">Download my resume</a>
 </Content>
