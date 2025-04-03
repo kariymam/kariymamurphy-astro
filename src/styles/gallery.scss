@@ -1,53 +1,59 @@
-@use 'sass:list';
-/* .gallery * {
-  grid-column: span 1;
-}
-
-.gallery *:first-child,
-.gallery *:nth-child(4) {
-  grid-column: span 2;
-}
-
-@media (max-width: 922px) {
-  .gallery * {
-    grid-column: 1 / span 2;
-  }
-}
- */
+@use "sass:list";
 
 #gallery {
- display: grid;
- width: 100%;
- grid-template-columns: repeat(12, 1fr);
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(12, 1fr);
 }
 
 ul.masonry {
- display: grid;
- column-gap: 1em;
- width: 100%;
- grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
- grid-auto-flow: row;
- row-gap: 1em;
- grid-template-areas:
-  "a b c"
-  "d b e"
-  "d f e";
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: row;
+  // column-gap: 1em;
+  // row-gap: 1em;
+  grid-template-areas:
+    "a b c"
+    "d b e"
+    "d f e";
 }
+
+@mixin text-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+ }
+
+ .gallery-description {
+  @include text-truncate;
+ }
 
 $areas: a, b, c, d, e, f;
 
 @each $area in $areas {
- $i: list.index($areas, $area);
- #gallery-item-#{$i} {
-  display: flex;
-  height: max-content;
-  grid-area: $area;
- }
+  $i: list.index($areas, $area);
+  #gallery-item-#{$i} {
+    display: flex;
+    height: max-content;
+    grid-area: $area;
+  }
+  @media (max-width: 922px) {
+    #gallery-item-#{$i} {
+      grid-area: auto;
+    }
+  }
 }
 
 @media (max-width: 922px) {
- ul.masonry :first-child,
- ul.masonry :nth-child(4n) {
-  grid-column: span 2;
- }
+  ul.masonry {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    column-gap: 0;
+  }
+  ul.masonry :first-child,
+  ul.masonry :nth-child(4n) {
+    grid-column: span 2;
+  }
 }

@@ -15,9 +15,8 @@ mobile:
 ---
 
 <!-- Codepen embed -->
-<iframe height="300" style="width: 100%; height: 812px;" scrolling="no" title="magic 8" src="https://codepen.io/kariymam/embed/poqErya?default-tab=html%2Cresult&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="300" style="width: 100%; height: 812px" scrolling="no" title="magic 8" src="https://codepen.io/kariymam/embed/poqErya?default-tab=html%2Cresult&theme-id=light" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/kariymam/pen/poqErya">
   magic 8</a> by kariyma murphy (<a href="https://codepen.io/kariymam">@kariymam</a>)
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
-

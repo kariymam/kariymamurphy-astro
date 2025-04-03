@@ -18,7 +18,7 @@ const GalleryItem = ({ className, children, galleryItem, post }: Props) => {
                     <h2 className="hover:underline">
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
                     </h2>
-                    <p>{post.data.description}</p>
+                    <p className="gallery-description">{post.data.description}</p>
                     <div className="flex gap-1 text-slate-400">
                         {
                             post.data.tools.map((tool, i) => (
