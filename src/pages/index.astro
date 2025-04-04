@@ -1,16 +1,23 @@
 ---
 import TagsContainer from '@/components/TagsContainer';
+import { Button } from '@/components/ui/button';
 import Content from '@/layouts/content.astro';
 const { title } = Astro.props;
 const featuredTags = ["ux & ui design", "graphic design"]
 ---
-<Content title="Home">
-	<section class="flex flex-col px-4 md:px-0 bg-accent">
-		<h1>Graphic Designer turned UI/UX Designer turned <em class="tracking-tight">Frontend Developer</em> building bespoke digital products.</h1>
-		<h2>About me</h2>
-		<p>I'm an Baltimore-based Frontend Developer with over 7 years of experience designing for digital marketing and driving measurable improvements for digital products. fostering collaboration between design, product, and engineering — most recently at Capital One, Truist, and KPMG.
-		</p>
-		<TagsContainer tags={featuredTags}/>
-		<a href="/public/Kariyma_Murphy_Resume.pdf">Download my resume</a>
+<Content title={title}>
+	<section class="px-4 md:px-0 pt-14 col-span-full md:col-start-3 md:col-end-11 items-center text-center mx-auto">
+			<h1 class="text-5xl pb-8">Graphic Designer turned UI/UX Designer turned <b class="tracking-tight">Frontend Developer</b> building bespoke digital products.</h1>
+			<div class="max-w-md mx-auto">
+				<h2 class="pt-8 pb-14 flex flex-col gap-4 items-center justify-center">
+					<TagsContainer tags={featuredTags}/>
+				</h2>
+				<Button variant="outline" className={`bg-accent-foreground text-white`}>
+					<a href="/public/Kariyma_Murphy_Resume.pdf">Download my resume</a>
+				</Button>
+				<Button variant="outline">
+					<a href="#footer-contact">Contact me</a>
+				</Button>
+			</div>
 	</section>
 </Content>

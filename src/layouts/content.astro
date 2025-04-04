@@ -5,7 +5,7 @@ const { title } = Astro.props;
 ---
 <Base title={ title }>
 	<main>
-		<div class="md:grid">
+		<div class="md:grid md:grid-cols-12 md:grid-flow-row">
             <slot />
         </div>
 	</main>

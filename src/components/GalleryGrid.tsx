@@ -10,7 +10,7 @@ export default function Gallery({ collection }: Props) {
   return (
     <div id="gallery" className="gallery ">
       <ul
-        className="masonry col-span-full pt-5 max-w-[1200px] mx-auto"
+        className="masonry col-span-full pt-5 mx-auto"
       >
         {
           collection.map((post, i) => (

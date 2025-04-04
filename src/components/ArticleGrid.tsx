@@ -25,7 +25,7 @@ const Grid = ({ gallery, links, description, tags, tools, carousel, children }: 
         <>
             <div className="grid grid-cols-1 max-w-full md:grid-cols-2 md:grid-rows-auto mx-auto border rounded-t-xl gap-x-8">
                 <div className="p-8">
-                    <p className="text-7xl">
+                    <p className="text-xl leading-relaxed">
                         {description}
                     </p>
                 </div>

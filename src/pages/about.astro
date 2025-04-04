@@ -3,15 +3,22 @@ import Content from "@/layouts/content.astro";
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
-  <Content title="About Me">
-    <section class="flex flex-col px-4 md:px-0 bg-accent">
-        <h1>About</h1>
-        <p>
-          I’m Kariyma, and I'm here to claim a little piece of the internet for myself. I'm a graphic designer turned <em>UI Engineer</em> with experience connecting designers, product managers, and developers to deliver excellent digital products. When I’m not studying, defining or implementing user interfaces for digital products, I’m here tinkering, writing or reviewing things I find interesting.
-        </p>
-        <p>My skills:</p>
-        <ul>
-          {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-      </section>
-  </Content>
+<Content title="Home">
+  <section class="max-w-md mx-auto px-4 flex flex-col gap-4 md:px-0 pt-14 col-span-full md:col-start-3 md:col-end-11">
+      <h1 class="mx-auto text-slate-600 uppercase font-bold tracking-wide text-center">About</h1>
+      <h2>I'm an Baltimore-based Frontend Developer with over 7 years of experience designing for digital marketing and driving measurable improvements for digital products. fostering collaboration between design, product, and engineering — most recently at Capital One, Truist, and KPMG.</h2>
+      <p>
+        I'm here to claim a little piece of the internet for
+        myself. I'm have experience
+        connecting designers, product managers, and developers to deliver excellent
+        digital products. When I’m not studying code, defining or implementing user interfaces
+        for digital products, I’m here tinkering, writing or reviewing things I find
+        interesting.
+      </p>
+      <p>My skills:</p>
+      <ul class="list-disc ml-4">
+        {skills.map((skill) => <li class="skill">{skill}</li>)}
+      </ul>
+      <a href="/public/Kariyma_Murphy_Resume.pdf">Download my resume</a>
+  </section>
+</Content>

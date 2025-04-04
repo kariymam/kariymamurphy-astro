@@ -16,20 +16,20 @@ const uniqueTags = (): string[] => {
 
 ---
 <Content title="Work">
-  <section class="flex flex-col px-4 md:px-0 bg-accent">
-    <h2 class="mx-auto pt-14 text-slate-600">Featured Work</h2>
+  <section class="flex flex-col px-4 md:px-0 bg-accent col-span-full">
+    <h1 class="mx-auto pt-14 text-slate-600 uppercase font-bold tracking-wide">Featured Work</h1>
     {featured.map((post) => (
       <Featured post={post}/>
     ))}
   </section>
-  <section class="flex flex-col px-4 md:px-0">
-    <h2 class="mx-auto pt-14">Other Work</h2>
+  <section class="flex flex-col px-4 md:px-0 col-span-full">
+    <h2 class="mx-auto pt-14 text-slate-600 tracking-wide">Other Work</h2>
     <div class="flex justify-center w-full my-8">
       <TagsContainer tags={uniqueTags()} />
     </div>
     <div id="gallery" class="gallery ">
       <ul
-        class="masonry col-span-full pt-5 max-w-[1200px] mx-auto"
+        class="masonry col-span-full pt-5 mx-auto"
       >
         {
           projects.map((post, i) => (

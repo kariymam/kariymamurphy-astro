@@ -11,8 +11,6 @@ ul.masonry {
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-flow: row;
-  // column-gap: 1em;
-  // row-gap: 1em;
   grid-template-areas:
     "a b c"
     "d b e"

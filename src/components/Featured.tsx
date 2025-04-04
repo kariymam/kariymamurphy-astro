@@ -8,10 +8,10 @@ type Props = {
 
 const Featured = ({ post }: Props) => {
     return (
-        <div className="overflow-hidden grid md:grid-cols-2 h-screen bg-accent">
-            <div className="max-w-[442px] m-auto">
+        <div className="overflow-hidden grid grid-cols-1 md:grid-cols-2 h-screen bg-accent">
+            <div className="max-w-[442px] md:m-auto flex flex-col gap-4">
                 <h3>{post.data.title}</h3>
-                <p>{post.data.description}</p>
+                <p className="text-xl leading-relaxed">{post.data.description}</p>
                 <TagsContainer tags={post.data.tags}/>
             </div>
             <HeroImage pageTitle="Weather App">
