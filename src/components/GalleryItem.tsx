@@ -1,8 +1,9 @@
 import type { CollectionEntry } from "astro:content";
+import ToolsContainer from "./ToolsContainer";
 
 type Props = {
     galleryItem: string | undefined;
-    className?: React.CSSProperties;
+    className?: React.CSSProperties | string;
     children: React.ReactNode;
     post: CollectionEntry<'work'>
 }
@@ -19,27 +20,16 @@ const GalleryItem = ({ className, children, galleryItem, post }: Props) => {
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
                     </h3>
                     <p className="gallery-description">{post.data.description}</p>
-                    <div className="flex gap-1 text-slate-400">
-                        {
-                            post.data.tools.map((tool, i) => (
-                                <i
-                                    key={i} className={`devicon-${tool.toLowerCase()}-plain text-xl`}
-                                />
-                            ))}
+                    <div className="flex gap-1">
+                    {post.data.tools && <ToolsContainer tools={post.data.tools} />}
                     </div>
                 </div>
             ) : (
-                <div className="flex gap-4 h-full w-full absolute p-8 bottom-0">
+                <div className="flex items-end gap-4 h-full w-full absolute p-8 bottom-0">
                     <h3 className="text-sm grow hover:underline mt-auto text-card">
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
                     </h3>
-                    {post.data.tools &&
-                        (<div className="flex grow-0 justify-end items-end shrink gap-1 text-card">
-                            {post.data.tools.map((tool, i) => (
-                                <i key={i} className={`devicon-${tool.toLowerCase().replace(" ", "")}-plain text-xl`}/>
-                            ))}
-                        </div>
-                        )}
+                    {post.data.tools && <ToolsContainer tools={post.data.tools} text={["text-xl", "text-card"]} />}
                 </div>
             )}
         </li>

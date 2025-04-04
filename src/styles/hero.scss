@@ -1,7 +1,7 @@
-#intro {
+.project-image{
   margin: auto;
   aspect-ratio: 16/9;
-  height: auto;
+  height: 100%;
   max-height: var(--hero-height);
   row-gap: 1rem;
   color: rgba(0, 0, 0, 0.2);
@@ -12,13 +12,13 @@
   --hero-height: 568px; //90vh?
 }
 
-#hero iframe {
+.hero iframe {
   margin-top: 32px;
   padding-bottom: 32px;
   pointer-events: none;
 }
 
-#hero .device-grid {
+.hero .device-grid {
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: var(--desktop-template);
@@ -29,24 +29,24 @@
   --mobile-template: 16px 1fr 1fr 16px;
 }
 
-#hero #toggle {
+.hero #toggle {
   margin: auto;
 }
 
-#hero.desktop {
+.hero.desktop {
   --device-ratio: var(--desktop-ratio);
   --border-radius: var(--desktop-b-radius);
   --device-width: 1446px;
 }
 
-#hero.mobile {
+.hero.mobile {
   --device-ratio: var(--mobile-ratio);
   --border-radius: var(--mobile-b-radius);
   --device-width: 375px;
   max-height: var(--hero-height);
 }
 
-#hero.mobile {
+.hero.mobile {
   .browser-ui .desktop-buttons {
     display: none;
   }
@@ -55,7 +55,7 @@
   }
 }
 
-#hero.desktop {
+.hero.desktop {
   .mobile-frame {
     display: none;
   }
@@ -67,7 +67,7 @@
   }
 }
 
-#hero {
+.hero {
   display: flex;
   grid-area: var(--);
   aspect-ratio: var(--device-ratio);
@@ -88,7 +88,7 @@
     display: block;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: left top;
     border-radius: 0 0 var(--border-radius) var(--border-radius);
     margin: auto;
   }
@@ -205,7 +205,7 @@
   font-size: inherit;
 }
 
-#hero .text-truncate {
+.hero .text-truncate {
   display: inline-block;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -216,7 +216,7 @@
 }
 
 @media (max-width: 922px) {
-  #hero .browser-ui {
+  .hero .browser-ui {
     display: none;
   }
 }

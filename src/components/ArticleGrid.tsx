@@ -25,9 +25,9 @@ const Grid = ({ gallery, links, description, tags, tools, carousel, children }: 
         <>
             <div className="grid grid-cols-1 max-w-full md:grid-cols-2 md:grid-rows-auto mx-auto border rounded-t-xl gap-x-8">
                 <div className="p-8">
-                    <h2>
+                    <p className="text-7xl">
                         {description}
-                    </h2>
+                    </p>
                 </div>
                 <div className="p-8 flex flex-col gap-8 border-l">
                     <div className="flex flex-col gap-4">
@@ -37,7 +37,7 @@ const Grid = ({ gallery, links, description, tags, tools, carousel, children }: 
                     {tools && (
                         <div className="flex flex-col gap-4">
                             <span>Tool Stack</span>
-                            <ToolsContainer tools={tools} />
+                            <ToolsContainer tools={tools} text={["text-4xl", "text-slate-500"]} />
                         </div>
                     )}
                     {links && (

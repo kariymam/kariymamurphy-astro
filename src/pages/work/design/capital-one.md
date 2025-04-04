@@ -1,7 +1,7 @@
 ---
 layout: "src/layouts/work.astro"
 title: 'Designing for data privacy and governance at Capital One'
-description: 'I led UX/UI design for ensuring regulatory compliance with CPRA (California Privacy Act of 2020) before the law went into effect. I also provided product partners with design support for the new privacy scoping process with UI enhancements, which drove business efficiencies.'
+description: "I led UX/UI design for ensuring regulatory compliance with CPRA (California Privacy Act of 2020) before the law went into effect.\n I also provided product partners with design support for the new privacy scoping process with UI enhancements, which drove business efficiencies."
 tags: ["ux & ui design", "work experience"]
 tools: [ "figma", "jira"]
 deviceFrame: true

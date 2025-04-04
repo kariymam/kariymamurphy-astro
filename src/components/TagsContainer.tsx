@@ -6,10 +6,10 @@ type Props = {
 
 const TagsContainer = ({ tags }: Props) => {
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 flex-wrap">
             {tags.map((tag, i) => (
-                <a className="tags" key={i} href={`/tags/${tag}`}>
-                    <Badge variant="outline">{tag}</Badge>
+                <a className="tags uppercase" key={i} href={`/tags/${tag}`}>
+                    <Badge variant="outline" className="text-slate-500 hover:text-foreground">{tag}</Badge>
                 </a>
             ))}
         </div>

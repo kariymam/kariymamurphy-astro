@@ -5,14 +5,15 @@
     position: relative;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    color: var(--color-slate-500);
   }
 
-  .activeTabIndicator {
-    position: absolute;
-    height: 2rem;
+  .active {
     width: 100%;
     left: 0;
-    border-radius: 20px;
-    background-color: red;
+    text-decoration: underline;
+    color: var(--color-foreground);
     z-index: -1;
   }

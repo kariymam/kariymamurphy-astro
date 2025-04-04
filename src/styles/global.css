@@ -1,18 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/* main, body {
-	background-color: rgb(232, 150, 135);
-} */
+@font-face {
+  font-family: "FT88";
+  src: url("/fonts/FT88-Regular.woff2") format("woff2"),
+    url("/fonts/FT88-Regular.woff") format("woff");
+}
 
-@view-transition {
-  navigation: auto;
+@font-face {
+  font-family: "FT88-Serif";
+  src: url("/fonts/FT88-Serif.woff2") format("woff2"),
+    url("/fonts/FT88-Serif.woff") format("woff");
 }
 
 :root {
+  font-size: 110%;
+  --ft88: "FT88", monospace;
+  --ft88-serif: "FT88-Serif", monospace;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -129,8 +136,11 @@
 }
 
 body {
-  --font: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font: "Atkinson Hyperlegible Next", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
   font-family: var(--font);
   letter-spacing: -0.015em;
 }
@@ -153,13 +163,16 @@ nav {
 
 h1,
 h2,
-h3,
-h4 {
-  --base-size: 1.8rem;
+h3 {
+  --base-size: 1.6rem;
   --heading-size: calc(var(--base-size) * 1);
-  --heading: 700 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) /
-    var(--leading-relaxed) var(--font);
+  --heading: 700 clamp(calc(0.1875rem * 1), 20vw, var(--heading-size)) /
+    var(--leading-relaxed) var(--font-display);
   font: var(--heading);
+}
+
+h2, h3 {
+  text-transform: uppercase;
 }
 
 h2 {
@@ -168,6 +181,10 @@ h2 {
 
 h3 {
   --heading-size: calc(var(--base-size) / 1.8);
+}
+
+em {
+  font-family: var(--ft88-serif);
 }
 
 h1,
@@ -182,15 +199,18 @@ article ul {
   max-width: 65ch;
 }
 
-p,
-blockquote,
-ol li,
-ul li {
-  font-size: 1rem;
+article ol li,
+article ul li {
+  list-style: disc;
+  margin-left: 1em;
+}
+article ol > * + *,
+article ul > * + * {
+  margin-top: 1em;
 }
 
 small {
-  font-size: 1rem;
+  font-size: 80%;
 }
 
 .scroller {
@@ -217,7 +237,7 @@ small {
 .tags:hover span,
 .tags:focus-within span,
 .tags:focus-visible span {
-  box-shadow: 0 0 0 2px var(--ring);
+  box-shadow: 0 0 0 2px var(--color-slate-300);
 }
 
 .video-grid {

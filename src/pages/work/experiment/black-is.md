@@ -16,8 +16,8 @@ tools: ["after effects"]
 #     alt:
 
 # gallery:
-#     image:
-#     alt:
+#     - image:
+#       alt:
 
 video: 
     title: "Black is"

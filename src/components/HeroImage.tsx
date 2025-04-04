@@ -31,8 +31,8 @@ export default function HeroImage({ children, mobile, pageTitle }: Props) {
     return (
         <>
             {mobile && (<DeviceToggleButton toggleView={toggleView} toggleTo={current.toggleTo} />)}
-            <div id="intro">
-                <div id="hero" className={`${current.device} hero`}>
+            <div className="project-image">
+                <div className={`${current.device} hero`}>
                     <BrowserUI title={pageTitle} />
                     <svg className="window-gradient">
                         <defs>

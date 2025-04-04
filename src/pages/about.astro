@@ -4,22 +4,14 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 ---
 
   <Content title="About Me">
-    <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/about/">About</a>
-        </li>
-        <li>
-          <a href="/blog/">Blog</a>
-        </li>
-      </ul>
-      <p>
-        I’m Kariyma, and I'm here to claim a little piece of the internet for myself. I'm a graphic designer turned <em>UI Engineer</em> with experience connecting designers, product managers, and developers to deliver excellent digital products. When I’m not studying, defining or implementing user interfaces for digital products, I’m here tinkering, writing or reviewing things I find interesting.
-      </p>
-      <p>My skills:</p>
-      <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-      </ul>
+    <section class="flex flex-col px-4 md:px-0 bg-accent">
+        <h1>About</h1>
+        <p>
+          I’m Kariyma, and I'm here to claim a little piece of the internet for myself. I'm a graphic designer turned <em>UI Engineer</em> with experience connecting designers, product managers, and developers to deliver excellent digital products. When I’m not studying, defining or implementing user interfaces for digital products, I’m here tinkering, writing or reviewing things I find interesting.
+        </p>
+        <p>My skills:</p>
+        <ul>
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+      </section>
   </Content>
