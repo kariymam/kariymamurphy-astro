@@ -1,8 +1,21 @@
 ---
+import "../styles/nav.css";
+const links = [
+  { to: "/", title: "Home" },
+  { to: "/about/", title: "About" },
+  { to: "/gallery/", title: "Work" },
+];
 
 ---
-<nav class="z-10 sticky top-0 border-b-2">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/gallery/">Work</a>
+
+<nav id="main" class="flex z-10 sticky top-0 border-b-2">
+  <ul class="flex mx-auto content-center">
+    {
+      links.map(({ to, title }) => (
+        <li id={`${title.toLowerCase()}-link`} class="tab">
+          {to === Astro.url.pathname ? (<a href={to} class="active">{title}</a>) : (<a href={to}>{title}</a>)}
+        </li>
+      ))
+    }
+  </ul>
 </nav>

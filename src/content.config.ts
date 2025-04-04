@@ -13,6 +13,7 @@ const work = defineCollection({
         image: z.object({ url: z.string(), alt: z.string() }),
         mobile: z.object({ url: z.string(), alt: z.string() }).optional(),
         video: z.object({ title: z.string(), videoCode: z.string(), dimensions: z.array(z.number()) }).optional(),
+        carousel: z.boolean().optional(),
         gallery: z.array(z.object({ image: z.string(), alt: z.string() })).optional()
     })
 })

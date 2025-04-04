@@ -9,9 +9,9 @@ image:
     url: '/portfolio-images/capital-one.png'
     alt: 'The Capital One logo on light amber background.'
 # ----
-mobile:
-    url: 'https://i.imgur.com/wBgQPt1.png'
-    alt: 'Placeholder image'
+# mobile:
+#     url: 'https://i.imgur.com/wBgQPt1.png'
+#     alt: 'Placeholder image'
 
 # ----
 gallery:
@@ -23,6 +23,8 @@ gallery:
       alt: 'An in-experience callout, guiding the user to download their data before they correct it'
     - image: '/portfolio-images/mydata.capitalone.com_manage.png'
       alt: 'The user portal with an updated status showing an expired data download requested previously'
+carousel: true
+
 ---
 
 ## Accomplishments

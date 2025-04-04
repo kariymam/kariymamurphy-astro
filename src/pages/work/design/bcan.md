@@ -14,6 +14,8 @@ gallery:
       alt: "The back of the flyer showing a timetable of events and featured entrepreneurs."
     - image: '/portfolio-images/we-own-this_screenshots_3.png'
       alt: "A screenshot of BCAN's Instagram feed featuring a flyer reusing my illustrations."
+carousel: false
+
 ---
 
 ## I created a series of vector portraits using an expressive variable font to create an engaging and flexible branding system that could work on social media flyers and print postcards

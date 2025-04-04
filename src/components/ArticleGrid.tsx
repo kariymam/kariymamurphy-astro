@@ -14,12 +14,13 @@ type Props = {
     children: React.ReactNode;
     description: string;
     tags: string[];
+    carousel: boolean;
     gallery?: Array<{ image: string; alt: string }>;
     tools?: string[];
     links?: Array<Link>;
 }
 
-const Grid = ({ gallery, links, description, tags, tools, children }: Props) => {
+const Grid = ({ gallery, links, description, tags, tools, carousel, children }: Props) => {
     return (
         <>
             <div className="grid grid-cols-1 max-w-full md:grid-cols-2 md:grid-rows-auto mx-auto border rounded-t-xl gap-x-8">
@@ -46,26 +47,32 @@ const Grid = ({ gallery, links, description, tags, tools, children }: Props) => 
                         </div>
                     )}
                 </div>
-                <div className="md:row-start-2 md:col-start-1 md:col-span-2">
-                    {gallery && (
-                        <div className="p-8 bg-accent">
-                            <Carousel className="translate-x-1">
-                                <CarouselContent className="items-center">
-                                    {gallery.map(({ image, alt }, idx) => (
-                                        <CarouselItem key={idx}>
-                                            <Card className="max-w-fit m-auto">
-                                                <img className="object-cover mx-auto max-h-[70vh] object-top" src={image} alt={alt} />
-                                            </Card>
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                                <div>
-                                    <CarouselPrevious />
-                                    <CarouselNext />
-                                </div>
-                            </Carousel>
-                        </div>
-                    )}
+                <div className="flex flex-col gap-8 pb-8 md:row-start-2 md:col-start-1 md:col-span-2">
+                    {carousel ?
+                        (gallery && (
+                            <div className="p-8 bg-accent">
+                                <Carousel className="translate-x-1">
+                                    <CarouselContent className="items-center">
+                                        {gallery.map(({ image, alt }, idx) => (
+                                            <CarouselItem key={idx}>
+                                                <Card className="max-w-fit m-auto">
+                                                    <img className="object-cover mx-auto max-h-[70vh] object-top" src={image} alt={alt} />
+                                                </Card>
+                                            </CarouselItem>
+                                        ))}
+                                    </CarouselContent>
+                                    <div>
+                                        <CarouselPrevious />
+                                        <CarouselNext />
+                                    </div>
+                                </Carousel>
+                            </div>
+                        )) : (gallery && gallery.map(({ image, alt }) => (
+                            <div className="max-w-fit m-auto px-8 overflow-hidden">
+                                <img className="object-cover border rounded-xl w-full mx-auto object-top" src={image} alt={alt} />
+                            </div>
+                        )))
+                    }
                 </div>
             </div>
             <div className="border-x border-b rounded-b-xl flex flex-col gap-8 p-8">

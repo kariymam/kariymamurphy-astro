@@ -13,11 +13,11 @@ const GalleryItem = ({ className, children, galleryItem, post }: Props) => {
             <div className="py-0 h-full relative">
                 {children}
             </div>
-            {post.data.deviceFrame && post.data.tools ?  (
+            {post.data.deviceFrame && post.data.tools ? (
                 <div className="p-8 mt-auto justify-end flex flex-col gap-4 rounded-b-xl w-full bg-background">
-                    <h2 className="hover:underline">
+                    <h3 className="hover:underline">
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
-                    </h2>
+                    </h3>
                     <p className="gallery-description">{post.data.description}</p>
                     <div className="flex gap-1 text-slate-400">
                         {
@@ -29,10 +29,17 @@ const GalleryItem = ({ className, children, galleryItem, post }: Props) => {
                     </div>
                 </div>
             ) : (
-                <div className="flex h-full w-full absolute p-8 bottom-0">
-                    <h2 className="hover:underline mt-auto text-card">
+                <div className="flex gap-4 h-full w-full absolute p-8 bottom-0">
+                    <h3 className="text-sm grow hover:underline mt-auto text-card">
                         <a href={`/work/${post.id}`}>{post.data.title}</a>
-                    </h2>
+                    </h3>
+                    {post.data.tools &&
+                        (<div className="flex grow-0 justify-end items-end shrink gap-1 text-card">
+                            {post.data.tools.map((tool, i) => (
+                                <i key={i} className={`devicon-${tool.toLowerCase().replace(" ", "")}-plain text-xl`}/>
+                            ))}
+                        </div>
+                        )}
                 </div>
             )}
         </li>

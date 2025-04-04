@@ -1,0 +1,18 @@
+.tab {
+    padding: 1.2rem;
+    border-left: 1px solid var(--accent);
+    border-right: 1px solid var(--accent);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .activeTabIndicator {
+    position: absolute;
+    height: 2rem;
+    width: 100%;
+    left: 0;
+    border-radius: 20px;
+    background-color: red;
+    z-index: -1;
+  }

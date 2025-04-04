@@ -24,6 +24,7 @@
     "embla-carousel-react": "^8.5.2",
     "gsap": "^3.12.7",
     "lucide-react": "^0.485.0",
+    "motion": "^12.6.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.86.0",

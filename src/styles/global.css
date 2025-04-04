@@ -8,6 +8,10 @@
 	background-color: rgb(232, 150, 135);
 } */
 
+@view-transition {
+  navigation: auto;
+}
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -153,7 +157,7 @@ h3,
 h4 {
   --base-size: 1.8rem;
   --heading-size: calc(var(--base-size) * 1);
-  --heading: 400 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) /
+  --heading: 700 clamp(calc(0.1875rem * 1), 10vw, var(--heading-size)) /
     var(--leading-relaxed) var(--font);
   font: var(--heading);
 }
