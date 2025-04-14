@@ -66,7 +66,8 @@ footer span, span::after {
     line-height: 1;
 }
 
-footer span::after {
+footer span::after,
+#contact_booking_link::after {
     content: '→';
 }
 
